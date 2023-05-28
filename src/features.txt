@@ -1,6 +1,21 @@
 restaurant availability feature -> custom hook 
 search bar
 routing
+context
 ------------------------------------------------
 shimmer ui
 restname in route
+modify add to cart btn
+cart functionality using redux -> remove specific item, increase quantity, show total
+login page
+cart page
+chatbot
+checkout from cart-> payment
+api for cart
+inc item qty on "add"
+
+----------------------
+categories -> RATING, COST ETC
+-----------------------
+issue -> items getting added twice 
+because on switching pages the quantity icons gets switched to "Add"
