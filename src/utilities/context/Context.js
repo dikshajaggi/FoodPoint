@@ -8,7 +8,7 @@ const data =
         {
             "cardType": "restaurant",
             "layoutAlignmentType": "VERTICAL",
-            "data": {
+            "info": {
                 "type": "restaurant",
                 "data": {
                     "type": "F",
@@ -85,6 +85,7 @@ const data =
                     },
                     "chain": [],
                     "feeDetails": {
+                        "restaurantId": "557580",
                         "fees": [],
                         "totalFees": 0,
                         "message": "",
@@ -110,7 +111,6 @@ const data =
                     "lastMileTravelString": "0.8 kms",
                     "hasSurge": false,
                     "sla": {
-                        "restaurantId": "557580",
                         "deliveryTime": 45,
                         "minDeliveryTime": 45,
                         "maxDeliveryTime": 45,
@@ -134,7 +134,7 @@ const data =
         {
             "cardType": "restaurant",
             "layoutAlignmentType": "VERTICAL",
-            "data": {
+            "info": {
                 "type": "restaurant",
                 "data": {
                     "type": "F",
@@ -219,6 +219,7 @@ const data =
                     ],
                     "chain": [],
                     "feeDetails": {
+                        "restaurantId": "614570",
                         "fees": [],
                         "totalFees": 0,
                         "message": "",
@@ -244,7 +245,6 @@ const data =
                     "lastMileTravelString": "2 kms",
                     "hasSurge": false,
                     "sla": {
-                        "restaurantId": "614570",
                         "deliveryTime": 33,
                         "minDeliveryTime": 33,
                         "maxDeliveryTime": 33,
@@ -268,7 +268,7 @@ const data =
         {
             "cardType": "restaurant",
             "layoutAlignmentType": "VERTICAL",
-            "data": {
+            "info": {
                 "type": "restaurant",
                 "data": {
                     "type": "F",
@@ -345,6 +345,7 @@ const data =
                     },
                     "chain": [],
                     "feeDetails": {
+                        "restaurantId": "572525",
                         "fees": [],
                         "totalFees": 0,
                         "message": "",
@@ -370,7 +371,6 @@ const data =
                     "lastMileTravelString": "0.3 kms",
                     "hasSurge": false,
                     "sla": {
-                        "restaurantId": "572525",
                         "deliveryTime": 37,
                         "minDeliveryTime": 37,
                         "maxDeliveryTime": 37,
@@ -394,7 +394,7 @@ const data =
         {
             "cardType": "restaurant",
             "layoutAlignmentType": "VERTICAL",
-            "data": {
+            "info": {
                 "type": "restaurant",
                 "data": {
                     "type": "F",
@@ -473,6 +473,7 @@ const data =
                     },
                     "chain": [],
                     "feeDetails": {
+                        "restaurantId": "417141",
                         "fees": [],
                         "totalFees": 0,
                         "message": "",
@@ -498,7 +499,6 @@ const data =
                     "lastMileTravelString": "0.3 kms",
                     "hasSurge": false,
                     "sla": {
-                        "restaurantId": "417141",
                         "deliveryTime": 38,
                         "minDeliveryTime": 38,
                         "maxDeliveryTime": 38,
@@ -522,7 +522,7 @@ const data =
         {
             "cardType": "restaurant",
             "layoutAlignmentType": "VERTICAL",
-            "data": {
+            "info": {
                 "type": "restaurant",
                 "data": {
                     "type": "F",
@@ -601,6 +601,7 @@ const data =
                     },
                     "chain": [],
                     "feeDetails": {
+                        "restaurantId": "445821",
                         "fees": [],
                         "totalFees": 0,
                         "message": "",
@@ -626,7 +627,6 @@ const data =
                     "lastMileTravelString": "0.8 kms",
                     "hasSurge": false,
                     "sla": {
-                        "restaurantId": "445821",
                         "deliveryTime": 40,
                         "minDeliveryTime": 40,
                         "maxDeliveryTime": 40,

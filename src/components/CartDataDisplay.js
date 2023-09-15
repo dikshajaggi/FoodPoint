@@ -1,8 +1,8 @@
 import { useContext } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import "../style.css"
-import { Context } from "../Utility/Context/Context"
-import { removeItem } from '../Utility/Redux/cartSlice'
+import { Context } from "../utilities/context/Context"
+import { removeItem } from '../utilities/redux/cartSlice'
 
 const CartDataDisplay = (props) => {
     const { name, price, imageId, id } = props

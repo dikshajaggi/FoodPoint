@@ -1,10 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { UserContext } from '../../Utility/Context/UserContext'
+import { UserContext } from '../utilities/context/UserContext'
 import { useSelector } from 'react-redux'
 import axios from "axios"
-import "../../style.css"
-import { Context } from '../../Utility/Context/Context'
+import "../style.css"
+import { Context } from "../utilities/context/Context"
 
 const Header = () => {
     const data =

@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { UserContext } from '../../Utility/Context/UserContext'
+import { UserContext } from '../utilities/context/UserContext'
 import "./LoginStyles.css"
 
 const Login = () => {

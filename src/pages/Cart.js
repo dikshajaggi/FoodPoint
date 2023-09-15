@@ -1,10 +1,10 @@
 import { useContext, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { Link } from "react-router-dom"
-import { UserContext } from "../Utility/Context/UserContext"
-import CartDataDisplay from "./CartDataDisplay"
-import { clearCart } from '../Utility/Redux/cartSlice'
-import { Context } from "../Utility/Context/Context"
+import { UserContext } from "../utilities/context/UserContext"
+import CartDataDisplay from "../components/CartDataDisplay"
+import { clearCart } from '../utilities/redux/cartSlice'
+import { Context } from "../utilities/context/Context"
 import Checkout from "./Checkout"
 
 const Cart = () => {

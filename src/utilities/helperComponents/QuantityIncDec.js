@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import "./helperStyles.css"
-import { Context } from '../../Utility/Context/Context'
+import { Context } from '../context/Context'
 import { useDispatch } from 'react-redux'
 
 const QuantityIncDec = (props) => {

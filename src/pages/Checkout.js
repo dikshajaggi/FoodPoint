@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
-import { UserContext } from '../Utility/Context/UserContext'
-import { Context } from '../Utility/Context/Context'
+import { UserContext } from '../utilities/context/UserContext'
+import { Context } from '../utilities/context/Context'
 
 const Checkout = (props) => {
     const username = useContext(UserContext)

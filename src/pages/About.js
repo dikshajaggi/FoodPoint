@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import "../style.css"
-import { UserContext } from '../Utility/Context/UserContext'
+import { UserContext } from '../utilities/context/UserContext'
 
 const About = () => {
     const username = useContext(UserContext)

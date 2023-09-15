@@ -1,18 +1,18 @@
 import { useState } from "react"
 import './App.css';
-import Main from "./components/Main";
+import Main from "./layouts/Main";
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Specific from './components/Specific';
-import About from "./components/About"
-import { UserContextProvider } from './Utility/Context/UserContext';
-import store from "./Utility/Redux/store";
+import About from "./pages/About"
+import { UserContextProvider } from './utilities/context/UserContext';
+import store from "./utilities/redux/store";
 import { Provider } from "react-redux";
-import Cart from "./components/Cart";
-import { ContextProvider } from "./Utility/Context/Context";
-import Offers from "./components/Offers";
-import Login from "./components/User auth/Login";
-import SignUp from "./components/User auth/SignUp";
-import Payment from "./components/Payment";
+import Cart from "./pages/Cart";
+import Offers from "./pages/Offers";
+import Login from "./pages/Login";
+import SignUp from "./pages/SignUp";
+import Payment from "./pages/Payment";
+import { ContextProvider } from "./utilities/context/Context";
+import Specific from "./pages/SpecificPizzaDetail";
 
 function App() {
   const appRoutes = createBrowserRouter([
