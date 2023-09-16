@@ -18,7 +18,7 @@ const CartDataDisplay = (props) => {
     return (
         <>
             <div className='card-cart'>
-                <img className="pizzaImg-cart" src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" + imageId} />
+                <img className="pizzaImg-cart" src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" + imageId} alt="/" />
                 <div className="text-cart">
                     <h2>{name}</h2>
                     <h2>Rs. {(price) / 100}</h2>

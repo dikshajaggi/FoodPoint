@@ -5,9 +5,12 @@ import axios from "axios"
 import { Link } from 'react-router-dom'
 import Header from "../components/Header"
 import { Context } from '../utilities/context/Context'
+import { CardWrapper, MainWrapper } from './styledComponents/Main'
+import { useTheme } from 'styled-components'
 
 const Main = () => {
     const props = useContext(Context)
+    const theme = useTheme()
 
     async function getRest() {
         let api = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7040592&lng=77.10249019999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
@@ -23,9 +26,9 @@ const Main = () => {
                 props.setFilteredData(data?.data?.data?.cards[0]?.data?.data?.cards)
             }
             else {
-                console.log(data.data.data.cards[5].card.card.gridElements.infoWithStyle.restaurants, "swiggy checking api")
-                props.setrestData(data.data.data.cards[5].card.card.gridElements.infoWithStyle.restaurants)
-                props.setFilteredData(data.data.data.cards[5].card.card.gridElements.infoWithStyle.restaurants)
+                console.log(data.data.data.cards[5].card.card?.gridElements?.infoWithStyle.restaurants, "swiggy checking api")
+                props.setrestData(data.data.data.cards[5].card.card.gridElements?.infoWithStyle.restaurants)
+                props.setFilteredData(data.data.data.cards[5].card.card.gridElements?.infoWithStyle.restaurants)
             }
         })
     }
@@ -36,18 +39,17 @@ const Main = () => {
     }, [props.filter])
 
     return (
-        <div className='main-wrapper'>
+        <MainWrapper theme = {theme}>
             <Header />
-            <div className='card-wrapper'>
+            <CardWrapper>
                 {console.log(props?.filteredData, "swiggy filtered data")}
                 {props?.filteredData?.map((item) => {
                     console.log(item, "swiggy filtered item")
                     if (props.filter === "rating") console.log("item check", item?.info?.feeDetails, "rest_id")
                     return props.filter === "rating" ? <Link to={`/rest/${item.info?.feeDetails?.restaurantId}`} style={{ textDecoration: 'none' }} > < Card {...item?.info} /></Link> : <Link to={`/rest/${item?.info?.feeDetails?.restaurantId}`} style={{ textDecoration: 'none' }} > < Card {...item?.info} /></Link>
-
                 })}
-            </div>
-        </div>
+            </CardWrapper>
+        </MainWrapper>
     )
 }
 

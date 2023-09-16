@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux'
 import axios from "axios"
 import "../style.css"
 import { Context } from "../utilities/context/Context"
+import { HeaderWrapper } from './styledComponents/Header'
 
 const Header = () => {
     const data =
@@ -689,7 +690,7 @@ const Header = () => {
     }
     return (
         <div className='header'>
-            <header>
+            <HeaderWrapper>
                 <ul className='navbar'>
                     <Link to="/" className='link'><li>HOME</li></Link>
                     <Link to="/about" className='link'><li>ABOUT</li></Link>
@@ -706,7 +707,7 @@ const Header = () => {
                         <Link to="/cart" className='link'><i class="fa-sharp fa-solid fa-cart-shopping"><span className='cart-items-length'>{items.length}</span></i></Link>
                     </div>
                 </div>
-            </header>
+            </HeaderWrapper>
             <div className='categories'>
                 <ul className='navbar'>
                     <Link to="/"><li className='link' onClick={() => { setFilterOnClick("relevance") }}>RELEVANCE</li></Link>
