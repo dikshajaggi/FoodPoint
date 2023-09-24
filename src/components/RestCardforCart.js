@@ -5,7 +5,8 @@ import { addItems } from '../utilities/redux/cartSlice'
 import QuantityIncDec from "../utilities/helperComponents/QuantityIncDec"
 
 const SpecificCard = (props) => {
-    const { name, defaultPrice, price, description, id, itemAttribute, imageId } = props
+    console.log(props, "props")
+    const { name, defaultPrice, price, description, id, itemAttribute, imageId, category } = props
     const context = useContext(Context)
     const dispatch = useDispatch()
 
@@ -20,7 +21,7 @@ const SpecificCard = (props) => {
         <div className='item-add'>
             <div className='item-add-data'>
                 <h2 className='menu-dish-name'>{name}</h2>
-                <h2><span className='specific-card-subheading'>{itemAttribute.vegClassifier} | {itemAttribute.portionSize} </span></h2>
+                <h2><span className='specific-card-subheading'>{itemAttribute.vegClassifier} | {category} </span></h2>
                 {price ? <h2><span className='specific-card-subheading'>Price: </span> Rs.{(price) / 100}</h2> : <h2><span className='specific-card-subheading'>Price: </span> Rs.{(defaultPrice) / 100}</h2>}
                 <h2>{description}</h2>
             </div>

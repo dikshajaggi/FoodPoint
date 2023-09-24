@@ -7,19 +7,22 @@ import useAvailable from '../hooks/isAvailable'
 import "../style.css"
 import SpecificCard from '../components/RestCardforCart'
 import Header from "../components/Header"
+import SpecificRest from "../shimmerUI/SpecificRest"
+import { data } from "../assets/data"
+import SpecificPage from "../shimmerUI/SpecificPage"
 
 const Specific = () => {
     const rest_id = useParams()
-    const username = useContext(UserContext)
-    const params = useParams()
-    console.log(params, "checking params")
-
     const [info, setInfo] = useState({})
     const [otherInfo, setOtherInfo] = useState()
     const [title, setTitle] = useState("")
+    const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
-        getData()
+        setTimeout(() => {
+            setIsLoading(false)
+            getData()
+        }, 2000);
     }, [])
 
     async function getData() {
@@ -43,15 +46,21 @@ const Specific = () => {
         <div className='specific-wrapper'>
             <Header />
             <div className='specific-card'>
-                <h2 className='specifc-heading'>{info?.name}</h2>
-                <h2 className='specific-card-subheading'>{info?.cuisines?.join(", ")} | {info?.areaName} | <i class="fa-regular fa-star"></i>{info?.avgRating}</h2>
-                <h2 className='specific-card-subheading'> {available}</h2>
+                {isLoading ? <SpecificPage /> :
+                    <>
+                        <h2 className='specifc-heading'>{info?.name}</h2>
+                        <h2 className='specific-card-subheading'>{info?.cuisines?.join(", ")} | {info?.areaName} | <i class="fa-regular fa-star"></i>{info?.avgRating}</h2>
+                        <h2 className='specific-card-subheading'> {available}</h2>
 
-                <h4 className='menu-heading'>MENU</h4>
-                <h4 className='menu-category'>{title}</h4>
+                        <h4 className='menu-heading'>MENU</h4>
+                        <h4 className='menu-category'>{title}</h4>
+                    </>
+                }
 
                 <div className='menu-all-cards'>
-                    {otherInfo?.map(dish => (
+                    {isLoading ? data?.map(item => {
+                        return <SpecificRest />
+                    }) : otherInfo?.map(dish => (
                         <SpecificCard {...dish?.card?.info} />
                     ))}
                 </div>
