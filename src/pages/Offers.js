@@ -5,19 +5,26 @@ import { Link } from 'react-router-dom'
 import { Col, Nav, NavItem, NavLink, Row, TabContent, TabPane } from 'reactstrap'
 import OfferCard from "../components/OfferCard"
 import Card from "../components/RestCard"
+import Header from "../components/Header"
+import RestCard from "../shimmerUI/RestCard"
+import { data } from "../assets/data"
 
 const Offers = () => {
 
     const [offers, setOffers] = useState([])
     const [paymentOffers, setPaymentOffers] = useState([])
-
+    const [isLoading, setIsLoading] = useState(true)
     const [currentActiveTab, setCurrentActiveTab] = useState('1')
 
     const toggle = tab => {
         if (currentActiveTab !== tab) setCurrentActiveTab(tab)
     }
     useEffect(() => {
-        getData()
+        setTimeout(() => {
+            setIsLoading(false)
+            getData()
+        }, 1000)
+
     })
 
     async function getData() {
@@ -32,59 +39,62 @@ const Offers = () => {
         })
     }
     return (
-        <div style={{ margin: "10px" }}>
-            <div className='offer-banner'>
-                <h1>OFFERS</h1>
-                <h2>Explore top deals and offers exclusively for you!</h2>
-            </div>
+        <>
+            <Header />
+            <div style={{ margin: "10px" }}>
+                <div className='offer-banner'>
+                    <h1>OFFERS</h1>
+                    <h2>Explore top deals and offers exclusively for you!</h2>
+                </div>
 
 
-            <Nav tabs>
-                <NavItem>
-                    <NavLink
-                        className={classnames({
-                            active:
-                                currentActiveTab === '1'
-                        })}
-                        onClick={() => { toggle('1') }}
-                    >
-                        Restaurant offers
-                    </NavLink>
-                </NavItem>
-                <NavItem>
-                    <NavLink
-                        onClick={() => { toggle('2') }}
-                    >
-                        Payment offers/ Coupons
-                    </NavLink>
-                </NavItem>
-            </Nav>
-            <TabContent activeTab={currentActiveTab}>
-                <TabPane tabId="1">
-                    <Row>
-                        <Col >
-                            <div className='card-wrapper'>
-                                {console.log(offers, "filtered data")}
-                                {offers?.slice(1)?.map((item) => {
-                                    console.log(item, "offer item")
-                                    return <Link to={`/rest/${item.info.feeDetails.restaurantId}`} style={{ textDecoration: 'none' }} >< Card {...item.info} /></Link>
+                <Nav tabs>
+                    <NavItem>
+                        <NavLink
+                            className={classnames({
+                                active:
+                                    currentActiveTab === '1'
+                            })}
+                            onClick={() => { toggle('1') }}
+                        >
+                            Restaurant offers
+                        </NavLink>
+                    </NavItem>
+                    <NavItem>
+                        <NavLink
+                            onClick={() => { toggle('2') }}
+                        >
+                            Payment offers/ Coupons
+                        </NavLink>
+                    </NavItem>
+                </Nav>
+                <TabContent activeTab={currentActiveTab}>
+                    <TabPane tabId="1">
+                        <Row>
+                            <Col >
+                                <div className='card-wrapper'>
+                                    {isLoading ? data?.map((item) => {
+                                        return <RestCard />
+                                    }) : offers?.slice(1)?.map((item) => {
+                                        return <Link to={`/rest/${item.info.feeDetails.restaurantId}`} style={{ textDecoration: 'none' }} >< Card {...item.info} /></Link>
+                                    })}
+                                </div>
+                            </Col>
+                        </Row>
+                    </TabPane>
+                    <TabPane tabId="2">
+                        <Row>
+                            <div className='offer-card-wrapper'>
+                                {console.log(paymentOffers, "filtered data")}
+                                {paymentOffers?.slice(2)?.map((item) => {
+                                    return <OfferCard {...item?.data?.data} />
                                 })}
                             </div>
-                        </Col>
-                    </Row>
-                </TabPane>
-                <TabPane tabId="2">
-                    <Row>
-                        <div className='offer-card-wrapper'>
-                            {console.log(paymentOffers, "filtered data")}
-                            {paymentOffers?.slice(2)?.map((item) => {
-                                return <OfferCard {...item?.data?.data} />
-                            })}
-                        </div>
-                    </Row>
-                </TabPane>
-            </TabContent>
-        </div>
+                        </Row>
+                    </TabPane>
+                </TabContent>
+            </div>
+        </>
     )
 }
 

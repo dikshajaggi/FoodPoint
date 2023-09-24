@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { UserContext } from '../utilities/context/UserContext'
 import { useSelector } from 'react-redux'
 import axios from "axios"
@@ -12,16 +12,18 @@ import { useLocation } from 'react-router-dom';
 
 const Header = () => {
     const { user, setUser } = useContext(UserContext)
-
     const context = useContext(Context)
     const location = useLocation()
 
     const items = useSelector((store) => store.cart.items)
     const [restData, setrestData] = useState(data)
-    console.log(restData, "mango restdata")
     const [searchvalue, setSearchvalue] = useState("")
     const currentPathname = location.pathname;
-    const linkInfo = currentPathname === "/signup" || currentPathname === "/login" ? "header" : "subHeader"
+    const params = useParams()
+    const headerPaths = ["/signup", "/login", "/about", "/offers", "/cart"];
+    const linkInfo = headerPaths.includes(currentPathname) || currentPathname === `/rest/${params.id}`
+        ? "header"
+        : "subHeader";
 
     useEffect(() => {
         getRest()

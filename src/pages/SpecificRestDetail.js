@@ -6,10 +6,13 @@ import { UserContext } from '../utilities/context/UserContext'
 import useAvailable from '../hooks/isAvailable'
 import "../style.css"
 import SpecificCard from '../components/RestCardforCart'
+import Header from "../components/Header"
 
 const Specific = () => {
     const rest_id = useParams()
     const username = useContext(UserContext)
+    const params = useParams()
+    console.log(params, "checking params")
 
     const [info, setInfo] = useState({})
     const [otherInfo, setOtherInfo] = useState()
@@ -38,17 +41,7 @@ const Specific = () => {
 
     return (
         <div className='specific-wrapper'>
-            <header>
-                <ul className='navbar'>
-                    <Link to="/" style={{ textDecoration: 'none' }}><li>HOME</li></Link>
-                    <Link to="/about" style={{ textDecoration: 'none' }}><li>ABOUT</li></Link>
-                    <Link to="/offers" style={{ textDecoration: 'none' }}><li>OFFERS</li></Link>
-                </ul>
-                <div className='cart-wrapper'>
-                    <h3 className='username'> Welcome {username.user}</h3>
-                    <Link to="/cart" style={{ textDecoration: 'none' }}><i class="fa-sharp fa-solid fa-cart-shopping"><span className='cart-items-length'>{items.length}</span></i></Link>
-                </div>
-            </header>
+            <Header />
             <div className='specific-card'>
                 <h2 className='specifc-heading'>{info?.name}</h2>
                 <h2 className='specific-card-subheading'>{info?.cuisines?.join(", ")} | {info?.areaName} | <i class="fa-regular fa-star"></i>{info?.avgRating}</h2>

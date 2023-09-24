@@ -2,10 +2,11 @@ restaurant availability feature -> custom hook
 search bar
 routing
 context
+shimmer ui
 ------------------------------------------------
+transition to shimmer ui
 pagination in specific restaurant page
 auto suggetion div while searching
-shimmer ui
 restname in route
 modify add to cart btn
 cart functionality using redux -> remove specific item, increase quantity, show total
@@ -21,3 +22,7 @@ categories -> RATING, COST ETC
 -----------------------
 issue -> items getting added twice 
 because on switching pages the quantity icons gets switched to "Add"
+
+issue -> when on cart and user is not logged in -> user moves to login page, 
+but after logging in, 
+the user is not able to go back to the cart page

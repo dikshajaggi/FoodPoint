@@ -18,7 +18,6 @@ font-size: 20px;
 font-weight: 400;
 color: rgb(88, 86, 86);
 border-bottom: 1px solid rgb(158, 155, 155);
-
 `
 
 const RestName = styled.h6`

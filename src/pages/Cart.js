@@ -6,6 +6,7 @@ import CartDataDisplay from "../components/CartDataDisplay"
 import { clearCart } from '../utilities/redux/cartSlice'
 import { Context } from "../utilities/context/Context"
 import Checkout from "./Checkout"
+import Header from "../components/Header"
 
 const Cart = () => {
     const username = useContext(UserContext)
@@ -21,17 +22,7 @@ const Cart = () => {
     console.log(context.quantity, "quantity")
     return (
         <>
-            <header>
-                <ul className='navbar'>
-                    <Link to="/" style={{ textDecoration: 'none' }}><li>HOME</li></Link>
-                    <Link to="/about" style={{ textDecoration: 'none' }}><li>ABOUT</li></Link>
-                    <Link to="/offers" style={{ textDecoration: 'none' }}><li>OFFERS</li></Link>
-                </ul>
-                <div className='cart-wrapper'>
-                    <h3 className="username">Welcome {username.user}</h3>
-                    <Link to="/cart" style={{ textDecoration: 'none' }}><i class="fa-sharp fa-solid fa-cart-shopping"><span className='cart-items-length'>{items.length}</span></i></Link>
-                </div>
-            </header>
+            <Header />
             <h2 className="cart-head">CART</h2>
             <div className="cart-content-wrapper">
                 {items.length !== 0 ? <>

@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import "../style.css"
 import { UserContext } from '../utilities/context/UserContext'
+import Header from '../components/Header'
 
 const About = () => {
     const username = useContext(UserContext)
@@ -12,17 +13,7 @@ const About = () => {
 
     return (
         <div className='about'>
-            <header>
-                <ul className='navbar'>
-                    <Link to="/" style={{ textDecoration: 'none' }}><li>HOME</li></Link>
-                    <Link to="/about" style={{ textDecoration: 'none' }}><li>ABOUT</li></Link>
-                    <Link to="/offers" style={{ textDecoration: 'none' }}><li>OFFERS</li></Link>
-                </ul>
-                <div className='cart-wrapper'>
-                    <h3 className="username">Welcome {username.user}</h3>
-                    <Link to="/cart" style={{ textDecoration: 'none' }}><i class="fa-sharp fa-solid fa-cart-shopping"><span className='cart-items-length'>{items.length}</span></i></Link>
-                </div>
-            </header>
+            <Header />
             <h4>About us</h4>
             <div className='about-desc'>
                 Ipsum qui non non incididunt. Mollit sunt exercitation in laboris cupidatat do sint officia. Est anim nostrud veniam qui ipsum id enim adipisicing.

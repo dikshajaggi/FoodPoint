@@ -8,11 +8,13 @@ import { Context } from '../utilities/context/Context'
 import { CardWrapper, MainWrapper } from './styledComponents/Main'
 import { useTheme } from 'styled-components'
 import RestCard from '../shimmerUI/RestCard'
+import { data } from '../assets/data'
 
 const Main = () => {
     const props = useContext(Context)
     const theme = useTheme()
     const [isLoading, setIsLoading] = useState(true)
+
 
     async function getRest() {
         let api = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7040592&lng=77.10249019999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
@@ -40,7 +42,7 @@ const Main = () => {
         setTimeout(() => {
             setIsLoading(false)
             getRest()
-        }, 2000)
+        }, 1000)
 
     }, [props.filter])
 
@@ -48,10 +50,10 @@ const Main = () => {
         <MainWrapper theme={theme}>
             <Header />
             <CardWrapper>
-                {isLoading ? props?.filteredData?.map((item) => {
+                {isLoading ? data.map((item) => {
                     return <RestCard />
                 }) : props?.filteredData?.map((item) => {
-                    // if (props.filter === "rating") console.log("item check", item?.info?.feeDetails, "rest_id")
+                    if (props.filter === "rating") console.log("item check", item?.info, "rest_id")
                     return props.filter === "rating" ? <Link to={`/rest/${item.info?.feeDetails?.restaurantId}`} style={{ textDecoration: 'none' }} > < Card {...item?.info} /></Link> : <Link to={`/rest/${item?.info?.feeDetails?.restaurantId}`} style={{ textDecoration: 'none' }} > < Card {...item?.info} /></Link>
                 })}
             </CardWrapper>
