@@ -7,10 +7,12 @@ import Header from "../components/Header"
 import { Context } from '../utilities/context/Context'
 import { CardWrapper, MainWrapper } from './styledComponents/Main'
 import { useTheme } from 'styled-components'
+import RestCard from '../shimmerUI/RestCard'
 
 const Main = () => {
     const props = useContext(Context)
     const theme = useTheme()
+    const [isLoading, setIsLoading] = useState(true)
 
     async function getRest() {
         let api = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7040592&lng=77.10249019999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
@@ -35,20 +37,25 @@ const Main = () => {
 
 
     useEffect(() => {
-        getRest()
+        setTimeout(() => {
+            setIsLoading(false)
+            getRest()
+        }, 2000)
+
     }, [props.filter])
 
     return (
         <MainWrapper theme={theme}>
             <Header />
             <CardWrapper>
-                {console.log(props?.filteredData, "swiggy filtered data")}
-                {props?.filteredData?.map((item) => {
-                    console.log(item, "swiggy filtered item")
-                    if (props.filter === "rating") console.log("item check", item?.info?.feeDetails, "rest_id")
+                {isLoading ? props?.filteredData?.map((item) => {
+                    return <RestCard />
+                }) : props?.filteredData?.map((item) => {
+                    // if (props.filter === "rating") console.log("item check", item?.info?.feeDetails, "rest_id")
                     return props.filter === "rating" ? <Link to={`/rest/${item.info?.feeDetails?.restaurantId}`} style={{ textDecoration: 'none' }} > < Card {...item?.info} /></Link> : <Link to={`/rest/${item?.info?.feeDetails?.restaurantId}`} style={{ textDecoration: 'none' }} > < Card {...item?.info} /></Link>
                 })}
             </CardWrapper>
+
         </MainWrapper>
     )
 }

@@ -1,12 +1,17 @@
 import styled from "styled-components";
 
 const CardWrapper = styled.div`
-height:25%;
-width: 45%;
+height:60vh;
+width: 20vw;
 margin:4vh;
 `
 
-const InfoWrapper =  styled.div`
+const Image = styled.img`
+width: 20vw;
+height: 35vh;
+`
+
+const InfoWrapper = styled.div`
 display: flex;
 justify-content: space-evenly;
 font-size: 20px;
@@ -26,4 +31,4 @@ margin-top:2vh;
 text-align:center;
 `
 
-export {CardWrapper, InfoWrapper, RestName, RestInfo }
+export { CardWrapper, InfoWrapper, RestName, RestInfo, Image }

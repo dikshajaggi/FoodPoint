@@ -1,12 +1,12 @@
 import React from 'react'
 import "../style.css"
-import { CardWrapper, InfoWrapper, RestInfo, RestName } from './styledComponents/RestCard'
+import { CardWrapper, Image, InfoWrapper, RestInfo, RestName } from './styledComponents/RestCard'
 
 const Card = (props) => {
     const { name, costForTwoString, sla, cloudinaryImageId, avgRating, aggregatedDiscountInfo } = props
     return (
         <CardWrapper>
-            <img className="pizzaImg" src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" + cloudinaryImageId} alt="" />
+            <Image className="pizzaImg" src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" + cloudinaryImageId} alt="" />
             <RestName>{name}</RestName>
             {/* <h4 className='text-light'>{cuisines[0]}</h4> */}
             <InfoWrapper>

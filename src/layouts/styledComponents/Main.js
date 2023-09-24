@@ -10,11 +10,11 @@ width:100%;
 `
 
 const CardWrapper = styled.div`
-flex-wrap: wrap;
+width:100%;
 margin-top: 20px;
-display: flex;
-justify-content: space-between;
-align-items: center;
+display: grid;
+gap: 20px 100px;
+grid-template-columns: auto auto auto;
 `
 
 export { MainWrapper, CardWrapper }
