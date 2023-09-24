@@ -11,30 +11,33 @@ import { useLocation } from 'react-router-dom';
 
 
 const Header = () => {
-    const username = useContext(UserContext)
+    const { user, setUser } = useContext(UserContext)
+
     const context = useContext(Context)
     const location = useLocation()
 
     const items = useSelector((store) => store.cart.items)
     const [restData, setrestData] = useState(data)
+    console.log(restData, "mango restdata")
     const [searchvalue, setSearchvalue] = useState("")
     const currentPathname = location.pathname;
     const linkInfo = currentPathname === "/signup" || currentPathname === "/login" ? "header" : "subHeader"
 
-    console.log(currentPathname, "currentPathname")
     useEffect(() => {
         getRest()
     }, [])
 
     async function getRest() {
-        let api = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7040592&lng=77.10249019999999&offset=15&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING"
+        let api = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7040592&lng=77.10249019999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
         if (context.filter === "rating") api = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7040592&lng=77.10249019999999&sortBy=RATING&page_type=DESKTOP_WEB_LISTING"
         else if (context.filter === "delivery-time") api = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7040592&lng=77.10249019999999&sortBy=DELIVERY_TIME&page_type=DESKTOP_WEB_LISTING"
         else if (context.filter === "cost-low-to-high") api = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7040592&lng=77.10249019999999&sortBy=COST_FOR_TWO&page_type=DESKTOP_WEB_LISTING"
         else if (context.filter === "cost-high-to-low") api = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7040592&lng=77.10249019999999&sortBy=COST_FOR_TWO_H2L&page_type=DESKTOP_WEB_LISTING"
         await axios.get(api).then((data) => {
-            setrestData(data?.data?.data?.cards)
-            context.setFilteredData(data?.data?.data?.cards)
+            if (data) {
+                setrestData(data.data.data.cards[5].card.card?.gridElements?.infoWithStyle.restaurants)
+                context.setFilteredData(data.data.data.cards[5].card.card?.gridElements?.infoWithStyle.restaurants)
+            }
         })
     }
 
@@ -44,8 +47,8 @@ const Header = () => {
     }
 
     const search = () => {
-        console.log(restData, "checking search", searchvalue)
-        context.setFilteredData(restData.filter((item) => item.data.data.name.toLowerCase().includes(searchvalue.toLowerCase())))
+        console.log(restData.filter((item) => item?.info.name), "mango checking search", searchvalue)
+        context.setFilteredData(restData.filter((item) => item?.info.name.toLowerCase().includes(searchvalue.toLowerCase())))
     }
 
     const setFilterOnClick = (filter) => {
@@ -66,7 +69,7 @@ const Header = () => {
                     </div>
                     <div></div>
                     <div className='cart-wrapper'>
-                        {username.user !== "" ? <h3 className="username"> Welcome {username.user}</h3> : <Link to="/login" className='link'><h3 className="username">Login</h3></Link>}
+                        {user !== "" ? <h3 className="username"> Welcome {user}</h3> : <Link to="/login" className='link'><h3 className="username">Login</h3></Link>}
                         <Link to="/cart" className='link'><i class="fa-sharp fa-solid fa-cart-shopping"><span className='cart-items-length'>{items.length}</span></i></Link>
                     </div>
                 </div>

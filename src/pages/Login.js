@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { LoginButton, LoginWrapper } from "./styledComponents/Login";
 import { useFormik } from "formik";
 import { LoginSchema } from "../schemas/login";
 import { CenterDiv, ErrorPara, HeaderOnlyLayoutWrapper, Heading, Input, Label, LabelInputWrapper, LinkWrapper } from "./styledComponents/LoginSignup";
 import Header from "../components/Header";
+import { UserContext } from "../utilities/context/UserContext";
 
 const Login = () => {
+    const { user, setUser } = useContext(UserContext)
     const initialValues = {
         email: "",
         password: ""
@@ -15,6 +17,7 @@ const Login = () => {
         initialValues: initialValues,
         validationSchema: LoginSchema,
         onSubmit: (values, { resetForm }) => {
+            setUser(values.name)
             console.log(values);
             resetForm()
         }
@@ -27,6 +30,10 @@ const Login = () => {
                     <LoginWrapper>
                         <Heading>login</Heading>
                         <form onSubmit={formik.handleSubmit}>
+                            <LabelInputWrapper>
+                                <Input type="text" placeholder="enter name" name="name" id="name" onChange={formik.handleChange} onBlur={formik.handleBlur}></Input>
+                                {formik.errors.name && formik.touched.name ? <ErrorPara>{formik.errors.name}</ErrorPara> : null}
+                            </LabelInputWrapper>
                             <LabelInputWrapper>
                                 <Input type="email" placeholder="enter email" name="email" id="email" onChange={formik.handleChange} onBlur={formik.handleBlur}></Input>
                                 {formik.errors.email && formik.touched.email ? <ErrorPara>{formik.errors.email}</ErrorPara> : null}
