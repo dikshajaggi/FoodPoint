@@ -1,6 +1,6 @@
 import React from 'react'
 import "../style.css"
-import { CardWrapper, InfoWrapper, RestInfo, RestName } from './styledComponents/PizzaCard'
+import { CardWrapper, InfoWrapper, RestInfo, RestName } from './styledComponents/RestCard'
 
 const Card = (props) => {
     const { name, costForTwoString, sla, cloudinaryImageId, avgRating, aggregatedDiscountInfo } = props

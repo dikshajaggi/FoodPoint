@@ -5,7 +5,7 @@ import { Link, useParams } from 'react-router-dom'
 import { UserContext } from '../utilities/context/UserContext'
 import useAvailable from '../hooks/isAvailable'
 import "../style.css"
-import SpecificCard from '../components/PizzaCardforCart'
+import SpecificCard from '../components/RestCardforCart'
 
 const Specific = () => {
     const rest_id = useParams()

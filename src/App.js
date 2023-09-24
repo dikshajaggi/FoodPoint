@@ -12,7 +12,7 @@ import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import Payment from "./pages/Payment";
 import { ContextProvider } from "./utilities/context/Context";
-import Specific from "./pages/SpecificPizzaDetail";
+import Specific from "./pages/SpecificRestDetail";
 import Themeprovider from "./theme/ThemeProvider";
 
 function App() {
@@ -72,14 +72,14 @@ function App() {
     <div>
       <Provider store={store}>
         <Themeprovider>
-        <ContextProvider>
-          <UserContextProvider value={{
-            user,
-            setUser
-          }}>
-            <RouterProvider router={appRoutes} />
-          </UserContextProvider>
-        </ContextProvider>
+          <ContextProvider>
+            <UserContextProvider value={{
+              user,
+              setUser
+            }}>
+              <RouterProvider router={appRoutes} />
+            </UserContextProvider>
+          </ContextProvider>
         </Themeprovider>
       </Provider>
     </div>

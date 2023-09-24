@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Col, Nav, NavItem, NavLink, Row, TabContent, TabPane } from 'reactstrap'
 import OfferCard from "../components/OfferCard"
-import Card from "../components/PizzaCard"
+import Card from "../components/RestCard"
 
 const Offers = () => {
 

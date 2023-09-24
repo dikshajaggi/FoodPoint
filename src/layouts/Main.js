@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import Card from '../components/PizzaCard'
+import Card from '../components/RestCard'
 import "../style.css"
 import axios from "axios"
 import { Link } from 'react-router-dom'
@@ -39,7 +39,7 @@ const Main = () => {
     }, [props.filter])
 
     return (
-        <MainWrapper theme = {theme}>
+        <MainWrapper theme={theme}>
             <Header />
             <CardWrapper>
                 {console.log(props?.filteredData, "swiggy filtered data")}
