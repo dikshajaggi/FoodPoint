@@ -1,76 +1,48 @@
-import React, { useContext, useState } from 'react'
-import { useSelector } from 'react-redux'
-import { Link } from 'react-router-dom'
-import { UserContext } from '../utilities/context/UserContext'
-import "./LoginStyles.css"
+import React from "react";
+import { LoginButton, LoginWrapper } from "./styledComponents/Login";
+import { useFormik } from "formik";
+import { LoginSchema } from "../schemas/login";
+import { CenterDiv, ErrorPara, HeaderOnlyLayoutWrapper, Heading, Input, Label, LabelInputWrapper, LinkWrapper } from "./styledComponents/LoginSignup";
+import Header from "../components/Header";
 
 const Login = () => {
-
-    const username = useContext(UserContext)
-    const cartItems = useSelector((store) => store.cart.items)
-    const [loginValue, setLoginValue] = useState(username.user)
-
-    const changeUsername = (e) => {
-        setLoginValue(e.target.value)
-        console.log(e.target.value)
+    const initialValues = {
+        email: "",
+        password: ""
     }
 
-    const login = (e) => {
-        console.log(e)
-        e.preventDefault()
-        console.log(loginValue, "login value")
-        username.setUser(loginValue)
-        console.log("loginvalue", loginValue)
-        if (loginValue === "") username.setUser(username.user)
-    }
-
+    const formik = useFormik({
+        initialValues: initialValues,
+        validationSchema: LoginSchema,
+        onSubmit: (values, { resetForm }) => {
+            console.log(values);
+            resetForm()
+        }
+    })
     return (
-        <div className='wrapper'>
-            {cartItems.length !== 0 ? <h6>Login to proceed</h6> : ""}
-            <div className="container" >
-                <h2 className="login-title" > Log in</h2>
-                <form className="login-form" >
-                    <div>
-                        <label for="name">Name </label>
-                        <input
-                            id="name"
-                            type="text"
-                            placeholder="Eren Buruk"
-                            name="name"
-                            onChange={(e) => changeUsername(e)}
-                            required
-                        />
-                    </div>
+        <>
+            <HeaderOnlyLayoutWrapper>
+                <Header />
+                <CenterDiv>
+                    <LoginWrapper>
+                        <Heading>login</Heading>
+                        <form onSubmit={formik.handleSubmit}>
+                            <LabelInputWrapper>
+                                <Input type="email" placeholder="enter email" name="email" id="email" onChange={formik.handleChange} onBlur={formik.handleBlur}></Input>
+                                {formik.errors.email && formik.touched.email ? <ErrorPara>{formik.errors.email}</ErrorPara> : null}
+                            </LabelInputWrapper>
+                            <LabelInputWrapper>
+                                <Input type="password" placeholder="enter password" name="password" id="password" onChange={formik.handleChange} onBlur={formik.handleBlur}></Input>
+                                {formik.errors.password && formik.touched.password ? <ErrorPara>{formik.errors.password}</ErrorPara> : null}
+                            </LabelInputWrapper>
+                            <LoginButton type="submit">login</LoginButton>
+                            <Label>Don't have an account? <LinkWrapper to="/signup">Sign up </LinkWrapper></Label>
+                        </form>
+                    </LoginWrapper>
+                </CenterDiv>
+            </HeaderOnlyLayoutWrapper>
+        </>
 
-                    <div>
-                        <label for="email">Email </label>
-                        <input
-                            id="email"
-                            type="email"
-                            placeholder="me@example.com"
-                            name="email"
-                            required
-                        />
-                    </div>
-
-                    <div>
-                        <label for="password">Password </label>
-                        <input
-                            id="password"
-                            type="password"
-                            placeholder="password"
-                            name="password"
-                            required
-                        />
-                    </div>
-
-                    <button className="btn btn--form" type="submit" value="Log in" onClick={(e) => login((e))}>
-                        <Link to="/" style={{ textDecoration: 'none' }}>Log in</Link>
-                    </button >
-                    <p>New user? <Link to="/signup" style={{ textDecoration: 'none' }}>Sign up</Link></p>
-                </form >
-            </div >
-        </div>
     )
 }
 

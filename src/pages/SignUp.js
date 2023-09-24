@@ -1,54 +1,54 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import "./LoginStyles.css"
+import React from "react";
+import { SignUpWrapper, SignupButton } from "./styledComponents/Signup";
+import { useFormik } from "formik";
+import { SignUpSchema } from "../schemas/signup";
+import { CenterDiv, ErrorPara, HeaderOnlyLayoutWrapper, Heading, Input, Label, LabelInputWrapper, LinkWrapper } from "./styledComponents/LoginSignup";
+import Header from "../components/Header";
 
 const SignUp = () => {
+    const initialValues = {
+        name: "",
+        email: "",
+        password: "",
+        confirmPassword: ""
+    }
+    const formik = useFormik({
+        initialValues: initialValues,
+        validationSchema: SignUpSchema,
+        onSubmit: (values, action) => {
+            console.log(values)
+            action.resetForm()
+        }
+    })
     return (
-        <div className='wrapper'>
-            <div className="container" >
-                <h2 className="login-title" >Sign up</h2>
-
-                <form className="login-form" >
-                    <div>
-                        <label for="email">Email </label>
-                        <input
-                            id="email"
-                            type="email"
-                            placeholder="me@example.com"
-                            name="email"
-                            required
-                        />
-                    </div>
-
-                    <div>
-                        <label for="password">Password </label>
-                        <input
-                            id="password"
-                            type="password"
-                            placeholder="password"
-                            name="password"
-                            required
-                        />
-                    </div>
-
-                    <div>
-                        <label for="password">Confirm Password </label>
-                        <input
-                            id="confirm-password"
-                            type="password"
-                            placeholder="confirm password"
-                            name="password"
-                            required
-                        />
-                    </div>
-
-                    <button className="btn btn--form" type="submit" value="sign up" >
-                        <Link to="/login" style={{ textDecoration: 'none' }}>Sign up</Link>
-                    </button >
-                    <p>Already have an account? <Link to="/login" style={{ textDecoration: 'none' }}>Log in</Link></p>
-                </form >
-            </div >
-        </div>
+        <HeaderOnlyLayoutWrapper>
+            <Header></Header>
+            <CenterDiv>
+                <SignUpWrapper>
+                    <Heading>sign up</Heading>
+                    <form onSubmit={formik.handleSubmit}>
+                        <LabelInputWrapper>
+                            <Input type="text" placeholder="enter name" name="name" id="name" onChange={formik.handleChange} onBlur={formik.handleBlur}></Input>
+                            {formik.errors.name && formik.touched.name ? <ErrorPara>{formik.errors.name}</ErrorPara> : null}
+                        </LabelInputWrapper>
+                        <LabelInputWrapper>
+                            <Input type="email" placeholder="enter email" name="email" id="email" onChange={formik.handleChange} onBlur={formik.handleBlur}></Input>
+                            {formik.errors.email && formik.touched.email ? <ErrorPara>{formik.errors.email}</ErrorPara> : null}
+                        </LabelInputWrapper>
+                        <LabelInputWrapper>
+                            <Input type="password" placeholder="enter password" name="password" id="password" onChange={formik.handleChange} onBlur={formik.handleBlur}></Input>
+                            {formik.errors.password && formik.touched.password ? <ErrorPara>{formik.errors.password}</ErrorPara> : null}
+                        </LabelInputWrapper>
+                        <LabelInputWrapper>
+                            <Input type="password" placeholder="confirm password" name="confirmPassword" id="confirmPassword" onChange={formik.handleChange} onBlur={formik.handleBlur}></Input>
+                            {formik.errors.confirmPassword && formik.touched.confirmPassword ? <ErrorPara>{formik.errors.confirmPassword}</ErrorPara> : null}
+                        </LabelInputWrapper>
+                        <SignupButton type="submit">sign up</SignupButton>
+                        <Label>Already have an account? <LinkWrapper to="/login">Login</LinkWrapper></Label>
+                    </form>
+                </SignUpWrapper>
+            </CenterDiv>
+        </HeaderOnlyLayoutWrapper>
     )
 }
 
