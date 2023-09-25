@@ -3,7 +3,6 @@ import { SignUpWrapper, SignupButton } from "./styledComponents/Signup";
 import { useFormik } from "formik";
 import { SignUpSchema } from "../schemas/signup";
 import { CenterDiv, ErrorPara, HeaderOnlyLayoutWrapper, Heading, Input, Label, LabelInputWrapper, LinkWrapper } from "./styledComponents/LoginSignup";
-import Header from "../components/Header";
 
 const SignUp = () => {
     const initialValues = {
@@ -22,7 +21,6 @@ const SignUp = () => {
     })
     return (
         <HeaderOnlyLayoutWrapper>
-            <Header></Header>
             <CenterDiv>
                 <SignUpWrapper>
                     <Heading>sign up</Heading>

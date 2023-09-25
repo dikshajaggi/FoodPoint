@@ -3,7 +3,6 @@ import { LoginButton, LoginWrapper } from "./styledComponents/Login";
 import { useFormik } from "formik";
 import { LoginSchema } from "../schemas/login";
 import { CenterDiv, ErrorPara, HeaderOnlyLayoutWrapper, Heading, Input, Label, LabelInputWrapper, LinkWrapper } from "./styledComponents/LoginSignup";
-import Header from "../components/Header";
 import { UserContext } from "../utilities/context/UserContext";
 
 const Login = () => {
@@ -25,7 +24,6 @@ const Login = () => {
     return (
         <>
             <HeaderOnlyLayoutWrapper>
-                <Header />
                 <CenterDiv>
                     <LoginWrapper>
                         <Heading>login</Heading>
