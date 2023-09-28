@@ -15,6 +15,8 @@ const CartDataDisplay = (props) => {
         dispatch(removeItem(items.filter((item) => item.id !== id)))
     }
 
+    console.log(context.quantity, "context quantity cart")
+
     return (
         <>
             <div className='card-cart'>
@@ -22,7 +24,7 @@ const CartDataDisplay = (props) => {
                 <div className="text-cart">
                     <h2>{name}</h2>
                     <h2>Rs. {(price) / 100}</h2>
-                    <h2>Qty: {context.quantity.filter((item) => id === item.id).length}</h2>
+                    <h2>Qty: {context.quantity.filter((item) => id === item).length}</h2>
                     <button className="cart-remove-btn" onClick={() => handleRemoveItem(id)}>Remove</button>
                 </div>
             </div>

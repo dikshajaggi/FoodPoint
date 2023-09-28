@@ -15,7 +15,7 @@ const SpecificCard = (props) => {
     const addItemToCart = (data) => {
         setFlag(1)
         dispatch(addItems(data))
-        context.setQuantity(prev => [...prev, { qty: 1, id: id }])
+        context.setQuantity(prev => [...prev, id])
     }
     return (
         <div className='item-add'>

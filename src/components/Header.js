@@ -27,7 +27,7 @@ const Header = () => {
         : "subHeader";
 
     const allRestNames = []
-    restData.filter((item) => allRestNames.push(item?.info?.name))
+    restData?.filter((item) => allRestNames.push(item?.info?.name))
 
     const findMatching = () => {
         const matching = []

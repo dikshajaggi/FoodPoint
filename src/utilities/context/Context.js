@@ -651,9 +651,7 @@ const data =
 
 const ContextProvider = (props) => {
     const [flag, setFlag] = useState(0)
-    const [quantity, setQuantity] = useState([{
-        qty: null, id: null
-    }])
+    const [quantity, setQuantity] = useState([])
     const [restData, setrestData] = useState(data)
     const [filter, setFilter] = useState("relevance")
     const [filteredData, setFilteredData] = useState(restData)
