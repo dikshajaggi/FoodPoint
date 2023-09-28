@@ -18,12 +18,25 @@ const Header = () => {
     const items = useSelector((store) => store.cart.items)
     const [restData, setrestData] = useState(data)
     const [searchvalue, setSearchvalue] = useState("")
+    const [matchingRest, setMatchingRest] = useState([])
     const currentPathname = location.pathname;
     const params = useParams()
     const headerPaths = ["/signup", "/login", "/about", "/offers", "/cart"];
     const linkInfo = headerPaths.includes(currentPathname) || currentPathname === `/rest/${params.id}`
         ? "header"
         : "subHeader";
+
+    const allRestNames = []
+    restData.filter((item) => allRestNames.push(item?.info?.name))
+
+    const findMatching = () => {
+        const matching = []
+        for (const rest of allRestNames) {
+            if (rest.toLowerCase().includes(searchvalue.toLowerCase())) matching.push(rest)
+        }
+        console.log(matching, "matchingRest")
+        setMatchingRest(matching)
+    }
 
     useEffect(() => {
         getRest()
@@ -44,8 +57,10 @@ const Header = () => {
     }
 
     const searchrest = (e) => {
-        setSearchvalue(e.target.value)
-        if (e.target.value === "") context.setFilteredData(restData)
+        const restSearch = e.target.value
+        setSearchvalue(restSearch)
+        findMatching()
+        if (restSearch === "") context.setFilteredData(restData)
     }
 
     const search = () => {
@@ -69,13 +84,22 @@ const Header = () => {
                         <input type="search" className='search-box' placeholder='search' value={searchvalue} onChange={searchrest} />
                         <button onClick={search}>Search</button>
                     </div>
-                    <div></div>
                     <div className='cart-wrapper'>
                         {user !== "" ? <h3 className="username"> Welcome {user}</h3> : <Link to="/login" className='link'><h3 className="username">Login</h3></Link>}
                         <Link to="/cart" className='link'><i class="fa-sharp fa-solid fa-cart-shopping"><span className='cart-items-length'>{items.length}</span></i></Link>
                     </div>
                 </div>
             </HeaderWrapper>
+            <div>
+                {searchvalue !== "" ? matchingRest.length !== 0 ? <ul>
+                    {matchingRest.map(item => {
+                        return (
+                            <li>{item}</li>
+                        )
+                    })}
+                </ul> : <span> no results found </span> : null}
+
+            </div>
             <Categories display={linkInfo}>
                 <NavbarUL>
                     <LinkStyled to="/"><NavbarLI header="sub" onClick={() => { setFilterOnClick("relevance") }}>RELEVANCE</NavbarLI></LinkStyled>
