@@ -17,12 +17,25 @@ checkout from cart-> payment
 api for cart
 inc item qty on "add"
 
+-----------------------
+
+add chat gpt feature -----> like swiggy GTP
+can give recommendation for restaurant
+
 ----------------------
 categories -> RATING, COST ETC
 -----------------------
+
 issue -> items getting added twice 
 because on switching pages the quantity icons gets switched to "Add"
 
 issue -> when on cart and user is not logged in -> user moves to login page, 
 but after logging in, 
 the user is not able to go back to the cart page
+
+
+
+-----------------------------------
+issues fixed
+
+issue -> decrement on items not working
