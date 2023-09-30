@@ -4,9 +4,13 @@ import { useFormik } from "formik";
 import { LoginSchema } from "../schemas/login";
 import { CenterDiv, ErrorPara, HeaderOnlyLayoutWrapper, Heading, Input, Label, LabelInputWrapper, LinkWrapper } from "./styledComponents/LoginSignup";
 import { UserContext } from "../utilities/context/UserContext";
+import { useNavigate } from "react-router";
+import { Context } from "../utilities/context/Context";
 
 const Login = () => {
-    const { user, setUser } = useContext(UserContext)
+    const { setUser } = useContext(UserContext)
+    const history = useNavigate()
+    const quantity = useContext(Context)
     const initialValues = {
         email: "",
         password: ""
@@ -16,6 +20,7 @@ const Login = () => {
         initialValues: initialValues,
         validationSchema: LoginSchema,
         onSubmit: (values, { resetForm }) => {
+            if(quantity.length !== 0) history("/cart")
             setUser(values.name)
             console.log(values);
             resetForm()
