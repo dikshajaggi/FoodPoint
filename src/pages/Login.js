@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { LoginButton, LoginWrapper } from "./styledComponents/Login";
 import { useFormik } from "formik";
 import { LoginSchema } from "../schemas/login";
@@ -16,6 +16,7 @@ const Login = () => {
         email: "",
         password: ""
     }
+    const [error, setError] = useState(null)
 
     const handleLogin = (values) => {
         signInWithEmailAndPassword(auth, values.email, values.password)
@@ -26,6 +27,7 @@ const Login = () => {
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
+                setError(`${errorCode} + ${errorMessage}`)
             });
     }
 
@@ -34,10 +36,12 @@ const Login = () => {
         validationSchema: LoginSchema,
         onSubmit: (values, { resetForm }) => {
             handleLogin(values)
-            navigate(-1)
-            setUser(values.name)
-            console.log(values);
-            resetForm()
+            if (error !== null) {
+                navigate(-1)
+                setUser(values.name)
+                console.log(values);
+                resetForm()
+            }
         }
     })
     return (
@@ -59,6 +63,7 @@ const Login = () => {
                                 <Input type="password" placeholder="enter password" name="password" id="password" onChange={formik.handleChange} onBlur={formik.handleBlur}></Input>
                                 {formik.errors.password && formik.touched.password ? <ErrorPara>{formik.errors.password}</ErrorPara> : null}
                             </LabelInputWrapper>
+                            {error !== null ? <ErrorPara>{error}</ErrorPara> : null}
                             <LoginButton type="submit">login</LoginButton>
                             <Label>Don't have an account? <LinkWrapper to="/signup">Sign up </LinkWrapper></Label>
                         </form>
