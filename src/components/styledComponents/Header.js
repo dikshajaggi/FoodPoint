@@ -2,23 +2,22 @@ import { Link } from "react-router-dom"
 import styled from "styled-components"
 
 const HeaderDiv = styled.div`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 30px;
-    border-bottom: 1px solid rgb(158, 155, 155);
+display: flex;
+flex-direction: column;
 `
 
 const HeaderWrapper = styled.div`
 display: flex;
 flex-direction: row;
 align-items: center;
+justify-content: space-evenly;
 width:96vw;
 `
 
 const Categories = styled.div`
+margin-top:4vh;
 display:${props => props.display === "subHeader" ? "flex" : "none"};
-justify-content: center;
+justify-content: space-evenly;
 align-items:center;
 `
 
@@ -31,6 +30,7 @@ const NavbarUL = styled.ul`
 display: flex;
 justify-content: space-evenly;
 list-style-type: none;
+width:100%;
 `
 
 const NavbarLI = styled.li`
@@ -40,6 +40,7 @@ font-weight: 500;
 
 const LinkStyled = styled(Link)`
 text-decoration: none;
+color: black;
 `
 
 const SearchCartWrapper = styled.div`

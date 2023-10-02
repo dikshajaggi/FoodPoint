@@ -6,7 +6,7 @@ const Card = (props) => {
     const { name, costForTwoString, sla, cloudinaryImageId, avgRating, aggregatedDiscountInfo } = props
     return (
         <CardWrapper>
-            <Image className="pizzaImg" src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" + cloudinaryImageId} alt="" />
+            <Image src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" + cloudinaryImageId} alt="" />
             <RestName>{name}</RestName>
             {/* <h4 className='text-light'>{cuisines[0]}</h4> */}
             <InfoWrapper>
@@ -16,7 +16,7 @@ const Card = (props) => {
                 <RestInfo>|</RestInfo>
                 <RestInfo>{costForTwoString}</RestInfo>
             </InfoWrapper>
-            <RestInfo className="text-center" style={{ marginTop: "2vh" }}>{aggregatedDiscountInfo ? aggregatedDiscountInfo?.header : "Currently no offers available"}</RestInfo>
+            <RestInfo style={{ marginTop: "2vh" }}>{aggregatedDiscountInfo ? aggregatedDiscountInfo?.header : "Currently no offers available"}</RestInfo>
         </CardWrapper>
     )
 }
