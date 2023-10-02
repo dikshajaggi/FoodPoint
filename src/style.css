@@ -300,3 +300,20 @@ h3 {
 .cart-data {
     width: 60%;
 }
+
+.login-user {
+    display: flex;
+    flex-direction: column;
+}
+
+.userInfo {
+    width: 200px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.user-dropdown {
+    display: none;
+    background-color: aqua;
+}

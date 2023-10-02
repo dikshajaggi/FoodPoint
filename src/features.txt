@@ -41,3 +41,8 @@ issue -> decrement on items not working
 issue -> when on cart and user is not logged in -> user moves to login page, 
 but after logging in, 
 the user is not able to go back to the cart page
+
+
+-------------------------------------
+firebase for authentication
+hoisting on firebase

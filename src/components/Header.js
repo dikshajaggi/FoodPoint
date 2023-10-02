@@ -85,7 +85,17 @@ const Header = () => {
                         <button onClick={search}>Search</button>
                     </div>
                     <div className='cart-wrapper'>
-                        {user !== "" ? <h3 className="username"> Welcome {user}</h3> : <Link to="/login" className='link'><h3 className="username">Login</h3></Link>}
+                        {user !== "" ? <div className='login-user'>
+                            <div className='userInfo'>
+                                <button className='avatar'><i class="fa-solid fa-user"></i></button>
+                                <h3 className="username">{user}</h3>
+                            </div>
+                            <div className='user-dropdown'>
+                                <ul>
+                                    <li>Logout</li>
+                                </ul>
+                            </div>
+                        </div> : <Link to="/login" className='link'><h3 className="username">Login</h3></Link>}
                         <Link to="/cart" className='link'><i class="fa-sharp fa-solid fa-cart-shopping"><span className='cart-items-length'>{items.length}</span></i></Link>
                     </div>
                 </div>
