@@ -2,6 +2,8 @@ import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { UserContext } from '../utilities/context/UserContext'
 import { Context } from '../utilities/context/Context'
+import { LinkStyled } from '../components/styledComponents/Header'
+import { TotalWrapper } from './styledComponents/Checkout'
 
 const Checkout = (props) => {
     const username = useContext(UserContext)
@@ -19,12 +21,12 @@ const Checkout = (props) => {
         <div>
             <h4 style={{ fontWeight: 600, fontSize: "28px" }}>CHECKOUT</h4>
             <br></br>
-            <div className='total'>
+            <TotalWrapper>
                 <h4>Total items: {total.length}</h4>
                 <h4>Total : {sum} {context.quantity.qty}</h4>
                 <br></br>
-                {username.user !== "" ? <Link className="link" to="/payment"><button>Checkout</button></Link> : <Link className="link" to="/login"><button>Checkout</button></Link>}
-            </div>
+                {username.user !== "" ? <LinkStyled to="/payment"><button>Checkout</button></LinkStyled> : <LinkStyled to="/login"><button>Checkout</button></LinkStyled>}
+            </TotalWrapper>
         </div>
     )
 }
