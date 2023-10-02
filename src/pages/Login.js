@@ -9,8 +9,7 @@ import { Context } from "../utilities/context/Context";
 
 const Login = () => {
     const { setUser } = useContext(UserContext)
-    const history = useNavigate()
-    const quantity = useContext(Context)
+    const navigate = useNavigate()
     const initialValues = {
         email: "",
         password: ""
@@ -20,7 +19,7 @@ const Login = () => {
         initialValues: initialValues,
         validationSchema: LoginSchema,
         onSubmit: (values, { resetForm }) => {
-            if(quantity.length !== 0) history("/cart")
+            navigate(-1)
             setUser(values.name)
             console.log(values);
             resetForm()

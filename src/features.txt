@@ -18,6 +18,7 @@ api for cart
 api for login / signup (FAKE API)
 payment page
 add quantity inc/dec option in cart as well (if quantity is reduced to 0, remove that item from cart)
+user dropdown => to logout
 -----------------------
 
 add chat gpt feature -----> like swiggy GTP
