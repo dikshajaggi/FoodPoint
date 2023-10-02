@@ -46,3 +46,5 @@ the user is not able to go back to the cart page
 -------------------------------------
 firebase for authentication
 hoisting on firebase
+
+once the user logs in aur signs up => store all the data in Redux store

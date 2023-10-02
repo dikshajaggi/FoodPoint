@@ -5,7 +5,9 @@ import { LoginSchema } from "../schemas/login";
 import { CenterDiv, ErrorPara, HeaderOnlyLayoutWrapper, Heading, Input, Label, LabelInputWrapper, LinkWrapper } from "./styledComponents/LoginSignup";
 import { UserContext } from "../utilities/context/UserContext";
 import { useNavigate } from "react-router";
-import { Context } from "../utilities/context/Context";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../utilities/firebase";
+
 
 const Login = () => {
     const { setUser } = useContext(UserContext)
@@ -15,10 +17,23 @@ const Login = () => {
         password: ""
     }
 
+    const handleLogin = (values) => {
+        signInWithEmailAndPassword(auth, values.email, values.password)
+            .then((userCredential) => {
+                const user = userCredential.user;
+                console.log(user, "logged in")
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+            });
+    }
+
     const formik = useFormik({
         initialValues: initialValues,
         validationSchema: LoginSchema,
         onSubmit: (values, { resetForm }) => {
+            handleLogin(values)
             navigate(-1)
             setUser(values.name)
             console.log(values);

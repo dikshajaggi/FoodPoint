@@ -3,18 +3,40 @@ import { SignUpWrapper, SignupButton } from "./styledComponents/Signup";
 import { useFormik } from "formik";
 import { SignUpSchema } from "../schemas/signup";
 import { CenterDiv, ErrorPara, HeaderOnlyLayoutWrapper, Heading, Input, Label, LabelInputWrapper, LinkWrapper } from "./styledComponents/LoginSignup";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../utilities/firebase";
+import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
+    const navigate = useNavigate()
+
     const initialValues = {
         name: "",
         email: "",
         password: "",
         confirmPassword: ""
     }
+
+    const handleSignup = (values) => {
+        createUserWithEmailAndPassword(auth, values.email, values.password)
+            .then((userCredential) => {
+                const user = userCredential.user;
+                console.log(user, "signed in")
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                console.log(errorCode, errorMessage, "error")
+            });
+
+    }
+
     const formik = useFormik({
         initialValues: initialValues,
         validationSchema: SignUpSchema,
         onSubmit: (values, action) => {
+            handleSignup(values)
+            navigate(-1)
             console.log(values)
             action.resetForm()
         }
