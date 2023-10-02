@@ -159,6 +159,11 @@ h3 {
     font-size: 30px;
     margin: 4vh 0;
     font-weight: 600;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 .search-cart-wrapper {
