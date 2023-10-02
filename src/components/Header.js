@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux'
 import axios from "axios"
 import "../style.css"
 import { Context } from "../utilities/context/Context"
-import { Categories, CategoryLabel, HeaderWrapper, LinkStyled, NavbarLI, NavbarUL } from './styledComponents/Header'
+import { Avatar, CartItemsLength, CartWrapper, Categories, CategoryLabel, HeaderDiv, HeaderWrapper, Input, LinkStyled, LoginUser, NavbarLI, NavbarUL, SearchCartWrapper, SearchWrapper, UserDropdown, UserInfo, Username } from './styledComponents/Header'
 import { data } from "../assets/data"
 import { useLocation } from 'react-router-dom';
 
@@ -72,33 +72,33 @@ const Header = () => {
         context.setFilter(filter)
     }
     return (
-        <div className='header'>
+        <HeaderDiv>
             <HeaderWrapper>
                 <NavbarUL>
-                    <LinkStyled to="/" className='link'><NavbarLI header="main">HOME</NavbarLI></LinkStyled>
-                    <LinkStyled to="/about" className='link'><NavbarLI header="main">ABOUT</NavbarLI></LinkStyled>
-                    <LinkStyled to="/offers" className='link'><NavbarLI header="main">OFFERS</NavbarLI></LinkStyled>
+                    <LinkStyled to="/"><NavbarLI header="main">HOME</NavbarLI></LinkStyled>
+                    <LinkStyled to="/about"><NavbarLI header="main">ABOUT</NavbarLI></LinkStyled>
+                    <LinkStyled to="/offers"><NavbarLI header="main">OFFERS</NavbarLI></LinkStyled>
                 </NavbarUL>
-                <div className='search-cart-wrapper'>
-                    <div className='search-wrapper'>
-                        <input type="search" className='search-box' placeholder='search' value={searchvalue} onChange={searchrest} />
+                <SearchCartWrapper>
+                    <SearchWrapper>
+                        <Input type="search" placeholder='search' value={searchvalue} onChange={searchrest} />
                         <button onClick={search}>Search</button>
-                    </div>
-                    <div className='cart-wrapper'>
-                        {user !== "" ? <div className='login-user'>
-                            <div className='userInfo'>
-                                <button className='avatar'><i class="fa-solid fa-user"></i></button>
-                                <h3 className="username">{user}</h3>
-                            </div>
-                            <div className='user-dropdown'>
+                    </SearchWrapper>
+                    <CartWrapper>
+                        {user !== "" ? <LoginUser>
+                            <UserInfo>
+                                <Avatar><i class="fa-solid fa-user"></i></Avatar>
+                                <Username>{user}</Username>
+                            </UserInfo>
+                            <UserDropdown>
                                 <ul>
                                     <li>Logout</li>
                                 </ul>
-                            </div>
-                        </div> : <Link to="/login" className='link'><h3 className="username">Login</h3></Link>}
-                        <Link to="/cart" className='link'><i class="fa-sharp fa-solid fa-cart-shopping"><span className='cart-items-length'>{items.length}</span></i></Link>
-                    </div>
-                </div>
+                            </UserDropdown>
+                        </LoginUser> : <LinkStyled to="/login"><Username>Login</Username></LinkStyled>}
+                        <LinkStyled to="/cart"><i class="fa-sharp fa-solid fa-cart-shopping"><CartItemsLength>{items.length}</CartItemsLength></i></LinkStyled>
+                    </CartWrapper>
+                </SearchCartWrapper>
             </HeaderWrapper>
             <div>
                 {searchvalue !== "" ? matchingRest.length !== 0 ? <ul>
@@ -120,7 +120,7 @@ const Header = () => {
                 </NavbarUL>
             </Categories>
             <CategoryLabel display={linkInfo} >{context.filter}</CategoryLabel>
-        </div>
+        </HeaderDiv>
     )
 }
 
