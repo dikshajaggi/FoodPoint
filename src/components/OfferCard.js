@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { CopyCouponCode, OfferCardWrapper } from './styledComponents/OfferCard'
 
 const OfferCard = (props) => {
     const { couponCode, description, title } = props
@@ -9,17 +10,17 @@ const OfferCard = (props) => {
         navigator.clipboard.writeText(couponCode)
     }
     return (
-        <div className='offerCard'>
+        <OfferCardWrapper>
             <h4>{couponCode}</h4>
             <h4>{title}</h4>
             <h6>{description}</h6>
-            <button className="copy-coupon-code" onClick={() => copyCode(couponCode)}>{btnText}</button>
+            <CopyCouponCode onClick={() => copyCode(couponCode)}>{btnText}</CopyCouponCode>
 
             {/* <h4>1234DS</h4>
             <h4>title</h4>
             <h6>desc desc desc desc desc desc desc desc desc</h6>
             <button onClick={() => copyCode(couponCode)}>{btnText}</button> */}
-        </div>
+        </OfferCardWrapper>
     )
 }
 

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux"
 import "../style.css"
 import { Context } from "../utilities/context/Context"
 import { removeItem } from '../utilities/redux/cartSlice'
+import { CardCart, CardText, CartRemoveBtn, PizzaImgCart } from "./styledComponents/CartDataDisplay"
 
 const CartDataDisplay = (props) => {
     const { name, price, imageId, id } = props
@@ -19,15 +20,15 @@ const CartDataDisplay = (props) => {
 
     return (
         <>
-            <div className='card-cart'>
-                <img className="pizzaImg-cart" src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" + imageId} alt="/" />
-                <div className="text-cart">
+            <CardCart>
+                <PizzaImgCart src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" + imageId} alt="/" />
+                <CardText>
                     <h2>{name}</h2>
                     <h2>Rs. {(price) / 100}</h2>
                     <h2>Qty: {context.quantity.filter((item) => id === item).length}</h2>
-                    <button className="cart-remove-btn" onClick={() => handleRemoveItem(id)}>Remove</button>
-                </div>
-            </div>
+                    <CartRemoveBtn onClick={() => handleRemoveItem(id)}>Remove</CartRemoveBtn>
+                </CardText>
+            </CardCart>
         </>
     )
 }
