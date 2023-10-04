@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import { UserContext } from '../utilities/context/UserContext'
 import { useDispatch, useSelector } from 'react-redux'
 import axios from "axios"
@@ -17,7 +17,8 @@ const Header = () => {
     const { user, setUser } = useContext(UserContext)
     const context = useContext(Context)
     const location = useLocation()
-
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
     const items = useSelector((store) => store.cart.items)
     const [restData, setrestData] = useState(data)
     const [searchvalue, setSearchvalue] = useState("")
@@ -75,9 +76,6 @@ const Header = () => {
         context.setFilter(filter)
     }
 
-
-    const dispatch = useDispatch()
-
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
             if (user) {
@@ -87,6 +85,7 @@ const Header = () => {
                 dispatch(addUser({ udi: uid, email: email, displayName: displayName }))
                 // if the user has an option to update its profile, then dispatch an action again in that component also
                 // and in that component work with the (this) updated value of the user using "auth" -> firebase auth
+                navigate(-1)
             } else {
                 // User is signed out
                 dispatch(removeUser())
