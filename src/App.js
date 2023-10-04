@@ -1,11 +1,11 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import './App.css';
 import Main from "./layouts/Main";
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, useNavigate } from 'react-router-dom';
 import About from "./pages/About"
 import { UserContextProvider } from './utilities/context/UserContext';
 import store from "./utilities/redux/store";
-import { Provider } from "react-redux";
+import { Provider, useDispatch } from "react-redux";
 import Cart from "./pages/Cart";
 import Offers from "./pages/Offers";
 import Login from "./pages/Login";
@@ -14,6 +14,9 @@ import Payment from "./pages/Payment";
 import { ContextProvider } from "./utilities/context/Context";
 import Specific from "./pages/SpecificRestDetail";
 import Themeprovider from "./theme/ThemeProvider";
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "./utilities/firebase";
+import { addUser, removeUser } from "./utilities/redux/userSlice";
 
 function App() {
   const appRoutes = createBrowserRouter([
@@ -66,6 +69,22 @@ function App() {
       element: <Payment />
     }
   ])
+
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // will be executed whenever sign-in or sing-up is done by the user
+        const { uid, email, displayName } = user.uid;
+        // passing payload to the action
+        dispatch(addUser({ udi: uid, email: email, displayName: displayName }))
+      } else {
+        // User is signed out
+        dispatch(removeUser())
+      }
+    });
+  }, [])
 
   const [user, setUser] = useState("")
   return (
