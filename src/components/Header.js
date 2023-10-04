@@ -1,13 +1,16 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { UserContext } from '../utilities/context/UserContext'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import axios from "axios"
 import "../style.css"
 import { Context } from "../utilities/context/Context"
 import { Avatar, CartItemsLength, CartWrapper, Categories, CategoryLabel, HeaderDiv, HeaderWrapper, Input, LinkStyled, LoginUser, NavbarLI, NavbarUL, SearchCartWrapper, SearchWrapper, UserDropdown, UserInfo, Username } from './styledComponents/Header'
 import { data } from "../assets/data"
 import { useLocation } from 'react-router-dom';
+import { onAuthStateChanged } from 'firebase/auth'
+import { auth } from '../utilities/firebase'
+import { addUser, removeUser } from '../utilities/redux/userSlice'
 
 
 const Header = () => {
@@ -71,6 +74,26 @@ const Header = () => {
     const setFilterOnClick = (filter) => {
         context.setFilter(filter)
     }
+
+
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                // will be executed whenever sign-in or sing-up is done by the user
+                const { uid, email, displayName } = user.uid;
+                // passing payload to the action
+                dispatch(addUser({ udi: uid, email: email, displayName: displayName }))
+                // if the user has an option to update its profile, then dispatch an action again in that component also
+                // and in that component work with the (this) updated value of the user using "auth" -> firebase auth
+            } else {
+                // User is signed out
+                dispatch(removeUser())
+            }
+        });
+    }, [])
+
     return (
         <HeaderDiv>
             <HeaderWrapper>
