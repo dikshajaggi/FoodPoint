@@ -5,10 +5,10 @@ import { useDispatch, useSelector } from 'react-redux'
 import axios from "axios"
 import "../style.css"
 import { Context } from "../utilities/context/Context"
-import { Avatar, CartItemsLength, CartWrapper, Categories, CategoryLabel, HeaderDiv, HeaderWrapper, Input, LinkStyled, LoginUser, NavbarLI, NavbarUL, SearchCartWrapper, SearchWrapper, UserDropdown, UserInfo, Username } from './styledComponents/Header'
+import { Account, Avatar, CartItemsLength, CartWrapper, Categories, CategoryLabel, HeaderDiv, HeaderWrapper, Input, LinkStyled, LoginUser, Name, NavbarLI, NavbarUL, SearchCartWrapper, SearchWrapper, UserDropdown, UserInfo, Username } from './styledComponents/Header'
 import { data } from "../assets/data"
 import { useLocation } from 'react-router-dom';
-import { onAuthStateChanged } from 'firebase/auth'
+import { onAuthStateChanged, signOut } from 'firebase/auth'
 import { auth } from '../utilities/firebase'
 import { addUser, removeUser } from '../utilities/redux/userSlice'
 
@@ -77,6 +77,17 @@ const Header = () => {
         context.setFilter(filter)
     }
 
+    const handleSignOut = () => {
+        signOut(auth).then(() => {
+            dispatch(removeUser())
+            window.location.reload()
+            console.log("signed-out")
+        }).catch((error) => {
+            // An error happened.
+        });
+
+    }
+
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
             if (user) {
@@ -85,8 +96,6 @@ const Header = () => {
                 // passing payload to the action
                 dispatch(addUser({ udi: uid, email: email, displayName: displayName }))
                 setUser(user)
-                // if the user has an option to update its profile, then dispatch an action again in that component also
-                // and in that component work with the (this) updated value of the user using "auth" -> firebase auth
             } else {
                 // User is signed out
                 dispatch(removeUser())
@@ -112,12 +121,13 @@ const Header = () => {
                         {user !== "" ? <LoginUser>
                             <UserInfo>
                                 <Avatar><i class="fa-solid fa-user"></i></Avatar>
-                                <Username>{user.displayName}</Username>
+                                <Username>
+                                    <Name>{user.displayName}</Name>
+                                    <Account onClick={handleSignOut}>Logout</Account>
+                                </Username>
                             </UserInfo>
                             <UserDropdown>
-                                <ul>
-                                    <li>Logout</li>
-                                </ul>
+                                <p>Logout</p>
                             </UserDropdown>
                         </LoginUser> : <LinkStyled to="/login"><Username>Login</Username></LinkStyled>}
                         <LinkStyled to="/cart"><i class="fa-sharp fa-solid fa-cart-shopping"><CartItemsLength>{items.length}</CartItemsLength></i></LinkStyled>

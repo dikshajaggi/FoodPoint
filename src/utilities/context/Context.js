@@ -1,5 +1,5 @@
 import { createContext, useState } from "react";
-import {data} from "../../assets/data"
+import { data } from "../../assets/data"
 
 const value = "value"
 const Context = createContext(value)

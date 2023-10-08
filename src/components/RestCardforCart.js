@@ -4,6 +4,7 @@ import { Context } from '../utilities/context/Context'
 import { addItems } from '../utilities/redux/cartSlice'
 import QuantityIncDec from "../utilities/helperComponents/QuantityIncDec"
 import { ItemAdd, ItemAddData, MenuDishName, SpecificCardSubHead } from './styledComponents/RestCardforCart'
+import { UserContext } from '../utilities/context/UserContext'
 
 const SpecificCard = (props) => {
     console.log(props, "props")
@@ -13,7 +14,7 @@ const SpecificCard = (props) => {
 
     const [flag, setFlag] = useState(0)
 
-    const addItemToCart = (data) => {
+    const addItemToCart = async (data) => {
         setFlag(1)
         dispatch(addItems(data))
         context.setQuantity(prev => [...prev, id])

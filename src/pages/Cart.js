@@ -1,4 +1,4 @@
-import { useContext, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { Link } from "react-router-dom"
 import { UserContext } from "../utilities/context/UserContext"
@@ -18,7 +18,6 @@ const Cart = () => {
     const handleclearCart = () => {
         dispatch(clearCart())
     }
-
     console.log(context.quantity, "quantity")
     return (
         <>

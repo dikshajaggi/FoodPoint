@@ -66,13 +66,34 @@ const UserInfo = styled.div`
     justify-content: space-evenly;
     align-items: center;
 `
+const UserDropdown = styled.div`
+position:absolute;
+ display: none;
+ margin-top:8vh;
+ width:16vw;
+ background-color:yellow; 
+ text-align:center;
+`
 const Avatar = styled.button``
-const Username = styled.h3`
+const Username = styled.div`
+position:relative;
+display: flex;
+flex-direction: column;
+height:8vh;
+justify-content: space-evenly;
+`
+const Account = styled.button`
+    margin-top:-2vh;
+    background-color:transparent;
+    border: none;
+    text-transform: capitalize;
+    font-weight: 400;
+    text-align:left;
+`
+
+const Name = styled.h6`
     text-transform: capitalize;
     font-weight: 600;
-`
-const UserDropdown = styled.div`
- display: none;
 `
 
 const CartItemsLength = styled.span`
@@ -90,4 +111,4 @@ width: 300px;
 height: 35px;
 `
 
-export { HeaderDiv, HeaderWrapper, Categories, CategoryLabel, NavbarUL, NavbarLI, LinkStyled, SearchCartWrapper, SearchWrapper, CartWrapper, UserInfo, Avatar, Username, UserDropdown, CartItemsLength, LoginUser, Input }
+export { HeaderDiv, HeaderWrapper, Categories, CategoryLabel, NavbarUL, NavbarLI, LinkStyled, SearchCartWrapper, SearchWrapper, CartWrapper, UserInfo, Avatar, Username, UserDropdown, CartItemsLength, LoginUser, Input, Name, Account }
