@@ -1,5 +1,9 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { data } from "../../assets/data"
+import { database } from "../firebase";
+import { get, onValue, ref } from "@firebase/database";
+import { addItems } from "../redux/cartSlice";
+import { useDispatch } from "react-redux";
 
 const value = "value"
 const Context = createContext(value)
@@ -10,6 +14,28 @@ const ContextProvider = (props) => {
     const [restData, setrestData] = useState(data)
     const [filter, setFilter] = useState("relevance")
     const [filteredData, setFilteredData] = useState(restData)
+    const [cartData, setCartData] = useState([])
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        const dataRef = ref(database, "cart_items");
+
+        get(dataRef)
+            .then((snapshot) => {
+                if (snapshot.exists()) {
+                    const data = snapshot.val();
+                    // Extract the values from the object into an array
+                    const objectDataArr = Object.values(data);
+                    console.log(objectDataArr, "object")
+                    setCartData(objectDataArr)
+                } else {
+                    console.log("No data available");
+                }
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+    }, []);
 
     return (
         <Context.Provider
@@ -23,7 +49,9 @@ const ContextProvider = (props) => {
                 restData,
                 setrestData,
                 filteredData,
-                setFilteredData
+                setFilteredData,
+                cartData,
+                setCartData
             }}
         >
             {props.children}

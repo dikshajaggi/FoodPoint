@@ -8,17 +8,18 @@ import { Context } from "../utilities/context/Context"
 import Checkout from "./Checkout"
 import Header from "../components/Header"
 
+
 const Cart = () => {
     const username = useContext(UserContext)
     const context = useContext(Context)
     const items = useSelector((store) => store.cart.items)
-
     const dispatch = useDispatch()
 
     const handleclearCart = () => {
         dispatch(clearCart())
     }
-    console.log(context.quantity, "quantity")
+
+    console.log(context.quantity, "quantity", context.cartData)
     return (
         <>
             <Header />
@@ -29,7 +30,9 @@ const Cart = () => {
                         <div className="clear-cart-btn"><button onClick={handleclearCart}>Clear Cart</button></div>
                     </div>
                     <div><Checkout items={items} /></div>
-                </> : <div><h4 style={{ margin: "20px" }}>Add something</h4></div>}
+                </> : context.cartData ? <div className="cart-data">{context.cartData?.map(item => <CartDataDisplay {...item} />)}
+                    <div className="clear-cart-btn"><button onClick={handleclearCart}>Clear Cart</button></div>
+                </div> : <div><h4 style={{ margin: "20px" }}>Add something</h4></div>}
             </div>
 
         </>
