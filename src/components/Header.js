@@ -43,6 +43,7 @@ const Header = () => {
     }
 
     useEffect(() => {
+        console.log(user, "user")
         getRest()
     }, [])
 
@@ -77,20 +78,21 @@ const Header = () => {
     }
 
     useEffect(() => {
-        onAuthStateChanged(auth, (user) => {
+        const unsubscribe = onAuthStateChanged(auth, (user) => {
             if (user) {
                 // will be executed whenever sign-in or sing-up is done by the user
                 const { uid, email, displayName } = user.uid;
                 // passing payload to the action
                 dispatch(addUser({ udi: uid, email: email, displayName: displayName }))
+                setUser(user)
                 // if the user has an option to update its profile, then dispatch an action again in that component also
                 // and in that component work with the (this) updated value of the user using "auth" -> firebase auth
-                navigate(-1)
             } else {
                 // User is signed out
                 dispatch(removeUser())
             }
         });
+        return () => unsubscribe()
     }, [])
 
     return (
@@ -110,7 +112,7 @@ const Header = () => {
                         {user !== "" ? <LoginUser>
                             <UserInfo>
                                 <Avatar><i class="fa-solid fa-user"></i></Avatar>
-                                <Username>{user}</Username>
+                                <Username>{user.displayName}</Username>
                             </UserInfo>
                             <UserDropdown>
                                 <ul>

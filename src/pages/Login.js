@@ -1,12 +1,14 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { LoginButton, LoginWrapper } from "./styledComponents/Login";
 import { useFormik } from "formik";
 import { LoginSchema } from "../schemas/login";
 import { CenterDiv, ErrorPara, HeaderOnlyLayoutWrapper, Heading, Input, Label, LabelInputWrapper, LinkWrapper } from "./styledComponents/LoginSignup";
 import { UserContext } from "../utilities/context/UserContext";
 import { useNavigate } from "react-router";
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../utilities/firebase";
+import { useDispatch } from "react-redux";
+import { addUser, removeUser } from "../utilities/redux/userSlice";
 
 
 const Login = () => {
@@ -22,7 +24,7 @@ const Login = () => {
         signInWithEmailAndPassword(auth, values.email, values.password)
             .then((userCredential) => {
                 const user = userCredential.user;
-                console.log(user, "logged in")
+                console.log(user, "logged in", values)
             })
             .catch((error) => {
                 const errorCode = error.code;
@@ -37,13 +39,36 @@ const Login = () => {
         onSubmit: (values, { resetForm }) => {
             handleLogin(values)
             if (error !== null) {
-                navigate(-1)
-                setUser(values.name)
                 console.log(values);
                 resetForm()
             }
         }
     })
+
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, (user) => {
+            if (user) {
+                console.log(user, "user")
+                // will be executed whenever sign-in or sing-up is done by the user
+                const { uid, email, displayName } = user.uid;
+                // passing payload to the action
+                dispatch(addUser({ udi: uid, email: email, displayName: displayName }))
+                setUser(user)
+                // if the user has an option to update its profile, then dispatch an action again in that component also
+                // and in that component work with the (this) updated value of the user using "auth" -> firebase auth
+                navigate("/")
+            } else {
+                // User is signed out
+                dispatch(removeUser())
+            }
+        });
+
+        return () => unsubscribe()
+        // onAuthStateChange returns an unsubcribe function to remove this listener when the component unmounts
+    }, [])
+
     return (
         <>
             <HeaderOnlyLayoutWrapper>

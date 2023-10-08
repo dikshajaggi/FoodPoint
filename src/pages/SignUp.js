@@ -3,7 +3,7 @@ import { SignUpWrapper, SignupButton } from "./styledComponents/Signup";
 import { useFormik } from "formik";
 import { SignUpSchema } from "../schemas/signup";
 import { CenterDiv, ErrorPara, HeaderOnlyLayoutWrapper, Heading, Input, Label, LabelInputWrapper, LinkWrapper } from "./styledComponents/LoginSignup";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from "../utilities/firebase";
 import { useNavigate } from "react-router-dom";
 
@@ -22,13 +22,21 @@ const SignUp = () => {
             .then((userCredential) => {
                 const user = userCredential.user;
                 console.log(user, "signed in")
+                updateProfile(user, {
+                    displayName: values.name
+                }).then(() => {
+                    navigate("/")
+                }).catch((error) => {
+                    // An error occurred
+                    // ...
+                });
+
             })
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
                 console.log(errorCode, errorMessage, "error")
             });
-
     }
 
     const formik = useFormik({
