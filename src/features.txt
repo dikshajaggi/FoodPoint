@@ -58,7 +58,8 @@ remove spcific items from cart -> working fine but update the removed item in da
 feature to inc/dec qty on cart page also, and remove item when qty is reduced to 0
 
 
-search results list is not clickable and also fix the ui
+MAKE SURE THAT WHEN USER HAVE SEARCHED A PARTICULAR REST, THEY SHOULD GET SUGGESTIONS FOR SIMILAR REST
+
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 -----------------------------------
@@ -72,6 +73,7 @@ but after logging in,
 the user is not able to go back to the cart page
 
 rounded off the total payable amount to 2 decimal places
+search results list is not clickable and also fix the ui
 
 
 -------------------------------------

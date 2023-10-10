@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import axios from "axios"
 import "../style.css"
 import { Context } from "../utilities/context/Context"
-import { Account, Avatar, CartItemsLength, CartWrapper, Categories, CategoryLabel, HeaderDiv, HeaderWrapper, Input, LinkStyled, LoginUser, Name, NavbarLI, NavbarUL, SearchCartWrapper, SearchWrapper, UserDropdown, UserInfo, Username } from './styledComponents/Header'
+import { Account, Avatar, CartItemsLength, CartWrapper, Categories, CategoryLabel, HeaderDiv, HeaderWrapper, Input, LinkStyled, LoginUser, Name, NavbarLI, NavbarUL, SearchCartWrapper, SearchListVal, SearchValImg, SearchValWrapper, SearchWrapper, UserDropdown, UserInfo, Username } from './styledComponents/Header'
 import { data } from "../assets/data"
 import { useLocation } from 'react-router-dom';
 import { onAuthStateChanged, signOut } from 'firebase/auth'
@@ -23,6 +23,7 @@ const Header = () => {
     const [restData, setrestData] = useState(data)
     const [searchvalue, setSearchvalue] = useState("")
     const [matchingRest, setMatchingRest] = useState([])
+    const [closeSearchList, setCloseSearchList] = useState(false)
     const currentPathname = location.pathname;
     const params = useParams()
     const headerPaths = ["/signup", "/login", "/about", "/offers", "/cart"];
@@ -31,6 +32,7 @@ const Header = () => {
         : "subHeader";
 
     const allRestNames = []
+    const [seachResultImg, setSeachResultImg] = useState()
     restData?.filter((item) => allRestNames.push(item?.info?.name))
 
     const findMatching = () => {
@@ -40,6 +42,9 @@ const Header = () => {
         }
         console.log(matching, "matchingRest")
         setMatchingRest(matching)
+        restData?.map(item => {
+            if (item?.info?.name === matching.toString()) setSeachResultImg(item?.info?.cloudinaryImageId)
+        })
     }
 
     useEffect(() => {
@@ -85,7 +90,11 @@ const Header = () => {
         }).catch((error) => {
             // An error happened.
         });
+    }
 
+    const searchRestWithList = () => {
+        setCloseSearchList(true)
+        context.setFilteredData(restData.filter((item) => item?.info.name.toLowerCase().includes(searchvalue.toLowerCase())))
     }
 
     useEffect(() => {
@@ -135,10 +144,14 @@ const Header = () => {
                 </SearchCartWrapper>
             </HeaderWrapper>
             <div>
-                {searchvalue !== "" ? matchingRest.length !== 0 ? <ul>
+                {searchvalue !== "" ? matchingRest.length !== 0 ? closeSearchList ? null : <ul>
                     {matchingRest.map(item => {
                         return (
-                            <li>{item}</li>
+                            <SearchValWrapper onClick={searchRestWithList}>
+                                {console.log(seachResultImg, "seachResultImg")}
+                                <SearchValImg src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" + seachResultImg} alt="" />
+                                <SearchListVal>{item}</SearchListVal>
+                            </SearchValWrapper>
                         )
                     })}
                 </ul> : <span> no results found </span> : null}

@@ -111,4 +111,23 @@ width: 300px;
 height: 35px;
 `
 
-export { HeaderDiv, HeaderWrapper, Categories, CategoryLabel, NavbarUL, NavbarLI, LinkStyled, SearchCartWrapper, SearchWrapper, CartWrapper, UserInfo, Avatar, Username, UserDropdown, CartItemsLength, LoginUser, Input, Name, Account }
+const SearchValWrapper = styled.div`
+display:flex;
+justify-content: space-evenly;
+align-items:center;
+background-color: yellow;
+cursor:pointer;
+`
+const SearchListVal = styled.li`
+list-style-type: none;
+font-weight: 500;
+`
+
+const SearchValImg = styled.img`
+height:10%;
+width:10%;
+border-radius: 6px;
+
+`
+
+export { HeaderDiv, HeaderWrapper, Categories, CategoryLabel, NavbarUL, NavbarLI, LinkStyled, SearchCartWrapper, SearchWrapper, CartWrapper, UserInfo, Avatar, Username, UserDropdown, CartItemsLength, LoginUser, Input, Name, Account, SearchListVal, SearchValWrapper, SearchValImg }
