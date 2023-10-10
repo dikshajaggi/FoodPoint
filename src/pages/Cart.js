@@ -7,6 +7,8 @@ import { clearCart } from '../utilities/redux/cartSlice'
 import { Context } from "../utilities/context/Context"
 import Checkout from "./Checkout"
 import Header from "../components/Header"
+import { database } from "../utilities/firebase"
+import { ref, remove } from "firebase/database"
 
 
 const Cart = () => {
@@ -16,6 +18,10 @@ const Cart = () => {
     const dispatch = useDispatch()
 
     const handleclearCart = () => {
+        const dataRef = ref(database, "cart_items")
+        // Delete data
+        remove(dataRef)
+        context.setCartData([])
         dispatch(clearCart())
     }
 

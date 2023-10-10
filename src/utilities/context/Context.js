@@ -28,6 +28,9 @@ const ContextProvider = (props) => {
                     const objectDataArr = Object.values(data);
                     console.log(objectDataArr, "object")
                     setCartData(objectDataArr)
+                    for (const data of objectDataArr) {
+                        dispatch(addItems(data))
+                    }
                 } else {
                     console.log("No data available");
                 }

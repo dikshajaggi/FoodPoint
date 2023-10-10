@@ -4,6 +4,8 @@ import "../style.css"
 import { Context } from "../utilities/context/Context"
 import { removeItem } from '../utilities/redux/cartSlice'
 import { CardCart, CardText, CartRemoveBtn, PizzaImgCart } from "./styledComponents/CartDataDisplay"
+import { database } from "../utilities/firebase"
+import { get, ref, remove } from "firebase/database"
 
 const CartDataDisplay = (props) => {
     const { name, price, imageId, id } = props
@@ -14,6 +16,7 @@ const CartDataDisplay = (props) => {
 
     const handleRemoveItem = (id) => {
         dispatch(removeItem(items.filter((item) => item.id !== id)))
+        // const dataRef = ref(database, "cart_items")
     }
 
     console.log(context.quantity, "context quantity cart")

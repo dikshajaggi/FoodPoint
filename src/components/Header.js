@@ -9,10 +9,8 @@ import { Account, Avatar, CartItemsLength, CartWrapper, Categories, CategoryLabe
 import { data } from "../assets/data"
 import { useLocation } from 'react-router-dom';
 import { onAuthStateChanged, signOut } from 'firebase/auth'
-import { auth, database } from '../utilities/firebase'
+import { auth } from '../utilities/firebase'
 import { addUser, removeUser } from '../utilities/redux/userSlice'
-import { get, onValue, ref } from "@firebase/database"
-import { addItems } from '../utilities/redux/cartSlice'
 
 
 const Header = () => {
@@ -116,7 +114,7 @@ const Header = () => {
                 </NavbarUL>
                 <SearchCartWrapper>
                     <SearchWrapper>
-                        <Input type="search" placeholder='search' value={searchvalue} onChange={searchrest} />
+                        <Input type="search" placeholder='search for restaurants' value={searchvalue} onChange={searchrest} />
                         <button onClick={search}>Search</button>
                     </SearchWrapper>
                     <CartWrapper>

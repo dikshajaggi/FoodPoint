@@ -23,7 +23,7 @@ const Checkout = (props) => {
             <br></br>
             <TotalWrapper>
                 <h4>Total items: {total.length}</h4>
-                <h4>Total : {sum} {context.quantity.qty}</h4>
+                <h4>Total : {sum.toFixed(2)} {context.quantity.qty}</h4>
                 <br></br>
                 {username.user !== "" ? <LinkStyled to="/payment"><button>Checkout</button></LinkStyled> : <LinkStyled to="/login"><button>Checkout</button></LinkStyled>}
             </TotalWrapper>

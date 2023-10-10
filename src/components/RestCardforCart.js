@@ -4,7 +4,6 @@ import { Context } from '../utilities/context/Context'
 import { addItems } from '../utilities/redux/cartSlice'
 import QuantityIncDec from "../utilities/helperComponents/QuantityIncDec"
 import { ItemAdd, ItemAddData, MenuDishName, SpecificCardSubHead } from './styledComponents/RestCardforCart'
-import { UserContext } from '../utilities/context/UserContext'
 import { database } from "../utilities/firebase/index"
 import { push, ref, set } from '@firebase/database'
 
