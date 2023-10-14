@@ -24,6 +24,8 @@ align-items:center;
 `
 
 const CategoryLabel = styled.h4`
+margin-top: 2vw;
+margin-left: 2vw;
 display: ${props => props.display === "subHeader" ? "flex" : "none"};
 text-transform: capitalize;
 `

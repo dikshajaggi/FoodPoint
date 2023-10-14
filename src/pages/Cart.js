@@ -10,6 +10,7 @@ import Header from "../components/Header"
 import { database } from "../utilities/firebase"
 import { ref, remove } from "firebase/database"
 import { CartContentWrapper, CartData, CartHead, ClearCartBtn, Wrapper, EmptyCart } from "./styledComponents/Cart"
+import Footer from "../components/Footer"
 
 
 const Cart = () => {
@@ -50,6 +51,7 @@ const Cart = () => {
             </CartContentWrapper> :
                 <EmptyCart><h4>Add something</h4></EmptyCart>
             }
+            <Footer />
         </>
     )
 }

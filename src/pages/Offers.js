@@ -9,6 +9,7 @@ import Header from "../components/Header"
 import RestCard from "../shimmerUI/RestCard"
 import { data } from "../assets/data"
 import { CardWrapper, OfferBanner, OfferCardWrapper, OfferWrapper } from "./styledComponents/Offers"
+import Footer from "../components/Footer"
 
 const Offers = () => {
 
@@ -44,8 +45,8 @@ const Offers = () => {
             <Header />
             <OfferWrapper>
                 <OfferBanner>
-                    <h1>OFFERS</h1>
-                    <h2>Explore top deals and offers exclusively for you!</h2>
+                    <h4 style={{ fontSize: "22px" }}>OFFERS</h4>
+                    <h2 style={{ fontSize: "18px" }}>Explore top deals and offers exclusively for you!</h2>
                 </OfferBanner>
 
 
@@ -70,9 +71,9 @@ const Offers = () => {
                     </NavItem>
                 </Nav>
                 <TabContent activeTab={currentActiveTab}>
-                    <TabPane tabId="1">
+                    <TabPane tabId="1" >
                         <Row>
-                            <Col >
+                            <Col>
                                 <CardWrapper>
                                     {isLoading ? data?.map((item) => {
                                         return <RestCard />
@@ -95,6 +96,7 @@ const Offers = () => {
                     </TabPane>
                 </TabContent>
             </OfferWrapper>
+            <Footer />
         </>
     )
 }

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { UserContext } from '../utilities/context/UserContext'
 import { Context } from '../utilities/context/Context'
 import { LinkStyled } from '../components/styledComponents/Header'
-import { CheckoutBtn, CheckoutLabel, TotalWrapper } from './styledComponents/Checkout'
+import { CheckoutBtn, CheckoutLabel, CheckoutWrapper, TotalLabels, TotalWrapper } from './styledComponents/Checkout'
 
 const Checkout = (props) => {
     const username = useContext(UserContext)
@@ -18,16 +18,15 @@ const Checkout = (props) => {
     }
 
     return (
-        <div>
-            <CheckoutLabel>CHECKOUT</CheckoutLabel>
+        <CheckoutWrapper>
+            <CheckoutLabel>Checkout</CheckoutLabel>
             <br></br>
             <TotalWrapper>
-                <h4>Total items: {total.length}</h4>
-                <h4>Total : {sum.toFixed(2)} {context.quantity.qty}</h4>
-                <br></br>
-                {username.user !== "" ? <LinkStyled to="/payment"><CheckoutBtn>Checkout</CheckoutBtn></LinkStyled> : <LinkStyled to="/login"><button>Checkout</button></LinkStyled>}
+                <TotalLabels>Total items: <span style={{ fontWeight: 400 }}>{total.length}</span></TotalLabels>
+                <TotalLabels>Total : <span style={{ fontWeight: 400 }}>{sum.toFixed(2)}</span></TotalLabels>
             </TotalWrapper>
-        </div>
+            {username.user !== "" ? <LinkStyled to="/payment"><CheckoutBtn>Checkout</CheckoutBtn></LinkStyled> : <LinkStyled to="/login"><button>Checkout</button></LinkStyled>}
+        </CheckoutWrapper>
     )
 }
 

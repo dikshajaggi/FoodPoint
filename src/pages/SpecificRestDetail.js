@@ -11,6 +11,7 @@ import SpecificRest from "../shimmerUI/SpecificRest"
 import { data } from "../assets/data"
 import SpecificPage from "../shimmerUI/SpecificPage"
 import { AllMenuCards, MenuCategory, MenuHeading, SpecificCardStyle, SpecificCardSubHeading, SpecificHeading, SpecificWrapper } from "./styledComponents/SpecificRestDetail"
+import Footer from "../components/Footer"
 
 const Specific = () => {
     const rest_id = useParams()
@@ -67,6 +68,7 @@ const Specific = () => {
                     ))}
                 </AllMenuCards>
             </SpecificCardStyle>
+            <Footer />
         </SpecificWrapper>
     )
 }

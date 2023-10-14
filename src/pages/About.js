@@ -5,6 +5,7 @@ import "../style.css"
 import { UserContext } from '../utilities/context/UserContext'
 import Header from '../components/Header'
 import { AboutDesc, AboutHeading, AboutWrapper } from './styledComponents/About'
+import Footer from '../components/Footer'
 
 const About = () => {
     const username = useContext(UserContext)
@@ -25,6 +26,7 @@ const About = () => {
 
                 Laborum nisi ex id enim incididunt fugiat occaecat proident ut est ullamco id. Est eu officia excepteur consectetur. Est elit ex Lorem adipisicing deserunt nostrud incididunt. Non tempor commodo culpa qui est ut culpa consequat proident minim. Nulla nulla ea veniam pariatur ipsum amet eu nulla id consectetur.
             </AboutDesc>
+            <Footer />
         </AboutWrapper>
     )
 }
