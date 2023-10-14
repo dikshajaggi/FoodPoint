@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import axios from "axios"
 import "../style.css"
 import { Context } from "../utilities/context/Context"
-import { Account, Avatar, CartItemsLength, CartWrapper, Categories, CategoryLabel, HeaderDiv, HeaderWrapper, Input, LinkStyled, LoginUser, Name, NavbarLI, NavbarUL, SearchCartWrapper, SearchListVal, SearchValImg, SearchValWrapper, SearchWrapper, UserDropdown, UserInfo, Username } from './styledComponents/Header'
+import { Account, Avatar, CartItemsLength, CartWrapper, Categories, CategoryLabel, HeaderDiv, HeaderWrapper, Input, LinkStyled, LoginUser, Logo, Name, NavbarLI, NavbarUL, NavbarULCat, SearchBtn, SearchCartWrapper, SearchListVal, SearchValImg, SearchValWrapper, SearchWrapper, UserDropdown, UserInfo, Username } from './styledComponents/Header'
 import { data } from "../assets/data"
 import { useLocation } from 'react-router-dom';
 import { onAuthStateChanged, signOut } from 'firebase/auth'
@@ -121,10 +121,11 @@ const Header = () => {
                     <LinkStyled to="/about"><NavbarLI header="main">ABOUT</NavbarLI></LinkStyled>
                     <LinkStyled to="/offers"><NavbarLI header="main">OFFERS</NavbarLI></LinkStyled>
                 </NavbarUL>
+                <Logo>FoodPoint</Logo>
                 <SearchCartWrapper>
                     <SearchWrapper>
+                        <SearchBtn onClick={search}><i class="fa-solid fa-magnifying-glass"></i></SearchBtn>
                         <Input type="search" placeholder='search for restaurants' value={searchvalue} onChange={searchrest} />
-                        <button onClick={search}>Search</button>
                     </SearchWrapper>
                     <CartWrapper>
                         {user !== "" ? <LoginUser>
@@ -158,13 +159,13 @@ const Header = () => {
 
             </div>
             <Categories display={linkInfo}>
-                <NavbarUL>
+                <NavbarULCat>
                     <LinkStyled to="/"><NavbarLI header="sub" onClick={() => { setFilterOnClick("relevance") }}>RELEVANCE</NavbarLI></LinkStyled>
                     <LinkStyled to="/rating"><NavbarLI header="sub" onClick={() => { setFilterOnClick("rating") }}>RATING</NavbarLI></LinkStyled>
                     <LinkStyled to="/delivery-time"><NavbarLI header="sub" onClick={() => { setFilterOnClick("delivery-time") }}>DELIVERY TIME</NavbarLI></LinkStyled>
                     <LinkStyled to="/cost-low-to-high"><NavbarLI header="sub" onClick={() => { setFilterOnClick("cost-low-to-high") }}>COST: LOW TO HIGH</NavbarLI></LinkStyled>
                     <LinkStyled to="/cost-high-to-low"><NavbarLI header="sub" onClick={() => { setFilterOnClick("cost-high-to-low") }}>COST: HIGH TO LOW</NavbarLI></LinkStyled>
-                </NavbarUL>
+                </NavbarULCat>
             </Categories>
             <CategoryLabel display={linkInfo} >{context.filter}</CategoryLabel>
         </HeaderDiv>

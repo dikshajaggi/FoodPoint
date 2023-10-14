@@ -30,7 +30,7 @@ const NavbarUL = styled.ul`
 display: flex;
 justify-content: space-evenly;
 list-style-type: none;
-width:100%;
+width:33.33%;
 `
 
 const NavbarLI = styled.li`
@@ -46,12 +46,17 @@ color: black;
 const SearchCartWrapper = styled.div`
     display: flex;
     justify-content: space-evenly;
-    width: 700px;
+    width:33.33%;
     align-items: center;
 `
 
 const SearchWrapper = styled.div`
  display: flex;
+`
+
+const SearchBtn = styled.button`
+background-color:transparent;
+border: none;
 `
 
 const CartWrapper = styled.div` 
@@ -107,6 +112,9 @@ const LoginUser = styled.div`
 `
 
 const Input = styled.input`
+background-color:transparent;
+border: none;
+border-bottom: 2px solid black;
 width: 300px;
 height: 35px;
 `
@@ -127,7 +135,19 @@ const SearchValImg = styled.img`
 height:10%;
 width:10%;
 border-radius: 6px;
-
+`
+const Logo = styled.span`
+display:flex;
+justify-content: center;
+align-items:center;
+width:33.33%;
 `
 
-export { HeaderDiv, HeaderWrapper, Categories, CategoryLabel, NavbarUL, NavbarLI, LinkStyled, SearchCartWrapper, SearchWrapper, CartWrapper, UserInfo, Avatar, Username, UserDropdown, CartItemsLength, LoginUser, Input, Name, Account, SearchListVal, SearchValWrapper, SearchValImg }
+const NavbarULCat = styled.div`
+display: flex;
+justify-content: space-evenly;
+list-style-type: none;
+width:100%;
+`
+
+export { HeaderDiv, HeaderWrapper, Categories, CategoryLabel, NavbarUL, NavbarLI, LinkStyled, SearchCartWrapper, SearchWrapper, CartWrapper, UserInfo, Avatar, Username, UserDropdown, CartItemsLength, LoginUser, Input, Name, Account, SearchListVal, SearchValWrapper, SearchValImg,Logo,SearchBtn, NavbarULCat }

@@ -81,3 +81,9 @@ firebase for authentication
 hoisting on firebase
 
 once the user logs in aur signs up => store all the data in Redux store
+
+
+
+-------------------------------------------------------
+
+CREATE SEPARATEN COMPONENT FOR SEARCH
