@@ -21,6 +21,7 @@ border-bottom: 1px solid rgb(158, 155, 155);
 `
 
 const RestName = styled.h6`
+color: black;
 margin-top:2vh;
 text-align:center;
 `

@@ -1,8 +1,10 @@
 import React from 'react'
 import "../style.css"
 import { CardWrapper, Image, InfoWrapper, RestInfo, RestName } from './styledComponents/RestCard'
+import { useTheme } from 'styled-components'
 
 const Card = (props) => {
+    const themes = useTheme()
     const { name, costForTwo, sla, cloudinaryImageId, avgRating, aggregatedDiscountInfoV3 } = props
     return (
         <CardWrapper>
@@ -16,7 +18,7 @@ const Card = (props) => {
                 <RestInfo>|</RestInfo>
                 <RestInfo>{costForTwo}</RestInfo>
             </InfoWrapper>
-            <RestInfo style={{ marginTop: "2vh" }}>{aggregatedDiscountInfoV3 ? `${aggregatedDiscountInfoV3?.discountTag == undefined ? "" : aggregatedDiscountInfoV3?.discountTag} ${aggregatedDiscountInfoV3?.header === undefined ? "" : aggregatedDiscountInfoV3?.header} ${aggregatedDiscountInfoV3?.subHeader === undefined ? "" : `(${aggregatedDiscountInfoV3?.subHeader})`} ` : "Currently no offers available"}</RestInfo>
+            <RestInfo style={{ marginTop: "2vh", color: aggregatedDiscountInfoV3 ? themes.colors.accent : 'black' }}>{aggregatedDiscountInfoV3 ? `${aggregatedDiscountInfoV3?.discountTag == undefined ? "" : aggregatedDiscountInfoV3?.discountTag} ${aggregatedDiscountInfoV3?.header === undefined ? "" : aggregatedDiscountInfoV3?.header} ${aggregatedDiscountInfoV3?.subHeader === undefined ? "" : `(${aggregatedDiscountInfoV3?.subHeader})`} ` : "Currently no offers available"}</RestInfo>
         </CardWrapper>
     )
 }
