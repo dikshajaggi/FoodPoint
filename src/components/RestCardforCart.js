@@ -27,8 +27,8 @@ const SpecificCard = (props) => {
             <ItemAddData>
                 <MenuDishName>{name}</MenuDishName>
                 <h2><SpecificCardSubHead>{itemAttribute.vegClassifier} | {category} </SpecificCardSubHead></h2>
-                {price ? <h2><SpecificCardSubHead>Price: </SpecificCardSubHead> Rs.{(price) / 100}</h2> : <h2><SpecificCardSubHead>Price: </SpecificCardSubHead> Rs.{(defaultPrice) / 100}</h2>}
-                <h2>{description}</h2>
+                {price ? <h2 style ={{fontSize: "22px"}}><SpecificCardSubHead>Price: </SpecificCardSubHead> Rs.{(price) / 100}</h2> : <h2 style ={{fontSize: "22px"}}><SpecificCardSubHead>Price: </SpecificCardSubHead> Rs.{(defaultPrice) / 100}</h2>}
+                <h2 style = {{fontSize: "18px"}}>{description}</h2>
             </ItemAddData>
             {flag === 0 ? <button onClick={() => addItemToCart(props)}>ADD</button> : <QuantityIncDec id={id} />}
         </ItemAdd>

@@ -1,10 +1,11 @@
 import React from 'react'
+import { PaymentWrapper } from './styledComponents/Payment'
 
 const Payment = () => {
     return (
-        <div>
+        <PaymentWrapper>
             payment
-        </div>
+        </PaymentWrapper>
     )
 }
 

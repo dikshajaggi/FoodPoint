@@ -8,6 +8,7 @@ import Card from "../components/RestCard"
 import Header from "../components/Header"
 import RestCard from "../shimmerUI/RestCard"
 import { data } from "../assets/data"
+import { CardWrapper, OfferBanner, OfferCardWrapper, OfferWrapper } from "./styledComponents/Offers"
 
 const Offers = () => {
 
@@ -41,11 +42,11 @@ const Offers = () => {
     return (
         <>
             <Header />
-            <div style={{ margin: "10px" }}>
-                <div className='offer-banner'>
+            <OfferWrapper>
+                <OfferBanner>
                     <h1>OFFERS</h1>
                     <h2>Explore top deals and offers exclusively for you!</h2>
-                </div>
+                </OfferBanner>
 
 
                 <Nav tabs>
@@ -72,28 +73,28 @@ const Offers = () => {
                     <TabPane tabId="1">
                         <Row>
                             <Col >
-                                <div className='card-wrapper'>
+                                <CardWrapper>
                                     {isLoading ? data?.map((item) => {
                                         return <RestCard />
                                     }) : offers?.slice(1)?.map((item) => {
                                         return <Link to={`/rest/${item.info.feeDetails.restaurantId}`} style={{ textDecoration: 'none' }} >< Card {...item.info} /></Link>
                                     })}
-                                </div>
+                                </CardWrapper>
                             </Col>
                         </Row>
                     </TabPane>
                     <TabPane tabId="2">
                         <Row>
-                            <div className='offer-card-wrapper'>
+                            <OfferCardWrapper>
                                 {console.log(paymentOffers, "filtered data")}
                                 {paymentOffers?.slice(2)?.map((item) => {
                                     return <OfferCard {...item?.data?.data} />
                                 })}
-                            </div>
+                            </OfferCardWrapper>
                         </Row>
                     </TabPane>
                 </TabContent>
-            </div>
+            </OfferWrapper>
         </>
     )
 }

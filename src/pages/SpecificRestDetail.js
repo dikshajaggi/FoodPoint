@@ -10,6 +10,7 @@ import Header from "../components/Header"
 import SpecificRest from "../shimmerUI/SpecificRest"
 import { data } from "../assets/data"
 import SpecificPage from "../shimmerUI/SpecificPage"
+import { AllMenuCards, MenuCategory, MenuHeading, SpecificCardStyle, SpecificCardSubHeading, SpecificHeading, SpecificWrapper } from "./styledComponents/SpecificRestDetail"
 
 const Specific = () => {
     const rest_id = useParams()
@@ -43,29 +44,30 @@ const Specific = () => {
     console.log(items, items.length, "checking items in store")
 
     return (
-        <div className='specific-wrapper'>
+        <SpecificWrapper>
             <Header />
-            <div className='specific-card'>
+            <SpecificCardStyle>
                 {isLoading ? <SpecificPage /> :
                     <>
-                        <h2 className='specifc-heading'>{info?.name}</h2>
-                        <h2 className='specific-card-subheading'>{info?.cuisines?.join(", ")} | {info?.areaName} | <i class="fa-regular fa-star"></i>{info?.avgRating}</h2>
-                        <h2 className='specific-card-subheading'> {available}</h2>
+                        <SpecificHeading>{info?.name}</SpecificHeading>
+                        <SpecificCardSubHeading>{info?.cuisines?.join(", ")} | {info?.areaName} | <i class="fa-regular fa-star"></i>{info?.avgRating}</SpecificCardSubHeading>
+                        <SpecificCardSubHeading> {available}</SpecificCardSubHeading>
 
-                        <h4 className='menu-heading'>MENU</h4>
-                        <h4 className='menu-category'>{title}</h4>
+                        <MenuHeading>MENU</MenuHeading>
+                        <MenuCategory>{title}</MenuCategory>
                     </>
                 }
 
-                <div className='menu-all-cards'>
+                <AllMenuCards>
                     {isLoading ? data?.map(item => {
+                        // RETURNING SHIMMER UI
                         return <SpecificRest />
                     }) : otherInfo?.map(dish => (
                         <SpecificCard {...dish?.card?.info} />
                     ))}
-                </div>
-            </div >
-        </div>
+                </AllMenuCards>
+            </SpecificCardStyle>
+        </SpecificWrapper>
     )
 }
 

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { UserContext } from '../utilities/context/UserContext'
 import { Context } from '../utilities/context/Context'
 import { LinkStyled } from '../components/styledComponents/Header'
-import { TotalWrapper } from './styledComponents/Checkout'
+import { CheckoutLabel, TotalWrapper } from './styledComponents/Checkout'
 
 const Checkout = (props) => {
     const username = useContext(UserContext)
@@ -19,7 +19,7 @@ const Checkout = (props) => {
 
     return (
         <div>
-            <h4 style={{ fontWeight: 600, fontSize: "28px" }}>CHECKOUT</h4>
+            <CheckoutLabel>CHECKOUT</CheckoutLabel>
             <br></br>
             <TotalWrapper>
                 <h4>Total items: {total.length}</h4>

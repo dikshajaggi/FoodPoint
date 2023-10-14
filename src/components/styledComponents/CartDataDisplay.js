@@ -12,7 +12,7 @@ const CardCart = styled.div`
     height: 300px;
 `
 
-const PizzaImgCart = styled.img`
+const DishImgCart = styled.img`
     width: 200px;
     height: 110px;
 `
@@ -28,4 +28,8 @@ height: 30px;
 width: 80px;
 `
 
-export { CardCart, PizzaImgCart, CardText, CartRemoveBtn }
+const DishName = styled.h2`
+font-size: 22px;
+`
+
+export { CardCart, DishImgCart, CardText, CartRemoveBtn, DishName }

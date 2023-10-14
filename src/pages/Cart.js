@@ -9,6 +9,7 @@ import Checkout from "./Checkout"
 import Header from "../components/Header"
 import { database } from "../utilities/firebase"
 import { ref, remove } from "firebase/database"
+import { CartContentWrapper, CartData, CartHead, ClearCartBtn } from "./styledComponents/Cart"
 
 
 const Cart = () => {
@@ -29,17 +30,17 @@ const Cart = () => {
     return (
         <>
             <Header />
-            <h2 className="cart-head">CART</h2>
-            <div className="cart-content-wrapper">
+            <CartHead>CART</CartHead>
+            <CartContentWrapper>
                 {items.length !== 0 ? <>
-                    <div className="cart-data">{items.map(data => <CartDataDisplay {...data} />)}
-                        <div className="clear-cart-btn"><button onClick={handleclearCart}>Clear Cart</button></div>
-                    </div>
+                    <CartData>{items.map(data => <CartDataDisplay {...data} />)}
+                        <ClearCartBtn><button onClick={handleclearCart}>Clear Cart</button></ClearCartBtn>
+                    </CartData>
                     <div><Checkout items={items} /></div>
-                </> : context.cartData ? <div className="cart-data">{context.cartData?.map(item => <CartDataDisplay {...item} />)}
-                    <div className="clear-cart-btn"><button onClick={handleclearCart}>Clear Cart</button></div>
-                </div> : <div><h4 style={{ margin: "20px" }}>Add something</h4></div>}
-            </div>
+                </> : context.cartData ? <CartData>{context.cartData?.map(item => <CartDataDisplay {...item} />)}
+                    <ClearCartBtn><button onClick={handleclearCart}>Clear Cart</button></ClearCartBtn>
+                </CartData> : <div><h4 style={{ margin: "20px" }}>Add something</h4></div>}
+            </CartContentWrapper>
 
         </>
     )
