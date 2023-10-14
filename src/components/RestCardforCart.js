@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import { Context } from '../utilities/context/Context'
 import { addItems } from '../utilities/redux/cartSlice'
 import QuantityIncDec from "../utilities/helperComponents/QuantityIncDec"
-import { ItemAdd, ItemAddData, MenuDishName, SpecificCardSubHead } from './styledComponents/RestCardforCart'
+import { AddDishBtn, DishImg, ItemAdd, ItemAddData, MenuDishName, SpecificCardSubHead } from './styledComponents/RestCardforCart'
 import { database } from "../utilities/firebase/index"
 import { push, ref, set } from '@firebase/database'
 
@@ -24,13 +24,14 @@ const SpecificCard = (props) => {
     }
     return (
         <ItemAdd>
+            <DishImg> <img src= {`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_180,h_180,c_fit/${imageId}`} alt=""/> </DishImg>
             <ItemAddData>
                 <MenuDishName>{name}</MenuDishName>
                 <h2><SpecificCardSubHead>{itemAttribute.vegClassifier} | {category} </SpecificCardSubHead></h2>
                 {price ? <h2 style ={{fontSize: "22px"}}><SpecificCardSubHead>Price: </SpecificCardSubHead> Rs.{(price) / 100}</h2> : <h2 style ={{fontSize: "22px"}}><SpecificCardSubHead>Price: </SpecificCardSubHead> Rs.{(defaultPrice) / 100}</h2>}
                 <h2 style = {{fontSize: "18px"}}>{description}</h2>
             </ItemAddData>
-            {flag === 0 ? <button onClick={() => addItemToCart(props)}>ADD</button> : <QuantityIncDec id={id} />}
+            {flag === 0 ? <AddDishBtn onClick={() => addItemToCart(props)}>ADD</AddDishBtn> : <QuantityIncDec id={id} />}
         </ItemAdd>
     )
 }

@@ -35,7 +35,7 @@ width:33.33%;
 
 const NavbarLI = styled.li`
 font-size: ${props => props.header === "main" ? "18px" : "14px"};
-font-weight: 500;
+font-weight: 400;
 `
 
 const LinkStyled = styled(Link)`
@@ -117,6 +117,10 @@ border: none;
 border-bottom: 2px solid black;
 width: 300px;
 height: 35px;
+&:focus {
+    outline: none; 
+    border-bottom:2px solid ${props => props.theme.colors.accent};
+  }
 `
 
 const SearchValWrapper = styled.div`

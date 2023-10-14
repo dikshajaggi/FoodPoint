@@ -11,9 +11,11 @@ import { useLocation } from 'react-router-dom';
 import { onAuthStateChanged, signOut } from 'firebase/auth'
 import { auth } from '../utilities/firebase'
 import { addUser, removeUser } from '../utilities/redux/userSlice'
+import { useTheme } from 'styled-components'
 
 
 const Header = () => {
+    const theme = useTheme()
     const { user, setUser } = useContext(UserContext)
     const context = useContext(Context)
     const location = useLocation()
@@ -33,6 +35,17 @@ const Header = () => {
 
     const allRestNames = []
     const [seachResultImg, setSeachResultImg] = useState()
+    const [isInputFocused, setInputFocused] = useState(false);
+    const iconColorOnFocus = theme.colors.accent; // Change this to your desired color
+  
+    const handleInputFocus = () => {
+      setInputFocused(true);
+    };
+  
+    const handleInputBlur = () => {
+      setInputFocused(false);
+    };
+
     restData?.filter((item) => allRestNames.push(item?.info?.name))
 
     const findMatching = () => {
@@ -117,17 +130,21 @@ const Header = () => {
         <HeaderDiv>
             <HeaderWrapper>
                 <NavbarUL>
-                    <LinkStyled to="/"><NavbarLI header="main">HOME</NavbarLI></LinkStyled>
-                    <LinkStyled to="/about"><NavbarLI header="main">ABOUT</NavbarLI></LinkStyled>
-                    <LinkStyled to="/offers"><NavbarLI header="main">OFFERS</NavbarLI></LinkStyled>
+                    <LinkStyled to="/"><NavbarLI header="main">Home</NavbarLI></LinkStyled>
+                    <LinkStyled to="/about"><NavbarLI header="main">About</NavbarLI></LinkStyled>
+                    <LinkStyled to="/offers"><NavbarLI header="main">Offers</NavbarLI></LinkStyled>
                 </NavbarUL>
                 <Logo>FoodPoint</Logo>
                 <SearchCartWrapper>
                     <SearchWrapper>
-                        <SearchBtn onClick={search}><i class="fa-solid fa-magnifying-glass"></i></SearchBtn>
-                        <Input type="search" placeholder='search for restaurants' value={searchvalue} onChange={searchrest} />
-                    </SearchWrapper>
-                    <CartWrapper>
+                        <SearchBtn onClick={search}><i class="fa-solid fa-magnifying-glass" 
+                        style={{
+                        color: isInputFocused ? iconColorOnFocus : 'black',
+                        }}></i></SearchBtn>
+                        <Input type="search" placeholder='search for restaurants' value={searchvalue} onChange={searchrest}  onFocus={handleInputFocus}
+                        onBlur={handleInputBlur}/>
+                        </SearchWrapper>
+                        <CartWrapper>
                         {user !== "" ? <LoginUser>
                             <UserInfo>
                                 <Avatar><i class="fa-solid fa-user"></i></Avatar>
@@ -140,7 +157,7 @@ const Header = () => {
                                 <p>Logout</p>
                             </UserDropdown>
                         </LoginUser> : <LinkStyled to="/login"><Username>Login</Username></LinkStyled>}
-                        <LinkStyled to="/cart"><i class="fa-sharp fa-solid fa-cart-shopping"><CartItemsLength>{items.length}</CartItemsLength></i></LinkStyled>
+                        <LinkStyled to="/cart"><i class="fa-sharp fa-solid fa-cart-shopping" style={{color: items.length === 0? "black" :theme.colors.accent, fontSize: "18px"}}><CartItemsLength style={{color: 'black'}}>{items.length}</CartItemsLength></i></LinkStyled>
                     </CartWrapper>
                 </SearchCartWrapper>
             </HeaderWrapper>

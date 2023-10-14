@@ -8,7 +8,7 @@ margin: 10px;
 
 const SpecificCardStyle= styled.div`
 margin: 20px;
-    width: 900px;
+    width: 80vw;
 `
 
 const SpecificHeading = styled.h2`

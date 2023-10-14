@@ -52,7 +52,7 @@ const Specific = () => {
                         <SpecificHeading>{info?.name}</SpecificHeading>
                         <SpecificCardSubHeading>{info?.cuisines?.join(", ")} | {info?.areaName} | <i class="fa-regular fa-star"></i>{info?.avgRating}</SpecificCardSubHeading>
                         <SpecificCardSubHeading> {available}</SpecificCardSubHeading>
-
+                        <hr></hr>
                         <MenuHeading>MENU</MenuHeading>
                         <MenuCategory>{title}</MenuCategory>
                     </>
