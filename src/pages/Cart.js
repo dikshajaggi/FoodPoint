@@ -9,7 +9,7 @@ import Checkout from "./Checkout"
 import Header from "../components/Header"
 import { database } from "../utilities/firebase"
 import { ref, remove } from "firebase/database"
-import { CartContentWrapper, CartData, CartHead, ClearCartBtn } from "./styledComponents/Cart"
+import { CartContentWrapper, CartData, CartHead, ClearCartBtn, Wrapper, EmptyCart } from "./styledComponents/Cart"
 
 
 const Cart = () => {
@@ -17,6 +17,7 @@ const Cart = () => {
     const context = useContext(Context)
     const items = useSelector((store) => store.cart.items)
     const dispatch = useDispatch()
+    const [cleared, setCleared] = useState(false)
 
     const handleclearCart = () => {
         const dataRef = ref(database, "cart_items")
@@ -24,24 +25,31 @@ const Cart = () => {
         remove(dataRef)
         context.setCartData([])
         dispatch(clearCart())
+        setCleared(true)
     }
 
     console.log(context.quantity, "quantity", context.cartData)
     return (
         <>
             <Header />
-            <CartHead>CART</CartHead>
-            <CartContentWrapper>
+            <Wrapper>
+                <CartHead>Food Cart</CartHead>
+                <ClearCartBtn onClick={handleclearCart}>Clear Cart</ClearCartBtn>
+            </Wrapper>
+            <hr></hr>
+            {cleared === false ? <CartContentWrapper>
                 {items.length !== 0 ? <>
-                    <CartData>{items.map(data => <CartDataDisplay {...data} />)}
-                        <ClearCartBtn><button onClick={handleclearCart}>Clear Cart</button></ClearCartBtn>
+                    {console.log("empty")}
+                    <CartData>
+                        {items.map(data => <CartDataDisplay {...data} />)}
                     </CartData>
                     <div><Checkout items={items} /></div>
-                </> : context.cartData ? <CartData>{context.cartData?.map(item => <CartDataDisplay {...item} />)}
-                    <ClearCartBtn><button onClick={handleclearCart}>Clear Cart</button></ClearCartBtn>
-                </CartData> : <div><h4 style={{ margin: "20px" }}>Add something</h4></div>}
-            </CartContentWrapper>
-
+                </> : <EmptyCart><h4>Add something</h4></EmptyCart>}
+                {context.cartData ? <CartData>{context.cartData?.map(item => <CartDataDisplay {...item} />)}
+                </CartData> : console.log("EMPTY")}
+            </CartContentWrapper> :
+                <EmptyCart><h4>Add something</h4></EmptyCart>
+            }
         </>
     )
 }

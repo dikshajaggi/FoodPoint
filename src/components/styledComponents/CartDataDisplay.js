@@ -26,6 +26,9 @@ const CardText = styled.div`
 const CartRemoveBtn = styled.button`
 height: 30px;
 width: 80px;
+background-color:transparent;
+border: 2px solid ${props => props.theme.colors.accent};
+border-radius:5px;
 `
 
 const DishName = styled.h2`

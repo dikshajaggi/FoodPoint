@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 const ItemAdd = styled.div`
-    width: 80vw;
+    width: 100%;
+    height: 28vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -10,15 +11,16 @@ const ItemAdd = styled.div`
     border-bottom: 1px solid rgb(104, 103, 103);
 `
 const ItemAddData = styled.div`
-    padding: 0;
-    width: 100%;
     display: flex;
+    flex:7;
+    margin-right: 3%;
+    padding: 0;
     flex-direction: column;
     justify-content: space-around;
 `
 
 const MenuDishName = styled.h2`
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 600;
 `
 
@@ -32,17 +34,24 @@ font-weight: 500;
 background-color: ${props => props.theme.colors.accent};
 `
 
+const AddBtnWrapper = styled.div`
+display:flex;
+justify-content: center;
+align-items:center;
+flex:1;
+`
+
 const SpecificCardSubHead = styled.span`
 font-weight: 600;
-font-size: 22px;
+font-size: 18px;
 `
 
 const DishImg = styled.div`
-width: 20vw;
-height:25vh;
+width: 20%;
+height:25%;
 display: flex;
 align-items: center;
 justify-content:center;
-margin-right: 3vw;
+margin-right: 3%;
 `
-export { ItemAdd, ItemAddData, MenuDishName, SpecificCardSubHead, AddDishBtn, DishImg}
+export { ItemAdd, ItemAddData, AddBtnWrapper, MenuDishName, SpecificCardSubHead, AddDishBtn, DishImg }

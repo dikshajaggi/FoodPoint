@@ -1,10 +1,11 @@
 const themes = {
-   colors : {
-    primary: "#FFFBF2",
-    secondary: "#FCC55E",
-    accent: "#FB9235"
+   colors: {
+      header: '#fff8e9',
+      primary: "#FFFBF2",
+      secondary: "#FCC55E",
+      accent: "#FB9235"
    },
-   fonts : {
+   fonts: {
 
    }
 }

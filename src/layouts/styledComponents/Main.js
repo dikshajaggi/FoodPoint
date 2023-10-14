@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 const MainWrapper = styled.div`
-background-color: ${props => props.theme.colors.primary};
+background-color: white;
 display: flex;
 flex-direction: column;
 align-items: center;

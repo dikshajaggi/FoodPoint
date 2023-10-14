@@ -4,18 +4,20 @@ import styled from "styled-components"
 const HeaderDiv = styled.div`
 display: flex;
 flex-direction: column;
+width:100%;
 `
 
 const HeaderWrapper = styled.div`
 display: flex;
 flex-direction: row;
 align-items: center;
-justify-content: space-evenly;
-width:96vw;
+justify-content: space-between;
+width:100%;
+height:10vh;
 `
 
 const Categories = styled.div`
-margin-top:4vh;
+margin:4vh 0;
 display:${props => props.display === "subHeader" ? "flex" : "none"};
 justify-content: space-evenly;
 align-items:center;
@@ -25,16 +27,25 @@ const CategoryLabel = styled.h4`
 display: ${props => props.display === "subHeader" ? "flex" : "none"};
 text-transform: capitalize;
 `
-
-const NavbarUL = styled.ul`
+const NavWrapper = styled.div`
 display: flex;
-justify-content: space-evenly;
+flex: 1;
+align-items: center;
+flex-direction: row;
+justify-content: center;
+`
+const NavbarUL = styled.ul`
+margin:auto;
+width:100%;
 list-style-type: none;
-width:33.33%;
+display:flex;
+align-items: center;
+justify-content: space-evenly;
+
 `
 
 const NavbarLI = styled.li`
-font-size: ${props => props.header === "main" ? "18px" : "14px"};
+font-size: ${props => props.header === "main" ? "16px" : "14px"};
 font-weight: 400;
 `
 
@@ -46,12 +57,13 @@ color: black;
 const SearchCartWrapper = styled.div`
     display: flex;
     justify-content: space-evenly;
-    width:33.33%;
+    flex: 1;
     align-items: center;
 `
 
 const SearchWrapper = styled.div`
  display: flex;
+ width: 60%;
 `
 
 const SearchBtn = styled.button`
@@ -66,7 +78,7 @@ const CartWrapper = styled.div`
     align-items: center;
 `
 const UserInfo = styled.div`
-    width: 200px;
+    width: auto;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -75,16 +87,18 @@ const UserDropdown = styled.div`
 position:absolute;
  display: none;
  margin-top:8vh;
- width:16vw;
- background-color:yellow; 
+ width:10%;
  text-align:center;
 `
-const Avatar = styled.button``
+const Avatar = styled.button`
+width: auto;
+background-color: transparent;
+border: none;
+`
 const Username = styled.div`
 position:relative;
 display: flex;
 flex-direction: column;
-height:8vh;
 justify-content: space-evenly;
 `
 const Account = styled.button`
@@ -93,12 +107,14 @@ const Account = styled.button`
     border: none;
     text-transform: capitalize;
     font-weight: 400;
+    font-size: 12px;
     text-align:left;
 `
 
 const Name = styled.h6`
     text-transform: capitalize;
-    font-weight: 600;
+    font-weight: 500;
+    font-size: 14px;
 `
 
 const CartItemsLength = styled.span`
@@ -114,13 +130,14 @@ const LoginUser = styled.div`
 const Input = styled.input`
 background-color:transparent;
 border: none;
-border-bottom: 2px solid black;
-width: 300px;
-height: 35px;
+border-bottom: 1px solid black;
+width: 100%;
+font-size: 14px;
 &:focus {
     outline: none; 
     border-bottom:2px solid ${props => props.theme.colors.accent};
   }
+
 `
 
 const SearchValWrapper = styled.div`
@@ -144,7 +161,10 @@ const Logo = styled.span`
 display:flex;
 justify-content: center;
 align-items:center;
-width:33.33%;
+flex: 1;
+font-weight:500;
+font-size:22px;
+color:${props => props.theme.colors.accent}
 `
 
 const NavbarULCat = styled.div`
@@ -154,4 +174,4 @@ list-style-type: none;
 width:100%;
 `
 
-export { HeaderDiv, HeaderWrapper, Categories, CategoryLabel, NavbarUL, NavbarLI, LinkStyled, SearchCartWrapper, SearchWrapper, CartWrapper, UserInfo, Avatar, Username, UserDropdown, CartItemsLength, LoginUser, Input, Name, Account, SearchListVal, SearchValWrapper, SearchValImg,Logo,SearchBtn, NavbarULCat }
+export { HeaderDiv, HeaderWrapper, Categories, CategoryLabel, NavWrapper, NavbarUL, NavbarLI, LinkStyled, SearchCartWrapper, SearchWrapper, CartWrapper, UserInfo, Avatar, Username, UserDropdown, CartItemsLength, LoginUser, Input, Name, Account, SearchListVal, SearchValWrapper, SearchValImg, Logo, SearchBtn, NavbarULCat }

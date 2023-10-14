@@ -1,23 +1,40 @@
 import styled from "styled-components";
 
 const CartHead = styled.h2`
-text-align: center;
+padding-left:6vw;
+padding-top:4vh;
+text-align: left;
+font-size: 22px;
 `
 
 const CartContentWrapper = styled.div`
 display: flex;
-    flex-wrap: wrap;
+flex-wrap: wrap;
 `
 
 const CartData = styled.div`
 width: 60%;
 `
 
-const ClearCartBtn = styled.div`
-margin-bottom: 10vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+const Wrapper = styled.div`
+margin-bottom: 2vh;
+width:100%;
+display: flex;
+justify-content: space-between;
+align-items: center;
+`
+const ClearCartBtn = styled.button`
+background-color:transparent;
+margin-top: 2vh;
+margin-right:6vw;
+border-radius:15px;
+width: 10vw;
+border: 2px solid ${props => props.theme.colors.accent}
 `
 
-export { CartHead, CartContentWrapper, CartData, ClearCartBtn}
+const EmptyCart = styled.div`
+width:90%;
+margin:auto;
+`
+
+export { CartHead, CartContentWrapper, CartData, ClearCartBtn, Wrapper, EmptyCart }

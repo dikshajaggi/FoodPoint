@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import axios from "axios"
 import "../style.css"
 import { Context } from "../utilities/context/Context"
-import { Account, Avatar, CartItemsLength, CartWrapper, Categories, CategoryLabel, HeaderDiv, HeaderWrapper, Input, LinkStyled, LoginUser, Logo, Name, NavbarLI, NavbarUL, NavbarULCat, SearchBtn, SearchCartWrapper, SearchListVal, SearchValImg, SearchValWrapper, SearchWrapper, UserDropdown, UserInfo, Username } from './styledComponents/Header'
+import { Account, Avatar, CartItemsLength, CartWrapper, Categories, CategoryLabel, HeaderDiv, HeaderWrapper, Input, LinkStyled, LoginUser, Logo, Name, NavWrapper, NavbarLI, NavbarUL, NavbarULCat, SearchBtn, SearchCartWrapper, SearchListVal, SearchValImg, SearchValWrapper, SearchWrapper, UserDropdown, UserInfo, Username } from './styledComponents/Header'
 import { data } from "../assets/data"
 import { useLocation } from 'react-router-dom';
 import { onAuthStateChanged, signOut } from 'firebase/auth'
@@ -37,13 +37,13 @@ const Header = () => {
     const [seachResultImg, setSeachResultImg] = useState()
     const [isInputFocused, setInputFocused] = useState(false);
     const iconColorOnFocus = theme.colors.accent; // Change this to your desired color
-  
+
     const handleInputFocus = () => {
-      setInputFocused(true);
+        setInputFocused(true);
     };
-  
+
     const handleInputBlur = () => {
-      setInputFocused(false);
+        setInputFocused(false);
     };
 
     restData?.filter((item) => allRestNames.push(item?.info?.name))
@@ -129,25 +129,28 @@ const Header = () => {
     return (
         <HeaderDiv>
             <HeaderWrapper>
-                <NavbarUL>
-                    <LinkStyled to="/"><NavbarLI header="main">Home</NavbarLI></LinkStyled>
-                    <LinkStyled to="/about"><NavbarLI header="main">About</NavbarLI></LinkStyled>
-                    <LinkStyled to="/offers"><NavbarLI header="main">Offers</NavbarLI></LinkStyled>
-                </NavbarUL>
+                <NavWrapper>
+                    <NavbarUL>
+                        <LinkStyled to="/"><NavbarLI header="main">Home</NavbarLI></LinkStyled>
+                        <LinkStyled to="/about"><NavbarLI header="main">About</NavbarLI></LinkStyled>
+                        <LinkStyled to="/offers"><NavbarLI header="main">Offers</NavbarLI></LinkStyled>
+                    </NavbarUL>
+                </NavWrapper>
                 <Logo>FoodPoint</Logo>
                 <SearchCartWrapper>
                     <SearchWrapper>
-                        <SearchBtn onClick={search}><i class="fa-solid fa-magnifying-glass" 
-                        style={{
-                        color: isInputFocused ? iconColorOnFocus : 'black',
-                        }}></i></SearchBtn>
-                        <Input type="search" placeholder='search for restaurants' value={searchvalue} onChange={searchrest}  onFocus={handleInputFocus}
-                        onBlur={handleInputBlur}/>
-                        </SearchWrapper>
-                        <CartWrapper>
+                        <SearchBtn onClick={search}><i class="fa-solid fa-magnifying-glass"
+                            style={{
+                                fontSize: "14px",
+                                color: isInputFocused ? iconColorOnFocus : 'black',
+                            }}></i></SearchBtn>
+                        <Input type="search" placeholder='search for restaurants' value={searchvalue} onChange={searchrest} onFocus={handleInputFocus}
+                            onBlur={handleInputBlur} />
+                    </SearchWrapper>
+                    <CartWrapper>
                         {user !== "" ? <LoginUser>
                             <UserInfo>
-                                <Avatar><i class="fa-solid fa-user"></i></Avatar>
+                                <Avatar><i class="fa-solid fa-user" style={{ fontSize: "12px" }}></i></Avatar>
                                 <Username>
                                     <Name>{user.displayName}</Name>
                                     <Account onClick={handleSignOut}>Logout</Account>
@@ -157,7 +160,7 @@ const Header = () => {
                                 <p>Logout</p>
                             </UserDropdown>
                         </LoginUser> : <LinkStyled to="/login"><Username>Login</Username></LinkStyled>}
-                        <LinkStyled to="/cart"><i class="fa-sharp fa-solid fa-cart-shopping" style={{color: items.length === 0? "black" :theme.colors.accent, fontSize: "18px"}}><CartItemsLength style={{color: 'black'}}>{items.length}</CartItemsLength></i></LinkStyled>
+                        <LinkStyled to="/cart"><i class="fa-sharp fa-solid fa-cart-shopping" style={{ color: items.length === 0 ? "black" : theme.colors.accent, fontSize: "16px" }}><CartItemsLength style={{ color: 'black', fontSize: "12px" }}>{items.length}</CartItemsLength></i></LinkStyled>
                     </CartWrapper>
                 </SearchCartWrapper>
             </HeaderWrapper>
