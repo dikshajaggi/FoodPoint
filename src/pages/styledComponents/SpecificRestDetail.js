@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 const SpecificWrapper = styled.div`
-    margin: 10px;
     display: flex;
     flex-direction: column;
     flex:1;

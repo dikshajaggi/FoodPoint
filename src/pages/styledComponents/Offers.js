@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
-const OfferWrapper= styled.div`
-margin: 10px;
+const OfferWrapper = styled.div`
 `
 
 const OfferBanner = styled.div`
@@ -23,4 +22,4 @@ const OfferCardWrapper = styled.div`
     align-items: center;
 `
 
-export {OfferWrapper, OfferBanner, CardWrapper, OfferCardWrapper}
+export { OfferWrapper, OfferBanner, CardWrapper, OfferCardWrapper }
