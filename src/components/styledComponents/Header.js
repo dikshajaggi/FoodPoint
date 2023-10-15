@@ -153,19 +153,19 @@ height:auto;
 const SearchListVal = styled.li`
 list-style-type: none;
 font-weight: 500;
-font-size:12px;
+font-size:14px;
 `
 
 const SearchValImg = styled.img`
-height:15%;
-width:15%;
+height:40%;
+width:40%;
 border-radius: 6px;
 `
 
 const SearchBarList = styled.div`
 display:flex;
 margin-left: 65%;
-width:20%;
+width:25%;
 border: 2px solid ${props => props.theme.colors.accent};
 border-radius: 10px;
 `

@@ -46,13 +46,16 @@ const Header = () => {
         setInputFocused(false);
     };
 
-    restData?.filter((item) => allRestNames.push(item?.info?.name))
 
-    const findMatching = () => {
+
+    const findMatching = (e) => {
         const matching = []
-        for (const rest of allRestNames) {
-            if (rest.toLowerCase().includes(searchvalue.toLowerCase())) matching.push(rest)
-        }
+        const value = e.target.value
+        console.log(value, "eeeeeeeeee")
+        restData?.filter((item) => {
+            console.log(item?.info?.name.toLowerCase(), value.toLowerCase(), "item?.info?.name")
+            if (item?.info?.name.toLowerCase() === value.toLowerCase()) matching.push(item.info)
+        })
         console.log(matching, "matchingRest")
         setMatchingRest(matching)
         // restData?.map(item => {
@@ -81,8 +84,9 @@ const Header = () => {
 
     const searchrest = (e) => {
         const restSearch = e.target.value
+        console.log(e.target.value, "checking search", restSearch)
         setSearchvalue(restSearch)
-        findMatching()
+        findMatching(e)
         if (restSearch === "") context.setFilteredData(restData)
     }
 
@@ -170,8 +174,8 @@ const Header = () => {
                     {matchingRest.map(item => {
                         return (
                             <SearchValWrapper onClick={searchRestWithList}>
-                                {/* <SearchValImg src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" + seachResultImg} alt="" /> */}
-                                <SearchListVal>{item}</SearchListVal>
+                                <SearchValImg src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" + item.cloudinaryImageId} alt="" />
+                                <SearchListVal>{item.name}</SearchListVal>
                             </SearchValWrapper>
                         )
                     })}
