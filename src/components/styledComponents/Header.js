@@ -144,21 +144,32 @@ font-size: 14px;
 
 const SearchValWrapper = styled.div`
 display:flex;
-justify-content: space-evenly;
+justify-content: space-between;
 align-items:center;
-background-color: yellow;
 cursor:pointer;
+padding:1vh;
+height:auto;
 `
 const SearchListVal = styled.li`
 list-style-type: none;
 font-weight: 500;
+font-size:12px;
 `
 
 const SearchValImg = styled.img`
-height:10%;
-width:10%;
+height:15%;
+width:15%;
 border-radius: 6px;
 `
+
+const SearchBarList = styled.div`
+display:flex;
+margin-left: 65%;
+width:20%;
+border: 2px solid ${props => props.theme.colors.accent};
+border-radius: 10px;
+`
+
 const Logo = styled.span`
 display:flex;
 justify-content: center;
@@ -176,4 +187,4 @@ list-style-type: none;
 width:100%;
 `
 
-export { HeaderDiv, HeaderWrapper, Categories, CategoryLabel, NavWrapper, NavbarUL, NavbarLI, LinkStyled, SearchCartWrapper, SearchWrapper, CartWrapper, UserInfo, Avatar, Username, UserDropdown, CartItemsLength, LoginUser, Input, Name, Account, SearchListVal, SearchValWrapper, SearchValImg, Logo, SearchBtn, NavbarULCat }
+export { HeaderDiv, HeaderWrapper, Categories, CategoryLabel, NavWrapper, NavbarUL, NavbarLI, LinkStyled, SearchCartWrapper, SearchWrapper, SearchBarList, CartWrapper, UserInfo, Avatar, Username, UserDropdown, CartItemsLength, LoginUser, Input, Name, Account, SearchListVal, SearchValWrapper, SearchValImg, Logo, SearchBtn, NavbarULCat }

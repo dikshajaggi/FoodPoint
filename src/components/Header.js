@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import axios from "axios"
 import "../style.css"
 import { Context } from "../utilities/context/Context"
-import { Account, Avatar, CartItemsLength, CartWrapper, Categories, CategoryLabel, HeaderDiv, HeaderWrapper, Input, LinkStyled, LoginUser, Logo, Name, NavWrapper, NavbarLI, NavbarUL, NavbarULCat, SearchBtn, SearchCartWrapper, SearchListVal, SearchValImg, SearchValWrapper, SearchWrapper, UserDropdown, UserInfo, Username } from './styledComponents/Header'
+import { Account, Avatar, CartItemsLength, CartWrapper, Categories, CategoryLabel, HeaderDiv, HeaderWrapper, Input, LinkStyled, LoginUser, Logo, Name, NavWrapper, NavbarLI, NavbarUL, NavbarULCat, SearchBarList, SearchBtn, SearchCartWrapper, SearchListVal, SearchValImg, SearchValWrapper, SearchWrapper, UserDropdown, UserInfo, Username } from './styledComponents/Header'
 import { data } from "../assets/data"
 import { useLocation } from 'react-router-dom';
 import { onAuthStateChanged, signOut } from 'firebase/auth'
@@ -36,8 +36,8 @@ const Header = () => {
     const allRestNames = []
     const [seachResultImg, setSeachResultImg] = useState()
     const [isInputFocused, setInputFocused] = useState(false);
-    const iconColorOnFocus = theme.colors.accent; // Change this to your desired color
-
+    const [filterSelected, setFilterSelected] = useState("relevance")
+    const iconColorOnFocus = theme.colors.accent;
     const handleInputFocus = () => {
         setInputFocused(true);
     };
@@ -55,9 +55,9 @@ const Header = () => {
         }
         console.log(matching, "matchingRest")
         setMatchingRest(matching)
-        restData?.map(item => {
-            if (item?.info?.name === matching.toString()) setSeachResultImg(item?.info?.cloudinaryImageId)
-        })
+        // restData?.map(item => {
+        //     if (item?.info?.name === matching.toString()) setSeachResultImg(item?.info?.cloudinaryImageId)
+        // })
     }
 
     useEffect(() => {
@@ -92,6 +92,7 @@ const Header = () => {
     }
 
     const setFilterOnClick = (filter) => {
+        setFilterSelected(filter)
         context.setFilter(filter)
     }
 
@@ -131,9 +132,9 @@ const Header = () => {
             <HeaderWrapper>
                 <NavWrapper>
                     <NavbarUL>
-                        <LinkStyled to="/"><NavbarLI header="main">Home</NavbarLI></LinkStyled>
-                        <LinkStyled to="/about"><NavbarLI header="main">About</NavbarLI></LinkStyled>
-                        <LinkStyled to="/offers"><NavbarLI header="main">Offers</NavbarLI></LinkStyled>
+                        <LinkStyled to="/" style={{ color: window.location.pathname === "/" ? theme.colors.accent : "black" }}><NavbarLI header="main">Home</NavbarLI></LinkStyled>
+                        <LinkStyled to="/about" style={{ color: window.location.pathname === "/about" ? theme.colors.accent : "black" }}><NavbarLI header="main">About</NavbarLI></LinkStyled>
+                        <LinkStyled to="/offers" style={{ color: window.location.pathname === "/offers" ? theme.colors.accent : "black" }}><NavbarLI header="main">Offers</NavbarLI></LinkStyled>
                     </NavbarUL>
                 </NavWrapper>
                 <Logo>FoodPoint</Logo>
@@ -164,27 +165,25 @@ const Header = () => {
                     </CartWrapper>
                 </SearchCartWrapper>
             </HeaderWrapper>
-            <div>
-                {searchvalue !== "" ? matchingRest.length !== 0 ? closeSearchList ? null : <ul>
+            {searchvalue !== "" ? matchingRest.length !== 0 ? closeSearchList ? null : <SearchBarList>
+                <ul>
                     {matchingRest.map(item => {
                         return (
                             <SearchValWrapper onClick={searchRestWithList}>
-                                {console.log(seachResultImg, "seachResultImg")}
-                                <SearchValImg src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" + seachResultImg} alt="" />
+                                {/* <SearchValImg src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" + seachResultImg} alt="" /> */}
                                 <SearchListVal>{item}</SearchListVal>
                             </SearchValWrapper>
                         )
                     })}
-                </ul> : <span> no results found </span> : null}
+                </ul> </SearchBarList> : <span> no results found </span> : null}
 
-            </div>
             <Categories display={linkInfo}>
                 <NavbarULCat>
-                    <LinkStyled to="/"><NavbarLI header="sub" onClick={() => { setFilterOnClick("relevance") }}>RELEVANCE</NavbarLI></LinkStyled>
-                    <LinkStyled to="/rating"><NavbarLI header="sub" onClick={() => { setFilterOnClick("rating") }}>RATING</NavbarLI></LinkStyled>
-                    <LinkStyled to="/delivery-time"><NavbarLI header="sub" onClick={() => { setFilterOnClick("delivery-time") }}>DELIVERY TIME</NavbarLI></LinkStyled>
-                    <LinkStyled to="/cost-low-to-high"><NavbarLI header="sub" onClick={() => { setFilterOnClick("cost-low-to-high") }}>COST: LOW TO HIGH</NavbarLI></LinkStyled>
-                    <LinkStyled to="/cost-high-to-low"><NavbarLI header="sub" onClick={() => { setFilterOnClick("cost-high-to-low") }}>COST: HIGH TO LOW</NavbarLI></LinkStyled>
+                    <LinkStyled to="/" style={{ color: filterSelected === "relevance" ? theme.colors.accent : "black" }}><NavbarLI header="sub" onClick={() => { setFilterOnClick("relevance") }}>RELEVANCE</NavbarLI></LinkStyled>
+                    <LinkStyled to="/rating" style={{ color: filterSelected === "rating" ? theme.colors.accent : "black" }}><NavbarLI header="sub" onClick={() => { setFilterOnClick("rating") }}>RATING</NavbarLI></LinkStyled>
+                    <LinkStyled to="/delivery-time" style={{ color: filterSelected === "delivery-time" ? theme.colors.accent : "black" }}><NavbarLI header="sub" onClick={() => { setFilterOnClick("delivery-time") }}>DELIVERY TIME</NavbarLI></LinkStyled>
+                    <LinkStyled to="/cost-low-to-high" style={{ color: filterSelected === "cost-low-to-high" ? theme.colors.accent : "black" }}><NavbarLI header="sub" onClick={() => { setFilterOnClick("cost-low-to-high") }}>COST: LOW TO HIGH</NavbarLI></LinkStyled>
+                    <LinkStyled to="/cost-high-to-low" style={{ color: filterSelected === "cost-high-to-low" ? theme.colors.accent : "black" }}><NavbarLI header="sub" onClick={() => { setFilterOnClick("cost-high-to-low") }}>COST: HIGH TO LOW</NavbarLI></LinkStyled>
                 </NavbarULCat>
             </Categories>
             <CategoryLabel display={linkInfo} >{context.filter}</CategoryLabel>
