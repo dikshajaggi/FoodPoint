@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+const CartWrapper = styled.div`
+height:100vh;
+`
+
 const CartHead = styled.h2`
 padding-left:6vw;
 padding-top:4vh;
@@ -37,4 +41,4 @@ width:90%;
 margin:auto;
 `
 
-export { CartHead, CartContentWrapper, CartData, ClearCartBtn, Wrapper, EmptyCart }
+export { CartHead, CartContentWrapper, CartData, ClearCartBtn, Wrapper, EmptyCart, CartWrapper }
