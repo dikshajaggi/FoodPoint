@@ -5,25 +5,30 @@ import { useDispatch } from 'react-redux'
 
 const QuantityIncDec = (props) => {
     const context = useContext(Context)
-    const dispatch = useDispatch()
-    let itemRemoved = ""
     const [quantity, setQuantity] = useState(1)
 
     const increase = (id) => {
-        console.log("context quantity inc")
+        context.quantity.filter(item => {
+            if (item.id === id) item.qty = item.qty + 1
+        })
         setQuantity(quantity + 1)
-        context.setQuantity(prev => [...prev, id])
+        console.log(context.quantity, "checking cart quantity")
+        // context.setQuantity(prev => [...prev, id])
     }
     const decrease = (id) => {
+        context.quantity.filter(item => {
+            if (item.id === id) item.qty = item.qty - 1
+        })
         setQuantity(quantity - 1)
-        console.log(context.quantity, "context quantity", quantity - 1)
-        const matchingOptions = context.quantity.filter(item => item === id)
-        console.log(matchingOptions, "context quantity matching")
+        console.log(context.quantity, "checking cart quantity")
 
-        if (matchingOptions.length > 0) {
-            const index = context.quantity.indexOf(id)
-            context.quantity.splice(index, 1)
-        }
+        // const matchingOptions = context.quantity.filter(item => item === id)
+        // console.log(matchingOptions, "context quantity matching")
+
+        // if (matchingOptions.length > 0) {
+        //     const index = context.quantity.indexOf(id)
+        //     context.quantity.splice(index, 1)
+        // }
     }
     return (
         <div className='quantityIncDec'>
