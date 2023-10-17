@@ -20,8 +20,9 @@ const SpecificCard = (props) => {
         const newRef = push(ref(database, "cart_items"))
         set(newRef, data)
         dispatch(addItems(data))
-        context.setQuantity(prev => [...prev, id])
+        context.setQuantity(prev => [...prev, {id: id, qty:1}])
     }
+    console.log(context.quantity, "set qty check")
     return (
         <ItemAdd>
             <DishImg> <img src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_150,h_150,c_fit/${imageId}`} alt="" /> </DishImg>

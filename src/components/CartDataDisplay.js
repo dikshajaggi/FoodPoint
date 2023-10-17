@@ -1,4 +1,4 @@
-import { useContext } from "react"
+import { useContext, useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import "../style.css"
 import { Context } from "../utilities/context/Context"
@@ -12,12 +12,20 @@ const CartDataDisplay = (props) => {
     const dispatch = useDispatch()
     const context = useContext(Context)
     const items = useSelector(store => store.cart.items)
+    const [qty, setQty] = useState(null)
 
     const handleRemoveItem = (id) => {
         dispatch(removeItem(items.filter((item) => item.id !== id)))
     }
 
-    console.log(context.quantity, "context quantity cart")
+    useEffect(() => {
+        context.quantity.filter((item) =>  {
+            if (item.id === id) {
+                setQty(item.qty)
+            }
+        })
+    }, [])
+
 
     return (
         <>
@@ -26,7 +34,7 @@ const CartDataDisplay = (props) => {
                 <CardText>
                     <DishName>{name}</DishName>
                     <h2 style={{fontSize: "18px"}}>Rs. {(price) / 100}</h2>
-                    <h2 style={{fontSize: "18px"}}>Qty: {context.quantity.filter((item) => id === item).length}</h2>
+                    <h2 style={{fontSize: "18px"}}>Qty: {qty}</h2>
                     <CartRemoveBtn onClick={() => handleRemoveItem(id)}>Remove</CartRemoveBtn>
                 </CardText>
             </CardCart>
