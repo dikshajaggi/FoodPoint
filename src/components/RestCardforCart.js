@@ -20,7 +20,7 @@ const SpecificCard = (props) => {
         const newRef = push(ref(database, "cart_items"))
         set(newRef, data)
         dispatch(addItems(data))
-        context.setQuantity(prev => [...prev, {id: id, qty:1}])
+        context.setQuantity(prev => [...prev, { id: id, qty: 1 }])
     }
     console.log(context.quantity, "set qty check")
     return (
