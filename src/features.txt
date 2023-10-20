@@ -50,7 +50,7 @@ categories -> RATING, COST ETC
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 issue -> items getting added twice 
-because on switching pages the quantity icons gets switched to "Add"
+because on switching pages the quantity icons gets switched to "Add" (resolved)
 
 qty of items in cart, when data is loded from database
 remove spcific items from cart -> working fine but update the removed item in database
@@ -86,4 +86,7 @@ once the user logs in aur signs up => store all the data in Redux store
 
 -------------------------------------------------------
 
-CREATE SEPARATEN COMPONENT FOR SEARCH
+CREATE SEPARATE COMPONENT FOR SEARCH
+
+when cart is cleared or a specific item is removed make sure to set the quantity to zero (show add btn)
+in the add to cart page
