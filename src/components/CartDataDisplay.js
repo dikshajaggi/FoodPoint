@@ -15,6 +15,9 @@ const CartDataDisplay = (props) => {
     const [qty, setQty] = useState(null)
 
     const handleRemoveItem = (id) => {
+        context.quantity.map(item => {
+                if (item.id === id) item.qty = 0
+            })
         dispatch(removeItem(items.filter((item) => item.id !== id)))
     }
 

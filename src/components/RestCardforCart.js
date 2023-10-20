@@ -23,18 +23,27 @@ const SpecificCard = (props) => {
     }
 
     const idArray = []
-    if (context.quantity.length !== 0) context.quantity.map(item => {
+    if (context.quantity?.length !== 0) context.quantity.map(item => {
         idArray.push(item.id)
     })
 
     console.log(id, idArray, "checking id array")
 
     useEffect(() => {
-        // console.log("checking item quantity", context.quantity)
+        console.log("checking item quantity", context.quantity)
         if (context.quantity.length !== 0) {
-            context.quantity?.map(item => console.log(item.id === id, "checking item quantity", id))
             setFlag(1)
         }
+        if (context.quantity.length === 0) {
+            setFlag(0)
+        }
+        context.quantity.map(item => {
+            if (item.id === id) {
+                if(item.qty === 0) {
+                    setFlag(0)
+                }
+            }
+        })
     }, [])
 
     return (
