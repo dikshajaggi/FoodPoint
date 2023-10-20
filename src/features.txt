@@ -60,7 +60,7 @@ feature to inc/dec qty on cart page also, and remove item when qty is reduced to
 
 MAKE SURE THAT WHEN USER HAVE SEARCHED A PARTICULAR REST, THEY SHOULD GET SUGGESTIONS FOR SIMILAR REST
 
-
+SHOW PASSWORD OPTION
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 -----------------------------------
 issues fixed

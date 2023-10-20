@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 const CartWrapper = styled.div`
-height:100vh;
+height:auto;
+position: relative
 `
 
 const CartHead = styled.h2`
@@ -38,6 +39,7 @@ border: 2px solid ${props => props.theme.colors.accent}
 
 const EmptyCart = styled.div`
 width:90%;
+height:50vh;
 margin:auto;
 `
 

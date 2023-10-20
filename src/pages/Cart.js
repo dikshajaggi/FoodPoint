@@ -31,7 +31,7 @@ const Cart = () => {
 
     console.log(context.quantity, "quantity", context.cartData)
     return (
-        <>
+        <div>
             <Header />
             <CartWrapper>
                 <Wrapper>
@@ -54,7 +54,7 @@ const Cart = () => {
                 }
             </CartWrapper>
             <Footer />
-        </>
+        </div>
     )
 }
 export default Cart

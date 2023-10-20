@@ -19,7 +19,7 @@ const CartDataDisplay = (props) => {
     }
 
     useEffect(() => {
-        context.quantity.filter((item) =>  {
+        context.quantity.filter((item) => {
             if (item.id === id) {
                 setQty(item.qty)
             }
@@ -33,8 +33,8 @@ const CartDataDisplay = (props) => {
                 <DishImgCart src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" + imageId} alt="/" />
                 <CardText>
                     <DishName>{name}</DishName>
-                    <h2 style={{fontSize: "18px"}}>Rs. {(price) / 100}</h2>
-                    <h2 style={{fontSize: "18px"}}>Qty: {qty}</h2>
+                    <h2 style={{ fontSize: "18px" }}>Rs. {(price) / 100}</h2>
+                    <h2 style={{ fontSize: "18px" }}>Qty: {qty}</h2>
                     <CartRemoveBtn onClick={() => handleRemoveItem(id)}>Remove</CartRemoveBtn>
                 </CardText>
             </CardCart>
