@@ -4,6 +4,7 @@ import "../style.css"
 import { Context } from "../utilities/context/Context"
 import { removeItem } from '../utilities/redux/cartSlice'
 import { CardCart, CardText, CartRemoveBtn, DishImgCart, DishName } from "./styledComponents/CartDataDisplay"
+import QuantityIncDec from "../utilities/helperComponents/QuantityIncDec"
 
 
 const CartDataDisplay = (props) => {
@@ -27,6 +28,7 @@ const CartDataDisplay = (props) => {
                 setQty(item.qty)
             }
         })
+        console.log(id, name, context.quantity, "checking cart items quantity")
     }, [])
 
 
@@ -38,6 +40,7 @@ const CartDataDisplay = (props) => {
                     <DishName>{name}</DishName>
                     <h2 style={{ fontSize: "18px" }}>Rs. {(price) / 100}</h2>
                     <h2 style={{ fontSize: "18px" }}>Qty: {qty}</h2>
+                    <QuantityIncDec id={id} qty={qty} />
                     <CartRemoveBtn onClick={() => handleRemoveItem(id)}>Remove</CartRemoveBtn>
                 </CardText>
             </CardCart>

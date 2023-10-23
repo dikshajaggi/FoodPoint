@@ -27,8 +27,6 @@ const SpecificCard = (props) => {
         idArray.push(item.id)
     })
 
-    console.log(id, idArray, "checking id array")
-
     useEffect(() => {
         console.log("checking item quantity", context.quantity)
         if (context.quantity.length !== 0) {
