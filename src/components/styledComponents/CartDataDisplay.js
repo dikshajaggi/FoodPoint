@@ -29,6 +29,7 @@ width: 80px;
 background-color:transparent;
 border: 2px solid ${props => props.theme.colors.accent};
 border-radius:5px;
+margin-top: 1vh;
 `
 
 const DishName = styled.h2`

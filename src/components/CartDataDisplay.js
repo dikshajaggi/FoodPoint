@@ -17,8 +17,8 @@ const CartDataDisplay = (props) => {
 
     const handleRemoveItem = (id) => {
         context.quantity.map(item => {
-                if (item.id === id) item.qty = 0
-            })
+            if (item.id === id) item.qty = 0
+        })
         dispatch(removeItem(items.filter((item) => item.id !== id)))
     }
 
@@ -28,9 +28,7 @@ const CartDataDisplay = (props) => {
                 setQty(item.qty)
             }
         })
-        console.log(id, name, context.quantity, "checking cart items quantity")
     }, [])
-
 
     return (
         <>
@@ -39,7 +37,6 @@ const CartDataDisplay = (props) => {
                 <CardText>
                     <DishName>{name}</DishName>
                     <h2 style={{ fontSize: "18px" }}>Rs. {(price) / 100}</h2>
-                    <h2 style={{ fontSize: "18px" }}>Qty: {qty}</h2>
                     <QuantityIncDec id={id} qty={qty} />
                     <CartRemoveBtn onClick={() => handleRemoveItem(id)}>Remove</CartRemoveBtn>
                 </CardText>
