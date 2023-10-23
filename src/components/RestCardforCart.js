@@ -13,6 +13,8 @@ const SpecificCard = (props) => {
     const context = useContext(Context)
     const dispatch = useDispatch()
     const [flag, setFlag] = useState(0)
+    const [qty, setQty] = useState()
+
 
     const addItemToCart = async (data) => {
         setFlag(1)
@@ -28,7 +30,6 @@ const SpecificCard = (props) => {
     })
 
     useEffect(() => {
-        console.log("checking item quantity", context.quantity)
         if (context.quantity.length !== 0) {
             setFlag(1)
         }
@@ -37,24 +38,27 @@ const SpecificCard = (props) => {
         }
         context.quantity.map(item => {
             if (item.id === id) {
-                if(item.qty === 0) {
+                if (item.qty === 0) {
                     setFlag(0)
                 }
             }
         })
-    }, [])
+        context.quantity.filter(item => {
+            if (item.id === id) setQty(item.qty)
+        })
+    }, [context.quantity])
 
     return (
         <ItemAdd>
             <DishImg> <img src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_150,h_150,c_fit/${imageId}`} alt="" /> </DishImg>
             <ItemAddData>
-                <MenuDishName>{name} {id}</MenuDishName>
+                <MenuDishName>{name}</MenuDishName>
                 <h2><SpecificCardSubHead>{itemAttribute.vegClassifier} | {category} </SpecificCardSubHead></h2>
                 {price ? <h2 style={{ fontSize: "18px" }}><SpecificCardSubHead>Price: </SpecificCardSubHead> Rs.{(price) / 100}</h2> : <h2 style={{ fontSize: "18px" }}><SpecificCardSubHead>Price: </SpecificCardSubHead> Rs.{(defaultPrice) / 100}</h2>}
                 <h2 style={{ fontSize: "14px" }}>{description?.slice(0, 200)}...</h2>
             </ItemAddData>
             <AddBtnWrapper>
-                {flag === 0 ? <AddDishBtn onClick={() => addItemToCart(props)}>ADD</AddDishBtn> : idArray.includes(id) ? <QuantityIncDec id={id} /> : <AddDishBtn onClick={() => addItemToCart(props)}>ADD</AddDishBtn>}
+                {flag === 0 ? <AddDishBtn onClick={() => addItemToCart(props)}>ADD</AddDishBtn> : idArray.includes(id) ? <QuantityIncDec id={id} qty={qty} /> : <AddDishBtn onClick={() => addItemToCart(props)}>ADD</AddDishBtn>}
             </AddBtnWrapper>
         </ItemAdd>
     )

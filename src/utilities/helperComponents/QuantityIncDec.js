@@ -8,6 +8,7 @@ const QuantityIncDec = (props) => {
     const check = context.quantity.map(item => item.id)
     const [quantity, setQuantity] = useState(props.qty !== undefined ? props.qty : 1)
 
+    console.log(quantity, "quantity", props.qty)
     const increase = (id) => {
         context.quantity.filter(item => {
             if (item.id === id) item.qty = item.qty + 1
@@ -22,9 +23,9 @@ const QuantityIncDec = (props) => {
     }
 
     useEffect(() => {
-       if (props.qty !== undefined) setQuantity(props.qty)
+        if (props.qty !== undefined) setQuantity(props.qty)
     }, [props.qty])
-    
+
     return (
         <div className='quantityIncDec'>
             {console.log("inc dec component")}
