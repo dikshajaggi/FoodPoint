@@ -1,11 +1,13 @@
 import React, { useContext, useEffect, useState } from 'react'
 import "./helperStyles.css"
 import { Context } from '../context/Context'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { removeItem } from '../redux/cartSlice'
 
 const QuantityIncDec = (props) => {
     const context = useContext(Context)
-    const check = context.quantity.map(item => item.id)
+    const items = useSelector(store => store.cart.items)
+    const dispatch = useDispatch()
     const [quantity, setQuantity] = useState(props.qty !== undefined ? props.qty : 1)
 
     console.log(quantity, "quantity", props.qty)
@@ -19,7 +21,8 @@ const QuantityIncDec = (props) => {
         context.quantity.filter(item => {
             if (item.id === id) item.qty = item.qty - 1
         })
-        setQuantity(quantity - 1)
+        if (quantity !== 0) setQuantity(quantity - 1)
+        else setQuantity(0)
     }
 
     useEffect(() => {

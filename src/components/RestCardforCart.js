@@ -31,18 +31,20 @@ const SpecificCard = (props) => {
 
     useEffect(() => {
         if (context.quantity.length !== 0) {
-            setFlag(1)
+            context.quantity.map(item => {
+                if (item.id === id) if (item.qty === 0) setFlag(0); else setFlag(1)
+            })
         }
         if (context.quantity.length === 0) {
             setFlag(0)
         }
-        context.quantity.map(item => {
-            if (item.id === id) {
-                if (item.qty === 0) {
-                    setFlag(0)
-                }
-            }
-        })
+        // context.quantity.map(item => {
+        //     if (item.id === id) {
+        //         if (item.qty === 0) {
+        //             setFlag(0)
+        //         }
+        //     }
+        // })
         context.quantity.filter(item => {
             if (item.id === id) setQty(item.qty)
         })

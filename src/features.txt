@@ -90,3 +90,11 @@ CREATE SEPARATE COMPONENT FOR SEARCH
 
 when cart is cleared or a specific item is removed make sure to set the quantity to zero (show add btn)
 in the add to cart page
+
+
+ISSUES
+
+WHEN QTY IS REDUCED TO ZERO IN CART, UPDATE IT IN CHECKOUT
+
+WHEN AN ITEM IS REMOVE FROM CART AND USER IS TRYING TO ADD IT AGAIN, IT IS 
+NOT SHOWING QTY INC DEC BTN (BUT ITEM IS BEING ADDED)  ((FIXED !!!!!!!!!))
