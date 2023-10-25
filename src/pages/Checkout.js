@@ -31,7 +31,7 @@ const Checkout = () => {
                 <TotalLabels>Total Items : <span style={{ fontWeight: 400 }}>{totalItems}</span></TotalLabels>
                 <TotalLabels>Total Price : <span style={{ fontWeight: 400 }}>{totalPrice}</span></TotalLabels>
             </TotalWrapper>
-            {username.user !== "" ? <LinkStyled to="/payment"><CheckoutBtn>Checkout</CheckoutBtn></LinkStyled> : <LinkStyled to="/login"><button>Checkout</button></LinkStyled>}
+            {username.user !== "" ? <LinkStyled to="/payment"><CheckoutBtn>Checkout</CheckoutBtn></LinkStyled> : <LinkStyled to="/login"><CheckoutBtn>Checkout</CheckoutBtn></LinkStyled>}
         </CheckoutWrapper>
     )
 }
