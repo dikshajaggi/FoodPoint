@@ -1,6 +1,5 @@
 import { useContext, useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { Link } from "react-router-dom"
 import { UserContext } from "../utilities/context/UserContext"
 import CartDataDisplay from "../components/CartDataDisplay"
 import { clearCart } from '../utilities/redux/cartSlice'
@@ -30,7 +29,6 @@ const Cart = () => {
         setCleared(true)
     }
 
-    console.log(context.quantity, "quantity", context.cartData)
     return (
         <div>
             <Header />
@@ -42,14 +40,13 @@ const Cart = () => {
                 <hr></hr>
                 {cleared === false ? <CartContentWrapper>
                     {items.length !== 0 ? <>
-                        {console.log("empty")}
                         <CartData>
                             {items.map(data => <CartDataDisplay {...data} />)}
                         </CartData>
-                        <div><Checkout items={items} /></div>
+                        <div><Checkout /></div>
                     </> : <EmptyCart><h4>Add something</h4></EmptyCart>}
                     {context.cartData ? <CartData>{context.cartData?.map(item => <CartDataDisplay {...item} />)}
-                    </CartData> : console.log("EMPTY")}
+                    </CartData> : null}
                 </CartContentWrapper> :
                     <EmptyCart><h4>Add something</h4></EmptyCart>
                 }

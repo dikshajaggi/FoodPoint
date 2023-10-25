@@ -15,6 +15,7 @@ const ContextProvider = (props) => {
     const [filter, setFilter] = useState("relevance")
     const [filteredData, setFilteredData] = useState(restData)
     const [cartData, setCartData] = useState([])
+    const [qtyCheck, setQtyCheck] = useState(0)
     const dispatch = useDispatch()
 
     useEffect(() => {
@@ -54,7 +55,9 @@ const ContextProvider = (props) => {
                 filteredData,
                 setFilteredData,
                 cartData,
-                setCartData
+                setCartData,
+                qtyCheck,
+                setQtyCheck
             }}
         >
             {props.children}

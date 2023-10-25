@@ -37,7 +37,7 @@ const CartDataDisplay = (props) => {
                 <CardText>
                     <DishName>{name}</DishName>
                     <h2 style={{ fontSize: "18px" }}>Rs. {(price) / 100}</h2>
-                    <QuantityIncDec id={id} qty={qty} />
+                    <QuantityIncDec id={id} qty={qty} name={name} price={price / 100} />
                     <CartRemoveBtn onClick={() => handleRemoveItem(id)}>Remove</CartRemoveBtn>
                 </CardText>
             </CardCart>

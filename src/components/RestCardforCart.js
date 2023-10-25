@@ -8,7 +8,6 @@ import { database } from "../utilities/firebase/index"
 import { push, ref, set } from '@firebase/database'
 
 const SpecificCard = (props) => {
-    console.log(props, "props")
     const { name, defaultPrice, price, description, id, itemAttribute, imageId, category } = props
     const context = useContext(Context)
     const dispatch = useDispatch()
@@ -21,7 +20,7 @@ const SpecificCard = (props) => {
         const newRef = push(ref(database, "cart_items"))
         set(newRef, data)
         dispatch(addItems(data))
-        context.setQuantity(prev => [...prev, { id: id, qty: 1 }])
+        context.setQuantity(prev => [...prev, { id: id, qty: 1, name: name, price: price / 100 }])
     }
 
     const idArray = []
@@ -38,13 +37,6 @@ const SpecificCard = (props) => {
         if (context.quantity.length === 0) {
             setFlag(0)
         }
-        // context.quantity.map(item => {
-        //     if (item.id === id) {
-        //         if (item.qty === 0) {
-        //             setFlag(0)
-        //         }
-        //     }
-        // })
         context.quantity.filter(item => {
             if (item.id === id) setQty(item.qty)
         })

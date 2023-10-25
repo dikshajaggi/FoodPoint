@@ -1,29 +1,35 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { UserContext } from '../utilities/context/UserContext'
 import { Context } from '../utilities/context/Context'
 import { LinkStyled } from '../components/styledComponents/Header'
+import _ from 'lodash'
 import { CheckoutBtn, CheckoutLabel, CheckoutWrapper, TotalLabels, TotalWrapper } from './styledComponents/Checkout'
 
-const Checkout = (props) => {
+const Checkout = () => {
     const username = useContext(UserContext)
     const context = useContext(Context)
-    const qty = context.quantity.filter((item) => props.id === item.id).length
-    const total = []
-    console.log(qty, "context.quantity.qty")
-    props.items.map(item => total.push(item.price / 100))
-    let sum = 0
-    for (let i = 0; i < total.length; i++) {
-        sum += total[i];
-    }
+    const [items, setItems] = useState(context.quantity.map(item => item.qty))
+    const [totalItems, setTotalItems] = useState(_.sum(items))
+    const [price, setPrice] = useState(context.quantity.map(item => item.price))
+    const [totalPrice, setTotalPrice] = useState(_.sum(price))
+
+    useEffect(() => {
+        const price_current = context.quantity.map(item => item.price)
+        const items_current = context.quantity.map(item => item.qty)
+        setItems(context.quantity.map(item => item.qty))
+        setTotalItems(_.sum(items_current))
+        setPrice(context.quantity.map(item => item.price))
+        setTotalPrice(_.sum(price_current))
+    }, [context.qtyCheck])
 
     return (
         <CheckoutWrapper>
             <CheckoutLabel>Checkout</CheckoutLabel>
             <br></br>
             <TotalWrapper>
-                <TotalLabels>Total items: <span style={{ fontWeight: 400 }}>{total.length}</span></TotalLabels>
-                <TotalLabels>Total : <span style={{ fontWeight: 400 }}>{sum.toFixed(2)}</span></TotalLabels>
+                <TotalLabels>Total Items : <span style={{ fontWeight: 400 }}>{totalItems}</span></TotalLabels>
+                <TotalLabels>Total Price : <span style={{ fontWeight: 400 }}>{totalPrice}</span></TotalLabels>
             </TotalWrapper>
             {username.user !== "" ? <LinkStyled to="/payment"><CheckoutBtn>Checkout</CheckoutBtn></LinkStyled> : <LinkStyled to="/login"><button>Checkout</button></LinkStyled>}
         </CheckoutWrapper>
