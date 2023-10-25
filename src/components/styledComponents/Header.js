@@ -21,6 +21,8 @@ margin:4vh 0;
 display:${props => props.display === "subHeader" ? "flex" : "none"};
 justify-content: space-evenly;
 align-items:center;
+position: relative;
+z-index: 1;
 `
 
 const CategoryLabel = styled.h4`
@@ -164,10 +166,14 @@ border-radius: 6px;
 
 const SearchBarList = styled.div`
 display:flex;
+background-color: white;
 margin-left: 65%;
+margin-top:4%;
 width:25%;
-border: 2px solid ${props => props.theme.colors.accent};
+border: 3px solid ${props => props.theme.colors.accent};
 border-radius: 10px;
+position: absolute;
+z-index:2;
 `
 
 const Logo = styled.span`

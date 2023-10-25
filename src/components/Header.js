@@ -46,21 +46,16 @@ const Header = () => {
         setInputFocused(false);
     };
 
-
-
     const findMatching = (e) => {
         const matching = []
         const value = e.target.value
         console.log(value, "eeeeeeeeee")
         restData?.filter((item) => {
             console.log(item?.info?.name.toLowerCase(), value.toLowerCase(), "item?.info?.name")
-            if (item?.info?.name.toLowerCase() === value.toLowerCase()) matching.push(item.info)
+            if (item?.info?.name.toLowerCase().includes(value.toLowerCase())) matching.push(item.info)
         })
         console.log(matching, "matchingRest")
         setMatchingRest(matching)
-        // restData?.map(item => {
-        //     if (item?.info?.name === matching.toString()) setSeachResultImg(item?.info?.cloudinaryImageId)
-        // })
     }
 
     useEffect(() => {
@@ -83,6 +78,8 @@ const Header = () => {
     }
 
     const searchrest = (e) => {
+        setCloseSearchList(false)
+
         const restSearch = e.target.value
         console.log(e.target.value, "checking search", restSearch)
         setSearchvalue(restSearch)
@@ -174,12 +171,12 @@ const Header = () => {
                     {matchingRest.map(item => {
                         return (
                             <SearchValWrapper onClick={searchRestWithList}>
-                                <SearchValImg src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" + item.cloudinaryImageId} alt="" />
+                                {/* <SearchValImg src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" + item.cloudinaryImageId} alt="" /> */}
                                 <SearchListVal>{item.name}</SearchListVal>
                             </SearchValWrapper>
                         )
                     })}
-                </ul> </SearchBarList> : <span> no results found </span> : null}
+                </ul> </SearchBarList> : <SearchBarList> no results found </SearchBarList> : null}
 
             <Categories display={linkInfo}>
                 <NavbarULCat>
