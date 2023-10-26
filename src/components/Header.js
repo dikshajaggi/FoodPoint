@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import axios from "axios"
 import "../style.css"
 import { Context } from "../utilities/context/Context"
-import { Account, Avatar, CartItemsLength, CartWrapper, Categories, CategoryLabel, HeaderDiv, HeaderWrapper, Input, LinkStyled, LoginUser, Logo, Name, NavWrapper, NavbarLI, NavbarUL, NavbarULCat, SearchBarList, SearchBtn, SearchCartWrapper, SearchListVal, SearchValImg, SearchValWrapper, SearchWrapper, UserDropdown, UserInfo, Username } from './styledComponents/Header'
+import { Account, Avatar, CartItemsLength, CartWrapper, Categories, CategoryLabel, HeaderDiv, HeaderWrapper, Input, LinkStyled, LoginUser, Logo, Name, NavWrapper, NavbarLI, NavbarUL, NavbarULCat, SearchBarList, SearchBtn, SearchCartWrapper, SearchListVal, SearchValImg, SearchValWrapper, SearchWrapper, Span, UserDropdown, UserInfo, Username } from './styledComponents/Header'
 import { data } from "../assets/data"
 import { useLocation } from 'react-router-dom';
 import { onAuthStateChanged, signOut } from 'firebase/auth'
@@ -176,7 +176,7 @@ const Header = () => {
                             </SearchValWrapper>
                         )
                     })}
-                </ul> </SearchBarList> : <SearchBarList> no results found </SearchBarList> : null}
+                </ul> </SearchBarList> : <SearchBarList> <Span>no results found </Span></SearchBarList> : null}
 
             <Categories display={linkInfo}>
                 <NavbarULCat>

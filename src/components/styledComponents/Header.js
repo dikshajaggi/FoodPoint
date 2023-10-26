@@ -193,4 +193,9 @@ list-style-type: none;
 width:100%;
 `
 
-export { HeaderDiv, HeaderWrapper, Categories, CategoryLabel, NavWrapper, NavbarUL, NavbarLI, LinkStyled, SearchCartWrapper, SearchWrapper, SearchBarList, CartWrapper, UserInfo, Avatar, Username, UserDropdown, CartItemsLength, LoginUser, Input, Name, Account, SearchListVal, SearchValWrapper, SearchValImg, Logo, SearchBtn, NavbarULCat }
+const Span = styled.span`
+margin-left: 1vw;
+font-weight: 500;
+`
+
+export { HeaderDiv, HeaderWrapper, Categories, CategoryLabel, NavWrapper, NavbarUL, NavbarLI, LinkStyled, SearchCartWrapper, SearchWrapper, SearchBarList, CartWrapper, UserInfo, Avatar, Username, UserDropdown, CartItemsLength, LoginUser, Input, Name, Account, SearchListVal, SearchValWrapper, SearchValImg, Logo, SearchBtn, NavbarULCat, Span }
