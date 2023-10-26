@@ -7,6 +7,8 @@ height:100vh;
 scroll:auto;
 display:flex;
 flex-direction:column;
+justify-content:center;
+align-items:center
 `
 
 const CenterDiv = styled.div`
@@ -43,6 +45,8 @@ margin-bottom: 6%;
 const Input = styled.input`
 width:24vw;
 height:5vh;
+border-radius: 5px;
+border:none;
 `
 
 const Heading = styled.h4`
@@ -50,6 +54,8 @@ font-size:24px;
 text-transform: uppercase;
 font: ${(props) => props.theme.fonts.headings_sub_headings};
 color: ${props => props.theme.colors.secondary};
+margin-bottom: ${props => props.heading === "login" ? "6vh" : "2vh"} ;
+margin-top: ${props => props.heading === "login" ? "2vh" : "2vh"};
 
 `
 export { HeaderOnlyLayoutWrapper, ErrorPara, Label, LinkWrapper, LabelInputWrapper, Input, Heading, CenterDiv }

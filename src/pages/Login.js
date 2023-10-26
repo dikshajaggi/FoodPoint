@@ -72,9 +72,8 @@ const Login = () => {
     return (
         <>
             <HeaderOnlyLayoutWrapper>
-                <CenterDiv>
                     <LoginWrapper>
-                        <Heading>login</Heading>
+                        <Heading heading="login">login</Heading>
                         <form onSubmit={formik.handleSubmit}>
                             <LabelInputWrapper>
                                 <Input type="text" placeholder="enter name" name="name" id="name" onChange={formik.handleChange} onBlur={formik.handleBlur}></Input>
@@ -93,7 +92,6 @@ const Login = () => {
                             <Label>Don't have an account? <LinkWrapper to="/signup">Sign up </LinkWrapper></Label>
                         </form>
                     </LoginWrapper>
-                </CenterDiv>
             </HeaderOnlyLayoutWrapper>
         </>
 

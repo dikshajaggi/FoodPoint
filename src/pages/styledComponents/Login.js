@@ -1,9 +1,10 @@
 import styled from "styled-components"
 
 const LoginWrapper = styled.div`
-height:auto;
+height:50%;
 width:30%;
 display: flex;
+border-radius: 8px;
 flex-direction: column;
 align-items: center;
 background-color: ${props => props.theme.colors.primary};
