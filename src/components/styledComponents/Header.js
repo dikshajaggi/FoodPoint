@@ -14,7 +14,7 @@ align-items: center;
 justify-content: space-between;
 width:100%;
 height:10vh;
-box-shadow: 3px 9px 26px -4px rgba(237,237,237,1);
+box-shadow: 3px 9px 26px -4px #eeeeee;
 
 `
 

@@ -49,17 +49,29 @@ const Specific = () => {
         })
     }
 
-   
+
     const handleMarkedFav = (rest) => {
-        if(marked) setMarked(false)
-        else setMarked(true)
-        context.favRest.push(info)
+        if (marked) setMarked(false)
+        else {
+            setMarked(true)
+            context.favRest.push(info)
+        }
     }
 
     const showFav = (info) => {
         const idArray = context.favRest.map(item => item.id)
         if (idArray.includes(info.id)) setMarked(true)
     }
+
+    useEffect(() => {
+        if (marked == false) {
+            const idArray = context.favRest.map(item => item.id)
+            if (idArray.includes(info.id)) {
+                const data = context.favRest.filter(item => item.id !== info.id)
+                context.setFavRest(data)
+            }
+        }
+    }, [marked])
 
     return (
         <SpecificWrapper>
@@ -75,12 +87,12 @@ const Specific = () => {
                             </HeaderLeft>
 
                             <HeaderRight>
-                            <SpecificCardSubHeading> 
-                                <FontAwesomeIcon
-                                    icon={faHeart}
-                                    className="fa-regular fa-heart"
-                                    style={{ marginRight: "1vw", color: marked ? theme.colors.accent : "black", cursor: "pointer" }}
-                                    onClick={(e) => handleMarkedFav(info, e)} /> | <i class="fa-solid fa-star" style = {{color: theme.colors.accent, marginLeft: "1vw"}}></i><span style = {{color: theme.colors.accent}}>{info?.avgRating}</span></SpecificCardSubHeading>
+                                <SpecificCardSubHeading>
+                                    <FontAwesomeIcon
+                                        icon={faHeart}
+                                        className="fa-regular fa-heart"
+                                        style={{ marginRight: "1vw", color: marked ? theme.colors.accent : "black", cursor: "pointer" }}
+                                        onClick={(e) => handleMarkedFav(info, e)} /> | <i class="fa-solid fa-star" style={{ color: theme.colors.accent, marginLeft: "1vw" }}></i><span style={{ color: theme.colors.accent }}>{info?.avgRating}</span></SpecificCardSubHeading>
                             </HeaderRight>
                         </HeaderDiv>
                         <hr></hr>
