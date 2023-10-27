@@ -13,7 +13,7 @@ const QuantityIncDec = (props) => {
         context.quantity.filter(item => {
             if (item.id === id) {
                 item.qty = item.qty + 1
-                item.price = item.qty * item.price
+                item.price = item.qty * props.price
             }
         })
         setQuantity(quantity + 1)
@@ -23,7 +23,8 @@ const QuantityIncDec = (props) => {
         context.quantity.filter(item => {
             if (item.id === id) {
                 item.qty = item.qty - 1
-                item.price = item.qty * item.price
+                item.price = item.qty * props.price
+                console.log(item.qty, item.price, "item.qty * item.price")
             }
         })
         if (quantity !== 0) setQuantity(quantity - 1)

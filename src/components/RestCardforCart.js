@@ -52,7 +52,7 @@ const SpecificCard = (props) => {
                 <h2 style={{ fontSize: "14px" }}>{description?.slice(0, 200)}...</h2>
             </ItemAddData>
             <AddBtnWrapper>
-                {flag === 0 ? <AddDishBtn onClick={() => addItemToCart(props)}>ADD</AddDishBtn> : idArray.includes(id) ? <QuantityIncDec id={id} qty={qty} /> : <AddDishBtn onClick={() => addItemToCart(props)}>ADD</AddDishBtn>}
+                {flag === 0 ? <AddDishBtn onClick={() => addItemToCart(props)}>ADD</AddDishBtn> : idArray.includes(id) ? <QuantityIncDec id={id} qty={qty} name={name} price={price / 100} /> : <AddDishBtn onClick={() => addItemToCart(props)}>ADD</AddDishBtn>}
             </AddBtnWrapper>
         </ItemAdd>
     )
