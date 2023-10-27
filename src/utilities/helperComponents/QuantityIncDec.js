@@ -27,7 +27,7 @@ const QuantityIncDec = (props) => {
                 console.log(item.qty, item.price, "item.qty * item.price")
             }
         })
-        if (quantity !== 0) setQuantity(quantity - 1)
+        if (quantity >= 1) setQuantity(quantity - 1)
         else setQuantity(0)
     }
 
