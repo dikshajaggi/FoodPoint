@@ -10,8 +10,11 @@ import Header from "../components/Header"
 import SpecificRest from "../shimmerUI/SpecificRest"
 import { data } from "../assets/data"
 import SpecificPage from "../shimmerUI/SpecificPage"
-import { AllMenuCards, MenuCategory, MenuHeading, SpecificCardStyle, SpecificCardSubHeading, SpecificHeading, SpecificWrapper } from "./styledComponents/SpecificRestDetail"
+import { AllMenuCards, HeaderDiv, HeaderLeft, HeaderRight, MenuCategory, MenuHeading, SpecificCardStyle, SpecificCardSubHeading, SpecificHeading, SpecificWrapper } from "./styledComponents/SpecificRestDetail"
 import Footer from "../components/Footer"
+import { useTheme } from "styled-components"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeart } from '@fortawesome/free-regular-svg-icons';
 
 const Specific = () => {
     const rest_id = useParams()
@@ -40,9 +43,16 @@ const Specific = () => {
     }
 
     const available = useAvailable(info?.availability?.opened)
-
+    const theme = useTheme()
+    const [marked, setMarked] = useState(false)
     const items = useSelector((store) => store.cart.items)
     console.log(items, items.length, "checking items in store")
+
+    const handleMarkedFav = () => {
+        if(marked) setMarked(false)
+        else setMarked(true)
+        console.log(info.id, "marked favs")
+    }
 
     return (
         <SpecificWrapper>
@@ -50,9 +60,22 @@ const Specific = () => {
             <SpecificCardStyle>
                 {isLoading ? <SpecificPage /> :
                     <>
-                        <SpecificHeading>{info?.name}</SpecificHeading>
-                        <SpecificCardSubHeading>{info?.cuisines?.join(", ")} | {info?.areaName} | <i class="fa-regular fa-star"></i>{info?.avgRating}</SpecificCardSubHeading>
-                        <SpecificCardSubHeading> {available}</SpecificCardSubHeading>
+                        <HeaderDiv>
+                            <HeaderLeft>
+                                <SpecificHeading>{info?.name}</SpecificHeading>
+                                <SpecificCardSubHeading>{info?.cuisines?.join(", ")} | {info?.areaName} | {info?.sla?.slaString}</SpecificCardSubHeading>
+                                <SpecificCardSubHeading> {available}</SpecificCardSubHeading>
+                            </HeaderLeft>
+
+                            <HeaderRight>
+                            <SpecificCardSubHeading> 
+                                <FontAwesomeIcon
+                                    icon={faHeart}
+                                    className="fa-regular fa-heart"
+                                    style={{ marginRight: "1vw", color: marked ? theme.colors.accent : "black", cursor: "pointer" }}
+                                    onClick={handleMarkedFav} /> | <i class="fa-solid fa-star" style = {{color: theme.colors.accent, marginLeft: "1vw"}}></i><span style = {{color: theme.colors.accent}}>{info?.avgRating}</span></SpecificCardSubHeading>
+                            </HeaderRight>
+                        </HeaderDiv>
                         <hr></hr>
                         <MenuHeading>MENU</MenuHeading>
                         <MenuCategory>{title}</MenuCategory>

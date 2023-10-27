@@ -37,4 +37,19 @@ const MenuCategory = styled.h4`
 `
 const AllMenuCards = styled.div``
 
-export { SpecificWrapper, SpecificCardStyle, AllMenuCards, SpecificHeading, SpecificCardSubHeading, MenuHeading, MenuCategory }
+const HeaderDiv = styled.div`
+display:flex;
+justify-content: space-between
+`
+
+const HeaderLeft = styled.div`
+display:flex;
+flex-direction: column;
+`
+
+const HeaderRight = styled.div`
+display:flex;
+flex-direction: column;
+`
+
+export { SpecificWrapper, SpecificCardStyle, AllMenuCards, SpecificHeading, SpecificCardSubHeading, MenuHeading, MenuCategory, HeaderDiv, HeaderLeft, HeaderRight}
