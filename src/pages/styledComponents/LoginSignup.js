@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const HeaderOnlyLayoutWrapper = styled.div`
-background-color:${(props) => props.theme.colors.secondary};
+background-color:white;
 height:100vh;
 scroll:auto;
 display:flex;
@@ -20,7 +20,7 @@ align-items:center
 `
 
 const ErrorPara = styled.p`
-color: ${props => props.theme.colors.secondary};
+color: ${props => props.theme.colors.danger};
 font-size: 14px;
 font:${props => props.theme.fonts.normal_text};
 `
@@ -28,12 +28,12 @@ font:${props => props.theme.fonts.normal_text};
 const Label = styled.p`
 font-size: 16px;
 font:${props => props.theme.fonts.prdouct_name_desc};
-color: ${props => props.theme.colors.secondary}
+color: ${props => props.theme.colors.accent}
 `
 
 const LinkWrapper = styled(Link)`
 text-decoration:none;
-color: ${props => props.theme.colors.secondary}
+color: ${props => props.theme.colors.accent}
 `
 const LabelInputWrapper = styled.div`
 display: flex;
@@ -45,15 +45,15 @@ margin-bottom: 6%;
 const Input = styled.input`
 width:24vw;
 height:5vh;
-border-radius: 5px;
 border:none;
+border-bottom:1px solid ${props => props.theme.colors.accent};
 `
 
 const Heading = styled.h4`
 font-size:24px;
 text-transform: uppercase;
 font: ${(props) => props.theme.fonts.headings_sub_headings};
-color: ${props => props.theme.colors.secondary};
+color: ${props => props.theme.colors.accent};
 margin-bottom: ${props => props.heading === "login" ? "6vh" : "2vh"} ;
 margin-top: ${props => props.heading === "login" ? "2vh" : "2vh"};
 
