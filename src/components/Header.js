@@ -158,12 +158,12 @@ const Header = () => {
                     <CartWrapper>
                         {user !== "" ? <LoginUser>
                             <UserInfo>
-                                <Avatar><i class="fa-solid fa-user" style={{ fontSize: "12px" }}></i></Avatar>
+                                <Avatar><i class="fa-solid fa-user" style={{ fontSize: "14px" }}></i></Avatar>
                                 <Username>
                                     <Name>{user.displayName}</Name>
                                     <Profile onClick={toggleDiv}>Profile</Profile>
                                     {isDivOpen ? <UserDropdown>
-                                        <LinkStyled to="/fav-restaurant">Favourites</LinkStyled>
+                                        <LinkStyled option="fav" to="/fav-restaurant">Favourites</LinkStyled>
                                         <Button onClick={handleSignOut}>Logout</Button>
                                     </UserDropdown> : null}
                                 </Username>

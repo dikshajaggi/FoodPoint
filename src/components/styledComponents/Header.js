@@ -14,6 +14,8 @@ align-items: center;
 justify-content: space-between;
 width:100%;
 height:10vh;
+box-shadow: 3px 9px 26px -4px rgba(237,237,237,1);
+
 `
 
 const Categories = styled.div`
@@ -56,6 +58,8 @@ font-weight: 400;
 const LinkStyled = styled(Link)`
 text-decoration: none;
 color: black;
+font-size: ${props => props.option === "fav" ? "14px" : null};
+font-weight : ${props => props.option === "fav" ? "400" : null};
 `
 
 const SearchCartWrapper = styled.div`
@@ -88,14 +92,21 @@ const UserInfo = styled.div`
     align-items: center;
 `
 const UserDropdown = styled.div`
+display:flex;
+flex-direction: column;
+justify-content: space-evenly;
+align-items: center;
 position:absolute;
  margin-top:14vh;
- border:1px solid white;
- border-radius: 4px;
- width:110px;
+ border-top:4px solid ${props => props.theme.colors.accent};
+box-shadow: -2px 5px 26px -1px rgba(191,184,184,1);
+ width:180px;
+ height: 10vh;
+ margin-top: 20vh;
+ right:-40px;
  padding:1vh;
- color:white;
- background-color:${props => props.theme.colors.accent};
+ z-index: 2;
+ background-color:white;
 `
 const Avatar = styled.button`
 width: auto;
@@ -110,13 +121,13 @@ justify-content: space-evenly;
 `
 
 const Profile = styled.button`
-    margin-top: -1.5vh;
+    margin-top: -1vh;
     background-color:transparent;
     border: none;
     height:auto;
     text-transform: capitalize;
     font-weight: 400;
-    font-size: 12px;
+    font-size: 14px;
     text-align:left;
 `
 
@@ -206,9 +217,8 @@ font-weight: 500;
 const Button = styled.button`
 background-color: transparent;
 border: none;
-color:white;
-font-size: 12px;
-font-weight:500;
+font-size: 14px;
+font-weight:400;
 `
 
 export { HeaderDiv, HeaderWrapper, Profile, Categories, CategoryLabel, NavWrapper, NavbarUL, NavbarLI, LinkStyled, SearchCartWrapper, SearchWrapper, SearchBarList, CartWrapper, UserInfo, Avatar, Username, UserDropdown, CartItemsLength, LoginUser, Input, Name, SearchListVal, SearchValWrapper, SearchValImg, Logo, SearchBtn, NavbarULCat, Span, Button }
