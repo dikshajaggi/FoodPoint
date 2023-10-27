@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import axios from "axios"
 import "../style.css"
 import { Context } from "../utilities/context/Context"
-import {Avatar, Button, CartItemsLength, CartWrapper, Categories, CategoryLabel, HeaderDiv, HeaderWrapper, Input, LinkStyled, LoginUser, Logo, Name, NavWrapper, NavbarLI, NavbarUL, NavbarULCat, Profile, SearchBarList, SearchBtn, SearchCartWrapper, SearchListVal, SearchValImg, SearchValWrapper, SearchWrapper, Span, UserDropdown, UserInfo, Username } from './styledComponents/Header'
+import { Avatar, Button, CartItemsLength, CartWrapper, Categories, CategoryLabel, HeaderDiv, HeaderWrapper, Input, LinkStyled, LoginUser, Logo, Name, NavWrapper, NavbarLI, NavbarUL, NavbarULCat, Profile, SearchBarList, SearchBtn, SearchCartWrapper, SearchListVal, SearchValImg, SearchValWrapper, SearchWrapper, Span, UserDropdown, UserInfo, Username } from './styledComponents/Header'
 import { data } from "../assets/data"
 import { useLocation } from 'react-router-dom';
 import { onAuthStateChanged, signOut } from 'firebase/auth'
@@ -28,7 +28,7 @@ const Header = () => {
     const [closeSearchList, setCloseSearchList] = useState(false)
     const currentPathname = location.pathname;
     const params = useParams()
-    const headerPaths = ["/signup", "/login", "/about", "/offers", "/cart"];
+    const headerPaths = ["/signup", "/login", "/about", "/offers", "/cart", "/fav-restaurant"];
     const linkInfo = headerPaths.includes(currentPathname) || currentPathname === `/rest/${params.id}`
         ? "header"
         : "subHeader";
@@ -132,7 +132,7 @@ const Header = () => {
 
     const toggleDiv = () => {
         setIsDivOpen(!isDivOpen);
-      };
+    };
 
     return (
         <HeaderDiv>
@@ -163,7 +163,7 @@ const Header = () => {
                                     <Name>{user.displayName}</Name>
                                     <Profile onClick={toggleDiv}>Profile</Profile>
                                     {isDivOpen ? <UserDropdown>
-                                        <LinkStyled to = "/fav-restaurant">Favourites</LinkStyled>
+                                        <LinkStyled to="/fav-restaurant">Favourites</LinkStyled>
                                         <Button onClick={handleSignOut}>Logout</Button>
                                     </UserDropdown> : null}
                                 </Username>
