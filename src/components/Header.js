@@ -163,7 +163,7 @@ const Header = () => {
                                     <Name>{user.displayName}</Name>
                                     <Profile onClick={toggleDiv}>Profile</Profile>
                                     {isDivOpen ? <UserDropdown>
-                                        <Button>Favourites</Button>
+                                        <LinkStyled to = "/fav-restaurant">Favourites</LinkStyled>
                                         <Button onClick={handleSignOut}>Logout</Button>
                                     </UserDropdown> : null}
                                 </Username>

@@ -14,6 +14,7 @@ import Payment from "./pages/Payment";
 import { ContextProvider } from "./utilities/context/Context";
 import Specific from "./pages/SpecificRestDetail";
 import Themeprovider from "./theme/ThemeProvider";
+import Fav from "./pages/Fav";
 
 function App() {
   const appRoutes = createBrowserRouter([
@@ -64,6 +65,9 @@ function App() {
     {
       path: "/payment",
       element: <Payment />
+    },
+    {path: "/fav-restaurant",
+      element: <Fav />
     }
   ])
 
