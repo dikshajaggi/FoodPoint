@@ -20,34 +20,34 @@ const DataCard = styled.div`
 `
 
 const DishName = styled.span`
-background-color: grey;
+background-color: #e1dfdf;
 height: 4vh;
 width: 12vw;
 margin-bottom: 2vh;
 `
 
 const Label = styled.span`
-background-color: grey;
+background-color: #e1dfdf;
 height: 4vh;
 width: 5vw;
 margin-bottom: 2vh;
 `
 
 const Price = styled.span`
-background-color: grey;
+background-color: #e1dfdf;
 height: 4vh;
 width: 5vw;
 margin-bottom: 2vh;
 `
 
 const Button = styled.div`
-background-color: grey;
+background-color: #e1dfdf;
 height: 6vh;
 width: 5vw;
 `
 
 const Description = styled.div`
-background-color: grey;
+background-color: #e1dfdf;
 height: 6vh;
 width: 50vw;
 `

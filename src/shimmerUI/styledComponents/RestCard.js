@@ -11,14 +11,14 @@ flex-direction: column;
 `
 
 const Image = styled.div`
-background-color: grey;
+background-color: #e1dfdf;
 height:20vh;
 width: 44vh;
 `
 
 const RestName = styled.div`
 margin: 2vh 0;
-background-color: grey;
+background-color: #e1dfdf;
 height: 2vh;
 width:15vh;
 `
@@ -29,7 +29,7 @@ justify-content: space-evenly;
 `
 
 const Label = styled.div`
-background-color: grey;
+background-color: #e1dfdf;
 height: 2vh;
 margin: 0 1vw;
 width:10vh;
@@ -37,7 +37,7 @@ width:10vh;
 
 const Offer = styled.div`
 margin: 2vh 0;
-background-color: grey;
+background-color: #e1dfdf;
 height: 2vh;
 width:24vh;
 `
