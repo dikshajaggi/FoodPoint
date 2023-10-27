@@ -15,6 +15,7 @@ import Footer from "../components/Footer"
 import { useTheme } from "styled-components"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
+import { Context } from "../utilities/context/Context"
 
 const Specific = () => {
     const rest_id = useParams()
@@ -22,6 +23,11 @@ const Specific = () => {
     const [otherInfo, setOtherInfo] = useState()
     const [title, setTitle] = useState("")
     const [isLoading, setIsLoading] = useState(true)
+    const available = useAvailable(info?.availability?.opened)
+    const theme = useTheme()
+    const context = useContext(Context)
+    const [marked, setMarked] = useState()
+    const items = useSelector((store) => store.cart.items)
 
     useEffect(() => {
         setTimeout(() => {
@@ -34,24 +40,25 @@ const Specific = () => {
         // const rest_id = 348417
         //https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.7040592&lng=77.10249019999999&restaurantId=348417&submitAction=ENTER`
         await axios.get(`https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.7040592&lng=77.10249019999999&restaurantId=${rest_id.id}&submitAction=ENTER`).then((item) => {
-            console.log(item.data.data.cards[2], "data specific")
+            console.log(item.data.data.cards[2], "marked rest data specific")
             setInfo(item.data.data.cards[0].card.card.info)
+            showFav(item.data.data.cards[0].card.card.info)
             setOtherInfo(item?.data?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2].card.card.itemCards)
             console.log(item?.data?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2].card.card.title)
             setTitle(item?.data?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2].card.card.title)
         })
     }
 
-    const available = useAvailable(info?.availability?.opened)
-    const theme = useTheme()
-    const [marked, setMarked] = useState(false)
-    const items = useSelector((store) => store.cart.items)
-    console.log(items, items.length, "checking items in store")
-
-    const handleMarkedFav = () => {
+   
+    const handleMarkedFav = (rest) => {
         if(marked) setMarked(false)
         else setMarked(true)
-        console.log(info.id, "marked favs")
+        context.favRest.push(info)
+    }
+
+    const showFav = (info) => {
+        const idArray = context.favRest.map(item => item.id)
+        if (idArray.includes(info.id)) setMarked(true)
     }
 
     return (
@@ -73,7 +80,7 @@ const Specific = () => {
                                     icon={faHeart}
                                     className="fa-regular fa-heart"
                                     style={{ marginRight: "1vw", color: marked ? theme.colors.accent : "black", cursor: "pointer" }}
-                                    onClick={handleMarkedFav} /> | <i class="fa-solid fa-star" style = {{color: theme.colors.accent, marginLeft: "1vw"}}></i><span style = {{color: theme.colors.accent}}>{info?.avgRating}</span></SpecificCardSubHeading>
+                                    onClick={(e) => handleMarkedFav(info, e)} /> | <i class="fa-solid fa-star" style = {{color: theme.colors.accent, marginLeft: "1vw"}}></i><span style = {{color: theme.colors.accent}}>{info?.avgRating}</span></SpecificCardSubHeading>
                             </HeaderRight>
                         </HeaderDiv>
                         <hr></hr>
