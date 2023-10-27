@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import axios from "axios"
 import "../style.css"
 import { Context } from "../utilities/context/Context"
-import { Account, Avatar, CartItemsLength, CartWrapper, Categories, CategoryLabel, HeaderDiv, HeaderWrapper, Input, LinkStyled, LoginUser, Logo, Name, NavWrapper, NavbarLI, NavbarUL, NavbarULCat, SearchBarList, SearchBtn, SearchCartWrapper, SearchListVal, SearchValImg, SearchValWrapper, SearchWrapper, Span, UserDropdown, UserInfo, Username } from './styledComponents/Header'
+import {Avatar, Button, CartItemsLength, CartWrapper, Categories, CategoryLabel, HeaderDiv, HeaderWrapper, Input, LinkStyled, LoginUser, Logo, Name, NavWrapper, NavbarLI, NavbarUL, NavbarULCat, Profile, SearchBarList, SearchBtn, SearchCartWrapper, SearchListVal, SearchValImg, SearchValWrapper, SearchWrapper, Span, UserDropdown, UserInfo, Username } from './styledComponents/Header'
 import { data } from "../assets/data"
 import { useLocation } from 'react-router-dom';
 import { onAuthStateChanged, signOut } from 'firebase/auth'
@@ -37,6 +37,8 @@ const Header = () => {
     const [seachResultImg, setSeachResultImg] = useState()
     const [isInputFocused, setInputFocused] = useState(false);
     const [filterSelected, setFilterSelected] = useState("relevance")
+    const [isDivOpen, setIsDivOpen] = useState(false)
+
     const iconColorOnFocus = theme.colors.accent;
     const handleInputFocus = () => {
         setInputFocused(true);
@@ -128,6 +130,10 @@ const Header = () => {
         return () => unsubscribe()
     }, [])
 
+    const toggleDiv = () => {
+        setIsDivOpen(!isDivOpen);
+      };
+
     return (
         <HeaderDiv>
             <HeaderWrapper>
@@ -155,12 +161,13 @@ const Header = () => {
                                 <Avatar><i class="fa-solid fa-user" style={{ fontSize: "12px" }}></i></Avatar>
                                 <Username>
                                     <Name>{user.displayName}</Name>
-                                    <Account onClick={handleSignOut}>Logout</Account>
+                                    <Profile onClick={toggleDiv}>Profile</Profile>
+                                    {isDivOpen ? <UserDropdown>
+                                        <Button>Favourites</Button>
+                                        <Button onClick={handleSignOut}>Logout</Button>
+                                    </UserDropdown> : null}
                                 </Username>
                             </UserInfo>
-                            <UserDropdown>
-                                <p>Logout</p>
-                            </UserDropdown>
                         </LoginUser> : <LinkStyled to="/login"><Username>Login</Username></LinkStyled>}
                         <LinkStyled to="/cart"><i class="fa-sharp fa-solid fa-cart-shopping" style={{ color: items.length === 0 ? "black" : theme.colors.accent, fontSize: "16px" }}><CartItemsLength style={{ color: 'black', fontSize: "12px" }}>{items.length}</CartItemsLength></i></LinkStyled>
                     </CartWrapper>

@@ -89,10 +89,13 @@ const UserInfo = styled.div`
 `
 const UserDropdown = styled.div`
 position:absolute;
- display: none;
- margin-top:8vh;
- width:10%;
- text-align:center;
+ margin-top:14vh;
+ border:1px solid white;
+ border-radius: 4px;
+ width:110px;
+ padding:1vh;
+ color:white;
+ background-color:${props => props.theme.colors.accent};
 `
 const Avatar = styled.button`
 width: auto;
@@ -105,10 +108,12 @@ display: flex;
 flex-direction: column;
 justify-content: space-evenly;
 `
-const Account = styled.button`
-    margin-top:-2vh;
+
+const Profile = styled.button`
+    margin-top: -1.5vh;
     background-color:transparent;
     border: none;
+    height:auto;
     text-transform: capitalize;
     font-weight: 400;
     font-size: 12px;
@@ -198,4 +203,12 @@ margin-left: 1vw;
 font-weight: 500;
 `
 
-export { HeaderDiv, HeaderWrapper, Categories, CategoryLabel, NavWrapper, NavbarUL, NavbarLI, LinkStyled, SearchCartWrapper, SearchWrapper, SearchBarList, CartWrapper, UserInfo, Avatar, Username, UserDropdown, CartItemsLength, LoginUser, Input, Name, Account, SearchListVal, SearchValWrapper, SearchValImg, Logo, SearchBtn, NavbarULCat, Span }
+const Button = styled.button`
+background-color: transparent;
+border: none;
+color:white;
+font-size: 12px;
+font-weight:500;
+`
+
+export { HeaderDiv, HeaderWrapper, Profile, Categories, CategoryLabel, NavWrapper, NavbarUL, NavbarLI, LinkStyled, SearchCartWrapper, SearchWrapper, SearchBarList, CartWrapper, UserInfo, Avatar, Username, UserDropdown, CartItemsLength, LoginUser, Input, Name, SearchListVal, SearchValWrapper, SearchValImg, Logo, SearchBtn, NavbarULCat, Span, Button }
