@@ -6,7 +6,7 @@ height:100vh
 
 const FavHeading = styled.h4`
 text-align: center;
-margin: 2vh 0;
+margin: 6vh 0;
 font-size: ${props => props.size === "small" ? "16px" : "18px"};
 `
 const ImgWrapper = styled.div`

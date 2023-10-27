@@ -4,6 +4,7 @@ import { Context } from '../utilities/context/Context'
 import Card from '../components/RestCard'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import { Link } from 'react-router-dom'
 
 const Fav = () => {
   const context = useContext(Context)
@@ -15,7 +16,7 @@ const Fav = () => {
         <FavHeading>Your Plate, Your Favorites: Discover Delicious Dishes from a World of Flavors!</FavHeading>
         {context.favRest.length !== 0 ? <DispCards> {context.favRest.map(item => {
           return (
-            <Card {...item} ></Card>
+            <Link to={`/rest/${item?.feeDetails?.restaurantId}`} style={{ textDecoration: 'none' }} > < Card {...item} /></Link>
           )
         })} </DispCards> : <ImgWrapper>
           <FavHeading size="small">You haven't selected your favourite restaurants yet</FavHeading>
