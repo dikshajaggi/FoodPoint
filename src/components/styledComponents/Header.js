@@ -19,12 +19,15 @@ box-shadow: 3px 9px 26px -4px #eeeeee;
 `
 
 const Categories = styled.div`
-margin:4vh 0;
+margin-bottom:4vh;
 display:${props => props.display === "subHeader" ? "flex" : "none"};
 justify-content: space-evenly;
 align-items:center;
 position: relative;
 z-index: 1;
+height:6vh;
+background-color: ${props => props.theme.colors.accent}
+
 `
 
 const CategoryLabel = styled.h4`
@@ -51,7 +54,7 @@ justify-content: space-evenly;
 `
 
 const NavbarLI = styled.li`
-font-size: ${props => props.header === "main" ? "16px" : "14px"};
+font-size: ${props => props.header === "main" ? "18px" : "16px"};
 font-weight: 400;
 `
 

@@ -21,6 +21,8 @@ const Checkout = () => {
         setTotalItems(_.sum(items_current))
         setPrice(context.quantity.map(item => item.price))
         setTotalPrice(_.sum(price_current))
+        context.setTotalItems(_.sum(items_current))
+        context.setTotalPrice(_.sum(price_current))
     }, [context.qtyCheck])
 
     return (

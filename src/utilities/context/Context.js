@@ -17,6 +17,8 @@ const ContextProvider = (props) => {
     const [cartData, setCartData] = useState([])
     const [qtyCheck, setQtyCheck] = useState(0)
     const [favRest, setFavRest] = useState([])
+    const [totalItems, setTotalItems] = useState()
+    const [totalPrice, setTotalPrice] = useState()
     const dispatch = useDispatch()
 
     useEffect(() => {
@@ -60,7 +62,11 @@ const ContextProvider = (props) => {
                 qtyCheck,
                 setQtyCheck,
                 favRest,
-                setFavRest
+                setFavRest,
+                totalItems,
+                setTotalItems,
+                totalPrice,
+                setTotalPrice
             }}
         >
             {props.children}

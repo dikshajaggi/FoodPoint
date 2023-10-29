@@ -28,7 +28,7 @@ const Header = () => {
     const [closeSearchList, setCloseSearchList] = useState(false)
     const currentPathname = location.pathname;
     const params = useParams()
-    const headerPaths = ["/signup", "/login", "/about", "/offers", "/cart", "/fav-restaurant"];
+    const headerPaths = ["/signup", "/login", "/about", "/offers", "/cart", "/fav-restaurant", "/payment"];
     const linkInfo = headerPaths.includes(currentPathname) || currentPathname === `/rest/${params.id}`
         ? "header"
         : "subHeader";
@@ -187,11 +187,11 @@ const Header = () => {
 
             <Categories display={linkInfo}>
                 <NavbarULCat>
-                    <LinkStyled to="/" style={{ color: filterSelected === "relevance" ? theme.colors.accent : "black" }}><NavbarLI header="sub" onClick={() => { setFilterOnClick("relevance") }}>RELEVANCE</NavbarLI></LinkStyled>
-                    <LinkStyled to="/rating" style={{ color: filterSelected === "rating" ? theme.colors.accent : "black" }}><NavbarLI header="sub" onClick={() => { setFilterOnClick("rating") }}>RATING</NavbarLI></LinkStyled>
-                    <LinkStyled to="/delivery-time" style={{ color: filterSelected === "delivery-time" ? theme.colors.accent : "black" }}><NavbarLI header="sub" onClick={() => { setFilterOnClick("delivery-time") }}>DELIVERY TIME</NavbarLI></LinkStyled>
-                    <LinkStyled to="/cost-low-to-high" style={{ color: filterSelected === "cost-low-to-high" ? theme.colors.accent : "black" }}><NavbarLI header="sub" onClick={() => { setFilterOnClick("cost-low-to-high") }}>COST: LOW TO HIGH</NavbarLI></LinkStyled>
-                    <LinkStyled to="/cost-high-to-low" style={{ color: filterSelected === "cost-high-to-low" ? theme.colors.accent : "black" }}><NavbarLI header="sub" onClick={() => { setFilterOnClick("cost-high-to-low") }}>COST: HIGH TO LOW</NavbarLI></LinkStyled>
+                    <LinkStyled to="/" style={{ color: "white", fontWeight: "600" }}><NavbarLI header="sub" onClick={() => { setFilterOnClick("relevance") }}>RELEVANCE</NavbarLI></LinkStyled>
+                    <LinkStyled to="/rating" style={{ color: "white", fontWeight: "600" }}><NavbarLI header="sub" onClick={() => { setFilterOnClick("rating") }}>RATING</NavbarLI></LinkStyled>
+                    <LinkStyled to="/delivery-time" style={{ color: "white", fontWeight: "600" }}><NavbarLI header="sub" onClick={() => { setFilterOnClick("delivery-time") }}>DELIVERY TIME</NavbarLI></LinkStyled>
+                    <LinkStyled to="/cost-low-to-high" style={{ color: "white", fontWeight: "600" }}><NavbarLI header="sub" onClick={() => { setFilterOnClick("cost-low-to-high") }}>COST: LOW TO HIGH</NavbarLI></LinkStyled>
+                    <LinkStyled to="/cost-high-to-low" style={{ color: "white", fontWeight: "600" }}><NavbarLI header="sub" onClick={() => { setFilterOnClick("cost-high-to-low") }}>COST: HIGH TO LOW</NavbarLI></LinkStyled>
                 </NavbarULCat>
             </Categories>
             <CategoryLabel display={linkInfo} >{context.filter}</CategoryLabel>
