@@ -5,6 +5,10 @@ const HeaderDiv = styled.div`
 display: flex;
 flex-direction: column;
 width:100%;
+position: sticky;
+top: 0;
+z-index: 2;
+background-color: white;
 `
 
 const HeaderWrapper = styled.div`
@@ -31,10 +35,12 @@ background-color: ${props => props.theme.colors.accent}
 `
 
 const CategoryLabel = styled.h4`
-margin-top: 2vw;
 margin-left: 2vw;
+background-color: transparent;
 display: ${props => props.display === "subHeader" ? "flex" : "none"};
 text-transform: capitalize;
+box-shadow: 3px 9px 26px -4px #eeeeee;
+
 `
 const NavWrapper = styled.div`
 display: flex;
