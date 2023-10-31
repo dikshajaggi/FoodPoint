@@ -3,16 +3,21 @@ import styled from "styled-components";
 const CardWrapper = styled.div`
 height:60vh;
 width: 20vw;
-margin:4vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+flex: 0 0 25%;
+box-sizing: border-box;
 `
 
 const Image = styled.img`
-width: 20vw;
-height: 35vh;
+width:100%;
+border-radius: 8px;
 `
 
 const InfoWrapper = styled.div`
 display: flex;
+width:100%;
 justify-content: space-evenly;
 font-size: 20px;
 font-weight: 400;
