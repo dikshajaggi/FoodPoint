@@ -85,6 +85,7 @@ const SearchCartWrapper = styled.div`
 const SearchWrapper = styled.div`
  display: flex;
  width: 60%;
+ margin-right: -3vw;
 `
 
 const SearchBtn = styled.button`
@@ -95,7 +96,7 @@ right: 26px;
 `
 
 const CartWrapper = styled.div` 
-    width: 300px;
+    width: 240px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
