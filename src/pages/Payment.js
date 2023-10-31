@@ -42,9 +42,9 @@ const Payment = () => {
             </OrderDetails>
             <Wrapper>
                 <Button onClick={() => setClose(false)}><CodHead>Pay on Delivery</CodHead></Button>
-                <Button onClick={() => setCloseCard(false)}><CodHead>Credit / Debit card</CodHead></Button>
+                <Button onClick={() => setCloseCard(false)}><CodHead> <i class="fa-regular fa-credit-card" style={{color: "#a6a6a6", marginRight: "10px"}}></i> Credit / Debit card</CodHead></Button>
                 <CashOnDelivery close={close}>
-                    <ButtonClose onClick={() => setClose(true)}>Close</ButtonClose>
+                    <ButtonClose onClick={() => setClose(true)}><i class="fa-solid fa-xmark" style={{fontSize: "18px"}}></i></ButtonClose>
                     <CodHead>Payment Authorization Form</CodHead>
                     <form onSubmit={formik.handleSubmit}>
                         <LabelInputWrapper>
@@ -75,7 +75,7 @@ const Payment = () => {
                     <SubmitDetails onClick={handleSubmitDetails}> Place Order </SubmitDetails>
                 </CashOnDelivery>
                 <CardMethod closeCard={closeCard}>
-                    <ButtonClose onClick={() => setCloseCard(true)}>Close</ButtonClose>
+                    <ButtonClose onClick={() => setCloseCard(true)}><i class="fa-solid fa-xmark" style={{fontSize: "18px"}}></i></ButtonClose>
                     <GooglePayButton
                         environment="TEST"
                         paymentRequest={{

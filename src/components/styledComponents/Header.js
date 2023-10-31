@@ -67,8 +67,12 @@ font-weight: 400;
 const LinkStyled = styled(Link)`
 text-decoration: none;
 color: black;
-font-size: ${props => props.option === "fav" ? "14px" : null};
-font-weight : ${props => props.option === "fav" ? "400" : null};
+font-size: ${props => props.option === "fav" ? "14px" : "16px"};
+font-weight : ${props => props.option === "fav" ? "400" : "400"};
+`
+
+const LogoutBtn = styled.span`
+font-size: 14px;
 `
 
 const SearchCartWrapper = styled.div`
@@ -86,6 +90,8 @@ const SearchWrapper = styled.div`
 const SearchBtn = styled.button`
 background-color:transparent;
 border: none;
+position: relative;
+right: 26px;
 `
 
 const CartWrapper = styled.div` 
@@ -95,7 +101,7 @@ const CartWrapper = styled.div`
     align-items: center;
 `
 const UserInfo = styled.div`
-    width: auto;
+    width: 8vw;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -104,15 +110,13 @@ const UserDropdown = styled.div`
 display:flex;
 flex-direction: column;
 justify-content: space-evenly;
-align-items: center;
+align-items: flex-start;
 position:absolute;
- margin-top:14vh;
- border-top:4px solid ${props => props.theme.colors.accent};
 box-shadow: -2px 5px 26px -1px rgba(191,184,184,1);
- width:180px;
+ width:8vw;
  height: 10vh;
  margin-top: 20vh;
- right:-40px;
+ right:-6px;
  padding:1vh;
  z-index: 2;
  background-color:white;
@@ -159,19 +163,18 @@ const LoginUser = styled.div`
 const Input = styled.input`
 background-color:transparent;
 border: none;
-border-bottom: 1px solid black;
-width: 100%;
+border: 1px solid #a6a6a6;
+width: 20vw;
+height: 4vh;
 font-size: 14px;
 &:focus {
     outline: none; 
-    border-bottom:2px solid ${props => props.theme.colors.accent};
   }
 
 `
 
 const SearchValWrapper = styled.div`
 display:flex;
-justify-content: space-between;
 align-items:center;
 cursor:pointer;
 padding:1vh;
@@ -180,6 +183,8 @@ height:auto;
 const SearchListVal = styled.li`
 list-style-type: none;
 font-weight: 500;
+width: 100%;
+text-align: left;
 font-size:14px;
 `
 
@@ -191,14 +196,16 @@ border-radius: 6px;
 
 const SearchBarList = styled.div`
 display:flex;
-background-color: white;
-margin-left: 65%;
-margin-top:4%;
-width:25%;
-border: 3px solid ${props => props.theme.colors.accent};
-border-radius: 10px;
-position: absolute;
-z-index:2;
+flex-direction: column;
+justify-content: space-evenly;
+align-items: center;
+position:absolute;
+box-shadow: -2px 5px 26px -1px rgba(191,184,184,1);
+height: auto;
+top: 10vh;
+width: 20vw;
+z-index: 2;
+background-color:white;
 `
 
 const Logo = styled.span`
@@ -230,4 +237,4 @@ font-size: 14px;
 font-weight:400;
 `
 
-export { HeaderDiv, HeaderWrapper, Profile, Categories, CategoryLabel, NavWrapper, NavbarUL, NavbarLI, LinkStyled, SearchCartWrapper, SearchWrapper, SearchBarList, CartWrapper, UserInfo, Avatar, Username, UserDropdown, CartItemsLength, LoginUser, Input, Name, SearchListVal, SearchValWrapper, SearchValImg, Logo, SearchBtn, NavbarULCat, Span, Button }
+export { HeaderDiv, HeaderWrapper, Profile, Categories, CategoryLabel, NavWrapper, NavbarUL, NavbarLI, LinkStyled, LogoutBtn,SearchCartWrapper, SearchWrapper, SearchBarList, CartWrapper, UserInfo, Avatar, Username, UserDropdown, CartItemsLength, LoginUser, Input, Name, SearchListVal, SearchValWrapper, SearchValImg, Logo, SearchBtn, NavbarULCat, Span, Button }

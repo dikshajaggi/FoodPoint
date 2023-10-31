@@ -47,7 +47,7 @@ height:5vh;
 border:none;
 padding: 10px;
 border-radius: 5px;
-border:1px solid ${props => props.theme.colors.accent};
+border:1px solid #D3D3D3;
 `
 
 const InputRow = styled.input`
@@ -56,7 +56,7 @@ height:5vh;
 border:none;
 padding: 10px;
 border-radius: 5px;
-border:1px solid ${props => props.theme.colors.accent};
+border:1px solid #D3D3D3;
 `
 
 const RowInput = styled.div`
@@ -68,7 +68,7 @@ const CodHead = styled.h4`
 text-align: left;
 font-weight: 600;
 font-size: 18px;
-color: ${props => props.theme.colors.accent}
+color: black;
 `
 const SubmitDetails = styled.button`
 border:none;

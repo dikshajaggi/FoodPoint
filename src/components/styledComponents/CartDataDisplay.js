@@ -23,12 +23,11 @@ const CardText = styled.div`
     flex-direction: column;
 `
 
-const CartRemoveBtn = styled.button`
+const CartRemoveBtn = styled.div`
 height: 30px;
 width: 80px;
+border: none;
 background-color:transparent;
-border: 2px solid ${props => props.theme.colors.accent};
-border-radius:5px;
 margin-top: 1vh;
 `
 
@@ -36,4 +35,9 @@ const DishName = styled.h2`
 font-size: 22px;
 `
 
-export { CardCart, DishImgCart, CardText, CartRemoveBtn, DishName }
+const QtyRemoveWrapper = styled.div`
+display flex;
+flex-direction: row;
+`
+
+export { CardCart, DishImgCart, CardText, CartRemoveBtn, DishName,QtyRemoveWrapper }

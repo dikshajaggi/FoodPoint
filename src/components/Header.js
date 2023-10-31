@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import axios from "axios"
 import "../style.css"
 import { Context } from "../utilities/context/Context"
-import { Avatar, Button, CartItemsLength, CartWrapper, Categories, CategoryLabel, HeaderDiv, HeaderWrapper, Input, LinkStyled, LoginUser, Logo, Name, NavWrapper, NavbarLI, NavbarUL, NavbarULCat, Profile, SearchBarList, SearchBtn, SearchCartWrapper, SearchListVal, SearchValImg, SearchValWrapper, SearchWrapper, Span, UserDropdown, UserInfo, Username } from './styledComponents/Header'
+import { Avatar, Button, CartItemsLength, CartWrapper, Categories, CategoryLabel, HeaderDiv, HeaderWrapper, Input, LinkStyled, LoginUser, Logo, LogoutBtn, Name, NavWrapper, NavbarLI, NavbarUL, NavbarULCat, Profile, SearchBarList, SearchBtn, SearchCartWrapper, SearchListVal, SearchValImg, SearchValWrapper, SearchWrapper, Span, UserDropdown, UserInfo, Username } from './styledComponents/Header'
 import { data } from "../assets/data"
 import { useLocation } from 'react-router-dom';
 import { onAuthStateChanged, signOut } from 'firebase/auth'
@@ -147,33 +147,15 @@ const Header = () => {
                 <Logo>FoodPoint</Logo>
                 <SearchCartWrapper>
                     <SearchWrapper>
-                        <SearchBtn onClick={search}><i class="fa-solid fa-magnifying-glass"
+                        <Input type="search" placeholder='Search for restaurants' value={searchvalue} onChange={searchrest} onFocus={handleInputFocus}
+                            onBlur={handleInputBlur} />
+                             <SearchBtn onClick={search}><i class="fa-solid fa-magnifying-glass"
                             style={{
                                 fontSize: "14px",
-                                color: isInputFocused ? iconColorOnFocus : 'black',
+                                color: 'black',
+                                display: searchvalue ? "none" : null
                             }}></i></SearchBtn>
-                        <Input type="search" placeholder='search for restaurants' value={searchvalue} onChange={searchrest} onFocus={handleInputFocus}
-                            onBlur={handleInputBlur} />
-                    </SearchWrapper>
-                    <CartWrapper>
-                        {user !== "" ? <LoginUser>
-                            <UserInfo>
-                                <Avatar><i class="fa-solid fa-user" style={{ fontSize: "14px" }}></i></Avatar>
-                                <Username>
-                                    <Name>{user.displayName}</Name>
-                                    <Profile onClick={toggleDiv}>Profile</Profile>
-                                    {isDivOpen ? <UserDropdown>
-                                        <LinkStyled option="fav" to="/fav-restaurant">Favourites</LinkStyled>
-                                        <Button onClick={handleSignOut}>Logout</Button>
-                                    </UserDropdown> : null}
-                                </Username>
-                            </UserInfo>
-                        </LoginUser> : <LinkStyled to="/login"><Username>Login</Username></LinkStyled>}
-                        <LinkStyled to="/cart"><i class="fa-sharp fa-solid fa-cart-shopping" style={{ color: items.length === 0 ? "black" : theme.colors.accent, fontSize: "16px" }}><CartItemsLength style={{ color: 'black', fontSize: "12px" }}>{items.length}</CartItemsLength></i></LinkStyled>
-                    </CartWrapper>
-                </SearchCartWrapper>
-            </HeaderWrapper>
-            {searchvalue !== "" ? matchingRest.length !== 0 ? closeSearchList ? null : <SearchBarList>
+                             {searchvalue !== "" ? matchingRest.length !== 0 ? closeSearchList ? null : <SearchBarList>
                 <ul>
                     {matchingRest.map(item => {
                         return (
@@ -184,7 +166,26 @@ const Header = () => {
                         )
                     })}
                 </ul> </SearchBarList> : <SearchBarList> <Span>no results found </Span></SearchBarList> : null}
-
+                    </SearchWrapper>
+                    <CartWrapper>
+                        {user !== "" ? <LoginUser>
+                            <UserInfo>
+                                <Avatar><i class="fa-solid fa-user" style={{ fontSize: "14px" }}></i></Avatar>
+                                <Username>
+                                    <Name>{user.displayName}</Name>
+                                    <Profile onClick={toggleDiv}>Profile</Profile>
+                                    {isDivOpen ? <UserDropdown>
+                                        <LinkStyled option="fav" to="/fav-restaurant">Favourites</LinkStyled>
+                                        <LogoutBtn onClick={handleSignOut}>Logout</LogoutBtn>
+                                    </UserDropdown> : null}
+                                </Username>
+                            </UserInfo>
+                        </LoginUser> : <LinkStyled to="/login"><Username>Login</Username></LinkStyled>}
+                        <LinkStyled to="/cart"><i class="fa-sharp fa-solid fa-cart-shopping" style={{ color: items.length === 0 ? "black" : theme.colors.accent, fontSize: "16px" }}><CartItemsLength style={{ color: 'black', fontSize: "12px" }}>{items.length}</CartItemsLength></i></LinkStyled>
+                    </CartWrapper>
+                </SearchCartWrapper>
+            </HeaderWrapper>
+           
             <Categories display={linkInfo}>
                 <NavbarULCat>
                     <LinkStyled to="/" style={{ color: "white", fontWeight: "600" }}><NavbarLI header="sub" onClick={() => { setFilterOnClick("relevance") }}>RELEVANCE</NavbarLI></LinkStyled>
