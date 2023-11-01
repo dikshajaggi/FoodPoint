@@ -4,7 +4,9 @@ const OfferWrapper = styled.div`
 height:100%;
 `
 const OfferBanner = styled.div`
-padding: 2vh;
+margin: 4vh 0vh 10vh 4vh;
+font-size: 24px;
+font-weight: 700;
 `
 
 const CardWrapper = styled.div`

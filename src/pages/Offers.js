@@ -28,7 +28,7 @@ const Offers = () => {
             getData()
         }, 1000)
 
-    })
+    }, [])
 
     async function getData() {
         await axios.get("https://www.swiggy.com/api/seo/getListing?lat=28.65420&lng=77.23730").then(item => {
@@ -45,53 +45,14 @@ const Offers = () => {
         <>
             <Header />
             <OfferWrapper>
-                <OfferBanner>
-                    <h4 style={{ fontSize: "22px" }}>OFFERS</h4>
-                    <h2 style={{ fontSize: "14px" }}>Explore top deals and offers exclusively for you!</h2>
-                </OfferBanner>
-
-
-                <Nav tabs>
-                    <NavItem>
-                        <NavLink
-                            className={classnames({
-                                active:
-                                    currentActiveTab === '1'
-                            })}
-                            onClick={() => { toggle('1') }}
-                        >
-                            Restaurant offers
-                        </NavLink>
-                    </NavItem>
-                    <NavItem>
-                        <NavLink
-                            onClick={() => { toggle('2') }}
-                        >
-                            Payment offers/ Coupons
-                        </NavLink>
-                    </NavItem>
-                </Nav>
-                <TabContent activeTab={currentActiveTab}>
-                    <TabPane tabId="1" >
-                        <CardWrapper>
+                <OfferBanner> Explore top deals and offers exclusively for you! </OfferBanner>
+                <CardWrapper>
                             {isLoading ? data?.map((item) => {
                             return <RestCard />
                             }) : offers?.slice(1)?.map((item) => {
                             return <Link to={`/rest/${item.info.feeDetails?.restaurantId}`} style={{ textDecoration: 'none' }} >< Card {...item.info} /></Link>
                             })}
                         </CardWrapper>
-                    </TabPane>
-                    <TabPane tabId="2">
-                        <Row>
-                            <OfferCardWrapper>
-                                {console.log(paymentOffers, "filtered data")}
-                                {paymentOffers?.slice(2)?.map((item) => {
-                                    return <OfferCard {...item?.data?.data} />
-                                })}
-                            </OfferCardWrapper>
-                        </Row>
-                    </TabPane>
-                </TabContent>
             </OfferWrapper>
             <Footer />
         </>
