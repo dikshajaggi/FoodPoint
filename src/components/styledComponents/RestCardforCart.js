@@ -20,7 +20,8 @@ const ItemAddData = styled.div`
 `
 
 const MenuDishName = styled.h2`
-    font-size: 20px;
+margin-top: 6px;
+    font-size: 18px;
     font-weight: 600;
 `
 
@@ -43,15 +44,27 @@ flex:1;
 
 const SpecificCardSubHead = styled.span`
 font-weight: 600;
-font-size: 18px;
+font-size: 14px;
 `
 
 const DishImg = styled.div`
-width: 20%;
-height:25%;
-display: flex;
-align-items: center;
-justify-content:center;
-margin-right: 3%;
+margin-right: 2vw;
+
 `
-export { ItemAdd, ItemAddData, AddBtnWrapper, MenuDishName, SpecificCardSubHead, AddDishBtn, DishImg }
+const Image = styled.img`
+width:100%;
+height: 100%;
+border-radius: 8px;
+`
+
+const DishDesc = styled.div`
+color: #a6a6a6;
+font-size: 14px;
+`
+
+const VegClassifierIcon = styled.img`
+height:20px;
+width:20px;
+`
+
+export { ItemAdd, ItemAddData, AddBtnWrapper, MenuDishName, SpecificCardSubHead, AddDishBtn, DishImg, Image, DishDesc, VegClassifierIcon }

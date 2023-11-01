@@ -12,13 +12,14 @@ width: 80%;
 `
 
 const SpecificHeading = styled.h2`
-    font-size: 22px;
+    font-size: 20px;
     margin-bottom: 2vh;
 `
 
 const SpecificCardSubHeading = styled.h2`
     font-weight: 600;
-    font-size: 18px;
+    font-size: 14px;
+    color: #a6a6a6;
 `
 const MenuHeading = styled.h4`
     margin-top: 10vh;
@@ -50,6 +51,7 @@ flex-direction: column;
 const HeaderRight = styled.div`
 display:flex;
 flex-direction: column;
+justify-content: space-evenly;
 `
 
 export { SpecificWrapper, SpecificCardStyle, AllMenuCards, SpecificHeading, SpecificCardSubHeading, MenuHeading, MenuCategory, HeaderDiv, HeaderLeft, HeaderRight}

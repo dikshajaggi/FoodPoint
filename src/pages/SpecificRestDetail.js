@@ -82,8 +82,8 @@ const Specific = () => {
                         <HeaderDiv>
                             <HeaderLeft>
                                 <SpecificHeading>{info?.name}</SpecificHeading>
-                                <SpecificCardSubHeading>{info?.cuisines?.join(", ")} | {info?.areaName} | {info?.sla?.slaString}</SpecificCardSubHeading>
-                                <SpecificCardSubHeading> {available}</SpecificCardSubHeading>
+                                <SpecificCardSubHeading>{info?.cuisines?.join(", ")}</SpecificCardSubHeading>
+                                <SpecificCardSubHeading>{info?.areaName} | {info?.sla?.slaString}</SpecificCardSubHeading>
                             </HeaderLeft>
 
                             <HeaderRight>
@@ -92,7 +92,10 @@ const Specific = () => {
                                         icon={faHeart}
                                         className="fa-regular fa-heart"
                                         style={{ marginRight: "1vw", color: marked ? theme.colors.accent : "black", cursor: "pointer" }}
-                                        onClick={(e) => handleMarkedFav(info, e)} /> | <i class="fa-solid fa-star" style={{ color: theme.colors.accent, marginLeft: "1vw" }}></i><span style={{ color: theme.colors.accent }}>{info?.avgRating}</span></SpecificCardSubHeading>
+                                        onClick={(e) => handleMarkedFav(info, e)} /> 
+                                        | <i class="fa-solid fa-star" style={{ color: theme.colors.accent, marginLeft: "1vw" }}></i><span style={{ color: theme.colors.accent }}>{info?.avgRating}</span>
+                                </SpecificCardSubHeading>
+                                <SpecificCardSubHeading> {available}</SpecificCardSubHeading>
                             </HeaderRight>
                         </HeaderDiv>
                         <hr></hr>

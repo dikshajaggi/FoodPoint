@@ -3,9 +3,11 @@ import { useDispatch } from 'react-redux'
 import { Context } from '../utilities/context/Context'
 import { addItems } from '../utilities/redux/cartSlice'
 import QuantityIncDec from "../utilities/helperComponents/QuantityIncDec"
-import { AddBtnWrapper, AddDishBtn, DishImg, ItemAdd, ItemAddData, MenuDishName, SpecificCardSubHead } from './styledComponents/RestCardforCart'
+import { AddBtnWrapper, AddDishBtn, DishDesc, DishImg, Image, ItemAdd, ItemAddData, MenuDishName, SpecificCardSubHead, VegClassifierIcon } from './styledComponents/RestCardforCart'
 import { database } from "../utilities/firebase/index"
 import { push, ref, set } from '@firebase/database'
+import nonveg from "../assets/nonveg.png"
+import veg from "../assets/veg.png"
 
 const SpecificCard = (props) => {
     const { name, defaultPrice, price, description, id, itemAttribute, imageId, category } = props
@@ -44,12 +46,13 @@ const SpecificCard = (props) => {
 
     return (
         <ItemAdd>
-            <DishImg> <img src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_150,h_150,c_fit/${imageId}`} alt="" /> </DishImg>
+            <DishImg> <Image src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_150,h_150,c_fit/${imageId}`} alt="" /> </DishImg>
             <ItemAddData>
+            {itemAttribute?.vegClassifier === "VEG" ? <VegClassifierIcon src = {veg} /> : <VegClassifierIcon src= {nonveg} />}
                 <MenuDishName>{name}</MenuDishName>
-                <h2><SpecificCardSubHead>{itemAttribute.vegClassifier} | {category} </SpecificCardSubHead></h2>
-                {price ? <h2 style={{ fontSize: "18px" }}><SpecificCardSubHead>Price: </SpecificCardSubHead> Rs.{(price) / 100}</h2> : <h2 style={{ fontSize: "18px" }}><SpecificCardSubHead>Price: </SpecificCardSubHead> Rs.{(defaultPrice) / 100}</h2>}
-                <h2 style={{ fontSize: "14px" }}>{description?.slice(0, 200)}...</h2>
+                <SpecificCardSubHead>{category} </SpecificCardSubHead>
+                {price ? <h2 style={{ fontSize: "14px" }}> ₹{(price) / 100}</h2> : <h2 style={{ fontSize: "14px" }}> ₹{(defaultPrice) / 100}</h2>}
+                <DishDesc>{description?.slice(0, 400)}...</DishDesc>
             </ItemAddData>
             <AddBtnWrapper>
                 {flag === 0 ? <AddDishBtn onClick={() => addItemToCart(props)}>ADD</AddDishBtn> : idArray.includes(id) ? <QuantityIncDec id={id} qty={qty} name={name} price={price / 100} /> : <AddDishBtn onClick={() => addItemToCart(props)}>ADD</AddDishBtn>}
