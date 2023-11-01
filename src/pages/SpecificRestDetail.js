@@ -93,7 +93,7 @@ const Specific = () => {
                                         className="fa-regular fa-heart"
                                         style={{ marginRight: "1vw", color: marked ? theme.colors.accent : "black", cursor: "pointer" }}
                                         onClick={(e) => handleMarkedFav(info, e)} /> 
-                                        | <i class="fa-solid fa-star" style={{ color: theme.colors.accent, marginLeft: "1vw" }}></i><span style={{ color: theme.colors.accent }}>{info?.avgRating}</span>
+                                        | <i class="fa-solid fa-star" style={{ color: "#3d9b6d", marginLeft: "1vw" }}></i><span style={{ color:"#3d9b6d" }}>{info?.avgRating}</span>
                                 </SpecificCardSubHeading>
                                 <SpecificCardSubHeading> {available}</SpecificCardSubHeading>
                             </HeaderRight>

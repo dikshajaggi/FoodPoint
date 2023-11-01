@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const OfferWrapper = styled.div`
-height:120vh;
+height:100%;
 `
 const OfferBanner = styled.div`
 padding: 2vh;

@@ -19,7 +19,7 @@ const InfoWrapper = styled.div`
 display: flex;
 width:100%;
 justify-content: space-evenly;
-font-size: 20px;
+font-size: 18px;
 font-weight: 400;
 color: rgb(88, 86, 86);
 border-bottom: 1px solid rgb(158, 155, 155);
@@ -34,6 +34,7 @@ text-align:center;
 const RestInfo = styled.h6`
 margin-top:2vh;
 text-align:center;
+font-size: 14px;
 `
 
 export { CardWrapper, InfoWrapper, RestName, RestInfo, Image }

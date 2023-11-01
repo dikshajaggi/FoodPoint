@@ -8,8 +8,9 @@ import Card from "../components/RestCard"
 import Header from "../components/Header"
 import RestCard from "../shimmerUI/RestCard"
 import { data } from "../assets/data"
-import { CardWrapper, OfferBanner, OfferCardWrapper, OfferWrapper } from "./styledComponents/Offers"
+import {OfferBanner, OfferCardWrapper, OfferWrapper } from "./styledComponents/Offers"
 import Footer from "../components/Footer"
+import { CardWrapper } from "../layouts/styledComponents/Main"
 
 const Offers = () => {
 
@@ -46,7 +47,7 @@ const Offers = () => {
             <OfferWrapper>
                 <OfferBanner>
                     <h4 style={{ fontSize: "22px" }}>OFFERS</h4>
-                    <h2 style={{ fontSize: "18px" }}>Explore top deals and offers exclusively for you!</h2>
+                    <h2 style={{ fontSize: "14px" }}>Explore top deals and offers exclusively for you!</h2>
                 </OfferBanner>
 
 
@@ -72,17 +73,13 @@ const Offers = () => {
                 </Nav>
                 <TabContent activeTab={currentActiveTab}>
                     <TabPane tabId="1" >
-                        <Row>
-                            <Col>
-                                <CardWrapper>
-                                    {isLoading ? data?.map((item) => {
-                                        return <RestCard />
-                                    }) : offers?.slice(1)?.map((item) => {
-                                        return <Link to={`/rest/${item.info.feeDetails.restaurantId}`} style={{ textDecoration: 'none' }} >< Card {...item.info} /></Link>
-                                    })}
-                                </CardWrapper>
-                            </Col>
-                        </Row>
+                        <CardWrapper>
+                            {isLoading ? data?.map((item) => {
+                            return <RestCard />
+                            }) : offers?.slice(1)?.map((item) => {
+                            return <Link to={`/rest/${item.info.feeDetails?.restaurantId}`} style={{ textDecoration: 'none' }} >< Card {...item.info} /></Link>
+                            })}
+                        </CardWrapper>
                     </TabPane>
                     <TabPane tabId="2">
                         <Row>
