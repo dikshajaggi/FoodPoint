@@ -40,27 +40,10 @@ background-color: transparent;
 display: ${props => props.display === "subHeader" ? "flex" : "none"};
 text-transform: capitalize;
 box-shadow: 3px 9px 26px -4px #eeeeee;
-
-`
-const NavWrapper = styled.div`
-display: flex;
-flex: 1;
-align-items: center;
-flex-direction: row;
-justify-content: center;
-`
-const NavbarUL = styled.ul`
-margin:auto;
-width:100%;
-list-style-type: none;
-display:flex;
-align-items: center;
-justify-content: space-evenly;
-
 `
 
-const NavbarLI = styled.li`
-font-size: ${props => props.header === "main" ? "18px" : "16px"};
+const NavbarLI = styled.div`
+font-size: 16px;
 font-weight: 400;
 `
 
@@ -75,34 +58,14 @@ const LogoutBtn = styled.span`
 font-size: 14px;
 `
 
-const SearchCartWrapper = styled.div`
-    display: flex;
-    justify-content: space-evenly;
-    flex: 1;
-    align-items: center;
-`
-
-const SearchWrapper = styled.div`
- display: flex;
- width: 60%;
- margin-right: -2vw;
-`
-
-const SearchBtn = styled.button`
-background-color:transparent;
-border: none;
-position: absolute;
-right: 14vw;
-`
-
 const CartWrapper = styled.div` 
-    width: 240px;
+    width: 30vw;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
 `
 const UserInfo = styled.div`
-    width: 8vw;
+    width: 9vw;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -136,21 +99,10 @@ flex-direction: column;
 justify-content: space-evenly;
 `
 
-const Profile = styled.button`
-    margin-top: -1vh;
-    background-color:transparent;
-    border: none;
-    height:auto;
+const Name = styled.div`
     text-transform: capitalize;
     font-weight: 400;
-    font-size: 14px;
-    text-align:left;
-`
-
-const Name = styled.h6`
-    text-transform: capitalize;
-    font-weight: 500;
-    font-size: 14px;
+    font-size: 16px;
 `
 
 const CartItemsLength = styled.span`
@@ -163,17 +115,36 @@ const LoginUser = styled.div`
     flex-direction: column;
 `
 
+const Offers = styled.div`
+    display: flex;
+    align-items: center;
+    width:6vw;
+    justify-content: space-evenly;
+`
+
 const Input = styled.input`
 background-color:transparent;
-border: none;
 border: 1px solid #a6a6a6;
-width: 20vw;
-height: 4vh;
+width: 35vw;
+height: 5vh;
+padding: 0 10px;
+border-radius: 5px;
 font-size: 14px;
 &:focus {
     outline: none; 
   }
 
+`
+const SearchWrapper = styled.div`
+ display: flex;
+`
+
+const SearchBtn = styled.button`
+background-color:transparent;
+border: none;
+position: absolute;
+left: 54vw;
+top: 2.5vh;
 `
 
 const SearchValWrapper = styled.div`
@@ -182,18 +153,18 @@ align-items:center;
 cursor:pointer;
 padding:1vh;
 height:auto;
+margin: 2vh 0;
+
 `
-const SearchListVal = styled.li`
-list-style-type: none;
+const SearchListVal = styled.div`
 font-weight: 500;
-width: 100%;
+margin-left: 2vw;
 text-align: left;
 font-size:14px;
 `
 
 const SearchValImg = styled.img`
-height:40%;
-width:40%;
+width:25%;
 border-radius: 6px;
 `
 
@@ -206,7 +177,7 @@ position:absolute;
 box-shadow: -2px 5px 26px -1px rgba(191,184,184,1);
 height: auto;
 top: 10vh;
-width: 20vw;
+width: 30vw;
 z-index: 2;
 background-color:white;
 `
@@ -215,7 +186,7 @@ const Logo = styled.span`
 display:flex;
 justify-content: center;
 align-items:center;
-flex: 1;
+margin-left: 1vw;
 font-weight:500;
 font-size:22px;
 color:${props => props.theme.colors.accent}
@@ -240,4 +211,4 @@ font-size: 14px;
 font-weight:400;
 `
 
-export { HeaderDiv, HeaderWrapper, Profile, Categories, CategoryLabel, NavWrapper, NavbarUL, NavbarLI, LinkStyled, LogoutBtn,SearchCartWrapper, SearchWrapper, SearchBarList, CartWrapper, UserInfo, Avatar, Username, UserDropdown, CartItemsLength, LoginUser, Input, Name, SearchListVal, SearchValWrapper, SearchValImg, Logo, SearchBtn, NavbarULCat, Span, Button }
+export { HeaderDiv, HeaderWrapper, Categories, CategoryLabel, NavbarLI, LinkStyled, LogoutBtn, Offers, SearchWrapper, SearchBarList, CartWrapper, UserInfo, Avatar, Username, UserDropdown, CartItemsLength, LoginUser, Input, Name, SearchListVal, SearchValWrapper, SearchValImg, Logo, SearchBtn, NavbarULCat, Span, Button }

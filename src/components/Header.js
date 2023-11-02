@@ -5,13 +5,14 @@ import { useDispatch, useSelector } from 'react-redux'
 import axios from "axios"
 import "../style.css"
 import { Context } from "../utilities/context/Context"
-import { Avatar, Button, CartItemsLength, CartWrapper, Categories, CategoryLabel, HeaderDiv, HeaderWrapper, Input, LinkStyled, LoginUser, Logo, LogoutBtn, Name, NavWrapper, NavbarLI, NavbarUL, NavbarULCat, Profile, SearchBarList, SearchBtn, SearchCartWrapper, SearchListVal, SearchValImg, SearchValWrapper, SearchWrapper, Span, UserDropdown, UserInfo, Username } from './styledComponents/Header'
+import { Avatar, CartItemsLength, CartWrapper, Categories, CategoryLabel, HeaderDiv, HeaderWrapper, Input, LinkStyled, LoginUser, Logo, LogoutBtn, Name, NavbarLI, NavbarULCat, Offers, SearchBarList, SearchBtn, SearchCartWrapper, SearchListVal, SearchValImg, SearchValWrapper, SearchWrapper, Span, UserDropdown, UserInfo, Username } from './styledComponents/Header'
 import { data } from "../assets/data"
 import { useLocation } from 'react-router-dom';
 import { onAuthStateChanged, signOut } from 'firebase/auth'
 import { auth } from '../utilities/firebase'
 import { addUser, removeUser } from '../utilities/redux/userSlice'
 import { useTheme } from 'styled-components'
+import offers from "../assets/offers.png"
 
 
 const Header = () => {
@@ -44,13 +45,13 @@ const Header = () => {
 
     const [isHovered, setIsHovered] = useState(false);
 
-  const handleMouseEnter = () => {
-    setIsHovered(true);
-    // Automatically hide the div after 2 seconds
-    setTimeout(() => {
-      setIsHovered(false);
-    }, 4000);
-  };
+    const handleMouseEnter = () => {
+        setIsHovered(true);
+        // Automatically hide the div after 2 seconds
+        setTimeout(() => {
+            setIsHovered(false);
+        }, 4000);
+    };
 
     const findMatching = (e) => {
         const matching = []
@@ -138,54 +139,49 @@ const Header = () => {
     return (
         <HeaderDiv>
             <HeaderWrapper>
-                <NavWrapper>
-                    <NavbarUL>
-                        <LinkStyled to="/" style={{ color: window.location.pathname === "/" ? theme.colors.accent : "black" }}><NavbarLI header="main">Home</NavbarLI></LinkStyled>
-                        <LinkStyled to="/about" style={{ color: window.location.pathname === "/about" ? theme.colors.accent : "black" }}><NavbarLI header="main">About</NavbarLI></LinkStyled>
+                <LinkStyled to="/" style={{ color: window.location.pathname === "/" ? theme.colors.accent : "black" }}><Logo>FoodPoint</Logo></LinkStyled>
+                <SearchWrapper>
+                    <Input type="search" placeholder='Search for restaurants' value={searchvalue} onChange={searchrest} onFocus={handleInputFocus}
+                        onBlur={handleInputBlur} />
+                    <SearchBtn onClick={search}><i class="fa-solid fa-magnifying-glass"
+                        style={{
+                            fontSize: "14px",
+                            color: 'black',
+                            display: searchvalue ? "none" : null
+                        }}></i></SearchBtn>
+                    {searchvalue !== "" ? matchingRest.length !== 0 ? closeSearchList ? null : <SearchBarList>
+                        <ul>
+                            {matchingRest.map(item => {
+                                return (
+                                    <SearchValWrapper onClick={searchRestWithList}>
+                                        <SearchValImg src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" + item.cloudinaryImageId} alt="" />
+                                        <SearchListVal>{item.name}</SearchListVal>
+                                    </SearchValWrapper>
+                                )
+                            })}
+                        </ul> </SearchBarList> : <SearchBarList> <Span>no results found </Span></SearchBarList> : null}
+                </SearchWrapper>
+                <CartWrapper>
+                    <Offers>
+                        <img src={offers} alt="" style={{ height: "16px", width: "16px", marginTop: "2px" }} />
                         <LinkStyled to="/offers" style={{ color: window.location.pathname === "/offers" ? theme.colors.accent : "black" }}><NavbarLI header="main">Offers</NavbarLI></LinkStyled>
-                    </NavbarUL>
-                </NavWrapper>
-                <Logo>FoodPoint</Logo>
-                <SearchCartWrapper>
-                    <SearchWrapper>
-                        <Input type="search" placeholder='Search for restaurants' value={searchvalue} onChange={searchrest} onFocus={handleInputFocus}
-                            onBlur={handleInputBlur} />
-                             <SearchBtn onClick={search}><i class="fa-solid fa-magnifying-glass"
-                            style={{
-                                fontSize: "14px",
-                                color: 'black',
-                                display: searchvalue ? "none" : null
-                            }}></i></SearchBtn>
-                             {searchvalue !== "" ? matchingRest.length !== 0 ? closeSearchList ? null : <SearchBarList>
-                <ul>
-                    {matchingRest.map(item => {
-                        return (
-                            <SearchValWrapper onClick={searchRestWithList}>
-                                {/* <SearchValImg src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" + item.cloudinaryImageId} alt="" /> */}
-                                <SearchListVal>{item.name}</SearchListVal>
-                            </SearchValWrapper>
-                        )
-                    })}
-                </ul> </SearchBarList> : <SearchBarList> <Span>no results found </Span></SearchBarList> : null}
-                    </SearchWrapper>
-                    <CartWrapper>
-                        {user !== "" ? <LoginUser >
-                            <UserInfo onMouseEnter={handleMouseEnter}>
-                                <Avatar><i class="fa-solid fa-user" style={{ fontSize: "14px" }}></i></Avatar>
-                                <Username>
-                                    <Name>{user.displayName}</Name>
-                                    <UserDropdown isHovered={isHovered}>
-                                        <LinkStyled option="fav" to="/fav-restaurant">Favourites</LinkStyled>
-                                        <LogoutBtn onClick={handleSignOut}>Logout</LogoutBtn>
-                                    </UserDropdown>
-                                </Username>
-                            </UserInfo>
-                        </LoginUser> : <LinkStyled to="/login"><Username>Login</Username></LinkStyled>}
-                        <LinkStyled to="/cart"><i class="fa-sharp fa-solid fa-cart-shopping" style={{ color: items.length === 0 ? "black" : theme.colors.accent, fontSize: "16px" }}><CartItemsLength style={{ color: 'black', fontSize: "12px" }}>{items.length}</CartItemsLength></i></LinkStyled>
-                    </CartWrapper>
-                </SearchCartWrapper>
+                    </Offers>
+                    {user !== "" ? <LoginUser >
+                        <UserInfo onMouseEnter={handleMouseEnter}>
+                            <Avatar><i class="fa-solid fa-user" style={{ fontSize: "14px" }}></i></Avatar>
+                            <Username>
+                                <Name>{user.displayName}</Name>
+                                <UserDropdown isHovered={isHovered}>
+                                    <LinkStyled option="fav" to="/fav-restaurant">Favourites</LinkStyled>
+                                    <LogoutBtn onClick={handleSignOut}>Logout</LogoutBtn>
+                                </UserDropdown>
+                            </Username>
+                        </UserInfo>
+                    </LoginUser> : <LinkStyled to="/login"><Username>Login</Username></LinkStyled>}
+                    <LinkStyled to="/cart"><i class="fa-sharp fa-solid fa-cart-shopping" style={{ color: items.length === 0 ? "black" : theme.colors.accent, fontSize: "16px" }}><CartItemsLength style={{ color: 'black', fontSize: "12px" }}>{items.length}</CartItemsLength></i></LinkStyled>
+                </CartWrapper>
             </HeaderWrapper>
-           
+
             <Categories display={linkInfo}>
                 <NavbarULCat>
                     <LinkStyled to="/" style={{ color: "white", fontWeight: "600" }}><NavbarLI header="sub" onClick={() => { setFilterOnClick("relevance") }}>RELEVANCE</NavbarLI></LinkStyled>

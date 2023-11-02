@@ -9,6 +9,7 @@ const Footer = () => {
                 <Logo>FoodPoint</Logo>
                 <LinksWrapper>
                     <LinkStyled to="/disclaimer" style={{ color: "white" }}>Disclaimer</LinkStyled>
+                    <LinkStyled to="/about" style={{ color: "white" }}>About</LinkStyled>
                     <LinkStyled to="/privacy_policy" style={{ color: "white" }}>Privacy Policy</LinkStyled>
                     <LinkStyled to="/faq" style={{ color: "white" }}>Faq</LinkStyled>
                     <LinkStyled to="/terms_conditions" style={{ color: "white" }}>Terms & Conditions</LinkStyled>
