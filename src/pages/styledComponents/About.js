@@ -12,8 +12,8 @@ width: 100%;
 height:100%;
 `
 const AboutDesc = styled.div`
-text-align: ${props => props.part === "commitment" ? "center" :  "justify"};
-margin: ${props => props.part === "commitment" ? "0 4vw" :  "0 2vw;"};
+text-align: ${props => props.part === "center" ? "center" :  "justify"};
+margin: ${props => props.part === "center" ? "0 4vw" :  "0 2vw;"};
 margin-bottom: 4vh;
 display: flex;
 flex-wrap: wrap;
@@ -40,17 +40,23 @@ justify-content: space-evenly;
 background-color: white;
 color: black;
 `
-const Commitment =  styled.div`
+const Wrapper =  styled.div`
 margin: 6vh 0;
 padding: 8vh 0;
 display: flex;
-align-items: center;
-height: 60vh;
+align-items: ${props => props.part === "commitment" ? "center" : "none" };
+height: ${props => props.part === "commitment" ? "60vh" : props.section === "first" ? "90vh" : "40vh"};
 flex-direction: column;
 justify-content: space-evenly;
-background-color: #94499c;
-color: white;
+background-color: ${props => props.part === "commitment" ? "#94499c" : "white"};
+color: ${props => props.part === "commitment" ? "white" : "black"};
 padding: 0 1vw;
+`
+
+const ImgWrapper = styled.div`
+display: flex;
+justify-content: space-evenly;
+align-items: center;
 `
 
 const Params = styled.div`
@@ -65,4 +71,11 @@ margin: ${props => props.main === "main" ? "0 2vw 8vh 2vw" : "0 2vw 4vh 2vw"};
 font-size: 30px;
 `
 
-export { AboutWrapper, AboutDesc, AboutHeading, AboutMain, Strong, Flex, Commitment,Params }
+const Images = styled.div`
+display:flex;
+align-items:center;
+justify-content: space-around;
+margin: ${props => props.section === "first" ? "0" : "8vh 0"};
+`
+
+export { AboutWrapper, AboutDesc, AboutHeading, AboutMain, Strong, Flex, Wrapper, Params, ImgWrapper, Images }

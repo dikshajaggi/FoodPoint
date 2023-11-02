@@ -27,7 +27,7 @@ position: absolute;
 flex-direction:column;
 justify-content: center;
 align-items: center;
-border: 2px solid ${props => props.theme.colors.accent};
+border: 2px solid #D3D3D3;
 background-color: white;
 `
 const CashOnDelivery = styled.div`
@@ -39,7 +39,7 @@ flex-direction:column;
 align-items: center;
 background-color:white;
 border-radius: 8px;
-border: 2px solid ${props => props.theme.colors.accent};
+border: 2px solid #D3D3D3;
 `
 const Input = styled.input`
 width:30vw;
