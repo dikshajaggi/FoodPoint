@@ -20,7 +20,6 @@ const Header = () => {
     const context = useContext(Context)
     const location = useLocation()
     const dispatch = useDispatch()
-    const navigate = useNavigate()
     const items = useSelector((store) => store.cart.items)
     const [restData, setrestData] = useState(data)
     const [searchvalue, setSearchvalue] = useState("")
@@ -32,14 +31,9 @@ const Header = () => {
     const linkInfo = headerPaths.includes(currentPathname) || currentPathname === `/rest/${params.id}`
         ? "header"
         : "subHeader";
-
-    const allRestNames = []
-    const [seachResultImg, setSeachResultImg] = useState()
     const [isInputFocused, setInputFocused] = useState(false);
     const [filterSelected, setFilterSelected] = useState("relevance")
-    const [isDivOpen, setIsDivOpen] = useState(false)
 
-    const iconColorOnFocus = theme.colors.accent;
     const handleInputFocus = () => {
         setInputFocused(true);
     };
@@ -47,6 +41,16 @@ const Header = () => {
     const handleInputBlur = () => {
         setInputFocused(false);
     };
+
+    const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+    // Automatically hide the div after 2 seconds
+    setTimeout(() => {
+      setIsHovered(false);
+    }, 4000);
+  };
 
     const findMatching = (e) => {
         const matching = []
@@ -130,9 +134,6 @@ const Header = () => {
         return () => unsubscribe()
     }, [])
 
-    const toggleDiv = () => {
-        setIsDivOpen(!isDivOpen);
-    };
 
     return (
         <HeaderDiv>
@@ -168,16 +169,15 @@ const Header = () => {
                 </ul> </SearchBarList> : <SearchBarList> <Span>no results found </Span></SearchBarList> : null}
                     </SearchWrapper>
                     <CartWrapper>
-                        {user !== "" ? <LoginUser>
-                            <UserInfo>
+                        {user !== "" ? <LoginUser >
+                            <UserInfo onMouseEnter={handleMouseEnter}>
                                 <Avatar><i class="fa-solid fa-user" style={{ fontSize: "14px" }}></i></Avatar>
                                 <Username>
                                     <Name>{user.displayName}</Name>
-                                    <Profile onClick={toggleDiv}>Profile</Profile>
-                                    {isDivOpen ? <UserDropdown>
+                                    <UserDropdown isHovered={isHovered}>
                                         <LinkStyled option="fav" to="/fav-restaurant">Favourites</LinkStyled>
                                         <LogoutBtn onClick={handleSignOut}>Logout</LogoutBtn>
-                                    </UserDropdown> : null}
+                                    </UserDropdown>
                                 </Username>
                             </UserInfo>
                         </LoginUser> : <LinkStyled to="/login"><Username>Login</Username></LinkStyled>}

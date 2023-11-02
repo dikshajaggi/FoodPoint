@@ -106,9 +106,11 @@ const UserInfo = styled.div`
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    cursor: pointer;
+
 `
 const UserDropdown = styled.div`
-display:flex;
+display: ${(props) => (props.isHovered ? 'flex' : 'none')};
 flex-direction: column;
 justify-content: space-evenly;
 align-items: flex-start;
