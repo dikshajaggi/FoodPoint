@@ -85,14 +85,14 @@ const SearchCartWrapper = styled.div`
 const SearchWrapper = styled.div`
  display: flex;
  width: 60%;
- margin-right: -3vw;
+ margin-right: -2vw;
 `
 
 const SearchBtn = styled.button`
 background-color:transparent;
 border: none;
-position: relative;
-right: 26px;
+position: absolute;
+right: 14vw;
 `
 
 const CartWrapper = styled.div` 
