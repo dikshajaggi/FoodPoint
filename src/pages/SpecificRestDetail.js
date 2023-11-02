@@ -1,8 +1,7 @@
 import axios from "axios"
 import React, { useContext, useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
-import { Link, useParams } from 'react-router-dom'
-import { UserContext } from '../utilities/context/UserContext'
+import { useParams } from 'react-router-dom'
 import useAvailable from '../hooks/isAvailable'
 import "../style.css"
 import SpecificCard from '../components/RestCardforCart'
@@ -27,7 +26,6 @@ const Specific = () => {
     const theme = useTheme()
     const context = useContext(Context)
     const [marked, setMarked] = useState()
-    const items = useSelector((store) => store.cart.items)
 
     useEffect(() => {
         setTimeout(() => {
@@ -64,7 +62,7 @@ const Specific = () => {
     }
 
     useEffect(() => {
-        if (marked == false) {
+        if (marked === false) {
             const idArray = context.favRest.map(item => item.id)
             if (idArray.includes(info.id)) {
                 const data = context.favRest.filter(item => item.id !== info.id)

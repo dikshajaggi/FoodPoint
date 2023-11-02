@@ -41,7 +41,7 @@ const Payment = () => {
                 <PaymentInfo>{context.totalItems} items | Total ₹{context.totalPrice}</PaymentInfo>
             </OrderDetails>
             <Wrapper>
-                <Button onClick={() => setClose(false)}><CodHead><img src = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_64,e_trim/PaymentLogos/instruments/4x/Cash" style={{marginRight: "10px", height: "2vh"}}/> Pay on Delivery</CodHead></Button>
+                <Button onClick={() => setClose(false)}><CodHead><img src = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_64,e_trim/PaymentLogos/instruments/4x/Cash" alt= "" style={{marginRight: "10px", height: "2vh"}}/> Pay on Delivery</CodHead></Button>
                 <Button onClick={() => setCloseCard(false)}><CodHead> <i class="fa-regular fa-credit-card" style={{color: "#2D2D3D", marginRight: "10px"}}></i> Credit / Debit card</CodHead></Button>
                 <CashOnDelivery close={close}>
                     <ButtonClose onClick={() => setClose(true)}><i class="fa-solid fa-xmark" style={{fontSize: "18px"}}></i></ButtonClose>

@@ -1,10 +1,9 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import { useSelector } from 'react-redux'
-import { Link } from 'react-router-dom'
 import "../style.css"
 import { UserContext } from '../utilities/context/UserContext'
 import Header from '../components/Header'
-import { AboutDesc, AboutHeading, AboutMain, AboutWrapper, Wrapper, Flex, Params, Strong, AboutDescImg, ImgWrapper, Images } from './styledComponents/About'
+import { AboutDesc, AboutHeading, AboutMain, AboutWrapper, Wrapper, Flex, Params, Strong, ImgWrapper, Images } from './styledComponents/About'
 import Footer from '../components/Footer'
 import team from "../assets/team.jpg"
 import team1 from "../assets/team1.jpg"
