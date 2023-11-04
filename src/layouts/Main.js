@@ -47,10 +47,6 @@ const Main = () => {
 
     }, [props.filter])
 
-    useEffect(() => {
-        console.log("main running")
-    }, [])
-
     return (
         <MainWrapper theme={theme}>
             <Header />

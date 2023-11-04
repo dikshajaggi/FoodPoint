@@ -6,6 +6,7 @@ import displayImg from "../assets/dining.jpg"
 import { Context } from '../utilities/context/Context'
 import axios from 'axios'
 import loadingSpinner from "../assets/loadingSpinner.gif"
+import { redirect } from 'react-router-dom'
 
 const WelcomePage = () => {
     const dynamicText = ["Hungry ?", "Unexpected guests ?", "Cooking gone wrong ?", "Late night at office ?"]
@@ -14,17 +15,25 @@ const WelcomePage = () => {
     const context = useContext(Context)
     const [changePage, setChangePage] = useState(false)
     const [fetchingLoc, setFetchingLoc] = useState(false)
-    
+    const [showError, setShowError] = useState(false)
+        
+
+    const handleClick= () => {
+        if(context.location === null) setShowError(true)
+    }
 
     const handleLocation = () => {
+        setShowError(false)
         setFetchingLoc(true)
         const ReverseGeoCoding = (obj) => {
             let response =  axios.get(`https://nominatim.openstreetmap.org/reverse?lat=${obj.latitude}&lon=${obj.longitude}&format=json`)
             response.then(result=> {
-                setTimeout(() => {
+                console.log(result.data, "context.location result")
+                localStorage.setItem('location', result.data.display_name);
+                context.setLocation(result.data.display_name)
+                // setTimeout(() => {
                     setChangePage(true)
-                    context.setLocation(result.data.display_name)
-                }, 2000);
+                // }, 1000);
             })
         }
     
@@ -38,10 +47,12 @@ const WelcomePage = () => {
           )
     }
 
+
     useEffect(() => {
         if(context.location !== null) {
             setFetchingLoc(false)
             window.location.href = "/home"
+            // return redirect("/home") 
         }
     }, [context.location])
 
@@ -77,9 +88,10 @@ const WelcomePage = () => {
                     </WelcomeText>
                    <LocationInput>
                     {console.log(changePage, "changePage")}
-                        <LocWrapper><Address placeholder= "enter your delivery location" value={fetchingLoc ? "fetching your location...." : ""}></Address> <i class="fa-solid fa-location-crosshairs" style={{marginTop: "2vh", color: "#686b78"}}></i><LocateUser onClick={handleLocation}>Locate Me</LocateUser></LocWrapper>
-                        <FindFood>{fetchingLoc ? <img src={loadingSpinner} alt="" style = {{height: "40px", width: "40px"}}/>: "Find food" }</FindFood>
+                        <LocWrapper><Address placeholder= "Enter your delivery location" value={fetchingLoc ? "fetching your location...." : null}></Address> <i class="fa-solid fa-location-crosshairs" style={{marginTop: "2vh", color: "#686b78"}}></i><LocateUser onClick={handleLocation}>Locate Me</LocateUser></LocWrapper>
+                        <FindFood onClick={handleClick}>{fetchingLoc ? <img src={loadingSpinner} alt="" style = {{height: "40px", width: "40px"}}/>: "Find food" }</FindFood>
                     </LocationInput>
+                    {showError ? <LocationInput type="error">Enter your delivery location</LocationInput> : null}
                 </Body>
             </Content>
             <Image src= {displayImg}></Image>

@@ -52,6 +52,13 @@ const LocationInput = styled.div`
 display: flex;
 margin-top: 6vh;
 align-items: center;
+background-color: ${props => props.type === "error" ? "#fa4a5b": "transparent"};
+height: 6vh;
+width: ${props => props.type === "error" ? "50vw": "none"};
+padding-left: ${props => props.type === "error" ? "1vw": "none"};
+color:${props => props.type === "error" ? "white": "none"};
+margin-top: ${props => props.type === "error" ? "2px": "none"};
+
 `
 
 const SubHead = styled.p`
@@ -77,7 +84,6 @@ border: none;
 background-color: ${props => props.theme.colors.accent};
 height: 6.2vh;
 width: 8vw;
-margin-left: 0.5vw;
 color: white;
 font-weight: 500;
 `
@@ -92,5 +98,8 @@ border: none;
 width: 36vw;
 height: 6vh;
 padding-left: 1vw;
+&:focus {
+    outline: none;
+  }
 `
 export {Wrapper, Main, Content, Image, Header, LoginSignup, Button, Body, WelcomeText, LocationInput, SubHead, Head, LocateUser, FindFood, LocWrapper, Address}
