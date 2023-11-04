@@ -217,6 +217,7 @@ font-weight:400;
 const Location = styled.div`
 display:flex;
 padding: 0 2vw;
+width: 22vw;
 align-items: center;
 font-size: 16px;
 `

@@ -29,7 +29,7 @@ const Header = () => {
     const [closeSearchList, setCloseSearchList] = useState(false)
     const currentPathname = location.pathname;
     const params = useParams()
-    const headerPaths = ["/" ,"/signup", "/login", "/about", "/offers", "/cart", "/fav-restaurant", "/payment"];
+    const headerPaths = ["/", "/signup", "/login", "/about", "/offers", "/cart", "/fav-restaurant", "/payment"];
     const linkInfo = headerPaths.includes(currentPathname) || currentPathname === `/rest/${params.id}`
         ? "header"
         : "subHeader";
@@ -131,7 +131,7 @@ const Header = () => {
             <HeaderWrapper>
                 <LinkStyled to="/" style={{ color: window.location.pathname === "/" ? theme.colors.accent : "black" }}><Logo>HungerBites</Logo></LinkStyled>
                 <Location>
-                    {localStorage.getItem("location") !== null ? `${localStorage.getItem("location").slice(0, 25)}....` :null } <i class="fa-solid fa-angle-down" style={{marginLeft: "1vw", marginTop: "4px", color: theme.colors.accent}}></i>
+                    {localStorage.getItem("location") !== null ? `${localStorage.getItem("location").slice(0, 20)}....` : null} <i class="fa-solid fa-angle-down" style={{ marginLeft: "1vw", marginTop: "4px", color: theme.colors.accent }}></i>
                 </Location>
                 <SearchWrapper>
                     <Input type="search" list="search-suggestions" placeholder='Search for restaurants' value={searchvalue} onChange={searchrest} />
@@ -155,7 +155,7 @@ const Header = () => {
                 </SearchWrapper>
                 <CartWrapper>
                     <Offers>
-                      {window.location.pathname === "/offers" ?  <img src={offersAccent} alt="" style={{ height: "16px", width: "16px", marginTop: "2px" }} /> :  <img src={offers} alt="" style={{ height: "16px", width: "16px", marginTop: "2px" }} /> } 
+                        {window.location.pathname === "/offers" ? <img src={offersAccent} alt="" style={{ height: "16px", width: "16px", marginTop: "2px" }} /> : <img src={offers} alt="" style={{ height: "16px", width: "16px", marginTop: "2px" }} />}
                         <LinkStyled to="/offers" style={{ color: window.location.pathname === "/offers" ? theme.colors.accent : "black" }}><NavbarLI header="main">Offers</NavbarLI></LinkStyled>
                     </Offers>
                     {user !== "" ? <LoginUser >

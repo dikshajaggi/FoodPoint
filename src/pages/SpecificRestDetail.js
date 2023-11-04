@@ -15,9 +15,11 @@ import { useTheme } from "styled-components"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import { Context } from "../utilities/context/Context"
+import { UserContext } from "../utilities/context/UserContext"
 
 const Specific = () => {
     const rest_id = useParams()
+    const { user } = useContext(UserContext)
     const [info, setInfo] = useState({})
     const [otherInfo, setOtherInfo] = useState()
     const [title, setTitle] = useState("")
@@ -86,12 +88,16 @@ const Specific = () => {
 
                             <HeaderRight>
                                 <SpecificCardSubHeading>
-                                    <FontAwesomeIcon
-                                        icon={faHeart}
-                                        className="fa-regular fa-heart"
-                                        style={{ marginRight: "1vw", color: marked ? theme.colors.accent : "black", cursor: "pointer" }}
-                                        onClick={(e) => handleMarkedFav(info, e)} /> 
-                                        | <i class="fa-solid fa-star" style={{ color: "#3d9b6d", marginLeft: "1vw" }}></i><span style={{ color:"#3d9b6d" }}>{info?.avgRating}</span>
+                                    {user !== "" ? <>
+                                        <FontAwesomeIcon
+                                            icon={faHeart}
+                                            className="fa-regular fa-heart"
+                                            style={{ marginRight: "1vw", color: marked ? theme.colors.accent : "black", cursor: "pointer" }}
+                                            onClick={(e) => handleMarkedFav(info, e)} />
+                                        | <i class="fa-solid fa-star" style={{ color: "#3d9b6d", marginLeft: "1vw" }}></i><span style={{ color: "#3d9b6d" }}>{info?.avgRating}</span>
+                                    </> : <>
+                                        <i class="fa-solid fa-star" style={{ color: "#3d9b6d", marginLeft: "1vw" }}></i><span style={{ color: "#3d9b6d" }}>{info?.avgRating}</span>
+                                    </>}
                                 </SpecificCardSubHeading>
                                 <SpecificCardSubHeading> {available}</SpecificCardSubHeading>
                             </HeaderRight>

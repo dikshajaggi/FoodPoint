@@ -51,7 +51,8 @@ flex-direction: column;
 const HeaderRight = styled.div`
 display:flex;
 flex-direction: column;
+align-items: center;
 justify-content: space-evenly;
 `
 
-export { SpecificWrapper, SpecificCardStyle, AllMenuCards, SpecificHeading, SpecificCardSubHeading, MenuHeading, MenuCategory, HeaderDiv, HeaderLeft, HeaderRight}
+export { SpecificWrapper, SpecificCardStyle, AllMenuCards, SpecificHeading, SpecificCardSubHeading, MenuHeading, MenuCategory, HeaderDiv, HeaderLeft, HeaderRight }
