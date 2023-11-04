@@ -88,7 +88,7 @@ const WelcomePage = () => {
                         </WelcomeText>
                         <LocationInput>
                             {console.log(changePage, "changePage")}
-                            <LocWrapper><Address placeholder="Enter your delivery location" value={fetchingLoc ? "fetching your location...." : null}></Address> <i class="fa-solid fa-location-crosshairs" style={{ marginTop: "1.8vh", color: "#686b78" }}></i><LocateUser onClick={handleLocation}>Locate me</LocateUser></LocWrapper>
+                            <LocWrapper><Address placeholder="Enter your delivery location" value={fetchingLoc ? "fetching your location...." : null}></Address> <i class="fa-solid fa-location-crosshairs" style={{ color: "#686b78" }}></i><LocateUser onClick={handleLocation}>Locate me</LocateUser></LocWrapper>
                             <FindFood onClick={handleClick}>{fetchingLoc ? <img src={loadingSpinner} alt="" style={{ height: "40px", width: "40px" }} /> : "Find food"}</FindFood>
                         </LocationInput>
                         {showError ? <LocationInput type="error">Enter your delivery location</LocationInput> : null}

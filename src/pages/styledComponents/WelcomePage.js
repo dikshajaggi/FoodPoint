@@ -92,6 +92,7 @@ const LocWrapper = styled.div`
 display: flex;
 width:42vw;
 justify-content: space-evenly;
+align-items: center;
 border: 1px solid black;
 `
 const Address = styled.input`
