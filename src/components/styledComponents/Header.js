@@ -49,9 +49,12 @@ font-weight: 400;
 
 const LinkStyled = styled(Link)`
 text-decoration: none;
-color: black;
+color: ${props => props.page === "welcome-signup" ? "white" : "black"};
 font-size: ${props => props.option === "fav" ? "14px" : "16px"};
 font-weight : ${props => props.option === "fav" ? "400" : "400"};
+&:hover {
+    color: inherit;
+  }
 `
 
 const LogoutBtn = styled.span`

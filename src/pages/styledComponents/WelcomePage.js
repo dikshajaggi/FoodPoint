@@ -32,8 +32,8 @@ const Button = styled.button`
 border: none;
 height: 6vh;
 width: 8vw;
-background-color: ${props => props.type === "login" ? "transparent": "black"};
-color: ${props => props.type === "login" ? "black": "white"};
+background-color: ${props => props.type === "login" ? "transparent" : "black"};
+color: ${props => props.type === "login" ? "black" : "white"};
 font-weight: 600;
 `
 
@@ -52,12 +52,12 @@ const LocationInput = styled.div`
 display: flex;
 margin-top: 6vh;
 align-items: center;
-background-color: ${props => props.type === "error" ? "#fa4a5b": "transparent"};
+background-color: ${props => props.type === "error" ? "#fa4a5b" : "transparent"};
 height: 6vh;
-width: ${props => props.type === "error" ? "50vw": "none"};
-padding-left: ${props => props.type === "error" ? "1vw": "none"};
-color:${props => props.type === "error" ? "white": "none"};
-margin-top: ${props => props.type === "error" ? "2px": "none"};
+width: ${props => props.type === "error" ? "50vw" : "none"};
+padding-left: ${props => props.type === "error" ? "1vw" : "none"};
+color:${props => props.type === "error" ? "white" : "none"};
+margin-top: ${props => props.type === "error" ? "2px" : "none"};
 
 `
 
@@ -75,7 +75,8 @@ font-size: 40px;
 const LocateUser = styled.button`
 border: none;
 height: 6vh;
-width: 6vw;
+width: 8vw;
+font-size: 16px;
 background-color: transparent;
 `
 
@@ -102,4 +103,4 @@ padding-left: 1vw;
     outline: none;
   }
 `
-export {Wrapper, Main, Content, Image, Header, LoginSignup, Button, Body, WelcomeText, LocationInput, SubHead, Head, LocateUser, FindFood, LocWrapper, Address}
+export { Wrapper, Main, Content, Image, Header, LoginSignup, Button, Body, WelcomeText, LocationInput, SubHead, Head, LocateUser, FindFood, LocWrapper, Address }

@@ -16,40 +16,40 @@ const WelcomePage = () => {
     const [changePage, setChangePage] = useState(false)
     const [fetchingLoc, setFetchingLoc] = useState(false)
     const [showError, setShowError] = useState(false)
-        
 
-    const handleClick= () => {
-        if(context.location === null) setShowError(true)
+
+    const handleClick = () => {
+        if (context.location === null) setShowError(true)
     }
 
     const handleLocation = () => {
         setShowError(false)
         setFetchingLoc(true)
         const ReverseGeoCoding = (obj) => {
-            let response =  axios.get(`https://nominatim.openstreetmap.org/reverse?lat=${obj.latitude}&lon=${obj.longitude}&format=json`)
-            response.then(result=> {
+            let response = axios.get(`https://nominatim.openstreetmap.org/reverse?lat=${obj.latitude}&lon=${obj.longitude}&format=json`)
+            response.then(result => {
                 console.log(result.data, "context.location result")
                 localStorage.setItem('location', result.data.display_name);
                 context.setLocation(result.data.display_name)
                 // setTimeout(() => {
-                    setChangePage(true)
+                setChangePage(true)
                 // }, 1000);
             })
         }
-    
+
         navigator.geolocation.getCurrentPosition(
             (position) => {
                 ReverseGeoCoding(position.coords)
-                },
-           (error) => {
-              console.error("Error getting user location:", error);
+            },
+            (error) => {
+                console.error("Error getting user location:", error);
             }
-          )
+        )
     }
 
 
     useEffect(() => {
-        if(context.location !== null) {
+        if (context.location !== null) {
             setFetchingLoc(false)
             window.location.href = "/home"
             // return redirect("/home") 
@@ -59,46 +59,46 @@ const WelcomePage = () => {
 
     useEffect(() => {
         const interval = setInterval(() => {
-          // Calculate the next index for the text
-          const nextIndex = (textIndex + 1) % dynamicText.length;
-          setTextIndex(nextIndex);
-          setText(dynamicText[nextIndex]);
+            // Calculate the next index for the text
+            const nextIndex = (textIndex + 1) % dynamicText.length;
+            setTextIndex(nextIndex);
+            setText(dynamicText[nextIndex]);
         }, 3000);
-    
+
         // Cleanup the interval when the component unmounts
         return () => clearInterval(interval);
-      }, [textIndex]);
+    }, [textIndex]);
 
 
-  return (
-    <Wrapper>
-        <Main>
-            <Content>
-                <Header>
-                    <Logo page="welcome">HungerBites</Logo>
-                    <LoginSignup>
-                       <Button type = "login"><LinkStyled to ="/login">Login</LinkStyled></Button>
-                        <Button type = "signup"><LinkStyled to ="/signup">Sign up</LinkStyled></Button>
-                    </LoginSignup>
-                </Header>
-                <Body>
-                    <WelcomeText>
-                        <Head>{text}</Head>
-                        <SubHead>Order food from favourite restaurants near you.</SubHead>
-                    </WelcomeText>
-                   <LocationInput>
-                    {console.log(changePage, "changePage")}
-                        <LocWrapper><Address placeholder= "Enter your delivery location" value={fetchingLoc ? "fetching your location...." : null}></Address> <i class="fa-solid fa-location-crosshairs" style={{marginTop: "2vh", color: "#686b78"}}></i><LocateUser onClick={handleLocation}>Locate Me</LocateUser></LocWrapper>
-                        <FindFood onClick={handleClick}>{fetchingLoc ? <img src={loadingSpinner} alt="" style = {{height: "40px", width: "40px"}}/>: "Find food" }</FindFood>
-                    </LocationInput>
-                    {showError ? <LocationInput type="error">Enter your delivery location</LocationInput> : null}
-                </Body>
-            </Content>
-            <Image src= {displayImg}></Image>
-        </Main>
-        <Footer />
-    </Wrapper>
-  )
+    return (
+        <Wrapper>
+            <Main>
+                <Content>
+                    <Header>
+                        <Logo page="welcome">HungerBites</Logo>
+                        <LoginSignup>
+                            <Button type="login"><LinkStyled to="/login" page="welcome">Login</LinkStyled></Button>
+                            <Button type="signup"><LinkStyled to="/signup" page="welcome-signup" >Sign up</LinkStyled></Button>
+                        </LoginSignup>
+                    </Header>
+                    <Body>
+                        <WelcomeText>
+                            <Head>{text}</Head>
+                            <SubHead>Order food from favourite restaurants near you.</SubHead>
+                        </WelcomeText>
+                        <LocationInput>
+                            {console.log(changePage, "changePage")}
+                            <LocWrapper><Address placeholder="Enter your delivery location" value={fetchingLoc ? "fetching your location...." : null}></Address> <i class="fa-solid fa-location-crosshairs" style={{ marginTop: "1.8vh", color: "#686b78" }}></i><LocateUser onClick={handleLocation}>Locate me</LocateUser></LocWrapper>
+                            <FindFood onClick={handleClick}>{fetchingLoc ? <img src={loadingSpinner} alt="" style={{ height: "40px", width: "40px" }} /> : "Find food"}</FindFood>
+                        </LocationInput>
+                        {showError ? <LocationInput type="error">Enter your delivery location</LocationInput> : null}
+                    </Body>
+                </Content>
+                <Image src={displayImg}></Image>
+            </Main>
+            <Footer />
+        </Wrapper>
+    )
 }
 
 export default WelcomePage
