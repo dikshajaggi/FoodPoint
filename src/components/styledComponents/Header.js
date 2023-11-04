@@ -144,7 +144,7 @@ background-color:transparent;
 border: none;
 position: absolute;
 left: 54vw;
-top: 2.5vh;
+top: 2.8vh;
 `
 
 const SearchValWrapper = styled.div`
@@ -177,7 +177,7 @@ position:absolute;
 box-shadow: -2px 5px 26px -1px rgba(191,184,184,1);
 height: auto;
 top: 10vh;
-width: 30vw;
+width: 35vw;
 z-index: 2;
 background-color:white;
 `

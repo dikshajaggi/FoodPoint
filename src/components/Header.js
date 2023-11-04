@@ -13,6 +13,7 @@ import { auth } from '../utilities/firebase'
 import { addUser, removeUser } from '../utilities/redux/userSlice'
 import { useTheme } from 'styled-components'
 import offers from "../assets/offers.png"
+import offersAccent from "../assets/offersAccent.png"
 
 
 const Header = () => {
@@ -163,7 +164,7 @@ const Header = () => {
                 </SearchWrapper>
                 <CartWrapper>
                     <Offers>
-                        <img src={offers} alt="" style={{ height: "16px", width: "16px", marginTop: "2px" }} />
+                      {window.location.pathname === "/offers" ?  <img src={offersAccent} alt="" style={{ height: "16px", width: "16px", marginTop: "2px" }} /> :  <img src={offers} alt="" style={{ height: "16px", width: "16px", marginTop: "2px" }} /> } 
                         <LinkStyled to="/offers" style={{ color: window.location.pathname === "/offers" ? theme.colors.accent : "black" }}><NavbarLI header="main">Offers</NavbarLI></LinkStyled>
                     </Offers>
                     {user !== "" ? <LoginUser >
