@@ -14,10 +14,6 @@ import { useTheme } from 'styled-components'
 
 const About = () => {
     const theme = useTheme()
-    const username = useContext(UserContext)
-    console.log(username.datajson, "datajson")
-    const items = useSelector((store) => store.cart.items)
-    console.log(items, items.length, "checking items in store")
 
     return (
         <AboutWrapper>

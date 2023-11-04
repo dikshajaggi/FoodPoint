@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import axios from "axios"
 import "../style.css"
 import { Context } from "../utilities/context/Context"
-import { Avatar, CartItemsLength, CartWrapper, Categories, CategoryLabel, HeaderDiv, HeaderWrapper, Input, LinkStyled, LoginUser, Logo, LogoutBtn, Name, NavbarLI, NavbarULCat, Offers, SearchBarList, SearchBtn, SearchCartWrapper, SearchListVal, SearchValImg, SearchValWrapper, SearchWrapper, Span, UserDropdown, UserInfo, Username } from './styledComponents/Header'
+import { Avatar, CartItemsLength, CartWrapper, Categories, CategoryLabel, HeaderDiv, HeaderWrapper, Input, LinkStyled, Location, LoginUser, Logo, LogoutBtn, Name, NavbarLI, NavbarULCat, Offers, SearchBarList, SearchBtn, SearchCartWrapper, SearchListVal, SearchValImg, SearchValWrapper, SearchWrapper, Span, UserDropdown, UserInfo, Username } from './styledComponents/Header'
 import { data } from "../assets/data"
 import { useLocation } from 'react-router-dom';
 import { onAuthStateChanged, signOut } from 'firebase/auth'
@@ -136,11 +136,15 @@ const Header = () => {
         return () => unsubscribe()
     }, [])
 
+    console.log(context.location, "checking location")
 
     return (
         <HeaderDiv>
             <HeaderWrapper>
                 <LinkStyled to="/" style={{ color: window.location.pathname === "/" ? theme.colors.accent : "black" }}><Logo>FoodPoint</Logo></LinkStyled>
+                <Location>
+                    {context.location !== null ? `${context.location.slice(0, 25)}....` :null } <i class="fa-solid fa-angle-down" style={{marginLeft: "1vw", marginTop: "4px", color: theme.colors.accent}}></i>
+                </Location>
                 <SearchWrapper>
                     <Input type="search" placeholder='Search for restaurants' value={searchvalue} onChange={searchrest} onFocus={handleInputFocus}
                         onBlur={handleInputBlur} />

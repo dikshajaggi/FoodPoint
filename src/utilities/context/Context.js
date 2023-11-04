@@ -1,9 +1,10 @@
 import { createContext, useEffect, useState } from "react";
 import { data } from "../../assets/data"
 import { database } from "../firebase";
-import { get, onValue, ref } from "@firebase/database";
+import { get, ref } from "@firebase/database";
 import { addItems } from "../redux/cartSlice";
 import { useDispatch } from "react-redux";
+import axios from "axios";
 
 const value = "value"
 const Context = createContext(value)
@@ -19,8 +20,27 @@ const ContextProvider = (props) => {
     const [favRest, setFavRest] = useState([])
     const [totalItems, setTotalItems] = useState()
     const [totalPrice, setTotalPrice] = useState()
+    const [location, setLocation] = useState(null)
     const dispatch = useDispatch()
 
+    const ReverseGeoCoding = (obj) => {
+        let response =  axios.get(`https://nominatim.openstreetmap.org/reverse?lat=${obj.latitude}&lon=${obj.longitude}&format=json`)
+        response.then(result=> {
+            console.log(result.data.display_name, "geolocation")
+            setLocation(result.data.display_name)
+        })
+    }
+
+
+    navigator.geolocation.getCurrentPosition(
+        (position) => {
+            ReverseGeoCoding(position.coords)
+            },
+       (error) => {
+          console.error("Error getting user location:", error);
+        }
+      )
+    
     useEffect(() => {
         const dataRef = ref(database, "cart_items");
 
@@ -42,6 +62,8 @@ const ContextProvider = (props) => {
             .catch((error) => {
                 console.error(error);
             });
+
+            
     }, []);
 
     return (
@@ -66,7 +88,9 @@ const ContextProvider = (props) => {
                 totalItems,
                 setTotalItems,
                 totalPrice,
-                setTotalPrice
+                setTotalPrice,
+                location,
+                setLocation
             }}
         >
             {props.children}

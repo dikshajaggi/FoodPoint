@@ -143,7 +143,7 @@ const SearchBtn = styled.button`
 background-color:transparent;
 border: none;
 position: absolute;
-left: 54vw;
+left: 63.5vw;
 top: 2.8vh;
 `
 
@@ -188,7 +188,7 @@ justify-content: center;
 align-items:center;
 margin-left: 1vw;
 font-weight:500;
-font-size:22px;
+font-size: 28px;
 color:${props => props.theme.colors.accent}
 `
 
@@ -211,4 +211,9 @@ font-size: 14px;
 font-weight:400;
 `
 
-export { HeaderDiv, HeaderWrapper, Categories, CategoryLabel, NavbarLI, LinkStyled, LogoutBtn, Offers, SearchWrapper, SearchBarList, CartWrapper, UserInfo, Avatar, Username, UserDropdown, CartItemsLength, LoginUser, Input, Name, SearchListVal, SearchValWrapper, SearchValImg, Logo, SearchBtn, NavbarULCat, Span, Button }
+const Location = styled.div`
+display:flex;
+align-items: center;
+`
+
+export { HeaderDiv, HeaderWrapper, Categories, CategoryLabel, NavbarLI, LinkStyled, LogoutBtn, Offers, SearchWrapper, SearchBarList, CartWrapper, UserInfo, Avatar, Username, UserDropdown, CartItemsLength, LoginUser, Input, Name, SearchListVal, SearchValWrapper, SearchValImg, Logo, SearchBtn, NavbarULCat, Span, Button, Location }
