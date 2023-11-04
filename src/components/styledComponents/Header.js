@@ -186,9 +186,9 @@ const Logo = styled.span`
 display:flex;
 justify-content: center;
 align-items:center;
-margin-left: 1vw;
-font-weight:500;
-font-size: 28px;
+margin-left: ${props => props.page === "welcome" ? "none" : "1vw"};
+font-weight:${props => props.page === "welcome" ? "700" : "500"};
+font-size: ${props => props.page === "welcome" ? "40px" : "28px"};
 color:${props => props.theme.colors.accent}
 `
 

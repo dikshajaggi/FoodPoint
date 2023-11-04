@@ -29,7 +29,7 @@ const Header = () => {
     const [closeSearchList, setCloseSearchList] = useState(false)
     const currentPathname = location.pathname;
     const params = useParams()
-    const headerPaths = ["/signup", "/login", "/about", "/offers", "/cart", "/fav-restaurant", "/payment"];
+    const headerPaths = ["/" ,"/signup", "/login", "/about", "/offers", "/cart", "/fav-restaurant", "/payment"];
     const linkInfo = headerPaths.includes(currentPathname) || currentPathname === `/rest/${params.id}`
         ? "header"
         : "subHeader";
