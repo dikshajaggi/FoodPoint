@@ -123,11 +123,9 @@ const Offers = styled.div`
 `
 
 const Input = styled.input`
-background-color:transparent;
 border: 1px solid #a6a6a6;
 width: 35vw;
 height: 5vh;
-padding: 0 10px;
 border-radius: 5px;
 font-size: 14px;
 &:focus {
@@ -137,14 +135,15 @@ font-size: 14px;
 `
 const SearchWrapper = styled.div`
  display: flex;
+ align-items: center;
+ height: 5vh;
 `
 
 const SearchBtn = styled.button`
 background-color:transparent;
 border: none;
-position: absolute;
-left: 63.5vw;
-top: 2.8vh;
+position: relative;
+right: 30px;
 `
 
 const SearchValWrapper = styled.div`

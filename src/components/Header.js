@@ -131,10 +131,10 @@ const Header = () => {
             <HeaderWrapper>
                 <LinkStyled to="/" style={{ color: window.location.pathname === "/" ? theme.colors.accent : "black" }}><Logo>HungerBites</Logo></LinkStyled>
                 <Location>
-                    {context.location !== null ? `${context.location.slice(0, 25)}....` :null } <i class="fa-solid fa-angle-down" style={{marginLeft: "1vw", marginTop: "4px", color: theme.colors.accent}}></i>
+                    {localStorage.getItem("location") !== null ? `${localStorage.getItem("location").slice(0, 25)}....` :null } <i class="fa-solid fa-angle-down" style={{marginLeft: "1vw", marginTop: "4px", color: theme.colors.accent}}></i>
                 </Location>
                 <SearchWrapper>
-                    <Input type="search" placeholder='Search for restaurants' value={searchvalue} onChange={searchrest} />
+                    <Input type="search" list="search-suggestions" placeholder='Search for restaurants' value={searchvalue} onChange={searchrest} />
                     <SearchBtn onClick={search}><i class="fa-solid fa-magnifying-glass"
                         style={{
                             fontSize: "14px",
