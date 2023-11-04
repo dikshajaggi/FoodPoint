@@ -51,6 +51,7 @@ margin-top: 8vh;
 const LocationInput = styled.div`
 display: flex;
 margin-top: 6vh;
+align-items: center;
 `
 
 const SubHead = styled.p`

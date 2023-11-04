@@ -130,7 +130,7 @@ const Header = () => {
     return (
         <HeaderDiv>
             <HeaderWrapper>
-                <LinkStyled to="/" style={{ color: window.location.pathname === "/" ? theme.colors.accent : "black" }}><Logo>FoodPoint</Logo></LinkStyled>
+                <LinkStyled to="/" style={{ color: window.location.pathname === "/" ? theme.colors.accent : "black" }}><Logo>HungerBites</Logo></LinkStyled>
                 <Location>
                     {context.location !== null ? `${context.location.slice(0, 25)}....` :null } <i class="fa-solid fa-angle-down" style={{marginLeft: "1vw", marginTop: "4px", color: theme.colors.accent}}></i>
                 </Location>

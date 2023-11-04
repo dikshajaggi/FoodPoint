@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import Card from '../components/RestCard'
 import "../style.css"
 import axios from "axios"
-import { Link, useFetcher } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Header from "../components/Header"
 import { Context } from '../utilities/context/Context'
 import { CardWrapper, MainWrapper } from './styledComponents/Main'

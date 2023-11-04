@@ -23,24 +23,6 @@ const ContextProvider = (props) => {
     const [location, setLocation] = useState(null)
     const dispatch = useDispatch()
 
-    const ReverseGeoCoding = (obj) => {
-        let response =  axios.get(`https://nominatim.openstreetmap.org/reverse?lat=${obj.latitude}&lon=${obj.longitude}&format=json`)
-        response.then(result=> {
-            console.log(result.data.display_name, "geolocation")
-            setLocation(result.data.display_name)
-        })
-    }
-
-
-    navigator.geolocation.getCurrentPosition(
-        (position) => {
-            ReverseGeoCoding(position.coords)
-            },
-       (error) => {
-          console.error("Error getting user location:", error);
-        }
-      )
-    
     useEffect(() => {
         const dataRef = ref(database, "cart_items");
 
