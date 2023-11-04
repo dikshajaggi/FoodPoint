@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { Link, useNavigate, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { UserContext } from '../utilities/context/UserContext'
 import { useDispatch, useSelector } from 'react-redux'
 import axios from "axios"
@@ -33,16 +33,6 @@ const Header = () => {
     const linkInfo = headerPaths.includes(currentPathname) || currentPathname === `/rest/${params.id}`
         ? "header"
         : "subHeader";
-    const [isInputFocused, setInputFocused] = useState(false);
-    const [filterSelected, setFilterSelected] = useState("relevance")
-
-    const handleInputFocus = () => {
-        setInputFocused(true);
-    };
-
-    const handleInputBlur = () => {
-        setInputFocused(false);
-    };
 
     const [isHovered, setIsHovered] = useState(false);
 
@@ -101,7 +91,6 @@ const Header = () => {
     }
 
     const setFilterOnClick = (filter) => {
-        setFilterSelected(filter)
         context.setFilter(filter)
     }
 
@@ -146,8 +135,7 @@ const Header = () => {
                     {context.location !== null ? `${context.location.slice(0, 25)}....` :null } <i class="fa-solid fa-angle-down" style={{marginLeft: "1vw", marginTop: "4px", color: theme.colors.accent}}></i>
                 </Location>
                 <SearchWrapper>
-                    <Input type="search" placeholder='Search for restaurants' value={searchvalue} onChange={searchrest} onFocus={handleInputFocus}
-                        onBlur={handleInputBlur} />
+                    <Input type="search" placeholder='Search for restaurants' value={searchvalue} onChange={searchrest} />
                     <SearchBtn onClick={search}><i class="fa-solid fa-magnifying-glass"
                         style={{
                             fontSize: "14px",
