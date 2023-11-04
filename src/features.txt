@@ -108,3 +108,5 @@ to be done =>
 don't show the main page first until the user has logged in
 navigate to the main page only when user has entered location
 save location in firebase
+
+add "user name"...instead of login sign up when user is on the welcome page and has logged in or signed up

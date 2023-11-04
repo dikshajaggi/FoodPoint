@@ -58,7 +58,7 @@ const Login = () => {
                 setUser(user)
                 // if the user has an option to update its profile, then dispatch an action again in that component also
                 // and in that component work with the (this) updated value of the user using "auth" -> firebase auth
-                navigate("/")
+                localStorage.getItem("location") !== null ? navigate("/home") : navigate("/")
             } else {
                 // User is signed out
                 dispatch(removeUser())
@@ -72,26 +72,26 @@ const Login = () => {
     return (
         <>
             <HeaderOnlyLayoutWrapper>
-                    <LoginWrapper>
-                        <Heading heading="login">login</Heading>
-                        <form onSubmit={formik.handleSubmit}>
-                            <LabelInputWrapper>
-                                <Input type="text" placeholder="enter name" name="name" id="name" onChange={formik.handleChange} onBlur={formik.handleBlur}></Input>
-                                {formik.errors.name && formik.touched.name ? <ErrorPara>{formik.errors.name}</ErrorPara> : null}
-                            </LabelInputWrapper>
-                            <LabelInputWrapper>
-                                <Input type="email" placeholder="enter email" name="email" id="email" onChange={formik.handleChange} onBlur={formik.handleBlur}></Input>
-                                {formik.errors.email && formik.touched.email ? <ErrorPara>{formik.errors.email}</ErrorPara> : null}
-                            </LabelInputWrapper>
-                            <LabelInputWrapper>
-                                <Input type="password" placeholder="enter password" name="password" id="password" onChange={formik.handleChange} onBlur={formik.handleBlur}></Input>
-                                {formik.errors.password && formik.touched.password ? <ErrorPara>{formik.errors.password}</ErrorPara> : null}
-                            </LabelInputWrapper>
-                            {error !== null ? <ErrorPara>{error}</ErrorPara> : null}
-                            <LoginButton type="submit">login</LoginButton>
-                            <Label>Don't have an account? <LinkWrapper to="/signup">Sign up </LinkWrapper></Label>
-                        </form>
-                    </LoginWrapper>
+                <LoginWrapper>
+                    <Heading heading="login">login</Heading>
+                    <form onSubmit={formik.handleSubmit}>
+                        <LabelInputWrapper>
+                            <Input type="text" placeholder="enter name" name="name" id="name" onChange={formik.handleChange} onBlur={formik.handleBlur}></Input>
+                            {formik.errors.name && formik.touched.name ? <ErrorPara>{formik.errors.name}</ErrorPara> : null}
+                        </LabelInputWrapper>
+                        <LabelInputWrapper>
+                            <Input type="email" placeholder="enter email" name="email" id="email" onChange={formik.handleChange} onBlur={formik.handleBlur}></Input>
+                            {formik.errors.email && formik.touched.email ? <ErrorPara>{formik.errors.email}</ErrorPara> : null}
+                        </LabelInputWrapper>
+                        <LabelInputWrapper>
+                            <Input type="password" placeholder="enter password" name="password" id="password" onChange={formik.handleChange} onBlur={formik.handleBlur}></Input>
+                            {formik.errors.password && formik.touched.password ? <ErrorPara>{formik.errors.password}</ErrorPara> : null}
+                        </LabelInputWrapper>
+                        {error !== null ? <ErrorPara>{error}</ErrorPara> : null}
+                        <LoginButton type="submit">login</LoginButton>
+                        <Label>Don't have an account? <LinkWrapper to="/signup">Sign up </LinkWrapper></Label>
+                    </form>
+                </LoginWrapper>
             </HeaderOnlyLayoutWrapper>
         </>
 

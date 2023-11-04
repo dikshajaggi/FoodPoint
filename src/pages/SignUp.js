@@ -25,7 +25,7 @@ const SignUp = () => {
                 updateProfile(user, {
                     displayName: values.name
                 }).then(() => {
-                    navigate("/")
+                    localStorage.getItem("location") ? navigate("/home") : navigate("/")
                 }).catch((error) => {
                     // An error occurred
                     // ...
@@ -44,7 +44,7 @@ const SignUp = () => {
         validationSchema: SignUpSchema,
         onSubmit: (values, action) => {
             handleSignup(values)
-            navigate(-1)
+            localStorage.getItem("location") ? navigate("/home") : navigate("/")
             console.log(values)
             action.resetForm()
         }
