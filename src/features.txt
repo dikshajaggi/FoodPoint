@@ -100,3 +100,11 @@ whenever qty is changed update checkout
 
 WHEN AN ITEM IS REMOVE FROM CART AND USER IS TRYING TO ADD IT AGAIN, IT IS 
 NOT SHOWING QTY INC DEC BTN (BUT ITEM IS BEING ADDED)  ((FIXED !!!!!!!!!))
+
+
+-------------------------------------------------------------------------------
+to be done =>
+
+don't show the main page first until the user has logged in
+navigate to the main page only when user has entered location
+save location in firebase

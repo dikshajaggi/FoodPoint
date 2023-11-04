@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Body, Button, Content, Head, Header, Image, LocationInput, LoginSignup, Main, SubHead, WelcomeText, Wrapper } from './styledComponents/WelcomePage'
+import { Address, Body, Button, Content, FindFood, Head, Header, Image, LocWrapper, LocateUser, LocationInput, LoginSignup, Main, SubHead, WelcomeText, Wrapper } from './styledComponents/WelcomePage'
 import Footer from '../components/Footer'
 import { LinkStyled, Logo } from '../components/styledComponents/Header'
 import displayImg from "../assets/dining.jpg"
@@ -22,7 +22,6 @@ const WelcomePage = () => {
       }, [textIndex]);
 
 
-
   return (
     <Wrapper>
         <Main>
@@ -39,7 +38,10 @@ const WelcomePage = () => {
                         <Head>{text}</Head>
                         <SubHead>Order food from favourite restaurants near you.</SubHead>
                     </WelcomeText>
-                   <LinkStyled to="/home"><LocationInput>Home</LocationInput></LinkStyled> 
+                   <LocationInput>
+                        <LocWrapper><Address placeholder="enter your delivery location"></Address> <LocateUser>Locate Me</LocateUser></LocWrapper>
+                        <LinkStyled to="/home"><FindFood>Find food</FindFood></LinkStyled> 
+                    </LocationInput>
                 </Body>
             </Content>
             <Image src= {displayImg}></Image>
