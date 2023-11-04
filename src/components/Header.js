@@ -86,7 +86,6 @@ const Header = () => {
     }
 
     const search = () => {
-        console.log(restData.filter((item) => item?.info.name), "mango checking search", searchvalue)
         context.setFilteredData(restData.filter((item) => item?.info.name.toLowerCase().includes(searchvalue.toLowerCase())))
     }
 
