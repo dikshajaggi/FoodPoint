@@ -104,7 +104,7 @@ justify-content: space-evenly;
 
 const Name = styled.div`
     text-transform: capitalize;
-    font-weight: 400;
+    font-weight: ${props => props.page === "welcome" ? 600 : 400};
     font-size: 16px;
 `
 
@@ -191,7 +191,7 @@ justify-content: center;
 align-items:center;
 margin-left: ${props => props.page === "welcome" ? "none" : "1vw"};
 font-weight:${props => props.page === "welcome" ? "700" : "500"};
-font-size: ${props => props.page === "welcome" ? "40px" : "28px"};
+font-size: ${props => props.page === "welcome" ? "40px" : "26px"};
 color:${props => props.theme.colors.accent}
 `
 

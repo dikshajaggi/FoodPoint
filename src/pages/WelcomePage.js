@@ -1,18 +1,19 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { Address, Body, Button, Content, FindFood, Head, Header, Image, LocWrapper, LocateUser, LocationInput, LoginSignup, Main, SubHead, WelcomeText, Wrapper } from './styledComponents/WelcomePage'
 import Footer from '../components/Footer'
-import { LinkStyled, Logo } from '../components/styledComponents/Header'
+import { LinkStyled, Logo, Name } from '../components/styledComponents/Header'
 import displayImg from "../assets/dining.jpg"
 import { Context } from '../utilities/context/Context'
 import axios from 'axios'
 import loadingSpinner from "../assets/loadingSpinner.gif"
-import { redirect } from 'react-router-dom'
+import { UserContext } from '../utilities/context/UserContext'
 
 const WelcomePage = () => {
-    const dynamicText = ["Hungry ?", "Unexpected guests ?", "Cooking gone wrong ?", "Late night at office ?"]
-    const [textIndex, setTextIndex] = useState(0);
-    const [text, setText] = useState(dynamicText[0]);
     const context = useContext(Context)
+    const { user } = useContext(UserContext)
+    const dynamicText = ["Hungry ?", "Unexpected guests ?", "Cooking gone wrong ?", "Late night at office ?"]
+    const [textIndex, setTextIndex] = useState(0)
+    const [text, setText] = useState(dynamicText[0])
     const [changePage, setChangePage] = useState(false)
     const [fetchingLoc, setFetchingLoc] = useState(false)
     const [showError, setShowError] = useState(false)
@@ -31,9 +32,9 @@ const WelcomePage = () => {
                 console.log(result.data, "context.location result")
                 localStorage.setItem('location', result.data.display_name);
                 context.setLocation(result.data.display_name)
-                // setTimeout(() => {
-                setChangePage(true)
-                // }, 1000);
+                setTimeout(() => {
+                    setChangePage(true)
+                }, 1000);
             })
         }
 
@@ -52,7 +53,6 @@ const WelcomePage = () => {
         if (context.location !== null) {
             setFetchingLoc(false)
             window.location.href = "/home"
-            // return redirect("/home") 
         }
     }, [context.location])
 
@@ -69,17 +69,17 @@ const WelcomePage = () => {
         return () => clearInterval(interval);
     }, [textIndex]);
 
-
+    console.log(user, "user user")
     return (
         <Wrapper>
             <Main>
                 <Content>
                     <Header>
                         <Logo page="welcome">HungerBites</Logo>
-                        <LoginSignup>
+                        {user !== "" ? <Name page="welcome">Hello, {user.displayName}</Name> : <LoginSignup>
                             <Button type="login"><LinkStyled to="/login" page="welcome">Login</LinkStyled></Button>
                             <Button type="signup"><LinkStyled to="/signup" page="welcome-signup" >Sign up</LinkStyled></Button>
-                        </LoginSignup>
+                        </LoginSignup>}
                     </Header>
                     <Body>
                         <WelcomeText>
