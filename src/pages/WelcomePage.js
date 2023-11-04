@@ -77,8 +77,8 @@ const WelcomePage = () => {
                 <Header>
                     <Logo page="welcome">HungerBites</Logo>
                     <LoginSignup>
-                        <Button type = "login">Login</Button>
-                        <Button type = "signup">Sign up</Button>
+                       <Button type = "login"><LinkStyled to ="/login">Login</LinkStyled></Button>
+                        <Button type = "signup"><LinkStyled to ="/signup">Sign up</LinkStyled></Button>
                     </LoginSignup>
                 </Header>
                 <Body>

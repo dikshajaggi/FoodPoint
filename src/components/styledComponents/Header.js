@@ -126,6 +126,7 @@ const Input = styled.input`
 border: 1px solid #a6a6a6;
 width: 35vw;
 height: 5vh;
+padding-left: 1vw;
 border-radius: 5px;
 font-size: 14px;
 &:focus {
@@ -212,7 +213,9 @@ font-weight:400;
 
 const Location = styled.div`
 display:flex;
+padding: 0 2vw;
 align-items: center;
+font-size: 16px;
 `
 
 export { HeaderDiv, HeaderWrapper, Categories, CategoryLabel, NavbarLI, LinkStyled, LogoutBtn, Offers, SearchWrapper, SearchBarList, CartWrapper, UserInfo, Avatar, Username, UserDropdown, CartItemsLength, LoginUser, Input, Name, SearchListVal, SearchValWrapper, SearchValImg, Logo, SearchBtn, NavbarULCat, Span, Button, Location }
