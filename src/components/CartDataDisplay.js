@@ -10,6 +10,8 @@ import QuantityIncDec from "../utilities/helperComponents/QuantityIncDec"
 const CartDataDisplay = (props) => {
     const { name, price, imageId, id } = props
 
+    
+
     const dispatch = useDispatch()
     const context = useContext(Context)
     const items = useSelector(store => store.cart.items)
