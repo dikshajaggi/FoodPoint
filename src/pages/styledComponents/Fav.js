@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 const FavWrapper = styled.div`
-height:100vh
+height:100vh;
+margin: 2vh 2vw;
 `
 
 const FavHeading = styled.h4`
