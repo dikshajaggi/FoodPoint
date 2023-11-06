@@ -27,7 +27,7 @@ To get started with HungerBites, follow these steps:
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/your-username/hungerbites.git
+   git clone https://github.com/dikshajaggi/practice.git
 
 
 ## Available Scripts
