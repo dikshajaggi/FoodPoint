@@ -6,6 +6,8 @@ import { CenterDiv, ErrorPara, HeaderOnlyLayoutWrapper, Heading, Input, Label, L
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from "../utilities/firebase";
 import { useNavigate } from "react-router-dom";
+import { ImageWrapper } from "./styledComponents/Login";
+import loginImg from "../assets/login.jpg"
 
 const SignUp = () => {
     const navigate = useNavigate()
@@ -51,7 +53,6 @@ const SignUp = () => {
     })
     return (
         <HeaderOnlyLayoutWrapper>
-            <CenterDiv>
                 <SignUpWrapper>
                     <Heading>sign up</Heading>
                     <form onSubmit={formik.handleSubmit}>
@@ -75,7 +76,9 @@ const SignUp = () => {
                         <Label>Already have an account? <LinkWrapper to="/login">Login</LinkWrapper></Label>
                     </form>
                 </SignUpWrapper>
-            </CenterDiv>
+                <ImageWrapper>
+                    <img src={loginImg} alt="login" style={{maxHeight: "100%", maxWidth: "100%"}} />
+                </ImageWrapper>
         </HeaderOnlyLayoutWrapper>
     )
 }

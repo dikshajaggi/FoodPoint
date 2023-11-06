@@ -3,13 +3,11 @@ import styled from "styled-components";
 
 const SignUpWrapper = styled.div`
 height:auto;
-width:30%;
+width:80%;
 display: flex;
-flex-direction: column;
-justify-content: space-evenly;
-align-items: center;
 border-radius: 8px;
-border: 2px solid ${props => props.theme.colors.accent};
+flex-direction: column;
+align-items: center;
 `
 const SignupButton = styled.button`
 margin-top: 6vh;

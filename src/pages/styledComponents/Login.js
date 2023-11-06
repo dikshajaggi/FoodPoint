@@ -2,12 +2,16 @@ import styled from "styled-components"
 
 const LoginWrapper = styled.div`
 height:auto;
-width:30%;
+width:80%;
 display: flex;
 border-radius: 8px;
 flex-direction: column;
 align-items: center;
-border: 2px solid ${props => props.theme.colors.accent};
+`
+
+const ImageWrapper = styled.div`
+height:100%;
+width: 50%;
 `
 const LoginButton = styled.button`
 margin-top: 6vh;
@@ -21,4 +25,4 @@ text-transform: uppercase;
 font-size: 16px;
 `
 
-export { LoginWrapper, LoginButton }
+export { LoginWrapper, LoginButton, ImageWrapper }

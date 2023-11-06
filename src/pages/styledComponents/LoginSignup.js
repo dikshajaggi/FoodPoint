@@ -2,13 +2,11 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const HeaderOnlyLayoutWrapper = styled.div`
-background-color:white;
 height:100vh;
 scroll:auto;
 display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center
+justify-content:space-between;
+align-items:center;
 `
 
 const CenterDiv = styled.div`
@@ -46,7 +44,8 @@ const Input = styled.input`
 width:24vw;
 height:5vh;
 border:none;
-border-bottom:1px solid ${props => props.theme.colors.accent};
+border:1px solid #a6a6a6;
+padding: 0 4px;
 `
 
 const Heading = styled.h4`

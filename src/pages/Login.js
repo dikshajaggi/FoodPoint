@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { LoginButton, LoginWrapper } from "./styledComponents/Login";
+import { ImageWrapper, LoginButton, LoginWrapper } from "./styledComponents/Login";
 import { useFormik } from "formik";
 import { LoginSchema } from "../schemas/login";
 import { CenterDiv, ErrorPara, HeaderOnlyLayoutWrapper, Heading, Input, Label, LabelInputWrapper, LinkWrapper } from "./styledComponents/LoginSignup";
@@ -9,6 +9,7 @@ import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndP
 import { auth } from "../utilities/firebase";
 import { useDispatch } from "react-redux";
 import { addUser, removeUser } from "../utilities/redux/userSlice";
+import loginImg from "../assets/login.jpg"
 
 
 const Login = () => {
@@ -92,6 +93,9 @@ const Login = () => {
                         <Label>Don't have an account? <LinkWrapper to="/signup">Sign up </LinkWrapper></Label>
                     </form>
                 </LoginWrapper>
+                <ImageWrapper>
+                    <img src={loginImg} alt="login" style={{maxHeight: "100%"}} />
+                </ImageWrapper>
             </HeaderOnlyLayoutWrapper>
         </>
 
