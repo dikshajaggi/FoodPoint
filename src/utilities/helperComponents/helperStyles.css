@@ -11,3 +11,15 @@
 .inc-dec-span {
     font-size: 20px;
 }
+
+@media (max-width: 768px) {
+    .quantityIncDec{
+        margin: 2vh 0;
+    }
+  };
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .quantityIncDec{
+        margin: 2vh 0;
+    }
+  };
