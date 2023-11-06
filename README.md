@@ -1,6 +1,34 @@
-# Getting Started with Create React App
+# HungerBites - Food Ordering Web Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+HungerBites is an ambitious and dynamic food ordering web application that aims to redefine the dining experience for users. This project is currently in progress, showcasing a range of exciting features and functionalities, with ongoing development efforts focused on enhancing its capabilities.
+
+## Project Status
+HungerBites is an ongoing project with exciting features and enhancements in development. Stay tuned for updates and improvements.
+
+## Features
+
+- **Restaurant Discovery**: Leveraging the Swiggy API, HungerBites enables users to search for a wide variety of restaurants, giving them a vast selection of culinary options to choose from.
+
+- **Menu Customization**: Users can curate their own culinary journey by selecting different food items, adding them to their virtual cart, and dynamically adjusting quantities to suit their preferences.
+
+- **Secure Payments**:HungerBites provides users with the convenience of making payments through credit/debit cards while also offering Cash-on-Delivery (COD) as an alternative payment method.
+
+- **Geolocation Services**: The application integrates OpenStreetMap's API to empower users to pinpoint their current location, enhancing their overall experience by tailoring restaurant recommendations and delivery options based on their proximity.
+
+- **User Authentication**: HungerBites ensures data security and personalized experiences by implementing user login and logout features, ensuring a secure and user-friendly environment.
+
+- **AI-Powered Food Recommendations**: The project is set to incorporate OpenAI's advanced AI capabilities, enabling users to engage with a ChatGPT-like feature for personalized food suggestions, making the dining experience truly unique and user-centric.
+  
+- **Advanced Dish Filtering**: In the pipeline is the addition of advanced dish filtering options, including dietary preferences such as vegetarian, non-vegetarian, vegan, diabetic-friendly, protein-rich, and seafood, providing users with an enhanced ability to find dishes that align with their specific tastes and dietary requirements.
+
+## Getting Started
+
+To get started with HungerBites, follow these steps:
+
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/your-username/hungerbites.git
+
 
 ## Available Scripts
 
@@ -12,59 +40,50 @@ Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Screenshots
 
-### `npm run build`
+Here are some screenshots of the HungerBites application:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Home Page
+![Home Page with Location Services](./screenshots/home_page_location.png)
+*Description: The main landing page with location services enabled for current or delivery location.*
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Main Restaurant Page
+![Main Restaurant Page](./screenshots/main_restaurant_page.png)
+*Description: The page where users can browse and discover all available restaurants.*
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Restaurant Page
+![Restaurant Page](./screenshots/restaurant_page.png)
+*Description: A specific restaurant's page, allowing users to explore the restaurant's menu, view dish details, and add items to their cart.*
 
-### `npm run eject`
+### Cart Page
+!Cart Page](./screenshots/cart_page.png)
+*Description: The cart page provides an overview of all items added by the user, where they can review, adjust quantities, and proceed to checkout.*
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Payment Page
+![Payment Page](./screenshots/payment_page.png)
+*Description: The payment page where users can complete their order, select payment options, and finalize the transaction for a seamless dining experience.*
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Favorites Page
+![Favorites Page](./screenshots/favorites_page.png)
+*Description: The favorites page, allowing users to manage and view their list of preferred restaurants, making future orders even more convenient.*
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Login Page
+![Login Page](./screenshots/login_page.png)
+*Description: The login page, where users can securely log in to their accounts to access personalized features and saved information.*
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Signup Page
+![Signup Page](./screenshots/signup_page.png)
+*Description: The signup page for new users to create accounts and join the HungerBites community, gaining access to exclusive benefits.*
 
-## Learn More
+### Offers Page
+![Offers Page](./screenshots/offers_page.png)
+*Description: The offers page displays the latest discounts, promotions, and special deals from participating restaurants, providing users with enticing savings on their orders.*
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### About Us Page
+![About Us Page](./screenshots/about_us_page.png)
+*Description: The "About Us" page provides information about HungerBites, including its vision, and the team behind the project. Users can get to know the platform better and the people who make it all happen.*
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
