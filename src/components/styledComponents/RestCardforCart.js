@@ -9,6 +9,23 @@ const ItemAdd = styled.div`
     font-weight: 400;
     margin-bottom: 4vh;
     border-bottom: 1px solid rgb(104, 103, 103);
+
+    @media (max-width: 768px) {
+        /* Styles for mobile screen size (up to 768px) */
+        flex-direction: column;
+        height: auto;
+      }
+    
+      @media (min-width: 769px) and (max-width: 1024px) {
+        /* Styles for tablet screen size (769px - 1024px) */
+        flex-direction: column;
+        height: auto;
+      }
+
+      @media (min-width: 1025px) {
+        /* Styles for desktop screen size (1025px and above) */
+        flex-direction: row;
+    }
 `
 const ItemAddData = styled.div`
     display: flex;
@@ -17,6 +34,21 @@ const ItemAddData = styled.div`
     padding: 0;
     flex-direction: column;
     justify-content: space-around;
+    @media (max-width: 768px) {
+        /* Styles for mobile screen size (up to 768px) */
+        margin-top: 2vh;
+        align-items: center;
+      }
+    
+      @media (min-width: 769px) and (max-width: 1024px) {
+        /* Styles for tablet screen size (769px - 1024px) */
+        margin-top: 2vh;
+        align-items: center;
+      }
+
+      @media (min-width: 1025px) {
+        /* Styles for desktop screen size (1025px and above) */
+    }
 `
 
 const MenuDishName = styled.h2`
@@ -33,6 +65,25 @@ width:6vw;
 color:white;
 font-weight: 500;
 background-color: ${props => props.theme.colors.accent};
+@media (max-width: 768px) {
+    /* Styles for mobile screen size (up to 768px) */
+    width: 10vw;
+    height:2vh;
+    margin: 2vh 0;
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    /* Styles for tablet screen size (769px - 1024px) */
+    width: 10vw;
+    height:3vh;
+    margin: 2vh 0;
+  }
+
+  @media (min-width: 1025px) {
+    /* Styles for desktop screen size (1025px and above) */
+    width: 6vw;
+    height:5vh;
+}
 `
 
 const AddBtnWrapper = styled.div`
@@ -60,6 +111,20 @@ border-radius: 8px;
 const DishDesc = styled.div`
 color: #a6a6a6;
 font-size: 14px;
+@media (max-width: 768px) {
+    /* Styles for mobile screen size (up to 768px) */
+    text-align: center;
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    /* Styles for tablet screen size (769px - 1024px) */
+    text-align: center;
+  }
+
+  @media (min-width: 1025px) {
+    /* Styles for desktop screen size (1025px and above) */
+    flex-direction: row;
+}
 `
 
 const VegClassifierIcon = styled.img`

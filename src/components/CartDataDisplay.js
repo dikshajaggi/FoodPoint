@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux"
 import "../style.css"
 import { Context } from "../utilities/context/Context"
 import { removeItem } from '../utilities/redux/cartSlice'
-import { CardCart, CardText, CartRemoveBtn, DishImgCart, DishName, QtyRemoveWrapper } from "./styledComponents/CartDataDisplay"
+import { CardCart, CardText, CartRemoveBtn, DishImgCart, DishName, PriceLabel, QtyRemoveWrapper } from "./styledComponents/CartDataDisplay"
 import QuantityIncDec from "../utilities/helperComponents/QuantityIncDec"
 
 
@@ -40,7 +40,7 @@ const CartDataDisplay = (props) => {
                 <DishImgCart src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" + imageId} alt="/" />
                 <CardText>
                     <DishName>{name}</DishName>
-                    <h2 style={{ fontSize: "18px" }}>Rs. {(price) / 100}</h2>
+                    <PriceLabel>Rs. {(price) / 100}</PriceLabel>
                     <QtyRemoveWrapper>
                         <QuantityIncDec id={id} qty={qty} name={name} price={price / 100} />
                         {/* <CartRemoveBtn onClick={() => handleRemoveItem(id)}><i class="fa-solid fa-trash"></i></CartRemoveBtn> */}

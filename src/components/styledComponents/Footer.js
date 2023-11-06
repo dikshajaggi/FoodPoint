@@ -17,6 +17,20 @@ justify-content:space-evenly;
 align-items:center;
 height:80%;
 width:100%;
+@media (max-width: 768px) {
+    /* Styles for mobile screen size (up to 768px) */
+    flex-direction: column;
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    /* Styles for tablet screen size (769px - 1024px) */
+    flex-direction: column;
+  }
+
+  @media (min-width: 1025px) {
+    /* Styles for desktop screen size (1025px and above) */
+    flex-direction: row;
+}
 `
 
 const Copyright = styled.div`
@@ -34,6 +48,20 @@ justify-content:space-evenly;
 align-items:center;
 height:100%;
 width:60%;
+@media (max-width: 768px) {
+    /* Styles for mobile screen size (up to 768px) */
+    flex-direction: column;
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    /* Styles for tablet screen size (769px - 1024px) */
+    flex-direction: column;
+  }
+
+  @media (min-width: 1025px) {
+    /* Styles for desktop screen size (1025px and above) */
+    flex-direction: row;
+}
 `
 
 const Logo = styled.span`
