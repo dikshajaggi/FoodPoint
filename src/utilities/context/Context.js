@@ -23,30 +23,30 @@ const ContextProvider = (props) => {
     const [location, setLocation] = useState(null)
     const dispatch = useDispatch()
 
-    useEffect(() => {
-        const dataRef = ref(database, "cart_items");
+    // useEffect(() => {
+    //     const dataRef = ref(database, "cart_items");
 
-        get(dataRef)
-            .then((snapshot) => {
-                if (snapshot.exists()) {
-                    const data = snapshot.val();
-                    // Extract the values from the object into an array
-                    const objectDataArr = Object.values(data);
-                    console.log(objectDataArr, "object")
-                    setCartData(objectDataArr)
-                    for (const data of objectDataArr) {
-                        dispatch(addItems(data))
-                    }
-                } else {
-                    console.log("No data available");
-                }
-            })
-            .catch((error) => {
-                console.error(error);
-            });
+    //     get(dataRef)
+    //         .then((snapshot) => {
+    //             if (snapshot.exists()) {
+    //                 const data = snapshot.val();
+    //                 // Extract the values from the object into an array
+    //                 const objectDataArr = Object.values(data);
+    //                 console.log(objectDataArr, "object")
+    //                 setCartData(objectDataArr)
+    //                 for (const data of objectDataArr) {
+    //                     dispatch(addItems(data))
+    //                 }
+    //             } else {
+    //                 console.log("No data available");
+    //             }
+    //         })
+    //         .catch((error) => {
+    //             console.error(error);
+    //         });
 
             
-    }, []);
+    // }, []);
 
     return (
         <Context.Provider
