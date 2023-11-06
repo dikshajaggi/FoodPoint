@@ -42,5 +42,48 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 
 
+## Screenshots
+
+Here are some screenshots of the HungerBites application:
+
+### Home Page
+![Home Page with Location Services](./screenshots/home_page_location.png)
+*Description: The main landing page with location services enabled for current or delivery location.*
+
+### Main Restaurant Page
+![Main Restaurant Page](./screenshots/main_restaurant_page.png)
+*Description: The page where users can browse and discover all available restaurants.*
+
+### Restaurant Page
+![Restaurant Page](./screenshots/restaurant_page.png)
+*Description: A specific restaurant's page, allowing users to explore the restaurant's menu, view dish details, and add items to their cart.*
+
+### Cart Page
+!Cart Page](./screenshots/cart_page.png)
+*Description: The cart page provides an overview of all items added by the user, where they can review, adjust quantities, and proceed to checkout.*
+
+### Payment Page
+![Payment Page](./screenshots/payment_page.png)
+*Description: The payment page where users can complete their order, select payment options, and finalize the transaction for a seamless dining experience.*
+
+### Favorites Page
+![Favorites Page](./screenshots/favorites_page.png)
+*Description: The favorites page, allowing users to manage and view their list of preferred restaurants, making future orders even more convenient.*
+
+### Login Page
+![Login Page](./screenshots/login_page.png)
+*Description: The login page, where users can securely log in to their accounts to access personalized features and saved information.*
+
+### Signup Page
+![Signup Page](./screenshots/signup_page.png)
+*Description: The signup page for new users to create accounts and join the HungerBites community, gaining access to exclusive benefits.*
+
+### Offers Page
+![Offers Page](./screenshots/offers_page.png)
+*Description: The offers page displays the latest discounts, promotions, and special deals from participating restaurants, providing users with enticing savings on their orders.*
+
+### About Us Page
+![About Us Page](./screenshots/about_us_page.png)
+*Description: The "About Us" page provides information about HungerBites, including its vision, and the team behind the project. Users can get to know the platform better and the people who make it all happen.*
 
 
