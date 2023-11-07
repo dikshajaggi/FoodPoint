@@ -1,14 +1,11 @@
 import axios from "axios"
-import classnames from 'classnames'
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Col, Nav, NavItem, NavLink, Row, TabContent, TabPane } from 'reactstrap'
-import OfferCard from "../components/OfferCard"
 import Card from "../components/RestCard"
 import Header from "../components/Header"
 import RestCard from "../shimmerUI/RestCard"
 import { data } from "../assets/data"
-import {OfferBanner, OfferCardWrapper, OfferWrapper } from "./styledComponents/Offers"
+import {OfferBanner, OfferWrapper } from "./styledComponents/Offers"
 import Footer from "../components/Footer"
 import { CardWrapper } from "../layouts/styledComponents/Main"
 

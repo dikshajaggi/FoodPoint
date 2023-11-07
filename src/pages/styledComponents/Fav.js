@@ -25,6 +25,7 @@ width: 40%;
 const DispCards = styled.div`
 display: flex;
 flex-direction:row;
+justify-content: space-evenly;
 width: 90%;
 `
 
