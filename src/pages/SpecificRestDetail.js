@@ -29,6 +29,7 @@ const Specific = () => {
     const context = useContext(Context)
     const [marked, setMarked] = useState()
 
+
     useEffect(() => {
         setTimeout(() => {
             setIsLoading(false)
@@ -112,9 +113,12 @@ const Specific = () => {
                     {isLoading ? data?.map(item => {
                         // RETURNING SHIMMER UI
                         return <SpecificRest />
-                    }) : otherInfo?.map(dish => (
-                        <SpecificCard {...dish?.card?.info} />
-                    ))}
+                    }) : otherInfo?.map((dish) => {
+                        const modifiedInfo = { ...dish.card.info, restId: rest_id.id };
+                        return (
+                          <SpecificCard {...modifiedInfo} />
+                        )
+                      })}
                 </AllMenuCards>
             </SpecificCardStyle>
             <Footer />

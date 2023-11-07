@@ -8,9 +8,11 @@ import { database } from "../utilities/firebase/index"
 import { push, ref, set } from '@firebase/database'
 import nonveg from "../assets/nonveg.png"
 import veg from "../assets/veg.png"
+import CartConfirmation from './CartConfirmation'
 
 const SpecificCard = (props) => {
-    const { name, defaultPrice, price, description, id, itemAttribute, imageId, category } = props
+    const { name, defaultPrice, price, description, id, itemAttribute, imageId, category, restId } = props
+    console.log(restId, "restId")
     const context = useContext(Context)
     const dispatch = useDispatch()
     const [flag, setFlag] = useState(0)
@@ -18,11 +20,16 @@ const SpecificCard = (props) => {
 
 
     const addItemToCart = async (data) => {
+        console.log(context.quantity, "checking quantity")
+        context?.quantity?.map(item => {
+            console.log(item, "item.restId !== restId")
+            if (item.restId !== restId) context.setShowModal(true)
+        })
         setFlag(1)
         const newRef = push(ref(database, "cart_items"))
         set(newRef, data)
         dispatch(addItems(data))
-        context.setQuantity(prev => [...prev, { id: id, qty: 1, name: name, price: price / 100 }])
+        context.setQuantity(prev => [...prev, { id: id, qty: 1, name: name, price: price / 100, restId: restId }])
     }
 
     const idArray = []
@@ -57,6 +64,7 @@ const SpecificCard = (props) => {
             <AddBtnWrapper>
                 {flag === 0 ? <AddDishBtn onClick={() => addItemToCart(props)}>ADD</AddDishBtn> : idArray.includes(id) ? <QuantityIncDec id={id} qty={qty} name={name} price={price / 100} /> : <AddDishBtn onClick={() => addItemToCart(props)}>ADD</AddDishBtn>}
             </AddBtnWrapper>
+            {context.showModal ? <CartConfirmation /> : null}
         </ItemAdd>
     )
 }
