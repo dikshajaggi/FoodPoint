@@ -17,6 +17,7 @@ const SpecificCard = (props) => {
     const dispatch = useDispatch()
     const [flag, setFlag] = useState(0)
     const [qty, setQty] = useState()
+    const [matched, setMatched] = useState(true)
 
     // check if the value of showModal is true, then first show the modal instead of toggling to inc dec button
 
@@ -25,7 +26,10 @@ const SpecificCard = (props) => {
         console.log(context.quantity, "checking quantity")
         context?.quantity?.map(item => {
             console.log(item, "item.restId !== restId")
-            if (item.restId !== restId) context.setShowModal(true)
+            if (item.restId !== restId) {
+                context.setShowModal(true)
+                setMatched(false)
+            } 
         })
         setFlag(1)
         const newRef = push(ref(database, "cart_items"))
@@ -37,7 +41,18 @@ const SpecificCard = (props) => {
     const idArray = []
     if (context.quantity?.length !== 0) context.quantity.map(item => {
         idArray.push(item.id)
+    //    if(matched) idArray.push(item.id)
+    //    else if (matched === false) {
+    //     console.log("running", context.start, context.cartChoiceNo)
+    //         if (context.cartChoiceNo) return null
+    //         if (context.start) idArray.push(item.id)
+    //     }
     })
+
+    // useEffect(() => {
+    //     context.setCartChoiceNo(false)
+    //     context.setStart(false)
+    // }, [context.cartChoiceNo, context.setStart])
 
     useEffect(() => {
         if (context.quantity.length !== 0) {
