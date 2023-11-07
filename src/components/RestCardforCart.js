@@ -18,6 +18,8 @@ const SpecificCard = (props) => {
     const [flag, setFlag] = useState(0)
     const [qty, setQty] = useState()
 
+    // check if the value of showModal is true, then first show the modal instead of toggling to inc dec button
+
 
     const addItemToCart = async (data) => {
         console.log(context.quantity, "checking quantity")

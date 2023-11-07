@@ -29,11 +29,13 @@ const CartConfirmation = () => {
 
       const handleStart = () => {
         // make cart empty, add the current item
+        context.setStart(true)
         context.setShowModal(false)
       }
 
       const handleNO = () => {
         // don't add current item to the cart, make qty inc decrease btn back to "add"
+        context.setCartChoiceNo(true)
         context.setShowModal(false)
       }
 

@@ -22,6 +22,8 @@ const ContextProvider = (props) => {
     const [totalPrice, setTotalPrice] = useState()
     const [location, setLocation] = useState(null)
     const [showModal, setShowModal] = useState(false)
+    const [cartChoiceNo, setCartChoiceNo] = useState(false)
+    const [start, setStart] = useState(false)
 
     const dispatch = useDispatch()
 
@@ -76,7 +78,11 @@ const ContextProvider = (props) => {
                 location,
                 setLocation,
                 showModal,
-                setShowModal
+                setShowModal,
+                cartChoiceNo,
+                setCartChoiceNo,
+                start,
+                setStart
             }}
         >
             {props.children}
