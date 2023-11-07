@@ -220,6 +220,7 @@ padding: 0 2vw;
 width: 22vw;
 align-items: center;
 font-size: 16px;
+cursor: pointer;
 `
 
 export { HeaderDiv, HeaderWrapper, Categories, CategoryLabel, NavbarLI, LinkStyled, LogoutBtn, Offers, SearchWrapper, SearchBarList, CartWrapper, UserInfo, Avatar, Username, UserDropdown, CartItemsLength, LoginUser, Input, Name, SearchListVal, SearchValWrapper, SearchValImg, Logo, SearchBtn, NavbarULCat, Span, Button, Location }

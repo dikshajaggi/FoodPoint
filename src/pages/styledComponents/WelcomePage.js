@@ -91,10 +91,12 @@ font-weight: 500;
 `
 const LocWrapper = styled.div`
 display: flex;
-width:42vw;
+width: ${props => props.component === "drawer" ? "26vw" : "42vw"};
 justify-content: space-evenly;
 align-items: center;
 border: 1px solid black;
+margin: ${props => props.component === "drawer" ? "10vh 2vw 2vh 2vw" : "0"};
+
 `
 const Address = styled.input`
 border: none;
