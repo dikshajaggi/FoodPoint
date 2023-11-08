@@ -24,6 +24,7 @@ const ContextProvider = (props) => {
     const [showModal, setShowModal] = useState(false)
     const [cartChoiceNo, setCartChoiceNo] = useState(false)
     const [start, setStart] = useState(false)
+    const [idArray, setIdArray] = useState([])
 
     const dispatch = useDispatch()
 
@@ -82,7 +83,9 @@ const ContextProvider = (props) => {
                 cartChoiceNo,
                 setCartChoiceNo,
                 start,
-                setStart
+                setStart,
+                idArray,
+                setIdArray
             }}
         >
             {props.children}

@@ -18,41 +18,49 @@ const SpecificCard = (props) => {
     const [flag, setFlag] = useState(0)
     const [qty, setQty] = useState()
     const [matched, setMatched] = useState(true)
+    let matchedRest = true
 
-    // check if the value of showModal is true, then first show the modal instead of toggling to inc dec button
-
-
-    const addItemToCart = async (data) => {
-        console.log(context.quantity, "checking quantity")
+    const checkIfmatched = () => {
         context?.quantity?.map(item => {
-            console.log(item, "item.restId !== restId")
             if (item.restId !== restId) {
                 context.setShowModal(true)
                 setMatched(false)
+                matchedRest = false
             } 
         })
-        setFlag(1)
-        const newRef = push(ref(database, "cart_items"))
-        set(newRef, data)
-        dispatch(addItems(data))
-        context.setQuantity(prev => [...prev, { id: id, qty: 1, name: name, price: price / 100, restId: restId }])
     }
 
-    const idArray = []
+    const addItemToCart = async (data) => {
+        checkIfmatched()
+        setFlag(1)
+        // const newRef = push(ref(database, "cart_items"))
+        // set(newRef, data)
+        if(matchedRest) {
+            dispatch(addItems(data))
+            context.setQuantity(prev => [...prev, { id: id, qty: 1, name: name, price: price / 100, restId: restId }])
+        }
+    }
+
     if (context.quantity?.length !== 0) context.quantity.map(item => {
-        idArray.push(item.id)
-    //    if(matched) idArray.push(item.id)
-    //    else if (matched === false) {
-    //     console.log("running", context.start, context.cartChoiceNo)
-    //         if (context.cartChoiceNo) return null
-    //         if (context.start) idArray.push(item.id)
-    //     }
+            // context.idArray.push(item.id)
+        if(matched) context.idArray.push(item.id)
+        else if (matched === false) {
+            console.log("running", context.start, context.cartChoiceNo)
+            if (context.cartChoiceNo) return null
+            if (context.start) {
+                console.log("checking context id array")
+                context.idArray.push(item.id)
+            }
+        }
     })
 
-    // useEffect(() => {
-    //     context.setCartChoiceNo(false)
-    //     context.setStart(false)
-    // }, [context.cartChoiceNo, context.setStart])
+
+    
+    useEffect(() => {
+        context.setCartChoiceNo(false)
+        context.setStart(false)
+        matchedRest = true
+    }, [context.cartChoiceNo, context.setStart])
 
     useEffect(() => {
         if (context.quantity.length !== 0) {
@@ -79,9 +87,10 @@ const SpecificCard = (props) => {
                 <DishDesc>{description?.slice(0, 400)}...</DishDesc>
             </ItemAddData>
             <AddBtnWrapper>
-                {flag === 0 ? <AddDishBtn onClick={() => addItemToCart(props)}>ADD</AddDishBtn> : idArray.includes(id) ? <QuantityIncDec id={id} qty={qty} name={name} price={price / 100} /> : <AddDishBtn onClick={() => addItemToCart(props)}>ADD</AddDishBtn>}
+                {console.log(context.idArray.includes(id), flag, "checking flag ")}
+                {flag === 0 ? <AddDishBtn onClick={() => addItemToCart(props)}>ADD</AddDishBtn> : context.idArray.includes(id) ? <QuantityIncDec id={id} qty={qty} name={name} price={price / 100} /> : <AddDishBtn onClick={() => addItemToCart(props)}>ADD</AddDishBtn>}
             </AddBtnWrapper>
-            {context.showModal ? <CartConfirmation /> : null}
+            {context.showModal ? <CartConfirmation  data = {props} /> : null}
         </ItemAdd>
     )
 }

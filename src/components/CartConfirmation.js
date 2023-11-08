@@ -3,8 +3,11 @@ import { Button, ButtonWrapper, Content, Heading, Label } from './styledComponen
 import { Box, Modal } from '@mui/material'
 import { Context } from '../utilities/context/Context';
 import { ButtonClose } from '../pages/styledComponents/Payment';
+import { useDispatch } from 'react-redux';
+import { addItems, clearCart } from '../utilities/redux/cartSlice';
 
-const CartConfirmation = () => {
+const CartConfirmation = ({data}) => {
+  const { name, price, id, restId } = data
 
     const style = {
         padding: 4,
@@ -23,14 +26,23 @@ const CartConfirmation = () => {
       };
 
       const context = useContext(Context)
+      const dispatch = useDispatch()
+
+
       const handleClose = () => {
         context.setShowModal(false);
       };
 
+      
       const handleStart = () => {
         // make cart empty, add the current item
+        context.setCartData([])
+        context.setQuantity([])
+        dispatch(clearCart())
         context.setStart(true)
         context.setShowModal(false)
+        dispatch(addItems(data))
+        context.setQuantity(prev => [...prev, { id: id, qty: 1, name: name, price: price / 100, restId: restId }])
       }
 
       const handleNO = () => {
