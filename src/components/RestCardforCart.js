@@ -12,7 +12,6 @@ import CartConfirmation from './CartConfirmation'
 
 const SpecificCard = (props) => {
     const { name, defaultPrice, price, description, id, itemAttribute, imageId, category, restId } = props
-    console.log(restId, "restId")
     const context = useContext(Context)
     const dispatch = useDispatch()
     const [flag, setFlag] = useState(0)
@@ -45,10 +44,8 @@ const SpecificCard = (props) => {
             // context.idArray.push(item.id)
         if(matched) context.idArray.push(item.id)
         else if (matched === false) {
-            console.log("running", context.start, context.cartChoiceNo)
             if (context.cartChoiceNo) return null
             if (context.start) {
-                console.log("checking context id array")
                 context.idArray.push(item.id)
             }
         }
@@ -87,8 +84,7 @@ const SpecificCard = (props) => {
                 <DishDesc>{description?.slice(0, 400)}...</DishDesc>
             </ItemAddData>
             <AddBtnWrapper>
-                {console.log(context.idArray.includes(id), flag, "checking flag ")}
-                {flag === 0 ? <AddDishBtn onClick={() => addItemToCart(props)}>ADD</AddDishBtn> : context.idArray.includes(id) ? <QuantityIncDec id={id} qty={qty} name={name} price={price / 100} /> : <AddDishBtn onClick={() => addItemToCart(props)}>ADD</AddDishBtn>}
+                {flag === 0 ? <AddDishBtn onClick={() => addItemToCart(props)}>ADD</AddDishBtn> : context.idArray.includes(id) ? <QuantityIncDec id={id} qty={qty} name={name} price={price / 100} /> : context.start ? <QuantityIncDec id={id} qty={qty} name={name} price={price / 100} />  : <AddDishBtn onClick={() => addItemToCart(props)}>ADD</AddDishBtn>}
             </AddBtnWrapper>
             {context.showModal ? <CartConfirmation  data = {props} /> : null}
         </ItemAdd>
