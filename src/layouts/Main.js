@@ -20,7 +20,7 @@ const Main = () => {
     async function getRest() {
         let api = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7040592&lng=77.10249019999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
         if (props.filter === "rating") api = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7040592&lng=77.10249019999999&sortBy=RATING&page_type=DESKTOP_WEB_LISTING"
-        else if (props.filter === "delivery-time") api = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7040592&lng=77.10249019999999&sortBy=DELIVERY_TIME&page_type=DESKTOP_WEB_LISTING"
+        else if (props.filter === "delivery-time") api = "https://www.swiggy.com/dapi/restaurants/list/update"
         else if (props.filter === "cost-low-to-high") api = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7040592&lng=77.10249019999999&sortBy=COST_FOR_TWO&page_type=DESKTOP_WEB_LISTING"
         else if (props.filter === "cost-high-to-low") api = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7040592&lng=77.10249019999999&sortBy=COST_FOR_TWO_H2L&page_type=DESKTOP_WEB_LISTING"
 
@@ -31,7 +31,7 @@ const Main = () => {
                 props.setFilteredData(data?.data?.data?.cards[0]?.data?.data?.cards)
             }
             else {
-                console.log(data.data.data.cards[5].card.card?.gridElements?.infoWithStyle.restaurants, "swiggy checking api")
+                console.log(data, "swiggy checking api")
                 props.setrestData(data.data.data.cards[5].card.card.gridElements?.infoWithStyle.restaurants)
                 props.setFilteredData(data.data.data.cards[5].card.card.gridElements?.infoWithStyle.restaurants)
             }

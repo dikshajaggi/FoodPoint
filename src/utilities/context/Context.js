@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import { data } from "../../assets/data"
-import { database } from "../firebase";
+import { auth, database } from "../firebase";
 import { get, ref } from "@firebase/database";
 import { addItems } from "../redux/cartSlice";
 import { useDispatch } from "react-redux";
@@ -11,6 +11,8 @@ const Context = createContext(value)
 
 const ContextProvider = (props) => {
     const [flag, setFlag] = useState(0)
+    const [added, setAdded] = useState(0)
+    const [qty, setQty] = useState(0)
     const [quantity, setQuantity] = useState([])
     const [restData, setrestData] = useState(data)
     const [filter, setFilter] = useState("relevance")
@@ -25,6 +27,7 @@ const ContextProvider = (props) => {
     const [cartChoiceNo, setCartChoiceNo] = useState(false)
     const [start, setStart] = useState(false)
     const [idArray, setIdArray] = useState([])
+    const [userId, setUserId] = useState(auth.currentUser?.uid)
 
     const dispatch = useDispatch()
 
@@ -52,6 +55,10 @@ const ContextProvider = (props) => {
 
             
     // }, []);
+
+    useEffect(()=>{
+        setUserId(auth.currentUser?.uid)
+    })
 
     return (
         <Context.Provider
@@ -85,7 +92,13 @@ const ContextProvider = (props) => {
                 start,
                 setStart,
                 idArray,
-                setIdArray
+                setIdArray,
+                added,
+                setAdded,
+                qty,
+                setQty,
+                userId,
+                setUserId
             }}
         >
             {props.children}

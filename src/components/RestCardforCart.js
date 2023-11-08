@@ -1,10 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { Context } from '../utilities/context/Context'
 import { addItems } from '../utilities/redux/cartSlice'
 import QuantityIncDec from "../utilities/helperComponents/QuantityIncDec"
 import { AddBtnWrapper, AddDishBtn, DishDesc, DishImg, Image, ItemAdd, ItemAddData, MenuDishName, SpecificCardSubHead, VegClassifierIcon } from './styledComponents/RestCardforCart'
-import { database } from "../utilities/firebase/index"
+import { auth, database } from "../utilities/firebase/index"
 import { push, ref, set } from '@firebase/database'
 import nonveg from "../assets/nonveg.png"
 import veg from "../assets/veg.png"
@@ -29,14 +29,16 @@ const SpecificCard = (props) => {
         })
     }
 
+    const items = useSelector(store => store.cart.items)
+
     const addItemToCart = async (data) => {
+        context.setAdded(context.added + 1)
         checkIfmatched()
         setFlag(1)
-        // const newRef = push(ref(database, "cart_items"))
-        // set(newRef, data)
         if(matchedRest) {
+            if (price === NaN) price = 0
             dispatch(addItems(data))
-            context.setQuantity(prev => [...prev, { id: id, qty: 1, name: name, price: price / 100, restId: restId }])
+            context.setQuantity(prev => [...prev, { id: id, qty: 1, name: name, price: price / 100, restId: restId, img: imageId }])
         }
     }
 
@@ -52,6 +54,15 @@ const SpecificCard = (props) => {
     })
 
 
+    useEffect(() => {
+        const userId = auth.currentUser.uid;
+        set(ref(database, `users/${userId}/cart`), items);
+        return () => {
+            // Cleanup function (fires when component unmounts)
+            const userId = auth.currentUser.uid;
+            set(ref(database, `users/${userId}/cart`), items);
+          };
+    }, [context.added])
     
     useEffect(() => {
         context.setCartChoiceNo(false)
