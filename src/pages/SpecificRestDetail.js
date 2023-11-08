@@ -13,7 +13,7 @@ import { AllMenuCards, HeaderDiv, HeaderLeft, HeaderRight, MenuCategory, MenuHea
 import Footer from "../components/Footer"
 import { useTheme } from "styled-components"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart } from '@fortawesome/free-regular-svg-icons';
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { Context } from "../utilities/context/Context"
 import { UserContext } from "../utilities/context/UserContext"
 
@@ -92,8 +92,8 @@ const Specific = () => {
                                     {user !== "" ? <>
                                         <FontAwesomeIcon
                                             icon={faHeart}
-                                            className="fa-regular fa-heart"
-                                            style={{ marginRight: "1vw", color: marked ? theme.colors.accent : "black", cursor: "pointer" }}
+                                            className="fa-solid fa-heart"
+                                            style={{ marginRight: "1vw", color: marked ? "#fa4a5b" : "black", cursor: "pointer" }}
                                             onClick={(e) => handleMarkedFav(info, e)} />
                                         | <i class="fa-solid fa-star" style={{ color: "#3d9b6d", marginLeft: "1vw" }}></i><span style={{ color: "#3d9b6d" }}>{info?.avgRating}</span>
                                     </> : <>
