@@ -10,6 +10,8 @@ import { useTheme } from 'styled-components'
 import RestCard from '../shimmerUI/RestCard'
 import { data } from '../assets/data'
 import Footer from '../components/Footer'
+import HeaderRes from '../components/responsive/HeaderRes'
+import FooterRes from '../components/responsive/FooterRes'
 
 const Main = () => {
     const props = useContext(Context)
@@ -50,6 +52,7 @@ const Main = () => {
     return (
         <MainWrapper theme={theme}>
             <Header />
+            {/* <HeaderRes /> */}
             <CardWrapper>
                 {isLoading ? data.map((item) => {
                     return <RestCard />
@@ -58,7 +61,8 @@ const Main = () => {
                     return props.filter === "rating" ? <Link to={`/rest/${item.info?.feeDetails?.restaurantId}`} style={{ textDecoration: 'none' }} > < Card {...item?.info} /></Link> : <Link to={`/rest/${item?.info?.feeDetails?.restaurantId}`} style={{ textDecoration: 'none' }} > < Card {...item?.info} /></Link>
                 })}
             </CardWrapper>
-            <Footer />
+            {/* <Footer /> */}
+            <FooterRes />
         </MainWrapper>
     )
 }

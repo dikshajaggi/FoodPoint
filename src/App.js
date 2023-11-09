@@ -83,7 +83,7 @@ function App() {
 
   const [user, setUser] = useState("")
   return (
-    <div>
+    <div className="style">
       <Provider store={store}>
         <Themeprovider>
           <ContextProvider>

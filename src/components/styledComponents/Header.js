@@ -121,7 +121,7 @@ const LoginUser = styled.div`
 const Offers = styled.div`
     display: flex;
     align-items: center;
-    width:6vw;
+    width: auto;
     justify-content: space-evenly;
 `
 
@@ -217,7 +217,7 @@ font-weight:400;
 const Location = styled.div`
 display:flex;
 padding: 0 2vw;
-width: 22vw;
+width: ${props => props.type = "responsive" ? "26vw" : "22vw"};
 align-items: center;
 font-size: 16px;
 cursor: pointer;
