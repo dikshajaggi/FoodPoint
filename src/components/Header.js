@@ -80,7 +80,7 @@ const Header = () => {
 
     const toggleDrawer = () => {
         setOpen(!open);
-      };
+    };
 
     const searchrest = (e) => {
         setCloseSearchList(false)
@@ -93,6 +93,7 @@ const Header = () => {
     }
 
     const search = () => {
+        context.setSearched(true)
         context.setFilteredData(restData.filter((item) => item?.info.name.toLowerCase().includes(searchvalue.toLowerCase())))
     }
 
@@ -111,6 +112,7 @@ const Header = () => {
     }
 
     const searchRestWithList = () => {
+        context.setSearched(true)
         setCloseSearchList(true)
         context.setFilteredData(restData.filter((item) => item?.info.name.toLowerCase().includes(searchvalue.toLowerCase())))
     }
@@ -140,7 +142,7 @@ const Header = () => {
                 <Location onClick={toggleDrawer}>
                     {localStorage.getItem("location") !== null ? `${localStorage.getItem("location").slice(0, 20)}....` : null} <i class="fa-solid fa-angle-down" style={{ marginLeft: "1vw", marginTop: "4px", color: theme.colors.accent, cursor: "pointer" }}></i>
                 </Location>
-                <DrawerComponent open={open} setOpen={setOpen}/>
+                <DrawerComponent open={open} setOpen={setOpen} />
                 <SearchWrapper>
                     <Input type="search" list="search-suggestions" placeholder='Search for restaurants' value={searchvalue} onChange={searchrest} />
                     <SearchBtn onClick={search}><i class="fa-solid fa-magnifying-glass"

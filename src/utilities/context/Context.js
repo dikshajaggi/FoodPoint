@@ -25,6 +25,7 @@ const ContextProvider = (props) => {
     const [cartChoiceNo, setCartChoiceNo] = useState(false)
     const [start, setStart] = useState(false)
     const [idArray, setIdArray] = useState([])
+    const [searched, setSearched] = useState(false)
 
     const dispatch = useDispatch()
 
@@ -50,7 +51,7 @@ const ContextProvider = (props) => {
     //             console.error(error);
     //         });
 
-            
+
     // }, []);
 
     return (
@@ -85,7 +86,9 @@ const ContextProvider = (props) => {
                 start,
                 setStart,
                 idArray,
-                setIdArray
+                setIdArray,
+                searched,
+                setSearched
             }}
         >
             {props.children}
