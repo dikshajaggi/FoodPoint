@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect } from 'react'
 import Card from '../components/RestCard'
 import "../style.css"
 import { Link } from 'react-router-dom'
@@ -8,7 +8,6 @@ import { CardWrapper, MainWrapper } from './styledComponents/Main'
 import { useTheme } from 'styled-components'
 import data from "./data.json"
 import Footer from '../components/Footer'
-import axios from 'axios'
 
 const Main = () => {
     const props = useContext(Context)

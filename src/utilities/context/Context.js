@@ -1,10 +1,6 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useState } from "react";
 import { data } from "../../assets/data"
-import { database } from "../firebase";
-import { get, ref } from "@firebase/database";
-import { addItems } from "../redux/cartSlice";
 import { useDispatch } from "react-redux";
-import axios from "axios";
 
 const value = "value"
 const Context = createContext(value)

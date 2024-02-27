@@ -8,8 +8,8 @@ import { Context } from "../utilities/context/Context"
 import { Avatar, CartItemsLength, CartWrapper, Categories, CategoryLabel, HeaderDiv, HeaderWrapper, Input, LinkStyled, Location, LoginUser, Logo, LogoutBtn, Name, NavbarLI, NavbarULCat, Offers, SearchBarList, SearchBtn, SearchCartWrapper, SearchListVal, SearchValImg, SearchValWrapper, SearchWrapper, Span, UserDropdown, UserInfo, Username } from './styledComponents/Header'
 import { data } from "../assets/data"
 import { useLocation } from 'react-router-dom';
-import { onAuthStateChanged, signOut } from 'firebase/auth'
-import { auth } from '../utilities/firebase'
+// import { onAuthStateChanged, signOut } from 'firebase/auth'
+// import { auth } from '../utilities/firebase'
 import { addUser, removeUser } from '../utilities/redux/userSlice'
 import { useTheme } from 'styled-components'
 import offers from "../assets/offers.png"
@@ -102,13 +102,13 @@ const Header = () => {
     }
 
     const handleSignOut = () => {
-        signOut(auth).then(() => {
-            dispatch(removeUser())
-            window.location.reload()
-            console.log("signed-out")
-        }).catch((error) => {
-            // An error happened.
-        });
+        // signOut(auth).then(() => {
+        //     dispatch(removeUser())
+        //     window.location.reload()
+        //     console.log("signed-out")
+        // }).catch((error) => {
+        //     // An error happened.
+        // });
     }
 
     const searchRestWithList = () => {
@@ -117,21 +117,21 @@ const Header = () => {
         context.setFilteredData(restData.filter((item) => item?.info.name.toLowerCase().includes(searchvalue.toLowerCase())))
     }
 
-    useEffect(() => {
-        const unsubscribe = onAuthStateChanged(auth, (user) => {
-            if (user) {
-                // will be executed whenever sign-in or sing-up is done by the user
-                const { uid, email, displayName } = user.uid;
-                // passing payload to the action
-                dispatch(addUser({ udi: uid, email: email, displayName: displayName }))
-                setUser(user)
-            } else {
-                // User is signed out
-                dispatch(removeUser())
-            }
-        });
-        return () => unsubscribe()
-    }, [])
+    // useEffect(() => {
+    //     const unsubscribe = onAuthStateChanged(auth, (user) => {
+    //         if (user) {
+    //             // will be executed whenever sign-in or sing-up is done by the user
+    //             const { uid, email, displayName } = user.uid;
+    //             // passing payload to the action
+    //             dispatch(addUser({ udi: uid, email: email, displayName: displayName }))
+    //             setUser(user)
+    //         } else {
+    //             // User is signed out
+    //             dispatch(removeUser())
+    //         }
+    //     });
+    //     return () => unsubscribe()
+    // }, [])
 
     console.log(context.location, "checking location")
 
