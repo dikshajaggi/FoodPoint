@@ -72,7 +72,7 @@ const Login = () => {
 
     return (
         <>
-            <HeaderOnlyLayoutWrapper>
+            <div className="flex justify-between items-center flex-col sm:flex-row">
                 <LoginWrapper>
                     <Heading heading="login">login</Heading>
                     <form onSubmit={formik.handleSubmit}>
@@ -93,10 +93,10 @@ const Login = () => {
                         <Label>Don't have an account? <LinkWrapper to="/signup">Sign up </LinkWrapper></Label>
                     </form>
                 </LoginWrapper>
-                <ImageWrapper>
+                <div className="h-full w-1/2 hidden sm:block">
                     <img src={loginImg} alt="login" style={{ maxHeight: "100%" }} />
-                </ImageWrapper>
-            </HeaderOnlyLayoutWrapper>
+                </div>
+            </div>
         </>
 
     )

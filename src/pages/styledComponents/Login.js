@@ -12,9 +12,6 @@ align-items: center;
 const ImageWrapper = styled.div`
 height:100%;
 width: 50%;
-@media screen and (max-width: 1024px) {
-   height:0%;
-width: 0%;
   }
 `
 const LoginButton = styled.button`
