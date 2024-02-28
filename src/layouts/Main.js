@@ -6,7 +6,7 @@ import Header from "../components/Header"
 import { Context } from '../utilities/context/Context'
 import { CardWrapper, MainWrapper } from './styledComponents/Main'
 import { useTheme } from 'styled-components'
-import data from "./data.json"
+import data from "../assets/data.json"
 import Footer from '../components/Footer'
 
 const Main = () => {
