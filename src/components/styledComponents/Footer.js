@@ -17,9 +17,9 @@ justify-content:space-evenly;
 align-items:center;
 height:80%;
 width:100%;
-@media screen and (max-width: 1024px) {
-   flex-direction: column;
-  }
+      @media only screen and (min-width: 768px) and (max-width: 768px) and (min-height: 1025px) and (max-height: 1025px) {
+     flex-direction: row;
+}
 `
 
 const Copyright = styled.div`
@@ -28,7 +28,14 @@ justify-content:center;
 align-items:center;
 height:20%;
 width:100%;
-background-color: #f58a2c`
+background-color: #f58a2c;
+@media only screen and (max-width: 600px)  {
+  font-size: 14px;
+    }
+    @media only screen and (min-width: 768px) and (max-width: 768px) and (min-height: 1025px) and (max-height: 1025px) {
+      font-size: 14px;
+}
+`
 
 
 const LinksWrapper = styled.div`
@@ -49,6 +56,12 @@ align-items:center;
 font-weight:500;
 font-size:22px;
 color:white;
+@media only screen and (max-width: 600px)  {
+  font-size: 16px;
+    }
+     @media only screen and (min-width: 768px) and (max-width: 768px) and (min-height: 1025px) and (max-height: 1025px) {
+      font-size: 16px;
+}
 `
 
 export { FooterWrapper, Info, Copyright, LinksWrapper, Logo }

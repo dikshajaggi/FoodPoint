@@ -9,6 +9,7 @@ position: sticky;
 top: 0;
 z-index: 2;
 background-color: white;
+
 `
 
 const HeaderWrapper = styled.div`
@@ -31,7 +32,9 @@ position: relative;
 z-index: 1;
 height:6vh;
 background-color: ${props => props.theme.colors.accent}
-
+@media only screen and (max-width: 600px)  {
+        display: none;
+    }
 `
 
 const CategoryLabel = styled.h4`
@@ -55,6 +58,12 @@ font-weight : ${props => props.option === "fav" ? "400" : "400"};
 &:hover {
     color: inherit;
   }
+  @media only screen and (max-width: 600px)  {
+  font-size: ${props => props.option === "fav" ? "14px" : "12px"};
+    }
+     @media only screen and (min-width: 768px) and (max-width: 768px) and (min-height: 1025px) and (max-height: 1025px) {
+     font-size: ${props => props.option === "fav" ? "14px" : "12px"};
+}
 `
 
 const LogoutBtn = styled.span`
@@ -66,6 +75,9 @@ const CartWrapper = styled.div`
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    @media only screen and (max-width: 600px)  {
+        display: none;
+    }
 `
 const UserInfo = styled.div`
     width: 9vw;
@@ -141,6 +153,9 @@ const SearchWrapper = styled.div`
  display: flex;
  align-items: center;
  height: 5vh;
+ @media only screen and (max-width: 600px)  {
+        display: none;
+    }
 `
 
 const SearchBtn = styled.button`
@@ -200,6 +215,9 @@ display: flex;
 justify-content: space-evenly;
 list-style-type: none;
 width:100%;
+@media only screen and (max-width: 600px)  {
+        display: none;
+    }
 `
 
 const Span = styled.span`
@@ -221,6 +239,9 @@ width: 22vw;
 align-items: center;
 font-size: 16px;
 cursor: pointer;
+@media only screen and (max-width: 600px)  {
+        display: none;
+    }
 `
 
 export { HeaderDiv, HeaderWrapper, Categories, CategoryLabel, NavbarLI, LinkStyled, LogoutBtn, Offers, SearchWrapper, SearchBarList, CartWrapper, UserInfo, Avatar, Username, UserDropdown, CartItemsLength, LoginUser, Input, Name, SearchListVal, SearchValWrapper, SearchValImg, Logo, SearchBtn, NavbarULCat, Span, Button, Location }
