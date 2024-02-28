@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { UserContext } from '../utilities/context/UserContext'
 import { useDispatch, useSelector } from 'react-redux'
 import axios from "axios"
@@ -24,6 +24,8 @@ const Header = () => {
     const context = useContext(Context)
     const location = useLocation()
     const dispatch = useDispatch()
+    const navigate = useNavigate()
+
     const items = useSelector((store) => store.cart.items)
     const [restData, setrestData] = useState(data)
     const [searchvalue, setSearchvalue] = useState("")
@@ -111,6 +113,8 @@ const Header = () => {
         // }).catch((error) => {
         //     // An error happened.
         // });
+        navigate("/login")
+        setUser(null)
     }
 
     const searchRestWithList = () => {
@@ -174,7 +178,7 @@ const Header = () => {
                         <UserInfo onMouseEnter={handleMouseEnter}>
                             <Avatar><i class="fa-solid fa-user" style={{ fontSize: "14px" }}></i></Avatar>
                             <Username>
-                                <Name>{user.displayName}</Name>
+                                <Name>{user.name}</Name>
                                 <UserDropdown isHovered={isHovered}>
                                     <LinkStyled option="fav" to="/fav-restaurant">Favourites</LinkStyled>
                                     <LogoutBtn onClick={handleSignOut}>Logout</LogoutBtn>

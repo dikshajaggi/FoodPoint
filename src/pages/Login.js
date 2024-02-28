@@ -22,6 +22,8 @@ const Login = () => {
     const [error, setError] = useState(null)
 
     const handleLogin = (values) => {
+        console.log(values, "valuescheck")
+        setUser(values)
         // signInWithEmailAndPassword(auth, values.email, values.password)
         //     .then((userCredential) => {
         //         const user = userCredential.user;
@@ -32,6 +34,7 @@ const Login = () => {
         //         const errorMessage = error.message;
         //         setError(`${errorCode} + ${errorMessage}`)
         //     });
+        navigate("/")
     }
 
     const formik = useFormik({
