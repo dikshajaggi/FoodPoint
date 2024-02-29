@@ -14,7 +14,7 @@ const Fav = () => {
       <Header />
       <FavWrapper>
         <FavHeading>Your Plate, Your Favorites: Discover Delicious Dishes from a World of Flavors!</FavHeading>
-        {context.favRest.length !== 0 ? <DispCards> {context.favRest.map(item => {
+        {context.favRest.length !== 0 ? <DispCards> {context.favRest.flat(2).map(item => {
           return (
             <Link to={`/rest/${item?.feeDetails?.restaurantId}`} style={{ textDecoration: 'none' }} > < Card {...item} /></Link>
           )

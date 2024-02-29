@@ -8,6 +8,7 @@ import SpecificCard from '../components/RestCardforCart'
 import Header from "../components/Header"
 import SpecificRest from "../shimmerUI/SpecificRest"
 import data from "../assets/specificRest.json"
+import details from "../assets/data.json"
 import SpecificPage from "../shimmerUI/SpecificPage"
 import { AllMenuCards, HeaderDiv, HeaderLeft, HeaderRight, MenuCategory, MenuHeading, SpecificCardStyle, SpecificCardSubHeading, SpecificHeading, SpecificWrapper } from "./styledComponents/SpecificRestDetail"
 import Footer from "../components/Footer"
@@ -54,10 +55,11 @@ const Specific = () => {
 
 
     const handleMarkedFav = (rest) => {
+        const data = details.restaurants.filter(item => item.id === rest.id.toString())
         if (marked) setMarked(false)
         else {
             setMarked(true)
-            context.favRest.push(info)
+            context.favRest.push(data)
         }
     }
 
@@ -85,25 +87,25 @@ const Specific = () => {
                         <HeaderDiv>
                             <HeaderLeft>
                                 <SpecificHeading>{specifcRestInfo[0]?.name}</SpecificHeading>
-                                <SpecificCardSubHeading>{specifcRestInfo[0]?.avgRating}</SpecificCardSubHeading>
+                                {/* <SpecificCardSubHeading>{specifcRestInfo[0]?.avgRating}</SpecificCardSubHeading> */}
                                 <SpecificCardSubHeading>{specifcRestInfo[0]?.sla?.slaString}</SpecificCardSubHeading>
                             </HeaderLeft>
 
-                            {/* <HeaderRight>
+                            <HeaderRight>
                                 <SpecificCardSubHeading>
                                     {user !== "" ? <>
                                         <FontAwesomeIcon
                                             icon={faHeart}
                                             className="fa-regular fa-heart"
                                             style={{ marginRight: "1vw", color: marked ? theme.colors.accent : "black", cursor: "pointer" }}
-                                            onClick={(e) => handleMarkedFav(info, e)} />
-                                        | <i class="fa-solid fa-star" style={{ color: "#3d9b6d", marginLeft: "1vw" }}></i><span style={{ color: "#3d9b6d" }}>{info?.avgRating}</span>
+                                            onClick={(e) => handleMarkedFav(specifcRestInfo[0], e)} />
+                                        | <i class="fa-solid fa-star" style={{ color: "#3d9b6d", marginLeft: "1vw" }}></i><span style={{ color: "#3d9b6d" }}>{specifcRestInfo[0]?.avgRating}</span>
                                     </> : <>
-                                        <i class="fa-solid fa-star" style={{ color: "#3d9b6d", marginLeft: "1vw" }}></i><span style={{ color: "#3d9b6d" }}>{info?.avgRating}</span>
+                                        <i class="fa-solid fa-star" style={{ color: "#3d9b6d", marginLeft: "1vw" }}></i><span style={{ color: "#3d9b6d" }}>{specifcRestInfo[0]?.avgRating}</span>
                                     </>}
                                 </SpecificCardSubHeading>
                                 <SpecificCardSubHeading> {available}</SpecificCardSubHeading>
-                            </HeaderRight> */}
+                            </HeaderRight>
                         </HeaderDiv>
                         <hr></hr>
                         <MenuHeading>MENU</MenuHeading>
