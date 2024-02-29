@@ -16,9 +16,9 @@ const Main = () => {
 
 
     useEffect(() => {
-        console.log(data?.cards?.card.card.gridElements.infoWithStyle.restaurants, "data?.cards?.card.card.gridElements.infoWithStyle.restaurants")
-        props.setrestData(data?.cards?.card.card.gridElements.infoWithStyle.restaurants)
-        props.setFilteredData(data?.cards?.card.card.gridElements.infoWithStyle.restaurants)
+        console.log(data?.restaurants, "data?.cards?.card.card.gridElements.infoWithStyle.restaurants")
+        props.setrestData(data?.restaurants)
+        props.setFilteredData(data?.restaurants)
     }, [props.filter])
 
     return (
@@ -29,7 +29,7 @@ const Main = () => {
                     return <RestCard />
                 }) :  */}
                 {props?.filteredData?.map((item) => {
-                    return <Link style={{ textDecoration: 'none' }} to={`/rest/:${item.info.id}`}> <Card {...item?.info} /> </Link>
+                    return <Link style={{ textDecoration: 'none' }} to={`/rest/:${item.id}`}> <Card {...item} /> </Link>
                     // return < Card {...item?.info} />
                 })}
             </CardWrapper>
