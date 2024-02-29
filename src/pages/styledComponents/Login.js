@@ -7,11 +7,19 @@ display: flex;
 border-radius: 8px;
 flex-direction: column;
 align-items: center;
+@media only screen and (max-width: 600px)  {
+    justify-content: center;
+}
+
 `
 
 const ImageWrapper = styled.div`
-height:100%;
-width: 50%;
+  height:100%;
+  width: 50%;
+
+    @media only screen and (max-width: 600px) {
+        display: none;
+    }
 `
 const LoginButton = styled.button`
 margin-top: 6vh;

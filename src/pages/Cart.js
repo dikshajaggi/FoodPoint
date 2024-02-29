@@ -6,8 +6,8 @@ import { clearCart } from '../utilities/redux/cartSlice'
 import { Context } from "../utilities/context/Context"
 import Checkout from "./Checkout"
 import Header from "../components/Header"
-import { database } from "../utilities/firebase"
-import { ref, remove } from "firebase/database"
+// import { database } from "../utilities/firebase"
+// import { ref, remove } from "firebase/database"
 import { CartContentWrapper, CartData, CartHead, ClearCartBtn, Wrapper, EmptyCart, CartWrapper } from "./styledComponents/Cart"
 import Footer from "../components/Footer"
 
@@ -20,9 +20,9 @@ const Cart = () => {
     const [cleared, setCleared] = useState(false)
 
     const handleclearCart = () => {
-        const dataRef = ref(database, "cart_items")
-        // Delete data
-        remove(dataRef)
+        // const dataRef = ref(database, "cart_items")
+        // // Delete data
+        // remove(dataRef)
         context.setCartData([])
         context.setQuantity([])
         dispatch(clearCart())

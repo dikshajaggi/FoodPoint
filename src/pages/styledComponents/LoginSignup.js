@@ -7,6 +7,9 @@ scroll:auto;
 display:flex;
 justify-content:space-between;
 align-items:center;
+@media only screen and (max-width: 600px)  {
+   justify-content:center;
+}
 `
 
 const CenterDiv = styled.div`
@@ -46,6 +49,9 @@ height:5vh;
 border:none;
 border:1px solid #a6a6a6;
 padding: 0 4px;
+@media only screen and (max-width: 600px)  {
+    width:60vw;
+}
 `
 
 const Heading = styled.h4`

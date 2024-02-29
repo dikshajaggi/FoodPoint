@@ -8,6 +8,18 @@ flex-direction: column;
 align-items: center;
 flex: 0 0 25%;
 box-sizing: border-box;
+@media only screen and (min-width: 768px) and (max-width: 768px) and (min-height: 1025px) and (max-height: 1025px) {
+      height:30vh;
+   width: 25vw;
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+   
+}
+@media only screen and (max-width: 600px)  {
+       height:40vh;
+       width: 55vw;
+    }
 `
 
 const Image = styled.img`

@@ -1,10 +1,6 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useState } from "react";
 import { data } from "../../assets/data"
-import { database } from "../firebase";
-import { get, ref } from "@firebase/database";
-import { addItems } from "../redux/cartSlice";
 import { useDispatch } from "react-redux";
-import axios from "axios";
 
 const value = "value"
 const Context = createContext(value)
@@ -25,6 +21,7 @@ const ContextProvider = (props) => {
     const [cartChoiceNo, setCartChoiceNo] = useState(false)
     const [start, setStart] = useState(false)
     const [idArray, setIdArray] = useState([])
+    const [searched, setSearched] = useState(false)
 
     const dispatch = useDispatch()
 
@@ -50,7 +47,7 @@ const ContextProvider = (props) => {
     //             console.error(error);
     //         });
 
-            
+
     // }, []);
 
     return (
@@ -85,7 +82,9 @@ const ContextProvider = (props) => {
                 start,
                 setStart,
                 idArray,
-                setIdArray
+                setIdArray,
+                searched,
+                setSearched
             }}
         >
             {props.children}

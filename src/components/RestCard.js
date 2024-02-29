@@ -14,7 +14,7 @@ const Card = (props) => {
             <InfoWrapper>
                 <RestInfo>{`${sla?.deliveryTime} MINS`}</RestInfo>
                 <RestInfo>|</RestInfo>
-                <RestInfo><i class="fa-regular fa-star" style={{paddingRight: "4px"}}></i>{avgRating}</RestInfo>
+                <RestInfo><i class="fa-regular fa-star" style={{ paddingRight: "4px" }}></i>{avgRating}</RestInfo>
                 <RestInfo>|</RestInfo>
                 <RestInfo>{costForTwo}</RestInfo>
             </InfoWrapper>
