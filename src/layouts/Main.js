@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Card from '../components/RestCard'
 import "../style.css"
 import { Link } from 'react-router-dom'
@@ -8,27 +8,28 @@ import { CardWrapper, MainWrapper } from './styledComponents/Main'
 import { useTheme } from 'styled-components'
 import data from "../assets/data.json"
 import Footer from '../components/Footer'
+import RestCard from "../shimmerUI/RestCard"
 
 const Main = () => {
     const props = useContext(Context)
     const theme = useTheme()
-    // const [isLoading, setIsLoading] = useState(true)
+    const [isLoading, setIsLoading] = useState(true)
 
 
     useEffect(() => {
         console.log(data?.restaurants, "data?.cards?.card.card.gridElements.infoWithStyle.restaurants")
         props.setrestData(data?.restaurants)
         props.setFilteredData(data?.restaurants)
+        setIsLoading(false)
     }, [props.filter])
 
     return (
         <MainWrapper theme={theme}>
             <Header />
             <CardWrapper>
-                {/* {isLoading ? data.map((item) => {
+                {isLoading ? data?.restaurants.map((item) => {
                     return <RestCard />
-                }) :  */}
-                {props?.filteredData?.map((item) => {
+                }) : props?.filteredData?.map((item) => {
                     return <Link style={{ textDecoration: 'none' }} to={`/rest/:${item.id}`}> <Card {...item} /> </Link>
                     // return < Card {...item?.info} />
                 })}
