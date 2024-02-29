@@ -30,7 +30,7 @@ const Main = () => {
                 {isLoading ? data?.restaurants.map((item) => {
                     return <RestCard />
                 }) : props?.filteredData?.map((item) => {
-                    return <Link style={{ textDecoration: 'none' }} to={`/rest/:${item.id}`}> <Card {...item} /> </Link>
+                    return <Link style={{ textDecoration: 'none' }} to={`/rest/${item.id}`}> <Card {...item} /> </Link>
                     // return < Card {...item?.info} />
                 })}
             </CardWrapper>

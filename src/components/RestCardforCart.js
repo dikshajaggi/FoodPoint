@@ -11,7 +11,8 @@ import veg from "../assets/veg.png"
 import CartConfirmation from './CartConfirmation'
 
 const SpecificCard = (props) => {
-    const { name, defaultPrice, price, description, id, itemAttribute, imageId, category, restId } = props
+    console.log(props, "proppppppppssssssss")
+    const { name, price, description, id, imageId, category } = props
     const context = useContext(Context)
     const dispatch = useDispatch()
     const [flag, setFlag] = useState(0)
@@ -20,13 +21,13 @@ const SpecificCard = (props) => {
     let matchedRest = true
 
     const checkIfmatched = () => {
-        context?.quantity?.map(item => {
-            if (item.restId !== restId) {
-                context.setShowModal(true)
-                setMatched(false)
-                matchedRest = false
-            }
-        })
+        // context?.quantity?.map(item => {
+        //     if (item.restId !== restId) {
+        //         context.setShowModal(true)
+        //         setMatched(false)
+        //         matchedRest = false
+        //     }
+        // })
     }
 
     const addItemToCart = async (data) => {
@@ -36,7 +37,7 @@ const SpecificCard = (props) => {
         // set(newRef, data)
         if (matchedRest) {
             dispatch(addItems(data))
-            context.setQuantity(prev => [...prev, { id: id, qty: 1, name: name, price: price / 100, restId: restId }])
+            // context.setQuantity(prev => [...prev, { id: id, qty: 1, name: name, price: price / 100, restId: restId }])
         }
     }
 
@@ -77,10 +78,10 @@ const SpecificCard = (props) => {
         <ItemAdd>
             <DishImg> <Image src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_150,h_150,c_fit/${imageId}`} alt="" /> </DishImg>
             <ItemAddData>
-                {itemAttribute?.vegClassifier === "VEG" ? <VegClassifierIcon src={veg} /> : <VegClassifierIcon src={nonveg} />}
+                {/* {itemAttribute?.vegClassifier === "VEG" ? <VegClassifierIcon src={veg} /> : <VegClassifierIcon src={nonveg} />} */}
                 <MenuDishName>{name}</MenuDishName>
                 <SpecificCardSubHead>{category} </SpecificCardSubHead>
-                {price ? <h2 style={{ fontSize: "14px" }}> ₹{(price) / 100}</h2> : <h2 style={{ fontSize: "14px" }}> ₹{(defaultPrice) / 100}</h2>}
+                <h2 style={{ fontSize: "14px" }}> ₹{(price) / 100}</h2>
                 <DishDesc>{description?.slice(0, 400)}...</DishDesc>
             </ItemAddData>
             <AddBtnWrapper>

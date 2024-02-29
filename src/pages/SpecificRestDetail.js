@@ -7,7 +7,7 @@ import "../style.css"
 import SpecificCard from '../components/RestCardforCart'
 import Header from "../components/Header"
 import SpecificRest from "../shimmerUI/SpecificRest"
-import data  from "../assets/specificRest.json"
+import data from "../assets/specificRest.json"
 import SpecificPage from "../shimmerUI/SpecificPage"
 import { AllMenuCards, HeaderDiv, HeaderLeft, HeaderRight, MenuCategory, MenuHeading, SpecificCardStyle, SpecificCardSubHeading, SpecificHeading, SpecificWrapper } from "./styledComponents/SpecificRestDetail"
 import Footer from "../components/Footer"
@@ -21,14 +21,14 @@ const Specific = () => {
     const rest_id = useParams()
     const { user } = useContext(UserContext)
     const [info, setInfo] = useState({})
-    const [data, setOtherInfo] = useState()
     const [title, setTitle] = useState("")
     const [isLoading, setIsLoading] = useState(true)
     const available = useAvailable(info?.availability?.opened)
     const theme = useTheme()
+    const [specifcRestInfo, setSpecifcRestInfo] = useState()
     const context = useContext(Context)
     const [marked, setMarked] = useState()
-    console.log(data)
+    console.log(data, rest_id)
 
     useEffect(() => {
         setTimeout(() => {
@@ -48,9 +48,8 @@ const Specific = () => {
         //     console.log(item?.data?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2].card.card.title)
         //     setTitle(item?.data?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2].card.card.title)
         // })
-        data.map(item => {
-            setInfo(item)
-        })
+        setInfo(data?.cards)
+        setSpecifcRestInfo(data?.cards.filter(item => item.id.toString() === rest_id.id))
     }
 
 
@@ -85,9 +84,9 @@ const Specific = () => {
                     <>
                         <HeaderDiv>
                             <HeaderLeft>
-                                <SpecificHeading>{info?.name}</SpecificHeading>
-                                <SpecificCardSubHeading>{info?.avgRating}</SpecificCardSubHeading>
-                                <SpecificCardSubHeading>{info?.sla?.slaString}</SpecificCardSubHeading>
+                                <SpecificHeading>{specifcRestInfo[0]?.name}</SpecificHeading>
+                                <SpecificCardSubHeading>{specifcRestInfo[0]?.avgRating}</SpecificCardSubHeading>
+                                <SpecificCardSubHeading>{specifcRestInfo[0]?.sla?.slaString}</SpecificCardSubHeading>
                             </HeaderLeft>
 
                             {/* <HeaderRight>
@@ -111,17 +110,18 @@ const Specific = () => {
                         {/* <MenuCategory>{title}</MenuCategory> */}
                     </>
                 }
+                {console.log(specifcRestInfo, "specifcRestInfo")}
 
                 <AllMenuCards>
-                    {isLoading ? data?.map(item => {
+                    {isLoading ? data.cards?.map(item => {
                         // RETURNING SHIMMER UI
                         return <SpecificRest />
-                    }) : data?.map((item) => {
+                    }) : specifcRestInfo[0].menu?.map((item) => {
                         // const modifiedInfo = { ...dish.card.info, restId: rest_id.id };
                         return (
-                          <SpecificCard {...item.menu} />
+                            <SpecificCard {...item} />
                         )
-                      })}
+                    })}
                 </AllMenuCards>
             </SpecificCardStyle>
             <Footer />
