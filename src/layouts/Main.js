@@ -29,7 +29,7 @@ const Main = () => {
                     return <RestCard />
                 }) :  */}
                 {props?.filteredData?.map((item) => {
-                    return <Link style={{ textDecoration: 'none' }} > <Card {...item?.info} /> </Link>
+                    return <Link style={{ textDecoration: 'none' }} to={`/rest/:${item.info.id}`}> <Card {...item?.info} /> </Link>
                     // return < Card {...item?.info} />
                 })}
             </CardWrapper>

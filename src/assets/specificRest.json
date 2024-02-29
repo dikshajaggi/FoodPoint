@@ -1,0 +1,561 @@
+{
+    "cards" : [
+       {
+        "id": "780417",
+        "name": "California Burrito",
+        "avgRating": 4.4,
+        "sla": {
+            "deliveryTime": 18,
+            "lastMileTravel": 1.6,
+            "serviceability": "SERVICEABLE",
+            "slaString": "18 mins",
+            "lastMileTravelString": "1.6 km",
+            "iconType": "ICON_TYPE_EMPTY"
+        }
+       },
+       {
+        "id": "354629",
+        "name": "BOX8 - Desi Meals",
+        "avgRating": 4.3,
+        "sla": {
+            "deliveryTime": 32,
+            "lastMileTravel": 2.8,
+            "serviceability": "SERVICEABLE",
+            "slaString": "27-37 mins",
+            "lastMileTravelString": "2.8 km",
+            "iconType": "ICON_TYPE_EMPTY"
+        }
+       },
+       {
+        "id": "603438",
+        "name": "Chinese Wok",
+        "avgRating": 4,
+        "sla": {
+            "deliveryTime": 22,
+            "lastMileTravel": 2.8,
+            "serviceability": "SERVICEABLE",
+            "slaString": "22 mins",
+            "lastMileTravelString": "2.8 km",
+            "iconType": "ICON_TYPE_EMPTY"
+        }
+       },
+       {
+        "id": "40415",
+        "name": "Bikanervala",
+        "avgRating": 4.4,
+        "sla": {
+            "deliveryTime": 19,
+            "lastMileTravel": 1.8,
+            "serviceability": "SERVICEABLE",
+            "slaString": "19 mins",
+            "lastMileTravelString": "1.8 km",
+            "iconType": "ICON_TYPE_EMPTY"
+        }
+       },
+       {
+        "id": "733714",
+        "name": "Chicago Pizza",
+        "avgRating": 3.8,
+        "sla": {
+            "deliveryTime": 25,
+            "lastMileTravel": 2.4,
+            "serviceability": "SERVICEABLE",
+            "slaString": "25 mins",
+            "lastMileTravelString": "2.4 km",
+            "iconType": "ICON_TYPE_EMPTY"
+        }
+       },
+       {
+        "id": "423775",
+        "name": "Dough & Cream",
+        "avgRating": 4.1,
+        "sla": {
+            "deliveryTime": 27,
+            "lastMileTravel": 4.9,
+            "serviceability": "SERVICEABLE",
+            "slaString": "27 mins",
+            "lastMileTravelString": "4.9 km",
+            "iconType": "ICON_TYPE_EMPTY"
+        }
+       },
+       {
+        "id": "326440",
+        "name": "Punjabi Angithi (Vegorama Group)",
+        "avgRating": 4.2,
+        "sla": {
+            "deliveryTime": 31,
+            "lastMileTravel": 5,
+            "serviceability": "SERVICEABLE",
+            "slaString": "31 mins",
+            "lastMileTravelString": "5.0 km",
+            "iconType": "ICON_TYPE_EMPTY"
+        }
+       }, 
+       {
+        "id": "341033",
+        "name": "Bakingo",
+        "avgRating": 4.4,
+        "sla": {
+            "deliveryTime": 22,
+            "lastMileTravel": 3,
+            "serviceability": "SERVICEABLE",
+            "slaString": "22 mins",
+            "lastMileTravelString": "3.0 km",
+            "iconType": "ICON_TYPE_EMPTY"
+        }
+       },
+       {
+        "id": "10392",
+        "name": "Subway",
+        "avgRating": 4.1,
+        "sla": {
+            "deliveryTime": 22,
+            "lastMileTravel": 2,
+            "serviceability": "SERVICEABLE",
+            "slaString": "22 mins",
+            "lastMileTravelString": "2.0 km",
+            "iconType": "ICON_TYPE_EMPTY"
+        },
+        "menu": [
+            {
+                        "id": "126848059",
+                        "name": "Delhi Tikki Sandwich + Side + Coke",
+                        "category": "SUPER SAVER COMBOS - SAVE UPTO 46%",
+                        "description": "Enjoy your favourite Grills sandwich with a choice of drink and a cookie or veg kebabs.",
+                        "imageId": "3b1bb2e4ab7a6f145d675e811b4ee0a3",
+                        "inStock": 1,
+                        "isVeg": 1,
+                        "price": 22800
+            },
+            {
+                        "id": "126848057",
+                        "name": "Bombay Grill Sandwich + Side + Coke",
+                        "category": "SUPER SAVER COMBOS - SAVE UPTO 46%",
+                        "description": "Enjoy your favourite Grills sandwich with a choice of drink and a cookie or veg kebabs.",
+                        "imageId": "6f6f6cdda05e7a857f18bd8459f231ce",
+                        "inStock": 1,
+                        "isVeg": 1,
+                        "price": 24800
+            },
+            {
+                        "id": "130251912",
+                        "name": "3 Cheese Melt Sandwich + Side + Coke",
+                        "category": "SUPER SAVER COMBOS - SAVE UPTO 46%",
+                        "description": "Enjoy your favourite Grills sandwich with a choice of drink and any choice of side.",
+                        "imageId": "c3f54b48c8a70db042cbd09accbe0931",
+                        "inStock": 1,
+                        "isVeg": 1,
+                        "price": 36800
+            },
+            {
+                        "id": "130251916",
+                        "name": "Egg 'n Cheese Sandwich + Side + Coke",
+                        "category": "SUPER SAVER COMBOS - SAVE UPTO 46%",
+                        "description": "Enjoy your favourite Grills sandwich with a choice of drink and any choice of side.",
+                        "imageId": "8740a76234a1c48351f27e1b935cd795",
+                        "inStock": 1,
+                        "price": 31800
+            },
+            {
+                        "id": "126848066",
+                        "name": "Chicken Keema Sandwich + Side + Coke",
+                        "category": "SUPER SAVER COMBOS - SAVE UPTO 46%",
+                        "description": "Enjoy your favourite Grills sandwich with a choice of drink?and?a?cookie.",
+                        "imageId": "40730c1ec1c9294fe8a537c0fb2a061f",
+                        "inStock": 1,
+                        "price": 26800
+            },
+            {
+                        "id": "130251904",
+                        "name": "Roast Chicken Melt Sandwich + Side + Coke",
+                        "category": "SUPER SAVER COMBOS - SAVE UPTO 46%",
+                        "description": "Enjoy your favourite Grills sandwich with a choice of drink?and?a?cookie.",
+                        "imageId": "66f7dfa9d7f0e3b1ad27ced7e673544e",
+                        "inStock": 1,
+                        "price": 33800
+            },
+            {
+                        "id": "119195524",
+                        "name": "Paneer Achari Sandwich + Side + Coke",
+                        "category": "SUPER SAVER COMBOS - SAVE UPTO 46%",
+                        "description": "Enjoy your favourite Hotseller sub with a choice of cookie and a choice of drink.",
+                        "imageId": "b9016987d7c9a36ccae5c21b9772c265",
+                        "inStock": 1,
+                        "isVeg": 1,
+                        "price": 35900
+            },
+            {
+                        "id": "119195525",
+                        "name": "Crunchy Mexican Sandwich + Side + Coke",
+                        "category": "SUPER SAVER COMBOS - SAVE UPTO 46%",
+                        "description": "Enjoy your favourite Hotseller sub with a choice of cookie and a choice of drink.",
+                        "imageId": "694b329ba400202058dd2793e2d8ab5d",
+                        "inStock": 1,
+                        "isVeg": 1,
+                        "price": 36900
+            },
+            {
+                        "id": "119195526",
+                        "name": "Chilli Cheese Sandwich + Side + Coke",
+                        "category": "SUPER SAVER COMBOS - SAVE UPTO 46%",
+                        "description": "Enjoy your favourite Hotseller sub with a choice of cookie and a choice of drink.",
+                        "imageId": "9020a32adc2b5fc28ac6ed497ea14a3a",
+                        "inStock": 1,
+                        "isVeg": 1,
+                        "price": 35900
+            },
+            {
+                        "id": "119195507",
+                        "name": "Great American BBQ Sandwich + Side + Coke",
+                        "category": "SUPER SAVER COMBOS - SAVE UPTO 46%",
+                        "description": "Enjoy your favourite Hotseller sub with a choice of cookie and a choice of drink.",
+                        "imageId": "b4e32b37ea2c71cfc7b28f885aa668fe",
+                        "inStock": 1,
+                        "price": 39900
+            }
+        ]
+       },
+       {
+        "id": "26723",
+        "name": "KFC",
+        "avgRating": 4.2,
+        "sla": {
+            "deliveryTime": 19,
+            "lastMileTravel": 2,
+            "serviceability": "SERVICEABLE",
+            "slaString": "19 mins",
+            "lastMileTravelString": "2.0 km",
+            "iconType": "ICON_TYPE_EMPTY"
+        },
+        "menu": [
+                {
+                                            "id": "135162896",
+                                            "name": "Chicken Super Snacker Combo",
+                                            "category": "KFC Black Friday",
+                                            "description": "Best of snacks meal with a Medium Chicken Popcorn, 4 strips, 1 dip & a chilled Pepsi Black [serves 1-2]",
+                                            "imageId": "xpfkrnzizg80fvytwemn",
+                                            "inStock": 1,
+                                            "price": 49333
+                                },
+                                {
+                                            "id": "135162895",
+                                            "name": "Chicken Wings Combo",
+                                            "category": "KFC Black Friday",
+                                            "description": "Save Rs. 59 & Enjoy 2pc Hot & Crispy Chicken, 4 chicken wings , 2 dips & a chilled Pepsi Black [serves 1-2]",
+                                            "imageId": "soqdycnjeyzedvivoul2",
+                                            "inStock": 1,
+                                            "price": 46667
+                                },
+                                {
+                                            "id": "135162893",
+                                            "name": "Chicken Zinger Burger Meal",
+                                            "category": "KFC Black Friday",
+                                            "description": "Favorite combo of Classic Chicken Zinger Burger, Medium French Fries & a chilled Pepsi Black",
+                                            "imageId": "jvhlgdezs1zssu0awfa1",
+                                            "inStock": 1,
+                                            "price": 35524
+                                },
+                                {
+                                            "id": "135162771",
+                                            "name": "Peri Peri chicken strips - 3 pc",
+                                            "category": "Sides and Dips",
+                                            "description": "3 Pieces Spicy Peri Peri chicken boneless strips ",
+                                            "imageId": "fgtsqzqqxxtzxu0p0acw",
+                                            "inStock": 1,
+                                            "price": 17905
+                                        },
+                                {
+                                            "id": "135162766",
+                                            "name": "French Fries - Large",
+                                            "category": "Sides and Dips",
+                                            "description": "Jazz up your meal with crispy large fries!",
+                                            "imageId": "r93ljtqjnlpn2xr24dln",
+                                            "inStock": 1,
+                                            "isVeg": 1,
+                                            "price": 11905
+                                },
+                                {
+                                            "id": "135162765",
+                                            "name": "Spicy Mix French Fries - Medium",
+                                            "category": "Sides and Dips",
+                                            "description": "Crispy french fries with a spicy chilli lime sprinkle",
+                                            "imageId": "wrh1fdjs1uynfefykyok",
+                                            "inStock": 1,
+                                            "isVeg": 1,
+                                            "price": 11429
+                                },
+                                
+                                {
+                                            "id": "135162760",
+                                            "name": "Chocolate Lava Cake",
+                                            "category": "Desserts & Beverages",
+                                            "description": "New Soft Chocolate cake with a gooey center- perfect chocolaty end to every meal",
+                                            "imageId": "thb7rrdooctsnknsnatz",
+                                            "inStock": 1,
+                                            "isVeg": 1,
+                                            "price": 10857
+                                },
+                                {
+                                            "id": "135162759",
+                                            "name": "Chocolate Mud Pie",
+                                            "category": "Desserts & Beverages",
+                                            "description": "Chocolate lovers unite! Say hello to our delicious, new, creamy chocolate & cake dessert- a must try! ",
+                                            "imageId": "fhtrvjerl7l2ck1crwhp",
+                                            "inStock": 1,
+                                            "isVeg": 1,
+                                            "price": 12857
+                                },
+                                {
+                                            "id": "135162758",
+                                            "name": "Coffee Mousse Cake",
+                                            "category": "Desserts & Beverages",
+                                            "description": "Coffee, chocolate, cake?what's not to love? Enjoy our delicious, new dessert for those coffee-licious temptations!",
+                                            "imageId": "cb0kmlqdl0kjiri0qii9",
+                                            "inStock": 1,
+                                            "isVeg": 1,
+                                            "price": 12857
+                                },
+                                {
+                                            "id": "135162755",
+                                            "name": "7UP Can 300 ml",
+                                            "category": "Desserts & Beverages",
+                                            "description": "7UP is the ultimate Super-Duper Refresher. Every sip of this crisp lemon flavour refreshes you to the core.",
+                                            "imageId": "qn00mdssgatf9yjauq8o",
+                                            "inStock": 1,
+                                            "isVeg": 1,
+                                            "price": 5714
+                                },
+                                {
+                                            "id": "135162753",
+                                            "name": "Mirinda Can 300 ml",
+                                            "category": "Desserts & Beverages",
+                                            "description": "Great orange taste and sparking bubbles encourage you to be carefree, spontaneous and playful!",
+                                            "imageId": "zcwmo9x7sbvhehuz59td",
+                                            "inStock": 1,
+                                            "isVeg": 1,
+                                            "price": 5714
+                                }
+        ]
+       }, 
+       {
+        "id": "498382",
+        "name": "Burger King",
+        "avgRating": 4.4,
+        "sla": {
+            "deliveryTime": 21,
+            "lastMileTravel": 2,
+            "serviceability": "SERVICEABLE",
+            "slaString": "21 mins",
+            "lastMileTravelString": "2.0 km",
+            "iconType": "ICON_TYPE_EMPTY"
+        },
+        "menu":[
+                {
+                            "id": "130923417",
+                            "name": "Crispy Veg Burger+Fries(M)",
+                            "category": "Burger+Fries (Save upto 15%)",
+                            "imageId": "7798d7bed74c81bc0e5ffc677a7d2eef",
+                            "inStock": 1,
+                            "isVeg": 1,
+                            "price": 16000
+                },
+                {
+                            "id": "130923420",
+                            "name": "Crispy Veg Double Patty Burger+Fries(M)",
+                            "category": "Burger+Fries (Save upto 15%)",
+                            "imageId": "2b8b717cfc1d7aac9c1c9d16594735f8",
+                            "inStock": 1,
+                            "isVeg": 1,
+                            "price": 18900
+                },
+                {
+                            "id": "130923423",
+                            "name": "Crispy Chicken Double Patty Burger+Fries(M)",
+                            "category": "Burger+Fries (Save upto 15%)",
+                            "imageId": "d065d5e9870ed98fb74d6b58c6e4f455",
+                            "inStock": 1,
+                            "price": 22900
+                },
+                {
+                            "id": "130923436",
+                            "name": "Premium Family Feast for 4 - Chicken",
+                            "category": "Family Feast for 4 ( Save upto 37%)",
+                            "description": "Save Rs. 200 | Chicken Whopper + Fiery Chicken + Crispy Chicken + Chicken Crunchy Taco + 2 Med Fries + 1 Dip + Peri Peri Sachet + Medium Soft Drink (Cola) + Chocolate Thick Shake",
+                            "imageId": "6f1dd11c2eb1b708e642bc32b6d5a0e3",
+                            "inStock": 1,
+                            "price": 98200
+                },
+                {
+                            "id": "130923437",
+                            "name": "Classic Family Feast for 4 - Veg",
+                            "category": "Family Feast for 4 ( Save upto 37%)",
+                            "description": "Save Rs. 200 | 2 Crispy Veg + BK Veggie + Veg Crunchy Taco + 2 Med Fries + 2 Dips + Medium Soft Drink (Cola) + Chocolate Thick Shake",
+                            "imageId": "062d970e847e4b3ad386054fc2795a96",
+                            "inStock": 1,
+                            "isVeg": 1,
+                            "price": 73100
+                },
+                {
+                            "id": "130923460",
+                            "name": "Veg Whopper",
+                            "category": "Whopper",
+                            "description": "Our signature Whopper with 7 layers between the buns. Extra crunchy veg patty, fresh onions, crispy lettuce, juicy tomatoes (seasonal), tangy gherkins, creamy and smoky sauces with new premium buns. Swaad Aisa, India Jaisa.",
+                            "imageId": "f10379c6bd1edbbb7ee38da07c78058f",
+                            "inStock": 1,
+                            "isVeg": 1,
+                            "price": 17900
+                    },
+                {
+                            "id": "130923473",
+                            "name": "Chicken Whopper",
+                            "category": "Whopper",
+                            "description": "Our signature Whopper with 7 layers between the buns. Flame-Grilled chicken patty, fresh onions, crispy lettuce, juicy tomatoes (seasonal), tangy gherkins, creamy and smoky sauces with new premium glazed buns. Swaad Aisa, India Jaisa.",
+                            "imageId": "2ece2c5f21d615e1bb12163a495bbcbc",
+                            "inStock": 1,
+                            "price": 19900
+                },
+                {
+                            "id": "130923531",
+                            "name": "Crispy Veg Burger",
+                            "category": "Burgers & Wraps",
+                            "description": "Our Best-Selling Burger With Crispy Veg Patty, Fresh Onion And Our Signature Sauce",
+                            "imageId": "eqaon8guufklmil7ayhr",
+                            "inStock": 1,
+                            "isVeg": 1,
+                            "price": 7000
+                },
+                {
+                            "id": "130923559",
+                            "name": "Crispy Veg Double Patty Burger",
+                            "category": "Burgers & Wraps",
+                            "description": "Our Best-Selling Burger With Crispy Veg Double Patty, Fresh Onion And Our Signature Sauce",
+                            "imageId": "phm3t2g7v0lpczvtu6g7",
+                            "inStock": 1,
+                            "isVeg": 1,
+                            "price": 9900
+                },
+                {
+                            "id": "130923565",
+                            "name": "Crispy Chicken Burger",
+                            "category": "Burgers & Wraps",
+                            "description": "Our Best-Selling Burger With Crispy Chicken Patty, Onion And Classic Mayo Sauce",
+                            "imageId": "mqr237klqgnu0w2pzd94",
+                            "inStock": 1,
+                            "price": 9900
+                },
+                {
+                            "id": "130923596",
+                            "name": "Crispy Chicken Double Patty Burger",
+                            "category": "Burgers & Wraps",
+                            "description": "Our Best-Selling Burger With Crispy Chicken Double Patty, Onion And Classic Mayo Sauce",
+                            "imageId": "vfagr7gcirgouhiewq66",
+                            "inStock": 1,
+                            "price": 13900
+                },
+                {
+                            "id": "130923621",
+                            "name": "Hot 'N' Saucy Burger",
+                            "category": "Kings Premium Burgers",
+                            "description": "Chilli Saucy patty, spicy sauce, soft square masala buns. It's saucy & spicy.",
+                            "imageId": "zv7fx1ed433greh6tpvn",
+                            "inStock": 1,
+                            "isVeg": 1,
+                            "price": 19900
+                },
+                {
+                            "id": "130923626",
+                            "name": "Fiery Chicken Burger",
+                            "category": "Kings Premium Burgers",
+                            "description": "Spicy Fried Chicken, loads of sauces in soft square masala buns. It's hot and happening.",
+                            "imageId": "ppxmlepv15e3qexhhq9v",
+                            "inStock": 1,
+                            "price": 19900
+                }
+            ]
+       },
+       {
+        "id": "253731",
+        "name": "McDonald's",
+        "avgRating": 4.4,
+        "sla": {
+            "deliveryTime": 22,
+            "lastMileTravel": 2.2,
+            "serviceability": "SERVICEABLE",
+            "slaString": "22 mins",
+            "lastMileTravelString": "2.2 km",
+            "iconType": "ICON_TYPE_EMPTY"
+        },
+        "menu": [
+            {
+                        "id": "134525534",
+                        "name": "VegSurprise+SmallCoke",
+                        "category": "The Great McDonald's Sale Menu Starts @99",
+                        "description": "A surprise that will leave you wide-eyed. A scrumptious potato patty topped with a delectable Italian herb sauce and shredded onions placed between perfectly toasted buns.",
+                        "imageId": "07c717e117ea76843da8fa306a2217e9",
+                        "inStock": 1,
+                        "isVeg": 1,
+                        "price": 10900
+            },
+            {
+                        "id": "86600647",
+                        "name": "McAloo VM® ",
+                        "category": "The Great McDonald's Sale Menu Starts @99",
+                        "imageId": "qjacrl5imzdgvbfecjf1",
+                        "inStock": 1,
+                        "isVeg": 1,
+                        "price": 11400,
+                        "variants": {},
+                        "variantsV2": {}
+            },
+            {
+                        "id": "86600662",
+                        "name": "Chicken McGrill VM® ",
+                        "category": "The Great McDonald's Sale Menu Starts @99",
+                        "imageId": "hvqfaosliamvgscaqstj",
+                        "inStock": 1,
+                        "price": 17300
+            },
+            {
+                        "id": "86600682",
+                        "name": "McChicken VM®",
+                        "category": "The Great McDonald's Sale Menu Starts @99",
+                        "imageId": "rphagkrvp9rntb3nusdz",
+                        "inStock": 1,
+                        "price": 20800
+            },
+            {
+                        "id": "86600637",
+                        "name": "McEgg VM®",
+                        "category": "The Great McDonald's Sale Menu Starts @99",
+                        "imageId": "k33isy2arro5etraswap",
+                        "inStock": 1,
+                        "price": 11400
+            },
+            {
+                "id": "127414987",
+                "name": "Aloo Wrap VM",
+                "category": "The Great McDonald's Sale Menu Starts @99",
+                "imageId": "1c5ff48d1aa4cd315745ca7fdf3519f2",
+                "inStock": 1,
+                "isVeg": 1,
+                "price": 15300
+            },
+            {
+                "id": "127414986",
+                "name": "Egg Wrap VM",
+                "category": "The Great McDonald's Sale Menu Starts @99",
+                "imageId": "bde4a78f0931d7ce4e4ab22b2157f1a9",
+                "inStock": 1,
+                "price": 16400
+            },
+            {
+                "id": "127414989",
+                "name": "Tandoori Chicken Wrap VM",
+                "category": "The Great McDonald's Sale Menu Starts @99",
+                "imageId": "8318530be40be4ef88d21d005e598630",
+                "inStock": 1,
+                "price": 17600
+            }
+        ]}
+
+]}

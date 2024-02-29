@@ -7,7 +7,7 @@ import "../style.css"
 import SpecificCard from '../components/RestCardforCart'
 import Header from "../components/Header"
 import SpecificRest from "../shimmerUI/SpecificRest"
-import { data } from "../assets/data"
+import data  from "../assets/specificRest.json"
 import SpecificPage from "../shimmerUI/SpecificPage"
 import { AllMenuCards, HeaderDiv, HeaderLeft, HeaderRight, MenuCategory, MenuHeading, SpecificCardStyle, SpecificCardSubHeading, SpecificHeading, SpecificWrapper } from "./styledComponents/SpecificRestDetail"
 import Footer from "../components/Footer"
@@ -21,14 +21,14 @@ const Specific = () => {
     const rest_id = useParams()
     const { user } = useContext(UserContext)
     const [info, setInfo] = useState({})
-    const [otherInfo, setOtherInfo] = useState()
+    const [data, setOtherInfo] = useState()
     const [title, setTitle] = useState("")
     const [isLoading, setIsLoading] = useState(true)
     const available = useAvailable(info?.availability?.opened)
     const theme = useTheme()
     const context = useContext(Context)
     const [marked, setMarked] = useState()
-
+    console.log(data)
 
     useEffect(() => {
         setTimeout(() => {
@@ -40,13 +40,16 @@ const Specific = () => {
     async function getData() {
         // const rest_id = 348417
         //https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.7040592&lng=77.10249019999999&restaurantId=348417&submitAction=ENTER`
-        await axios.get(`https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.7040592&lng=77.10249019999999&restaurantId=${rest_id.id}&submitAction=ENTER`).then((item) => {
-            console.log(item.data.data.cards[2], "marked rest data specific")
-            setInfo(item.data.data.cards[0].card.card.info)
-            showFav(item.data.data.cards[0].card.card.info)
-            setOtherInfo(item?.data?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2].card.card.itemCards)
-            console.log(item?.data?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2].card.card.title)
-            setTitle(item?.data?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2].card.card.title)
+        // await axios.get(`https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.7040592&lng=77.10249019999999&restaurantId=${rest_id.id}&submitAction=ENTER`).then((item) => {
+        //     console.log(item.data.data.cards[2], "marked rest data specific")
+        //     setInfo(item.data.data.cards[0].card.card.info)
+        //     showFav(item.data.data.cards[0].card.card.info)
+        //     setOtherInfo(item?.data?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2].card.card.itemCards)
+        //     console.log(item?.data?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2].card.card.title)
+        //     setTitle(item?.data?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2].card.card.title)
+        // })
+        data.map(item => {
+            setInfo(item)
         })
     }
 
@@ -83,11 +86,11 @@ const Specific = () => {
                         <HeaderDiv>
                             <HeaderLeft>
                                 <SpecificHeading>{info?.name}</SpecificHeading>
-                                <SpecificCardSubHeading>{info?.cuisines?.join(", ")}</SpecificCardSubHeading>
-                                <SpecificCardSubHeading>{info?.areaName} | {info?.sla?.slaString}</SpecificCardSubHeading>
+                                <SpecificCardSubHeading>{info?.avgRating}</SpecificCardSubHeading>
+                                <SpecificCardSubHeading>{info?.sla?.slaString}</SpecificCardSubHeading>
                             </HeaderLeft>
 
-                            <HeaderRight>
+                            {/* <HeaderRight>
                                 <SpecificCardSubHeading>
                                     {user !== "" ? <>
                                         <FontAwesomeIcon
@@ -101,11 +104,11 @@ const Specific = () => {
                                     </>}
                                 </SpecificCardSubHeading>
                                 <SpecificCardSubHeading> {available}</SpecificCardSubHeading>
-                            </HeaderRight>
+                            </HeaderRight> */}
                         </HeaderDiv>
                         <hr></hr>
                         <MenuHeading>MENU</MenuHeading>
-                        <MenuCategory>{title}</MenuCategory>
+                        {/* <MenuCategory>{title}</MenuCategory> */}
                     </>
                 }
 
@@ -113,10 +116,10 @@ const Specific = () => {
                     {isLoading ? data?.map(item => {
                         // RETURNING SHIMMER UI
                         return <SpecificRest />
-                    }) : otherInfo?.map((dish) => {
-                        const modifiedInfo = { ...dish.card.info, restId: rest_id.id };
+                    }) : data?.map((item) => {
+                        // const modifiedInfo = { ...dish.card.info, restId: rest_id.id };
                         return (
-                          <SpecificCard {...modifiedInfo} />
+                          <SpecificCard {...item.menu} />
                         )
                       })}
                 </AllMenuCards>
