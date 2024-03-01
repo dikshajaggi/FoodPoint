@@ -23,7 +23,7 @@ const Offers = () => {
         setTimeout(() => {
             setIsLoading(false)
             // getData()
-            setOffers(data?.cards?.card.card.gridElements.infoWithStyle.restaurants)
+            setOffers(data?.restaurants)
         }, 1000)
 
     }, [])
@@ -46,7 +46,7 @@ const Offers = () => {
                 <OfferBanner> Explore top deals and offers exclusively for you! </OfferBanner>
                 <CardWrapper>
                     {offers?.slice(1)?.map((item) => {
-                        return <Link to={`/rest/${item.info.feeDetails?.restaurantId}`} style={{ textDecoration: 'none' }} >< Card {...item.info} /></Link>
+                        return <Link to={`/rest/${item.id}`} style={{ textDecoration: 'none' }} >< Card {...item} /></Link>
                     })}
                 </CardWrapper>
             </OfferWrapper>

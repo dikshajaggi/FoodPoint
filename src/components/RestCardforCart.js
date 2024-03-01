@@ -12,7 +12,7 @@ import CartConfirmation from './CartConfirmation'
 
 const SpecificCard = (props) => {
     console.log(props, "proppppppppssssssss")
-    const { name, price, description, id, imageId, category } = props
+    const { name, price, description, id, imageId, category, defaultPrice } = props
     const context = useContext(Context)
     const dispatch = useDispatch()
     const [flag, setFlag] = useState(0)
@@ -81,7 +81,7 @@ const SpecificCard = (props) => {
                 {/* {itemAttribute?.vegClassifier === "VEG" ? <VegClassifierIcon src={veg} /> : <VegClassifierIcon src={nonveg} />} */}
                 <MenuDishName>{name}</MenuDishName>
                 <SpecificCardSubHead>{category} </SpecificCardSubHead>
-                <h2 style={{ fontSize: "14px" }}> ₹{(price) / 100}</h2>
+                {defaultPrice ? <h2 style={{ fontSize: "14px" }}>  ₹{(defaultPrice) / 100}</h2> : <h2 style={{ fontSize: "14px" }}>  ₹{(price) / 100}</h2>}
                 <DishDesc>{description?.slice(0, 400)}...</DishDesc>
             </ItemAddData>
             <AddBtnWrapper>
