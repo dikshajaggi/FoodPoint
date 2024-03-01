@@ -3,11 +3,11 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Card from "../components/RestCard"
 import Header from "../components/Header"
-import RestCard from "../shimmerUI/RestCard"
 import data from "../assets/data.json"
 import { OfferBanner, OfferWrapper } from "./styledComponents/Offers"
 import Footer from "../components/Footer"
 import { CardWrapper } from "../layouts/styledComponents/Main"
+import RestCard from "../shimmerUI/RestCard"
 
 const Offers = () => {
 
@@ -45,8 +45,10 @@ const Offers = () => {
             <OfferWrapper>
                 <OfferBanner> Explore top deals and offers exclusively for you! </OfferBanner>
                 <CardWrapper>
-                    {offers?.slice(1)?.map((item) => {
-                        return <Link to={`/rest/${item.id}`} style={{ textDecoration: 'none' }} >< Card {...item} /></Link>
+                    {isLoading ? data?.restaurants?.map(item => {
+                        return <RestCard />
+                    }) : offers?.map((item) => {
+                        return item.aggregatedDiscountInfoV3 === undefined ? null : <Link to={`/rest/${item.id}`} style={{ textDecoration: 'none' }} >< Card {...item} /></Link>
                     })}
                 </CardWrapper>
             </OfferWrapper>
