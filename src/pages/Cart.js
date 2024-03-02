@@ -45,7 +45,7 @@ const Cart = () => {
                         </CartData>
                         <div><Checkout /></div>
                     </> : <EmptyCart><h4>Add something</h4></EmptyCart>}
-                    {context.cartData ? <CartData>{context.cartData?.map(item => <CartDataDisplay {...item} />)}
+                    {context.cartData ? <CartData>{context.cartData?.map(c => <CartDataDisplay {...c.item} />)}
                     </CartData> : null}
                 </CartContentWrapper> :
                     <EmptyCart><h4>Add something</h4></EmptyCart>

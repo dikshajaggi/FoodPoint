@@ -21,6 +21,8 @@ const SpecificCard = (props) => {
         dispatch(removeItem(data))
     }
 
+    console.log(cartItems, "cartitems")
+
     return (
         <ItemAdd>
             <DishImg> <Image src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_150,h_150,c_fit/${imageId}`} alt="" /> </DishImg>
@@ -32,7 +34,7 @@ const SpecificCard = (props) => {
                 <DishDesc>{description?.slice(0, 400)}...</DishDesc>
             </ItemAddData>
             <AddBtnWrapper>
-            {cartItems.some(c => c.id === id) ? <AddDishBtn onClick={() => removeItemFromCart(props)}>REMOVE</AddDishBtn> : <AddDishBtn onClick={() => addItemToCart(props)}>ADD</AddDishBtn>} 
+            {cartItems.length !== 0 && cartItems.some(c => c.item.id === id) ? <AddDishBtn onClick={() => removeItemFromCart(props)}>REMOVE</AddDishBtn> : <AddDishBtn onClick={() => addItemToCart(props)}>ADD</AddDishBtn>} 
             </AddBtnWrapper>
         </ItemAdd>
     )

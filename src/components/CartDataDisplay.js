@@ -7,19 +7,18 @@ import QuantityIncDec from "../utilities/helperComponents/QuantityIncDec"
 
 
 const CartDataDisplay = (props) => {
-    const { name, price, imageId, id } = props
+    console.log(props, "line10")
+    const { item : {name, price, imageId, id}} = props
 
     
 
     const dispatch = useDispatch()
     const items = useSelector(store => store.cart.items)
-    const [qty, setQty] = useState(null)
-
     const handleRemoveItem = (data) => {
         dispatch(removeItem(data))
     }
 
-    console.log(items, dispatch)
+    console.log(items, "line22")
 
 
     return (
@@ -30,8 +29,8 @@ const CartDataDisplay = (props) => {
                     <DishName>{name}</DishName>
                     <h2 style={{ fontSize: "18px" }}>Rs. {(price) / 100}</h2>
                     <QtyRemoveWrapper>
-                        <QuantityIncDec id={id} qty={qty} name={name} price={price / 100} />
-                        <CartRemoveBtn onClick={() => handleRemoveItem(props)}><i class="fa-solid fa-trash"></i></CartRemoveBtn>
+                        <QuantityIncDec id={id} qty={props.quantity} name={name} price={price / 100} />
+                        <CartRemoveBtn onClick={() => handleRemoveItem(props.item)}><i class="fa-solid fa-trash"></i></CartRemoveBtn>
                     </QtyRemoveWrapper>
                 </CardText>
             </CardCart>
