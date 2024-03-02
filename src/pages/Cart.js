@@ -20,11 +20,6 @@ const Cart = () => {
     const [cleared, setCleared] = useState(false)
 
     const handleclearCart = () => {
-        // const dataRef = ref(database, "cart_items")
-        // // Delete data
-        // remove(dataRef)
-        context.setCartData([])
-        context.setQuantity([])
         dispatch(clearCart())
         setCleared(true)
     }
