@@ -17,6 +17,7 @@ import offersAccent from "../assets/offersAccent.png"
 import { Drawer } from '@mui/material'
 import DrawerComponent from './DrawerComponent'
 import specficRest from "../assets/specificRest.json"
+import _ from 'lodash'
 
 const Header = () => {
     const theme = useTheme()
@@ -43,9 +44,9 @@ const Header = () => {
 
     const [isHovered, setIsHovered] = useState(false);
 
-    
+
     const getAllDishes = () => {
-        setSearchedDish(specficRest.cards.map(item => item.menu))
+        setSearchedDish(specficRest.cards.map(item => item.menu).flat(2))
     }
 
     const handleMouseEnter = () => {
@@ -60,20 +61,14 @@ const Header = () => {
         const matching = []
         const matchingDish = []
         const value = e.target.value
-        console.log(value, "eeeeeeeeee")
         restData?.filter((item) => {
-            console.log(item?.info?.name.toLowerCase(), value.toLowerCase(), "item?.info?.name")
-            if (item?.info?.name.toLowerCase().includes(value.toLowerCase())) matching.push(item.info)
-        })
-        restData?.filter((item) => {
-            console.log(item?.info?.name.toLowerCase(), value.toLowerCase(), "item?.info?.name")
-            if (item?.info?.name.toLowerCase().includes(value.toLowerCase())) matchingDish.push(item.info)
+            console.log(item?.name.toLowerCase(), value.toLowerCase(), "item?.info?.name")
+            if (item?.name.toLowerCase().includes(value.toLowerCase())) matching.push(item)
         })
 
         searchedDish.filter(item => {
-            if (item?.name.toLowerCase().includes(value.toLowerCase())) matching.push(item)
+            if (item?.name.toLowerCase().includes(value.toLowerCase())) matchingDish.push(item)
         })
-        console.log(matching, "matchingRest")
         setMatchingRest(matching)
         setMatchingDish(matchingDish)
     }
@@ -82,7 +77,7 @@ const Header = () => {
         console.log(user, "user")
         // getRest()
         getAllDishes()
-        setrestData(data?.cards?.card.card.gridElements.infoWithStyle.restaurants)
+        setrestData(data?.restaurants)
 
     }, [])
 
@@ -116,7 +111,7 @@ const Header = () => {
 
     const search = () => {
         context.setSearched(true)
-        context.setFilteredData(restData.filter((item) => item?.info.name.toLowerCase().includes(searchvalue.toLowerCase())))
+        context.setFilteredData(restData.filter((item) => item.name.toLowerCase().includes(searchvalue.toLowerCase())))
     }
 
     const setFilterOnClick = (filter) => {
@@ -136,10 +131,30 @@ const Header = () => {
     }
 
     const searchRestWithList = () => {
-        console.log(matchingDish, "getting matching dish")
+        const restaurants = []
+        console.log(matchingDish, "getting matching dish", restData)
         context.setSearched(true)
         setCloseSearchList(true)
-        context.setFilteredData(restData.filter((item) => item?.info.name.toLowerCase().includes(searchvalue.toLowerCase())))
+        if (matchingDish.length !== 0) {
+            const names = matchingDish.map(item => item.name)
+            function findRestaurantName(dishName) {
+                const restaurant = _.find(specficRest.cards, restaurant => {
+                    return _.some(restaurant.menu, { 'name': dishName });
+                });
+                return restaurant ? restaurant.name : "Restaurant not found";
+            }
+
+            for (const dish of names) {
+                const restaurantName = findRestaurantName(dish);
+                restaurants.push(restaurantName)
+            }
+
+            console.log(names, "line138", restaurants);
+
+
+            console.log(restData.filter((item) => restaurants.includes(item?.name.toLowerCase())), "line138")
+            context.setFilteredData(restData.filter((item) => restaurants.includes(item?.name)))
+        } else context.setFilteredData(restData.filter((item) => item?.name.toLowerCase().includes(searchvalue.toLowerCase())))
     }
 
     // useEffect(() => {
@@ -169,16 +184,17 @@ const Header = () => {
                 </Location>
                 <DrawerComponent open={open} setOpen={setOpen} />
                 <SearchWrapper>
-                    <Input type="search" list="search-suggestions" placeholder='Search for restaurants' value={searchvalue} onChange={searchrest} />
+                    <Input type="search" list="search-suggestions" placeholder='Search for restaurants and dishes' value={searchvalue} onChange={searchrest} />
                     <SearchBtn onClick={search}><i class="fa-solid fa-magnifying-glass"
                         style={{
                             fontSize: "14px",
                             color: 'black',
                             display: searchvalue ? "none" : null
                         }}></i></SearchBtn>
-                    {searchvalue !== "" ? matchingRest.length !== 0 ? closeSearchList ? null : <SearchBarList>
+                    {searchvalue !== "" ? matchingRest.length !== 0 || matchingDish.length !== 0 ? closeSearchList ? null : <SearchBarList>
                         <ul>
-                            {matchingDish === 0 ? matchingRest.map(item => {
+                            {console.log(matchingDish, "matchingDishmatchingDish")}
+                            {matchingDish.length === 0 ? matchingRest.map(item => {
                                 return (
                                     <SearchValWrapper onClick={searchRestWithList}>
                                         <SearchValImg src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" + item.cloudinaryImageId} alt="" />
@@ -186,13 +202,12 @@ const Header = () => {
                                     </SearchValWrapper>
                                 )
                             }) : matchingDish.map(item => {
-                                searchRestWithList()
-                                // return (
-                                //     // <SearchValWrapper onClick={searchRestWithList}>
-                                //     //     <SearchValImg src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" + item.cloudinaryImageId} alt="" />
-                                //     //     <SearchListVal>{item.name}</SearchListVal>
-                                //     // </SearchValWrapper>
-                                // )
+                                return (
+                                    <SearchValWrapper onClick={searchRestWithList}>
+                                        <SearchValImg src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" + item.imageId} alt="" />
+                                        <SearchListVal>{item.name}</SearchListVal>
+                                    </SearchValWrapper>
+                                )
                             })}
                         </ul> </SearchBarList> : <SearchBarList> <Span>no results found </Span></SearchBarList> : null}
                 </SearchWrapper>
