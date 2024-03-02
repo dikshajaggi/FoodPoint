@@ -16,7 +16,7 @@ import offers from "../assets/offers.png"
 import offersAccent from "../assets/offersAccent.png"
 import { Drawer } from '@mui/material'
 import DrawerComponent from './DrawerComponent'
-
+import specficRest from "../assets/specificRest.json"
 
 const Header = () => {
     const theme = useTheme()
@@ -32,6 +32,8 @@ const Header = () => {
     const [matchingRest, setMatchingRest] = useState([])
     const [closeSearchList, setCloseSearchList] = useState(false)
     const [open, setOpen] = useState(false);
+    const [searchedDish, setSearchedDish] = useState()
+    const [matchingDish, setMatchingDish] = useState()
     const currentPathname = location.pathname;
     const params = useParams()
     const headerPaths = ["/", "/signup", "/login", "/about", "/offers", "/cart", "/fav-restaurant", "/payment"];
@@ -40,6 +42,11 @@ const Header = () => {
         : "subHeader";
 
     const [isHovered, setIsHovered] = useState(false);
+
+    
+    const getAllDishes = () => {
+        setSearchedDish(specficRest.cards.map(item => item.menu))
+    }
 
     const handleMouseEnter = () => {
         setIsHovered(true);
@@ -51,19 +58,30 @@ const Header = () => {
 
     const findMatching = (e) => {
         const matching = []
+        const matchingDish = []
         const value = e.target.value
         console.log(value, "eeeeeeeeee")
         restData?.filter((item) => {
             console.log(item?.info?.name.toLowerCase(), value.toLowerCase(), "item?.info?.name")
             if (item?.info?.name.toLowerCase().includes(value.toLowerCase())) matching.push(item.info)
         })
+        restData?.filter((item) => {
+            console.log(item?.info?.name.toLowerCase(), value.toLowerCase(), "item?.info?.name")
+            if (item?.info?.name.toLowerCase().includes(value.toLowerCase())) matchingDish.push(item.info)
+        })
+
+        searchedDish.filter(item => {
+            if (item?.name.toLowerCase().includes(value.toLowerCase())) matching.push(item)
+        })
         console.log(matching, "matchingRest")
         setMatchingRest(matching)
+        setMatchingDish(matchingDish)
     }
 
     useEffect(() => {
         console.log(user, "user")
         // getRest()
+        getAllDishes()
         setrestData(data?.cards?.card.card.gridElements.infoWithStyle.restaurants)
 
     }, [])
@@ -118,6 +136,7 @@ const Header = () => {
     }
 
     const searchRestWithList = () => {
+        console.log(matchingDish, "getting matching dish")
         context.setSearched(true)
         setCloseSearchList(true)
         context.setFilteredData(restData.filter((item) => item?.info.name.toLowerCase().includes(searchvalue.toLowerCase())))
@@ -159,13 +178,21 @@ const Header = () => {
                         }}></i></SearchBtn>
                     {searchvalue !== "" ? matchingRest.length !== 0 ? closeSearchList ? null : <SearchBarList>
                         <ul>
-                            {matchingRest.map(item => {
+                            {matchingDish === 0 ? matchingRest.map(item => {
                                 return (
                                     <SearchValWrapper onClick={searchRestWithList}>
                                         <SearchValImg src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" + item.cloudinaryImageId} alt="" />
                                         <SearchListVal>{item.name}</SearchListVal>
                                     </SearchValWrapper>
                                 )
+                            }) : matchingDish.map(item => {
+                                searchRestWithList()
+                                // return (
+                                //     // <SearchValWrapper onClick={searchRestWithList}>
+                                //     //     <SearchValImg src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" + item.cloudinaryImageId} alt="" />
+                                //     //     <SearchListVal>{item.name}</SearchListVal>
+                                //     // </SearchValWrapper>
+                                // )
                             })}
                         </ul> </SearchBarList> : <SearchBarList> <Span>no results found </Span></SearchBarList> : null}
                 </SearchWrapper>

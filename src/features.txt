@@ -4,6 +4,11 @@ routing
 context
 shimmer ui
 ------------------------------------------------
+apart from rest, search dishes also
+light dark theme
+multi language (eng/hindi)
+
+
 transition to shimmer ui
 pagination in specific restaurant page
 auto suggetion div while searching
@@ -49,38 +54,14 @@ categories -> RATING, COST ETC
 -----------------------
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-issue -> items getting added twice 
-because on switching pages the quantity icons gets switched to "Add" (resolved)
-
-qty of items in cart, when data is loded from database
-remove spcific items from cart -> working fine but update the removed item in database
-
-feature to inc/dec qty on cart page also, and remove item when qty is reduced to 0
-
 
 MAKE SURE THAT WHEN USER HAVE SEARCHED A PARTICULAR REST, THEY SHOULD GET SUGGESTIONS FOR SIMILAR REST
 
 SHOW PASSWORD OPTION
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 -----------------------------------
-issues fixed
-
-issue -> decrement on items not working
-
-
-issue -> when on cart and user is not logged in -> user moves to login page, 
-but after logging in, 
-the user is not able to go back to the cart page
-
-rounded off the total payable amount to 2 decimal places
-search results list is not clickable and also fix the ui
-
 
 -------------------------------------
-firebase for authentication
-hoisting on firebase
-
-once the user logs in aur signs up => store all the data in Redux store
 
 
 
@@ -91,16 +72,6 @@ CREATE SEPARATE COMPONENT FOR SEARCH
 when cart is cleared or a specific item is removed make sure to set the quantity to zero (show add btn)
 in the add to cart page
 -------------------------------------------------------------------
-
-
-ISSUES
-
-WHEN QTY IS REDUCED TO ZERO IN CART, UPDATE IT IN CHECKOUT
-whenever qty is changed update checkout
-
-WHEN AN ITEM IS REMOVE FROM CART AND USER IS TRYING TO ADD IT AGAIN, IT IS 
-NOT SHOWING QTY INC DEC BTN (BUT ITEM IS BEING ADDED)  ((FIXED !!!!!!!!!))
-
 
 -------------------------------------------------------------------------------
 to be done =>
