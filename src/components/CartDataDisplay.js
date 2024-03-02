@@ -8,7 +8,7 @@ import QuantityIncDec from "../utilities/helperComponents/QuantityIncDec"
 
 const CartDataDisplay = (props) => {
     console.log(props, "line10")
-    const { item : {name, price, imageId, id}} = props
+    const { item : {name, price, imageId, id, defaultPrice}} = props
 
     
 
@@ -27,9 +27,9 @@ const CartDataDisplay = (props) => {
                 <DishImgCart src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" + imageId} alt="/" />
                 <CardText>
                     <DishName>{name}</DishName>
-                    <h2 style={{ fontSize: "18px" }}>Rs. {(price) / 100}</h2>
+                    {defaultPrice ? <h2 style={{ fontSize: "18px" }}>Rs. {(defaultPrice) / 100}</h2>  : <h2 style={{ fontSize: "18px" }}>Rs. {(price) / 100}</h2>}
                     <QtyRemoveWrapper>
-                        <QuantityIncDec id={id} qty={props.quantity} name={name} price={price / 100} />
+                        <QuantityIncDec id={id} qty={props.quantity} name={name} defaultPrice={defaultPrice/100} price={price / 100} />
                         <CartRemoveBtn onClick={() => handleRemoveItem(props.item)}><i class="fa-solid fa-trash"></i></CartRemoveBtn>
                     </QtyRemoveWrapper>
                 </CardText>

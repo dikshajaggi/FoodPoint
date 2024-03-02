@@ -30,8 +30,17 @@ const Checkout = () => {
     // }, [context.qtyCheck])
 
     useEffect(() => {
-        setTotalItems(cartItems.reduce((acc, current) => acc + current.quantity , 0))
-        setTotal(cartItems.reduce((acc, current) => acc + current.item.price * current.quantity , 0))
+    const totalItems = cartItems.reduce((acc, current) => acc + current.quantity, 0);
+    const totalPrice = cartItems.reduce((acc, current) => {
+        if (current.item && current.item.defaultPrice) {
+            return acc + current.item.defaultPrice * current.quantity;
+        } else if (current.item && current.item.price) {
+            return acc + current.item.price * current.quantity;
+        }
+        return acc;
+    }, 0);
+    setTotalItems(totalItems);
+    setTotal(totalPrice);
     }, [cartItems])
 
     return (
