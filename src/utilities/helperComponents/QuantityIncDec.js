@@ -1,27 +1,28 @@
 import React, { useEffect, useState } from 'react'
 import "./helperStyles.css"
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { setItemQuantityDec, setItemQuantityInc } from '../redux/cartSlice'
 
 const QuantityIncDec = (props) => {
 
     const dispatch = useDispatch()
     const [itemQty, setItemQty] = useState()
-    const [flag, setFlag] = useState(0)
 
     const increase = (id) => {
-        setFlag(flag+1)
+        setItemQty(prevQty => prevQty + 1);
         dispatch(setItemQuantityInc(id))
     }
     const decrease = (id) => {
-        setFlag(flag+1)
-        dispatch(setItemQuantityDec(id))
+        if (itemQty > 0) {
+            setItemQty(prevQty => prevQty - 1);
+            dispatch(setItemQuantityDec(id));
+        }
     }
 
     useEffect(() => {
         setItemQty(props.qty)
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [flag])
+    }, [props.qty])
 
     return (
         <div className='quantityIncDec'>
