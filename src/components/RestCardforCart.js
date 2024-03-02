@@ -1,78 +1,25 @@
-import React, { useContext, useEffect, useState } from 'react'
-import { useDispatch } from 'react-redux'
-import { Context } from '../utilities/context/Context'
-import { addItems } from '../utilities/redux/cartSlice'
-import QuantityIncDec from "../utilities/helperComponents/QuantityIncDec"
-import { AddBtnWrapper, AddDishBtn, DishDesc, DishImg, Image, ItemAdd, ItemAddData, MenuDishName, SpecificCardSubHead, VegClassifierIcon } from './styledComponents/RestCardforCart'
+import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { addItems, removeItem } from '../utilities/redux/cartSlice'
+import { AddBtnWrapper, AddDishBtn, DishDesc, DishImg, Image, ItemAdd, ItemAddData, MenuDishName, SpecificCardSubHead } from './styledComponents/RestCardforCart'
 // import { database } from "../utilities/firebase/index"
 // import { push, ref, set } from '@firebase/database'
-import nonveg from "../assets/nonveg.png"
-import veg from "../assets/veg.png"
-import CartConfirmation from './CartConfirmation'
+// import nonveg from "../assets/nonveg.png"
+// import veg from "../assets/veg.png"
 
 const SpecificCard = (props) => {
     console.log(props, "proppppppppssssssss")
     const { name, price, description, id, imageId, category, defaultPrice } = props
-    const context = useContext(Context)
     const dispatch = useDispatch()
-    const [flag, setFlag] = useState(0)
-    const [qty, setQty] = useState()
-    const [matched, setMatched] = useState(true)
-    let matchedRest = true
+    const cartItems = useSelector(state => state.cart.items)
 
-    const checkIfmatched = () => {
-        // context?.quantity?.map(item => {
-        //     if (item.restId !== restId) {
-        //         context.setShowModal(true)
-        //         setMatched(false)
-        //         matchedRest = false
-        //     }
-        // })
+    const addItemToCart = (data) => {
+        dispatch(addItems(data))
     }
 
-    const addItemToCart = async (data) => {
-        checkIfmatched()
-        setFlag(1)
-        // const newRef = push(ref(database, "cart_items"))
-        // set(newRef, data)
-        if (matchedRest) {
-            dispatch(addItems(data))
-            // context.setQuantity(prev => [...prev, { id: id, qty: 1, name: name, price: price / 100, restId: restId }])
-        }
+    const removeItemFromCart = (data) => {
+        dispatch(removeItem(data))
     }
-
-    if (context.quantity?.length !== 0) context.quantity.map(item => {
-        // context.idArray.push(item.id)
-        if (matched) context.idArray.push(item.id)
-        else if (matched === false) {
-            if (context.cartChoiceNo) return null
-            if (context.start) {
-                context.idArray.push(item.id)
-            }
-        }
-    })
-
-
-
-    useEffect(() => {
-        context.setCartChoiceNo(false)
-        context.setStart(false)
-        matchedRest = true
-    }, [context.cartChoiceNo, context.setStart])
-
-    useEffect(() => {
-        if (context.quantity.length !== 0) {
-            context.quantity.map(item => {
-                if (item.id === id) if (item.qty === 0) setFlag(0); else setFlag(1)
-            })
-        }
-        if (context.quantity.length === 0) {
-            setFlag(0)
-        }
-        context.quantity.filter(item => {
-            if (item.id === id) setQty(item.qty)
-        })
-    }, [context.quantity])
 
     return (
         <ItemAdd>
@@ -85,9 +32,8 @@ const SpecificCard = (props) => {
                 <DishDesc>{description?.slice(0, 400)}...</DishDesc>
             </ItemAddData>
             <AddBtnWrapper>
-                {flag === 0 ? <AddDishBtn onClick={() => addItemToCart(props)}>ADD</AddDishBtn> : context.idArray.includes(id) ? <QuantityIncDec id={id} qty={qty} name={name} price={price / 100} /> : context.start ? <QuantityIncDec id={id} qty={qty} name={name} price={price / 100} /> : <AddDishBtn onClick={() => addItemToCart(props)}>ADD</AddDishBtn>}
+            {cartItems.some(c => c.id === id) ? <AddDishBtn onClick={() => removeItemFromCart(props)}>REMOVE</AddDishBtn> : <AddDishBtn onClick={() => addItemToCart(props)}>ADD</AddDishBtn>} 
             </AddBtnWrapper>
-            {context.showModal ? <CartConfirmation data={props} /> : null}
         </ItemAdd>
     )
 }

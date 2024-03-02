@@ -1,6 +1,4 @@
-import axios from "axios"
 import React, { useContext, useEffect, useState } from 'react'
-import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import useAvailable from '../hooks/isAvailable'
 import "../style.css"
@@ -10,7 +8,7 @@ import SpecificRest from "../shimmerUI/SpecificRest"
 import data from "../assets/specificRest.json"
 import details from "../assets/data.json"
 import SpecificPage from "../shimmerUI/SpecificPage"
-import { AllMenuCards, HeaderDiv, HeaderLeft, HeaderRight, MenuCategory, MenuHeading, SpecificCardStyle, SpecificCardSubHeading, SpecificHeading, SpecificWrapper } from "./styledComponents/SpecificRestDetail"
+import { AllMenuCards, HeaderDiv, HeaderLeft, HeaderRight, MenuHeading, SpecificCardStyle, SpecificCardSubHeading, SpecificHeading, SpecificWrapper } from "./styledComponents/SpecificRestDetail"
 import Footer from "../components/Footer"
 import { useTheme } from "styled-components"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -22,7 +20,6 @@ const Specific = () => {
     const rest_id = useParams()
     const { user } = useContext(UserContext)
     const [info, setInfo] = useState({})
-    const [title, setTitle] = useState("")
     const [isLoading, setIsLoading] = useState(true)
     const available = useAvailable(info?.availability?.opened)
     const theme = useTheme()
@@ -36,6 +33,7 @@ const Specific = () => {
             setIsLoading(false)
             getData()
         }, 2000);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     async function getData() {
@@ -63,10 +61,10 @@ const Specific = () => {
         }
     }
 
-    const showFav = (info) => {
-        const idArray = context.favRest.map(item => item.id)
-        if (idArray.includes(info.id)) setMarked(true)
-    }
+    // const showFav = (info) => {
+    //     const idArray = context.favRest.map(item => item.id)
+    //     if (idArray.includes(info.id)) setMarked(true)
+    // }
 
     useEffect(() => {
         if (marked === false) {
@@ -76,6 +74,7 @@ const Specific = () => {
                 context.setFavRest(data)
             }
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [marked])
 
     return (

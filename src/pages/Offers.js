@@ -1,4 +1,3 @@
-import axios from "axios"
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Card from "../components/RestCard"
@@ -12,13 +11,7 @@ import RestCard from "../shimmerUI/RestCard"
 const Offers = () => {
 
     const [offers, setOffers] = useState([])
-    const [paymentOffers, setPaymentOffers] = useState([])
     const [isLoading, setIsLoading] = useState(true)
-    const [currentActiveTab, setCurrentActiveTab] = useState('1')
-
-    const toggle = tab => {
-        if (currentActiveTab !== tab) setCurrentActiveTab(tab)
-    }
     useEffect(() => {
         setTimeout(() => {
             setIsLoading(false)
