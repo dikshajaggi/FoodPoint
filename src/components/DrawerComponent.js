@@ -1,6 +1,6 @@
 import { Drawer } from '@mui/material'
 import React, { useContext } from 'react'
-import { Address, LocWrapper } from '../pages/styledComponents/WelcomePage';
+// import { Address, LocWrapper } from '../pages/styledComponents/WelcomePage';
 import axios from 'axios';
 import { Context } from '../utilities/context/Context';
 import { ButtonClose } from '../pages/styledComponents/Payment';

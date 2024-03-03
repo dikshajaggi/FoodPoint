@@ -1,10 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { Address, Body, Button, Content, FindFood, Head, Header, Image, LocWrapper, LocateUser, LocationInput, LoginSignup, Main, SubHead, WelcomeText, Wrapper } from './styledComponents/WelcomePage'
+import { Body, Button, Content, FindFood, Head, Header, Image, LocationInput, LoginSignup, Main, SubHead, WelcomeText, Wrapper } from './styledComponents/WelcomePage'
 import Footer from '../components/Footer'
 import { LinkStyled, Logo, Name } from '../components/styledComponents/Header'
 import displayImg from "../assets/dining.jpg"
 import { Context } from '../utilities/context/Context'
-import axios from 'axios'
 import loadingSpinner from "../assets/loadingSpinner.gif"
 import { UserContext } from '../utilities/context/UserContext'
 
@@ -14,39 +13,40 @@ const WelcomePage = () => {
     const dynamicText = ["Hungry ?", "Unexpected guests ?", "Cooking gone wrong ?", "Late night at office ?"]
     const [textIndex, setTextIndex] = useState(0)
     const [text, setText] = useState(dynamicText[0])
-    const [changePage, setChangePage] = useState(false)
+    // const [changePage, setChangePage] = useState(false)
     const [fetchingLoc, setFetchingLoc] = useState(false)
     const [showError, setShowError] = useState(false)
 
 
     const handleClick = () => {
+
         if (context.location === null) setShowError(true)
     }
 
-    const handleLocation = () => {
-        setShowError(false)
-        setFetchingLoc(true)
-        const ReverseGeoCoding = (obj) => {
-            let response = axios.get(`https://nominatim.openstreetmap.org/reverse?lat=${obj.latitude}&lon=${obj.longitude}&format=json`)
-            response.then(result => {
-                console.log(result.data, "context.location result")
-                localStorage.setItem('location', result.data.display_name);
-                context.setLocation(result.data.display_name)
-                setTimeout(() => {
-                    setChangePage(true)
-                }, 1000);
-            })
-        }
+    // const handleLocation = () => {
+    //     setShowError(false)
+    //     setFetchingLoc(true)
+    //     const ReverseGeoCoding = (obj) => {
+    //         let response = axios.get(`https://nominatim.openstreetmap.org/reverse?lat=${obj.latitude}&lon=${obj.longitude}&format=json`)
+    //         response.then(result => {
+    //             console.log(result.data, "context.location result")
+    //             localStorage.setItem('location', result.data.display_name);
+    //             context.setLocation(result.data.display_name)
+    //             setTimeout(() => {
+    //                 setChangePage(true)
+    //             }, 1000);
+    //         })
+    //     }
 
-        navigator.geolocation.getCurrentPosition(
-            (position) => {
-                ReverseGeoCoding(position.coords)
-            },
-            (error) => {
-                console.error("Error getting user location:", error);
-            }
-        )
-    }
+    //     navigator.geolocation.getCurrentPosition(
+    //         (position) => {
+    //             ReverseGeoCoding(position.coords)
+    //         },
+    //         (error) => {
+    //             console.error("Error getting user location:", error);
+    //         }
+    //     )
+    // }
 
 
     useEffect(() => {
@@ -67,6 +67,7 @@ const WelcomePage = () => {
 
         // Cleanup the interval when the component unmounts
         return () => clearInterval(interval);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [textIndex]);
 
     console.log(user, "user user")
@@ -87,11 +88,11 @@ const WelcomePage = () => {
                             <SubHead>Order food from favourite restaurants near you.</SubHead>
                         </WelcomeText>
                         <LocationInput>
-                            {console.log(changePage, "changePage")}
+                            {/* {console.log(changePage, "changePage")} */}
                             {/* <LocWrapper><Address placeholder="Enter your delivery location" value={fetchingLoc ? "fetching your location...." : null}></Address> <i class="fa-solid fa-location-crosshairs" style={{ color: "#686b78" }}></i><LocateUser onClick={handleLocation}>Locate me</LocateUser></LocWrapper> */}
                             <FindFood onClick={handleClick}>{fetchingLoc ? <img src={loadingSpinner} alt="" style={{ maxHeight: "100%" }} /> : "Find food"}</FindFood>
                         </LocationInput>
-                        {/* {showError ? <LocationInput type="error">Enter your delivery location</LocationInput> : null} */}
+                        {showError ? <LocationInput type="error">Enter your delivery location</LocationInput> : null}
                     </Body>
                 </Content>
                 <Image src={displayImg}></Image>
