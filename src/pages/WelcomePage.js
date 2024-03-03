@@ -1,11 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { Body, Button, Content, FindFood, Head, Header, Image, LocWrapper, LocationInput, LoginSignup, Main, SubHead, WelcomeText, Wrapper } from './styledComponents/WelcomePage'
+import { Body, Button, Content, FindFood, Head, Header, Image, LocWrapper, LocateUser, LocationInput, LoginSignup, Main, SubHead, WelcomeText, Wrapper } from './styledComponents/WelcomePage'
 import Footer from '../components/Footer'
 import { LinkStyled, Logo, Name } from '../components/styledComponents/Header'
 import displayImg from "../assets/dining.jpg"
 import { Context } from '../utilities/context/Context'
 import loadingSpinner from "../assets/loadingSpinner.gif"
 import { UserContext } from '../utilities/context/UserContext'
+import axios from 'axios'
 
 const WelcomePage = () => {
     const context = useContext(Context)
@@ -23,30 +24,30 @@ const WelcomePage = () => {
         if (context.location === null) setShowError(true)
     }
 
-    // const handleLocation = () => {
-    //     setShowError(false)
-    //     setFetchingLoc(true)
-    //     const ReverseGeoCoding = (obj) => {
-    //         let response = axios.get(`https://nominatim.openstreetmap.org/reverse?lat=${obj.latitude}&lon=${obj.longitude}&format=json`)
-    //         response.then(result => {
-    //             console.log(result.data, "context.location result")
-    //             localStorage.setItem('location', result.data.display_name);
-    //             context.setLocation(result.data.display_name)
-    //             setTimeout(() => {
-    //                 setChangePage(true)
-    //             }, 1000);
-    //         })
-    //     }
+    const handleLocation = () => {
+        setShowError(false)
+        setFetchingLoc(true)
+        const ReverseGeoCoding = (obj) => {
+            let response = axios.get(`https://nominatim.openstreetmap.org/reverse?lat=${obj.latitude}&lon=${obj.longitude}&format=json`)
+            response.then(result => {
+                console.log(result.data, "context.location result")
+                localStorage.setItem('location', result.data.display_name);
+                context.setLocation(result.data.display_name)
+                // setTimeout(() => {
+                //     setChangePage(true)
+                // }, 1000);
+            })
+        }
 
-    //     navigator.geolocation.getCurrentPosition(
-    //         (position) => {
-    //             ReverseGeoCoding(position.coords)
-    //         },
-    //         (error) => {
-    //             console.error("Error getting user location:", error);
-    //         }
-    //     )
-    // }
+        navigator.geolocation.getCurrentPosition(
+            (position) => {
+                ReverseGeoCoding(position.coords)
+            },
+            (error) => {
+                console.error("Error getting user location:", error);
+            }
+        )
+    }
 
 
     useEffect(() => {
