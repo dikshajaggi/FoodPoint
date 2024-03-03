@@ -6,7 +6,7 @@ const Footer = () => {
     return (
         <FooterWrapper>
             <Info>
-                <Logo>HungerBites</Logo>
+                <Logo>FoodPoint</Logo>
                 <LinksWrapper>
                     <LinkStyled to="/disclaimer" style={{ color: "white" }}>Disclaimer</LinkStyled>
                     <LinkStyled to="/about" style={{ color: "white" }}>About</LinkStyled>

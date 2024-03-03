@@ -10,7 +10,7 @@ const PrivacyPolicy = () => {
             <Heading>Privacy Policy</Heading>
             <PrivacyWrapper>
                 Last updated: March 3, 2024
-                This Privacy Policy explains how HungerBites collects, uses, and protects the personal information you provide when you use our food ordering application.
+                This Privacy Policy explains how FoodPoint collects, uses, and protects the personal information you provide when you use our food ordering application.
 
                 Information we collect:
 

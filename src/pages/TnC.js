@@ -57,7 +57,7 @@ const TnC = () => {
 
                 <h6>Governing Law:</h6>
                 These Terms shall be governed by and construed in accordance with the laws of demo Jurisdiction, without regard to its conflict of law provisions.
-                If you have any questions or concerns about these Terms, please contact us at hungerBites.comDemo.
+                If you have any questions or concerns about these Terms, please contact us at FoodPoint.comDemo.
 
                 By using Hunger Bites, you agree to abide by these Terms and Conditions.
             </TncWrapper>

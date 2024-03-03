@@ -23,7 +23,7 @@ FoodPoint is an ongoing project with exciting features and enhancements in devel
 
 ## Getting Started
 
-To get started with HungerBites, follow these steps:
+To get started with FoodPoint, follow these steps:
 
 1. **Clone the Repository**:
    ```bash
@@ -44,7 +44,7 @@ The page will reload when you make changes.\
 
 ## Screenshots
 
-Here are some screenshots of the HungerBites application:
+Here are some screenshots of the FoodPoint application:
 
 ### Home Page
 ![Home Page with Location Services](./screenshots/home_page_location.png)
@@ -76,7 +76,7 @@ Here are some screenshots of the HungerBites application:
 
 ### Signup Page
 ![Signup Page](./screenshots/signup_page.png)
-*Description: The signup page for new users to create accounts and join the HungerBites community, gaining access to exclusive benefits.*
+*Description: The signup page for new users to create accounts and join the FoodPoint community, gaining access to exclusive benefits.*
 
 ### Offers Page
 ![Offers Page](./screenshots/offers_page.png)
@@ -84,6 +84,6 @@ Here are some screenshots of the HungerBites application:
 
 ### About Us Page
 ![About Us Page](./screenshots/about_us_page.png)
-*Description: The "About Us" page provides information about HungerBites, including its vision, and the team behind the project. Users can get to know the platform better and the people who make it all happen.*
+*Description: The "About Us" page provides information about FoodPoint, including its vision, and the team behind the project. Users can get to know the platform better and the people who make it all happen.*
 
 
