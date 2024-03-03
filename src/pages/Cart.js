@@ -8,7 +8,7 @@ import Checkout from "./Checkout"
 import Header from "../components/Header"
 // import { database } from "../utilities/firebase"
 // import { ref, remove } from "firebase/database"
-import { CartContentWrapper, CartData, CartHead, ClearCartBtn, Wrapper, EmptyCart, CartWrapper } from "./styledComponents/Cart"
+import { CartMain, CartContentWrapper, CartData, CartHead, ClearCartBtn, Wrapper, EmptyCart, CartWrapper } from "./styledComponents/Cart"
 import Footer from "../components/Footer"
 
 
@@ -25,7 +25,7 @@ const Cart = () => {
     }
 
     return (
-        <div>
+        <CartMain>
             <Header />
             <CartWrapper>
                 <Wrapper>
@@ -47,7 +47,7 @@ const Cart = () => {
                 }
             </CartWrapper>
             <Footer />
-        </div>
+        </CartMain>
     )
 }
 export default Cart

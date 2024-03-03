@@ -10,7 +10,15 @@ border-radius: 8px;
 padding: 4vh;
 width: 25vw;
 height: 34vh;
-border: 2px solid ${props => props.theme.colors.accent}
+border: 2px solid ${props => props.theme.colors.accent};
+@media only screen and (max-width: 600px)  {
+  width: 60vw;
+  height:40vh;
+    }
+    @media only screen and (min-width: 768px) and (max-width: 768px) and (min-height: 1025px) and (max-height: 1025px) {
+      width: 60vw;
+      height:40vh;
+}
 `
 
 const CheckoutLabel = styled.h5`

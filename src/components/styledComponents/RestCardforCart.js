@@ -11,11 +11,13 @@ const ItemAdd = styled.div`
     border-bottom: 1px solid rgb(104, 103, 103);
     @media only screen and (max-width: 600px)  {
         flex-direction: column;
-        height: 32vh;
+       height: auto;
+       margin-bottom: 8vh;
     }
     @media only screen and (min-width: 768px) and (max-width: 768px) and (min-height: 1025px) and (max-height: 1025px) {
         flex-direction: column;
-        height: 32vh;
+       height: auto;
+       margin-bottom: 8vh;
 }
 `
 const ItemAddData = styled.div`
@@ -43,9 +45,11 @@ font-weight: 500;
 background-color: ${props => props.theme.colors.accent};
 @media only screen and (max-width: 600px)  {
     width:auto;
+    margin-bottom: 4px;
     }
 @media only screen and (min-width: 768px) and (max-width: 768px) and (min-height: 1025px) and (max-height: 1025px) {
     width:auto;
+    margin-bottom: 4px;
 }
 `
 
