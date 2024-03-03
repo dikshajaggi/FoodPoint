@@ -21,6 +21,7 @@ const Main = () => {
         props.setrestData(data?.restaurants)
         props.setFilteredData(data?.restaurants)
         setIsLoading(false)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [props.filter])
 
     return (

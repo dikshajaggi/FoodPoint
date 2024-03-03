@@ -1,6 +1,6 @@
 import { createContext, useState } from "react";
 import { data } from "../../assets/data"
-import { useDispatch } from "react-redux";
+// import { useDispatch } from "react-redux";
 
 const value = "value"
 const Context = createContext(value)
@@ -23,7 +23,7 @@ const ContextProvider = (props) => {
     const [idArray, setIdArray] = useState([])
     const [searched, setSearched] = useState(false)
 
-    const dispatch = useDispatch()
+    // const dispatch = useDispatch()
 
     // useEffect(() => {
     //     const dataRef = ref(database, "cart_items");

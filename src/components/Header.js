@@ -1,20 +1,17 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { UserContext } from '../utilities/context/UserContext'
-import { useDispatch, useSelector } from 'react-redux'
-import axios from "axios"
+import { useSelector } from 'react-redux'
 import "../style.css"
 import { Context } from "../utilities/context/Context"
-import { Avatar, CartItemsLength, CartWrapper, Categories, CategoryLabel, HeaderDiv, HeaderWrapper, Input, LinkStyled, Location, LoginUser, Logo, LogoutBtn, Name, NavbarLI, NavbarULCat, Offers, SearchBarList, SearchBtn, SearchCartWrapper, SearchListVal, SearchValImg, SearchValWrapper, SearchWrapper, Span, UserDropdown, UserInfo, Username } from './styledComponents/Header'
+import { Avatar, CartItemsLength, CartWrapper, HeaderDiv, HeaderWrapper, Input, LinkStyled, Location, LoginUser, Logo, LogoutBtn, Name, NavbarLI, Offers, SearchBarList, SearchBtn, SearchListVal, SearchValImg, SearchValWrapper, SearchWrapper, Span, UserDropdown, UserInfo, Username } from './styledComponents/Header'
 import data from "../assets/data.json"
-import { useLocation } from 'react-router-dom';
+// import { useLocation } from 'react-router-dom';
 // import { onAuthStateChanged, signOut } from 'firebase/auth'
 // import { auth } from '../utilities/firebase'
-import { addUser, removeUser } from '../utilities/redux/userSlice'
 import { useTheme } from 'styled-components'
 import offers from "../assets/offers.png"
 import offersAccent from "../assets/offersAccent.png"
-import { Drawer } from '@mui/material'
 import DrawerComponent from './DrawerComponent'
 import specficRest from "../assets/specificRest.json"
 import _ from 'lodash'
@@ -23,8 +20,7 @@ const Header = () => {
     const theme = useTheme()
     const { user, setUser } = useContext(UserContext)
     const context = useContext(Context)
-    const location = useLocation()
-    const dispatch = useDispatch()
+    // const location = useLocation()
     const navigate = useNavigate()
 
     const items = useSelector((store) => store.cart.items)
@@ -35,12 +31,12 @@ const Header = () => {
     const [open, setOpen] = useState(false);
     const [searchedDish, setSearchedDish] = useState()
     const [matchingDish, setMatchingDish] = useState()
-    const currentPathname = location.pathname;
-    const params = useParams()
-    const headerPaths = ["/", "/signup", "/login", "/about", "/offers", "/cart", "/fav-restaurant", "/payment"];
-    const linkInfo = headerPaths.includes(currentPathname) || currentPathname === `/rest/${params.id}`
-        ? "header"
-        : "subHeader";
+    // const currentPathname = location.pathname;
+    // const params = useParams()
+    // const headerPaths = ["/", "/signup", "/login", "/about", "/offers", "/cart", "/fav-restaurant", "/payment"];
+    // const linkInfo = headerPaths.includes(currentPathname) || currentPathname === `/rest/${params.id}`
+    //     ? "header"
+    //     : "subHeader";
 
     const [isHovered, setIsHovered] = useState(false);
 
@@ -62,12 +58,13 @@ const Header = () => {
         const matchingDish = []
         const value = e.target.value
         restData?.filter((item) => {
-            console.log(item?.name.toLowerCase(), value.toLowerCase(), "item?.info?.name")
             if (item?.name.toLowerCase().includes(value.toLowerCase())) matching.push(item)
+            return true
         })
 
         searchedDish.filter(item => {
             if (item?.name.toLowerCase().includes(value.toLowerCase())) matchingDish.push(item)
+            return true
         })
         setMatchingRest(matching)
         setMatchingDish(matchingDish)
@@ -78,7 +75,7 @@ const Header = () => {
         // getRest()
         getAllDishes()
         setrestData(data?.restaurants)
-
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     // async function getRest() {
@@ -114,9 +111,9 @@ const Header = () => {
         context.setFilteredData(restData.filter((item) => item.name.toLowerCase().includes(searchvalue.toLowerCase())))
     }
 
-    const setFilterOnClick = (filter) => {
-        context.setFilter(filter)
-    }
+    // const setFilterOnClick = (filter) => {
+    //     context.setFilter(filter)
+    // }
 
     const handleSignOut = () => {
         // signOut(auth).then(() => {

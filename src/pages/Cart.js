@@ -1,6 +1,6 @@
-import { useContext, useEffect, useState } from "react"
+import { useContext, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { UserContext } from "../utilities/context/UserContext"
+// import { UserContext } from "../utilities/context/UserContext"
 import CartDataDisplay from "../components/CartDataDisplay"
 import { clearCart } from '../utilities/redux/cartSlice'
 import { Context } from "../utilities/context/Context"
@@ -13,7 +13,7 @@ import Footer from "../components/Footer"
 
 
 const Cart = () => {
-    const username = useContext(UserContext)
+    // const username = useContext(UserContext)
     const context = useContext(Context)
     const items = useSelector((store) => store.cart.items)
     const dispatch = useDispatch()

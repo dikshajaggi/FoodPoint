@@ -1,7 +1,7 @@
-import React, { useContext } from 'react'
-import { useSelector } from 'react-redux'
+import React from 'react'
+// import { useSelector } from 'react-redux'
 import "../style.css"
-import { UserContext } from '../utilities/context/UserContext'
+// import { UserContext } from '../utilities/context/UserContext'
 import Header from '../components/Header'
 import { AboutDesc, AboutHeading, AboutMain, AboutWrapper, Wrapper, Flex, Params, Strong, ImgWrapper, Images, FoodImg } from './styledComponents/About'
 import Footer from '../components/Footer'

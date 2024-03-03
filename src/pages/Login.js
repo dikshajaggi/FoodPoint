@@ -1,14 +1,13 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { ImageWrapper, LoginButton, LoginWrapper } from "./styledComponents/Login";
 import { useFormik } from "formik";
 import { LoginSchema } from "../schemas/login";
-import { CenterDiv, ErrorPara, HeaderOnlyLayoutWrapper, Heading, Input, Label, LabelInputWrapper, LinkWrapper } from "./styledComponents/LoginSignup";
+import { ErrorPara, HeaderOnlyLayoutWrapper, Heading, Input, Label, LabelInputWrapper, LinkWrapper } from "./styledComponents/LoginSignup";
 import { UserContext } from "../utilities/context/UserContext";
 import { useNavigate } from "react-router";
 // import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth";
 // import { auth } from "../utilities/firebase";
-import { useDispatch } from "react-redux";
-import { addUser, removeUser } from "../utilities/redux/userSlice";
+// import { useDispatch } from "react-redux";
 import loginImg from "../assets/login.jpg"
 
 
@@ -19,8 +18,6 @@ const Login = () => {
         email: "",
         password: ""
     }
-    const [error, setError] = useState(null)
-
     const handleLogin = (values) => {
         console.log(values, "valuescheck")
         setUser(values)
@@ -42,14 +39,15 @@ const Login = () => {
         validationSchema: LoginSchema,
         onSubmit: (values, { resetForm }) => {
             handleLogin(values)
-            if (error !== null) {
-                console.log(values);
-                resetForm()
-            }
+            resetForm()
+            // if (error !== null) {
+            //     console.log(values);
+            //     resetForm()
+            // }
         }
     })
 
-    const dispatch = useDispatch()
+    // const dispatch = useDispatch()
 
     // useEffect(() => {
     //     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -91,7 +89,7 @@ const Login = () => {
                             <Input type="password" placeholder="enter password" name="password" id="password" onChange={formik.handleChange} onBlur={formik.handleBlur}></Input>
                             {formik.errors.password && formik.touched.password ? <ErrorPara>{formik.errors.password}</ErrorPara> : null}
                         </LabelInputWrapper>
-                        {error !== null ? <ErrorPara>{error}</ErrorPara> : null}
+                        {/* {error !== null ? <ErrorPara>{error}</ErrorPara> : null} */}
                         <LoginButton type="submit">login</LoginButton>
                         <Label>Don't have an account? <LinkWrapper to="/signup">Sign up </LinkWrapper></Label>
                     </form>

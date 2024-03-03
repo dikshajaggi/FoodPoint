@@ -1,9 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
 import { UserContext } from '../utilities/context/UserContext'
-import { Context } from '../utilities/context/Context'
 import { LinkStyled } from '../components/styledComponents/Header'
-import _ from 'lodash'
 import { CheckoutBtn, CheckoutLabel, CheckoutWrapper, TotalLabels, TotalWrapper } from './styledComponents/Checkout'
 import { useSelector } from 'react-redux'
 
@@ -30,17 +27,17 @@ const Checkout = () => {
     // }, [context.qtyCheck])
 
     useEffect(() => {
-    const totalItems = cartItems.reduce((acc, current) => acc + current.quantity, 0);
-    const totalPrice = cartItems.reduce((acc, current) => {
-        if (current.item && current.item.defaultPrice) {
-            return acc + current.item.defaultPrice * current.quantity;
-        } else if (current.item && current.item.price) {
-            return acc + current.item.price * current.quantity;
-        }
-        return acc;
-    }, 0);
-    setTotalItems(totalItems);
-    setTotal(totalPrice);
+        const totalItems = cartItems.reduce((acc, current) => acc + current.quantity, 0);
+        const totalPrice = cartItems.reduce((acc, current) => {
+            if (current.item && current.item.defaultPrice) {
+                return acc + current.item.defaultPrice * current.quantity;
+            } else if (current.item && current.item.price) {
+                return acc + current.item.price * current.quantity;
+            }
+            return acc;
+        }, 0);
+        setTotalItems(totalItems);
+        setTotal(totalPrice);
     }, [cartItems])
 
     return (
