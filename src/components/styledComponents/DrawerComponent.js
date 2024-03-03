@@ -12,4 +12,4 @@ height: 10vh;
 margin: 4vh auto;
 font-size: 18px;
 `
-export {LocateUserBtn}
+export { LocateUserBtn }

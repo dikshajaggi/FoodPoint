@@ -360,7 +360,179 @@
                 "slaString": "19 mins",
                 "lastMileTravelString": "1.8 km",
                 "iconType": "ICON_TYPE_EMPTY"
-            }
+            },
+            "menu": [
+                {
+                    "id": "39887411",
+                    "name": "Bedmi Puri With Aloo Subji",
+                    "category": "Good Morning Menu",
+                    "description": "Serves 1 | Bedmi Puri with Aloo Subzi is a popular North Indian breakfast or brunch dish.This item contains Aloo Subji with 2 pieces of Bedmi Puri",
+                    "imageId": "ge3tdfspzgylxnna8ltf",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 12000
+                },
+                {
+                    "id": "47676320",
+                    "name": "Gajar Halwa",
+                    "category": "Winter Special",
+                    "description": "Gajar Halwa is a popular and indulgent Indian dessert that is cherished for its rich, sweet, and aromatic flavors.",
+                    "imageId": "tzhv1nzsjfocsl9pga5a",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "defaultPrice": 34000
+                },
+                {
+                    "id": "100163924",
+                    "name": "Rasmalai One Pc",
+                    "category": "Sweets",
+                    "description": "Serves 1 | Bikanervala Top-Seller: A delectable Indian dessert made from soft cheese dumplings soaked in sweet, saffron-infused milk, garnished with pistachios or almonds.This item includes 1 piece of Rasmalai.",
+                    "imageId": "4ff8a2ef199f63c4490bb08fb4a815b2",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 6000
+                },
+                {
+                    "id": "20513718",
+                    "name": "Kaju Burfii",
+                    "category": "Sweets",
+                    "description": "Serves 1 | A popular Indian sweet made from cashew nuts (kaju) and sugar, shaped into smooth, diamond-shaped pieces.This item Contains approximately 60 pieces of Kaju Burfi.",
+                    "imageId": "tzaxsmdi2q7w107inivn",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "defaultPrice": 49000
+                },
+                {
+                    "id": "20513759",
+                    "name": "Raj Kachori",
+                    "category": "Chaat, Snacks & Quick Bites",
+                    "description": "Serves 1 | A big crispy sphere ball stuffed with diced boiled potatoes and sprouted black gram, tamarind sauce, mint sauce, and sweet curd sprinkled with chaat masala.This delightful Item includes- 1 Raj Kachori, Dahi, Curd, Chaat Masala and Garnishes.",
+                    "imageId": "scosfx4zwqhve5aexzfo",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 16000
+                },
+                {
+                    "id": "20513690",
+                    "name": "Bhalla Papdi",
+                    "category": "Chaat, Snacks & Quick Bites",
+                    "description": "Serves 1 | Bhalla Papdi is a popular and delightful Indian street food that offers a burst of sweet, spicy, tangy, and crunchy flavors all in one bite.This item is served with Crispy Papdi, Bhalla, Dahi, Chutney and Garnishes.",
+                    "imageId": "nshzfsb4mahz2jqlusbg",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 16000
+                },
+                {
+                    "id": "20513688",
+                    "name": "Aloo Tikki",
+                    "category": "Chaat, Snacks & Quick Bites",
+                    "description": "Serves 1 | Aloo Tikki is a popular and delicious Indian street food snack made from mashed potatoes that are seasoned with spices. This item is served with Chutney, Aloo Tikki and Garnishes.",
+                    "imageId": "krtphdu2kzrabejdxmbf",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 12000
+                },
+                {
+                    "id": "20513691",
+                    "name": "Bhel Puri",
+                    "category": "Chaat, Snacks & Quick Bites",
+                    "description": "Serves 1 | A spicy dish prepared with puffed rice, onion, exotic spices and hot chutney.",
+                    "imageId": "dsyyzzijvz2a8aypmh7x",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 10000
+                },
+                {
+                    "id": "20513755",
+                    "name": "Punjabi Chana Kulcha",
+                    "category": "Chaat, Snacks & Quick Bites",
+                    "description": "Serves 1 | A North Indian delight featuring spicy chickpea curry (chana) paired with soft, fluffy kulcha bread. A hearty and flavorful combination.This Item Contains Punjabi Channa with 2 pieces of Kulcha.",
+                    "imageId": "243a3b5f1f8f1cd55afdfcabcf913b7c",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 16000
+                },
+                {
+                    "id": "96056448",
+                    "name": "Pyaz Kachori.",
+                    "category": "Chaat, Snacks & Quick Bites",
+                    "description": "Serves 1 | Explore the Savory and Crunchy goodness of Pyaz Kachori. This Crispy Indian snack filled with spiced onion.This item Includes 1 Pyaz Kachori and Chutney.",
+                    "imageId": "r8csf0txz9bnzoyiyqqu",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 4200
+                },
+                {
+                    "id": "52989362",
+                    "name": "Syrup Khus 1 Kg",
+                    "category": "Beverages",
+                    "description": "Serves 1 | A soft and flaky Indian flatbread cooked in a tandoor or clay oven, brushed with butter for a rich, flavorful taste.",
+                    "imageId": "qbhmmih1h7umz8jbl1gq",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 13559
+                },
+                {
+                    "id": "52989398",
+                    "name": "Syrup Jeera Shikanji 1 Kg",
+                    "category": "Beverages",
+                    "description": "Serves 1",
+                    "imageId": "n9laakzluq2xy5bxyfxn",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 14407
+                },
+                {
+                    "id": "52990190",
+                    "name": "Badam Drink 180 ml",
+                    "category": "Beverages",
+                    "description": "Serves 1 | Badam drink is a delicious and nutritious beverage made from almonds, milk, and various flavorings.Item includes Badam Drink in 180ml sized can.",
+                    "imageId": "oafufsce8x049x5dmfxu",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 4762
+                },
+                {
+                    "id": "52990507",
+                    "name": "Chocolate Drink 180 ml",
+                    "category": "Beverages",
+                    "description": "Serves 1 | Chocolate drink is a delicious and popular beverage made by combining milk with chocolate flavoring. It's enjoyed by people of all ages and is commonly served as a refreshing and sweet treat.Item includes Chocolate Drink in 180 ml sized can.",
+                    "imageId": "bgxvvgqak9z4ueqtlli5",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 4762
+                },
+                {
+                    "id": "52990845",
+                    "name": "Strawberry Drink 180 ml",
+                    "category": "Beverages",
+                    "description": "Serves 1",
+                    "imageId": "a7vb32dje5zepbvk0i6u",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 4762
+                },
+                {
+                    "id": "52990846",
+                    "name": "Thandai Drink 180 ml",
+                    "category": "Beverages",
+                    "description": "Serves 1 | Thandai Drink is a refreshing and energizing drink known for its cooling properties, making it perfect for hot summer days. Thandai is made with a blend of various nuts, spices, and aromatic ingredients.Item includes Thandai Drink in 180 ml can.",
+                    "imageId": "r3ah9ttlrleugwjowqrq",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 4762
+                },
+                {
+                    "id": "52989449",
+                    "name": "Soan Papdi Desi Ghee - 250g",
+                    "category": "Packed sweets, Namkeens & Savouries",
+                    "description": "Serves 1 | Soan Papdi made with Desi Ghee is a rich and indulgent variation of the popular Indian sweet delicacy. Desi ghee, or clarified butter made from cow's milk, adds a unique and luxurious flavor to Soan Papdi.Item includes Soan Papdi Desi Ghee in a box with net weight of 250 gms.",
+                    "imageId": "jmhtkuxgmkhmalwccwhz",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 10476
+                }
+            ]
         },
         {
             "id": "733714",
@@ -373,7 +545,93 @@
                 "slaString": "25 mins",
                 "lastMileTravelString": "2.4 km",
                 "iconType": "ICON_TYPE_EMPTY"
-            }
+            },
+            "menu": [
+                {
+                    "id": "65546303",
+                    "name": "Reshmi Paneer Pizza",
+                    "category": "Desi Veg Pizza",
+                    "description": "Paneer, roasted capsiucum  & caramalized onion marinated in inhouse tandoori sauce sprinkled with 100% mozarella cheese and served with inhouse chilli flakes & oregano seasoning",
+                    "imageId": "92051f3f61bbd1d79eeb85c0996e77e1",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "itemAttribute": {
+                        "vegClassifier": "VEG"
+                    },
+                    "defaultPrice": 19900
+                },
+                {
+                    "id": "65546280",
+                    "name": "Paneer Lababdar Pizza",
+                    "category": "Desi Veg Pizza",
+                    "description": "Paneer & caramalized onion marinated in inhouse korma sprinkled with 100% mozarella cheese and served with inhouse chilli flakes & oregano seasoning. ",
+                    "imageId": "507a7ceb5bc646c1e3b151274ebc26f7",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "itemAttribute": {
+                        "vegClassifier": "VEG"
+                    },
+                    "defaultPrice": 19900
+                },
+                {
+                    "id": "112594310",
+                    "name": "La Chicken Meatball Pizza",
+                    "category": "Non Veg Pizza @ 158",
+                    "description": "Chicken meatball freshly baked pizza with secret recipe cheesy, spicy & creamy jalapeno cheese sauce sprinkled with 100% mozarella cheese and served with inhouse chilli flakes & oregano seasoning",
+                    "imageId": "1ff4c8faeabafe35677a522ff9414b83",
+                    "inStock": 1,
+                    "itemAttribute": {
+                        "vegClassifier": "NONVEG"
+                    },
+                    "defaultPrice": 15800
+                },
+                {
+                    "id": "112594309",
+                    "name": "La Chicken Ham Pizza",
+                    "category": "Non Veg Pizza @ 158",
+                    "description": "Smoked chicken ham freshly baked pizza with secret recipe cheesy, spicy & creamy jalapeno cheese sauce sprinkled with 100% mozarella cheese and served with inhouse chilli flakes & oregano seasoning",
+                    "imageId": "554c3c6ab94e2c1c651adc0da934a9b0",
+                    "defaultPrice": 15800
+                },
+                {
+                    "id": "51821435",
+                    "name": "Bhuna Murg Pizza",
+                    "category": "Desi Nonveg Pizza",
+                    "description": "Chicken tikka marinated in inhouse desi butter gravy, caramalised onion and capsicum sprinkled with 100% mozarella cheese and served with inhouse chilli flakes & oregano seasoning",
+                    "imageId": "b5d1c4a6f945741b874a41b11b7306c4",
+                    "defaultPrice": 24900
+                },
+                {
+                    "id": "76620838",
+                    "name": "Cold Coffee",
+                    "category": "Milkshakes",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 14900
+                },
+                {
+                    "id": "51821425",
+                    "name": "Classic Cheese Pasta",
+                    "category": "Pastas",
+                    "description": "Authentic italian penne pasta tossed with extra virgin spanish olive oil with 100% mozarella cheese and a dash of garlic & bresh basil with a choice of 4 secret sauces",
+                    "imageId": "8d56aa78515be450c7e47c1adea63a70",
+                    "itemAttribute": {
+                        "vegClassifier": "VEG"
+                    },
+                    "defaultPrice": 19900
+                },
+                {
+                    "id": "51821480",
+                    "name": "Simply Veg Pasta",
+                    "category": "Pastas",
+                    "description": "Roasted capsicum & caramalized onion authentic italian penne pasta tossed with extra virgin spanish olive oil with 100% mozarella cheese and a dash of garlic & bresh basil with a choice of 4 secret sauces",
+                    "imageId": "637a07e1efb02d3c2abcc877e61fdb16",
+                    "itemAttribute": {
+                        "vegClassifier": "VEG"
+                    },
+                    "defaultPrice": 24900
+                }
+            ]
         },
         {
             "id": "423775",
@@ -386,7 +644,172 @@
                 "slaString": "27 mins",
                 "lastMileTravelString": "4.9 km",
                 "iconType": "ICON_TYPE_EMPTY"
-            }
+            },
+            "menu": [
+                {
+                    "id": "92410406",
+                    "name": "Pizza Parcel",
+                    "category": "Baked Savoury Snacks - Ready To Eat",
+                    "description": "Serves 1",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 10000
+                },
+                {
+                    "id": "109573671",
+                    "name": "Paneer Tikka Footlong Sub",
+                    "category": "Baked Savoury Snacks - Ready To Eat",
+                    "description": "Serves 1",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 10000
+                },
+                {
+                    "id": "77794496",
+                    "name": "Peri Peri Chicken Roll",
+                    "category": "Baked Savoury Snacks - Ready To Eat",
+                    "description": "Serves 1",
+                    "inStock": 1,
+                    "price": 12000
+                },
+                {
+                    "id": "77794498",
+                    "name": "Tandoori Chaap Roll",
+                    "category": "Baked Savoury Snacks - Ready To Eat",
+                    "description": "Serves 1",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 10000
+                },
+                {
+                    "id": "79827762",
+                    "name": "Chicken Wrap",
+                    "category": "Baked Savoury Snacks - Ready To Eat",
+                    "description": "Serves 1 | Chicken wrapped with tandoori mayo stuffed in our signature wrap",
+                    "inStock": 1,
+                    "price": 15000
+                },
+                {
+                    "id": "77793825",
+                    "name": "Mexican Cheese Roll",
+                    "category": "Baked Savoury Snacks - Ready To Eat",
+                    "description": "Serves 1 | Soft bread roll filled with mexican vegetable fillings and cheese",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 12000
+                },
+                {
+                    "id": "77793826",
+                    "name": "Mushroom Roll",
+                    "category": "Baked Savoury Snacks - Ready To Eat",
+                    "description": "Serves 1 | Soft bread roll filled with mushroom and veggies",
+                    "imageId": "w1nidoouhp7t1lztvoz0",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 10000
+                },
+                {
+                    "id": "77793866",
+                    "name": "Chilli Paneer Kathi Roll",
+                    "category": "Baked Savoury Snacks - Ready To Eat",
+                    "description": "Serves 1 | Indo chinise style, paneer tossed with veggies in chilli sauce, wrapped in a roll",
+                    "imageId": "ta4ei7z2retctqumutq9",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 13000
+                },
+                {
+                    "id": "59685765",
+                    "name": "Chicken Shawarma (6 inches)",
+                    "category": "Baked Savoury Snacks - Ready To Eat",
+                    "description": "Serves 1 | Juicy chicken marinated in a blend of Middle Eastern spices in a wrap",
+                    "imageId": "rfl2ezmhbb1in0ysbwle",
+                    "inStock": 1,
+                    "price": 15000
+                },
+                {
+                    "id": "59686077",
+                    "name": "Paneer Shawarma",
+                    "category": "Baked Savoury Snacks - Ready To Eat",
+                    "description": "Serves 1 | Spiced and flavourful cottage cheese wrap(6 Inches)",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 12000
+                },
+                {
+                    "id": "77794515",
+                    "name": "Masala Sandwich",
+                    "category": "Baked Savoury Snacks - Ready To Eat",
+                    "description": "Serves 1",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 11000
+                },
+                {
+                    "id": "92410476",
+                    "name": "Mexican Sandwich",
+                    "category": "Baked Savoury Snacks - Ready To Eat",
+                    "description": "Serves 1",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 11000
+                },
+                {
+                    "id": "59686074",
+                    "name": "Roasted Chicken Sandwich",
+                    "category": "Baked Savoury Snacks - Ready To Eat",
+                    "description": "Serves 1 | Classic white bread sandwich filled with roasted chicken",
+                    "imageId": "g250fpqi2s6ugfp5zmj3",
+                    "inStock": 1,
+                    "price": 16000
+                },
+                {
+                    "id": "81324256",
+                    "name": "Mumbaiya Vada Pao",
+                    "category": "Baked Savoury Snacks - Ready To Eat",
+                    "description": "Serves 1",
+                    "imageId": "zpfw3fmkksbzixvfm2rx",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 7000
+                },
+                {
+                    "id": "77793824",
+                    "name": "Cheese Burger",
+                    "category": "Baked Savoury Snacks - Ready To Eat",
+                    "description": "Serves 1 | Classic burger with crunchy veg patty, veggies, sauces and cheese",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 10000
+                },
+                {
+                    "id": "59685859",
+                    "name": "Veg Burger",
+                    "category": "Baked Savoury Snacks - Ready To Eat",
+                    "description": "Serves 1 | Classic burger with crunchy veg patty, veggies and sauces",
+                    "imageId": "j109enfwoxadaqrf7do8",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 9000
+                },
+                {
+                    "id": "59685861",
+                    "name": "Chicken Burger",
+                    "category": "Baked Savoury Snacks - Ready To Eat",
+                    "description": "Serves 1 | A perfect snack if you're craving a crispy chicken burger",
+                    "inStock": 1,
+                    "price": 13000
+                },
+                {
+                    "id": "77793828",
+                    "name": "Veg Hot Dog",
+                    "category": "Baked Savoury Snacks - Ready To Eat",
+                    "description": "Serves 1 | Classic hot dog bun filled with veg nuggets and sauces",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 9000
+                }
+            ]
         },
         {
             "id": "326440",
