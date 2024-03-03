@@ -15,8 +15,8 @@ import { ContextProvider } from "./utilities/context/Context";
 import Specific from "./pages/SpecificRestDetail";
 import Themeprovider from "./theme/ThemeProvider";
 import Fav from "./pages/Fav";
-import WelcomePage from "./pages/WelcomePage";
-import ProtectedRoute from "./utilities/ProtectedRoutes";
+// import WelcomePage from "./pages/WelcomePage";
+// import ProtectedRoute from "./utilities/ProtectedRoutes";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TnC from "./pages/TnC";
 import Disclaimer from "./pages/styledComponents/Disclaimer";
@@ -31,16 +31,16 @@ function App() {
       path: "/signup",
       element: <SignUp />
     },
+    // {
+    //   path: "/",
+    //   element:
+    //     <ProtectedRoute>
+    //       <WelcomePage />
+    //     </ProtectedRoute>
+
+    // },
     {
       path: "/",
-      element:
-        <ProtectedRoute>
-          <WelcomePage />
-        </ProtectedRoute>
-
-    },
-    {
-      path: "/home",
       element: <Main />
     },
     {
