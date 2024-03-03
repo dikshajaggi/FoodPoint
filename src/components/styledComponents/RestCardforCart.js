@@ -9,6 +9,14 @@ const ItemAdd = styled.div`
     font-weight: 400;
     margin-bottom: 4vh;
     border-bottom: 1px solid rgb(104, 103, 103);
+    @media only screen and (max-width: 600px)  {
+        flex-direction: column;
+        height: 32vh;
+    }
+    @media only screen and (min-width: 768px) and (max-width: 768px) and (min-height: 1025px) and (max-height: 1025px) {
+        flex-direction: column;
+        height: 32vh;
+}
 `
 const ItemAddData = styled.div`
     display: flex;
@@ -29,10 +37,16 @@ const AddDishBtn = styled.button`
 border: 1px solid ${props => props.theme.colors.accent};
 border-radius: 5px;
 height:5vh;
-width:6vw;
+width:auto;
 color:white;
 font-weight: 500;
 background-color: ${props => props.theme.colors.accent};
+@media only screen and (max-width: 600px)  {
+    width:auto;
+    }
+@media only screen and (min-width: 768px) and (max-width: 768px) and (min-height: 1025px) and (max-height: 1025px) {
+    width:auto;
+}
 `
 
 const AddBtnWrapper = styled.div`
