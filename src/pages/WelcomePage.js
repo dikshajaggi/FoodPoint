@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { Body, Button, Content, FindFood, Head, Header, Image, LocationInput, LoginSignup, Main, SubHead, WelcomeText, Wrapper } from './styledComponents/WelcomePage'
+import { Body, Button, Content, FindFood, Head, Header, Image, LocWrapper, LocationInput, LoginSignup, Main, SubHead, WelcomeText, Wrapper } from './styledComponents/WelcomePage'
 import Footer from '../components/Footer'
 import { LinkStyled, Logo, Name } from '../components/styledComponents/Header'
 import displayImg from "../assets/dining.jpg"
@@ -89,7 +89,7 @@ const WelcomePage = () => {
                         </WelcomeText>
                         <LocationInput>
                             {/* {console.log(changePage, "changePage")} */}
-                            {/* <LocWrapper><Address placeholder="Enter your delivery location" value={fetchingLoc ? "fetching your location...." : null}></Address> <i class="fa-solid fa-location-crosshairs" style={{ color: "#686b78" }}></i><LocateUser onClick={handleLocation}>Locate me</LocateUser></LocWrapper> */}
+                            <LocWrapper><i class="fa-solid fa-location-crosshairs" style={{ color: "#686b78" }}></i><LocateUser onClick={handleLocation}>Locate me</LocateUser></LocWrapper>
                             <FindFood onClick={handleClick}>{fetchingLoc ? <img src={loadingSpinner} alt="" style={{ maxHeight: "100%" }} /> : "Find food"}</FindFood>
                         </LocationInput>
                         {showError ? <LocationInput type="error">Enter your delivery location</LocationInput> : null}
