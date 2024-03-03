@@ -17,6 +17,9 @@ import Themeprovider from "./theme/ThemeProvider";
 import Fav from "./pages/Fav";
 import WelcomePage from "./pages/WelcomePage";
 import ProtectedRoute from "./utilities/ProtectedRoutes";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TnC from "./pages/TnC";
+import Disclaimer from "./pages/styledComponents/Disclaimer";
 
 function App() {
   const appRoutes = createBrowserRouter([
@@ -30,9 +33,9 @@ function App() {
     },
     {
       path: "/",
-      element: 
+      element:
         <ProtectedRoute>
-        <WelcomePage />
+          <WelcomePage />
         </ProtectedRoute>
 
     },
@@ -76,8 +79,21 @@ function App() {
       path: "/payment",
       element: <Payment />
     },
-    {path: "/fav-restaurant",
+    {
+      path: "/fav-restaurant",
       element: <Fav />
+    },
+    {
+      path: "/privacy-policy",
+      element: <PrivacyPolicy />
+    },
+    {
+      path: "/terms_conditions",
+      element: <TnC />
+    },
+    {
+      path: "/disclaimer",
+      element: <Disclaimer />
     }
   ])
 
