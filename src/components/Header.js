@@ -4,7 +4,7 @@ import { UserContext } from '../utilities/context/UserContext'
 import { useSelector } from 'react-redux'
 import "../style.css"
 import { Context } from "../utilities/context/Context"
-import { Avatar, CartItemsLength, CartWrapper, HeaderDiv, HeaderWrapper, Input, LinkStyled, Location, LoginUser, Logo, LogoutBtn, Name, NavbarLI, Offers, SearchBarList, SearchBtn, SearchListVal, SearchValImg, SearchValWrapper, SearchWrapper, Span, UserDropdown, UserInfo, Username } from './styledComponents/Header'
+import { Avatar, CartItemsLength, CartWrapper, HeaderDiv, HeaderWrapper, Input, LinkStyled, Location, LoginUser, Logo, LogoutBtn, MobileHeader, Name, NavbarLI, Offers, SearchBarList, SearchBtn, SearchListVal, SearchValImg, SearchValWrapper, SearchWrapper, Span, UserDropdown, UserInfo, Username } from './styledComponents/Header'
 import data from "../assets/data.json"
 // import { useLocation } from 'react-router-dom';
 // import { onAuthStateChanged, signOut } from 'firebase/auth'
@@ -181,7 +181,7 @@ const Header = () => {
                 </Location>
                 <DrawerComponent open={open} setOpen={setOpen} />
                 <SearchWrapper>
-                    <Input type="search" list="search-suggestions" placeholder='Search for restaurants and dishes' value={searchvalue} onChange={searchrest} />
+                    <Input type="search" list="search-suggestions" placeholder='Search...' value={searchvalue} onChange={searchrest} />
                     <SearchBtn onClick={search}><i class="fa-solid fa-magnifying-glass"
                         style={{
                             fontSize: "14px",
@@ -239,6 +239,14 @@ const Header = () => {
                 </NavbarULCat>
             </Categories> */}
             {/* <CategoryLabel display={linkInfo} >{context.filter}</CategoryLabel> */}
+            <MobileHeader>
+                <LinkStyled to="/login"><Username style={{ fontSize: "14px", color: "#fff" }}>Login</Username></LinkStyled>
+                {user !== "" ? <>
+                    <LogoutBtn style={{ fontSize: "14px", color: "#fff" }} onClick={handleSignOut}>Logout</LogoutBtn>
+                    <LinkStyled style={{ fontSize: "14px", color: "#fff" }} option="fav" to="/fav-restaurant">Favourites</LinkStyled></> : null}
+                <LinkStyled to="/offers" style={{ fontSize: "14px", color: "#fff" }}>Offers</LinkStyled>
+                <LinkStyled style={{ fontSize: "14px", color: "#fff" }} to="/cart"><CartItemsLength>Cart {items.length}</CartItemsLength></LinkStyled>
+            </MobileHeader>
         </HeaderDiv>
     )
 }

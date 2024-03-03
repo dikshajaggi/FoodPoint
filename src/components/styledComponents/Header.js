@@ -153,10 +153,9 @@ const SearchWrapper = styled.div`
  display: flex;
  align-items: center;
  height: 5vh;
- @media only screen and (max-width: 600px)  {
-        display: none;
-    }
+}
 `
+
 
 const SearchBtn = styled.button`
 background-color:transparent;
@@ -244,4 +243,19 @@ cursor: pointer;
     }
 `
 
-export { HeaderDiv, HeaderWrapper, Categories, CategoryLabel, NavbarLI, LinkStyled, LogoutBtn, Offers, SearchWrapper, SearchBarList, CartWrapper, UserInfo, Avatar, Username, UserDropdown, CartItemsLength, LoginUser, Input, Name, SearchListVal, SearchValWrapper, SearchValImg, Logo, SearchBtn, NavbarULCat, Span, Button, Location }
+const MobileHeader = styled.div`
+display: none;
+align-item: center;
+justify-content: space-evenly;
+position: fixed;
+bottom: 0;
+height: 5vh;
+background-color: ${props => props.theme.colors.accent};
+border-top: 4px solid white;
+width:100%;
+@media only screen and (max-width: 600px)  {
+        display: flex;
+    }
+`
+
+export { MobileHeader, HeaderDiv, HeaderWrapper, Categories, CategoryLabel, NavbarLI, LinkStyled, LogoutBtn, Offers, SearchWrapper, SearchBarList, CartWrapper, UserInfo, Avatar, Username, UserDropdown, CartItemsLength, LoginUser, Input, Name, SearchListVal, SearchValWrapper, SearchValImg, Logo, SearchBtn, NavbarULCat, Span, Button, Location }
