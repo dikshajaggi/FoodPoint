@@ -44,7 +44,7 @@ const Disclaimer = () => {
 
 
                     We reserve the right to modify or update this disclaimer at any time without prior notice. Any changes will be effective immediately upon posting the revised disclaimer on the Service. Your continued use of the Service after the posting of the revised disclaimer constitutes your acceptance of the changes.
-                    If you have any questions or concerns about this disclaimer, please contact us at FoodPoint.comDemo.
+                    If you have any questions or concerns about this disclaimer, please contact us at HungerBites.comDemo.
 
                     By using Hunger Bites, you acknowledge and agree to abide by this disclaimer.
                 </div>

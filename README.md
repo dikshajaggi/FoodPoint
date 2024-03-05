@@ -1,21 +1,21 @@
-# FoodPoint - Food Ordering Web Application
+# HungerBites - Food Ordering Web Application
 
-FoodPoint is an ambitious and dynamic food ordering web application that aims to redefine the dining experience for users. This project is currently in progress, showcasing a range of exciting features and functionalities, with ongoing development efforts focused on enhancing its capabilities.
+HungerBites is an ambitious and dynamic food ordering web application that aims to redefine the dining experience for users. This project is currently in progress, showcasing a range of exciting features and functionalities, with ongoing development efforts focused on enhancing its capabilities.
 
 ## Project Status
-FoodPoint is an ongoing project with exciting features and enhancements in development. Stay tuned for updates and improvements.
+HungerBites is an ongoing project with exciting features and enhancements in development. Stay tuned for updates and improvements.
 
 ## Features
 
-- **Restaurant Discovery**: Leveraging the Swiggy API, FoodPoint enables users to search for a wide variety of restaurants, giving them a vast selection of culinary options to choose from.
+- **Restaurant Discovery**: Leveraging the Swiggy API, HungerBites enables users to search for a wide variety of restaurants, giving them a vast selection of culinary options to choose from.
 
 - **Menu Customization**: Users can curate their own culinary journey by selecting different food items, adding them to their virtual cart, and dynamically adjusting quantities to suit their preferences.
 
-- **Secure Payments**:FoodPoint provides users with the convenience of making payments through credit/debit cards while also offering Cash-on-Delivery (COD) as an alternative payment method.
+- **Secure Payments**:HungerBites provides users with the convenience of making payments through credit/debit cards while also offering Cash-on-Delivery (COD) as an alternative payment method.
 
 - **Geolocation Services**: The application integrates OpenStreetMap's API to empower users to pinpoint their current location, enhancing their overall experience by tailoring restaurant recommendations and delivery options based on their proximity.
 
-- **User Authentication**: FoodPoint ensures data security and personalized experiences by implementing user login and logout features, ensuring a secure and user-friendly environment.
+- **User Authentication**: HungerBites ensures data security and personalized experiences by implementing user login and logout features, ensuring a secure and user-friendly environment.
 
 - **AI-Powered Food Recommendations**: The project is set to incorporate OpenAI's advanced AI capabilities, enabling users to engage with a ChatGPT-like feature for personalized food suggestions, making the dining experience truly unique and user-centric.
   
@@ -23,7 +23,7 @@ FoodPoint is an ongoing project with exciting features and enhancements in devel
 
 ## Getting Started
 
-To get started with FoodPoint, follow these steps:
+To get started with HungerBites, follow these steps:
 
 1. **Clone the Repository**:
    ```bash
@@ -44,7 +44,7 @@ The page will reload when you make changes.\
 
 ## Screenshots
 
-Here are some screenshots of the FoodPoint application:
+Here are some screenshots of the HungerBites application:
 
 ### Home Page
 ![Home Page with Location Services](./screenshots/home_page_location.png)
@@ -76,7 +76,7 @@ Here are some screenshots of the FoodPoint application:
 
 ### Signup Page
 ![Signup Page](./screenshots/signup_page.png)
-*Description: The signup page for new users to create accounts and join the FoodPoint community, gaining access to exclusive benefits.*
+*Description: The signup page for new users to create accounts and join the HungerBites community, gaining access to exclusive benefits.*
 
 ### Offers Page
 ![Offers Page](./screenshots/offers_page.png)
@@ -84,6 +84,6 @@ Here are some screenshots of the FoodPoint application:
 
 ### About Us Page
 ![About Us Page](./screenshots/about_us_page.png)
-*Description: The "About Us" page provides information about FoodPoint, including its vision, and the team behind the project. Users can get to know the platform better and the people who make it all happen.*
+*Description: The "About Us" page provides information about HungerBites, including its vision, and the team behind the project. Users can get to know the platform better and the people who make it all happen.*
 
 

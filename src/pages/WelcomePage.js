@@ -77,7 +77,7 @@ const WelcomePage = () => {
             <Main>
                 <Content>
                     <Header>
-                        <Logo page="welcome">FoodPoint</Logo>
+                        <Logo page="welcome">HungerBites</Logo>
                         {user !== "" ? <Name page="welcome">Hello, {user.displayName}</Name> : <LoginSignup>
                             <Button type="login"><LinkStyled to="/login" page="welcome">Login</LinkStyled></Button>
                             <Button type="signup"><LinkStyled to="/signup" page="welcome-signup" >Sign up</LinkStyled></Button>
