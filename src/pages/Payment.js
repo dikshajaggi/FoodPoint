@@ -1,10 +1,11 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Button, ButtonClose, CardMethod, CashOnDelivery, CodHead, Input, InputRow, OrderDetails, PaymentInfo, PaymentOp, PaymentWrapper, RowInput, SubmitDetails, Wrapper } from './styledComponents/Payment'
 import GooglePayButton from '@google-pay/button-react';
 import { LabelInputWrapper } from './styledComponents/LoginSignup';
 import { useFormik } from 'formik';
 import Header from '../components/Header';
 import { Context } from '../utilities/context/Context';
+import { useSelector } from 'react-redux';
 
 const Payment = () => {
     const context = useContext(Context)
@@ -33,12 +34,30 @@ const Payment = () => {
         console.log("saved")
     }
 
+    const [total, setTotal] = useState()
+    const [totalItems, setTotalItems] = useState()
+    const cartItems = useSelector(state => state.cart.items)
+
+    useEffect(() => {
+        const totalItems = cartItems.reduce((acc, current) => acc + current.quantity, 0);
+        const totalPrice = cartItems.reduce((acc, current) => {
+            if (current.item && current.item.defaultPrice) {
+                return acc + current.item.defaultPrice * current.quantity;
+            } else if (current.item && current.item.price) {
+                return acc + current.item.price * current.quantity;
+            }
+            return acc;
+        }, 0);
+        setTotalItems(totalItems);
+        setTotal(totalPrice);
+    }, [cartItems])
+
     return (
         <PaymentWrapper>
             <Header />
             <OrderDetails>
                 <PaymentOp>Payment Options</PaymentOp>
-                <PaymentInfo>{context.totalItems} items | Total ₹{context.totalPrice}</PaymentInfo>
+                <PaymentInfo>{totalItems === 1 ? `${totalItems} item` : `${totalItems} items` } | Total ₹{total/100}</PaymentInfo>
             </OrderDetails>
             <Wrapper>
                 <Button onClick={() => setClose(false)}><CodHead><img src = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_64,e_trim/PaymentLogos/instruments/4x/Cash" alt= "" style={{marginRight: "10px", height: "2vh"}}/> Pay on Delivery</CodHead></Button>
