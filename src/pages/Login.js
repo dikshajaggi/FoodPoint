@@ -8,7 +8,7 @@ import { useNavigate } from "react-router";
 // import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth";
 // import { auth } from "../utilities/firebase";
 // import { useDispatch } from "react-redux";
-import loginImg from "../assets/login.jpg"
+import loginImg from "../assets/images/login.jpg"
 
 
 const Login = () => {

@@ -10,8 +10,8 @@ import data from "../assets/data.json"
 // import { onAuthStateChanged, signOut } from 'firebase/auth'
 // import { auth } from '../utilities/firebase'
 import { useTheme } from 'styled-components'
-import offers from "../assets/offers.png"
-import offersAccent from "../assets/offersAccent.png"
+import offers from "../assets/images/offers.png"
+import offersAccent from "../assets/images/offersAccent.png"
 import DrawerComponent from './DrawerComponent'
 import specficRest from "../assets/specificRest.json"
 import _ from 'lodash'
@@ -219,6 +219,7 @@ const Header = () => {
                             <Username>
                                 <Name>{user.name}</Name>
                                 <UserDropdown isHovered={isHovered}>
+                                    <LinkStyled style={{ fontSize: "14px"}} to="/orders">Orders</LinkStyled>
                                     <LinkStyled option="fav" to="/fav-restaurant">Favourites</LinkStyled>
                                     <LogoutBtn onClick={handleSignOut}>Logout</LogoutBtn>
                                 </UserDropdown>

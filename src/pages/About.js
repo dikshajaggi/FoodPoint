@@ -5,11 +5,11 @@ import "../style.css"
 import Header from '../components/Header'
 import { AboutDesc, AboutHeading, AboutMain, AboutWrapper, Wrapper, Flex, Params, Strong, ImgWrapper, Images, FoodImg } from './styledComponents/About'
 import Footer from '../components/Footer'
-import team from "../assets/team.jpg"
-import team1 from "../assets/team1.jpg"
-import team2 from "../assets/team2.jpg"
-import team3 from "../assets/team3.jpg"
-import food from "../assets/food.jpg"
+import team from "../assets/images/team.jpg"
+import team1 from "../assets/images/team1.jpg"
+import team2 from "../assets/images/team2.jpg"
+import team3 from "../assets/images/team3.jpg"
+import food from "../assets/images/food.jpg"
 import { useTheme } from 'styled-components'
 
 const About = () => {

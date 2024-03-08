@@ -7,7 +7,7 @@ import { ErrorPara, HeaderOnlyLayoutWrapper, Heading, Input, Label, LabelInputWr
 // import { auth } from "../utilities/firebase";
 import { useNavigate } from "react-router-dom";
 import { ImageWrapper } from "./styledComponents/Login";
-import loginImg from "../assets/login.jpg"
+import loginImg from "../assets/images/login.jpg"
 
 const SignUp = () => {
     const navigate = useNavigate()

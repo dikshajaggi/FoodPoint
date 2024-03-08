@@ -1,14 +1,12 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, {useEffect, useState } from 'react'
 import { Button, ButtonClose, CardMethod, CashOnDelivery, CodHead, Input, InputRow, OrderDetails, PaymentInfo, PaymentOp, PaymentWrapper, RowInput, SubmitDetails, Wrapper } from './styledComponents/Payment'
 import GooglePayButton from '@google-pay/button-react';
 import { LabelInputWrapper } from './styledComponents/LoginSignup';
 import { useFormik } from 'formik';
 import Header from '../components/Header';
-import { Context } from '../utilities/context/Context';
 import { useSelector } from 'react-redux';
 
 const Payment = () => {
-    const context = useContext(Context)
     const [close, setClose] = useState(true)
     const [closeCard, setCloseCard] = useState(true)
     const initialValues = {
