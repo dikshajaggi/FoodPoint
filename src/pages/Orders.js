@@ -1,5 +1,5 @@
 import React from 'react'
-import { Desc, Image, Information, Label, LabelDesc, OrdersMain, OrdersWrapper, Status, StatusWrapper } from './styledComponents/Orders'
+import { Desc, DescInfo, EstTime, Image, Information, Label, LabelDesc, LableInfo, OrdNo, OrdersMain, OrdersWrapper, Status, StatusWrapper } from './styledComponents/Orders'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import delivery from "../assets/images/delivery.png"
@@ -19,7 +19,16 @@ const Orders = () => {
     <OrdersWrapper>
       <Header/>
       <OrdersMain>
-        <Information></Information>
+        <Information>
+          <EstTime>
+            <LableInfo>ESTIMATED TIME</LableInfo>
+            <DescInfo>30 MINUTES</DescInfo>
+          </EstTime>
+          <OrdNo>
+            <LableInfo>ORDER NUMBER</LableInfo>
+            <DescInfo>#1234HB</DescInfo>
+          </OrdNo>
+        </Information>
         <Status>
           {statusArr.map(item => {
             return(
