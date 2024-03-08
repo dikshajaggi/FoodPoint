@@ -20,6 +20,7 @@ import Fav from "./pages/Fav";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TnC from "./pages/TnC";
 import Disclaimer from "./pages/styledComponents/Disclaimer";
+import Orders from "./pages/Orders";
 
 function App() {
   const appRoutes = createBrowserRouter([
@@ -58,6 +59,10 @@ function App() {
     {
       path: "/offers",
       element: <Offers />
+    },
+    {
+      path: "/orders",
+      element: <Orders />
     },
     {
       path: "/rating",

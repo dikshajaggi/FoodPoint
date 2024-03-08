@@ -240,8 +240,9 @@ const Header = () => {
             </Categories> */}
             {/* <CategoryLabel display={linkInfo} >{context.filter}</CategoryLabel> */}
             <MobileHeader>
-                <LinkStyled to="/login"><Username style={{ fontSize: "14px", color: "#fff" }}>Login</Username></LinkStyled>
+                <LinkStyled to="/login"><Username style={{ fontSize: "14px", color: "#fff", textTransform: "capitalize" }}> {user !== "" ? user.name : "Login" } </Username></LinkStyled>
                 {user !== "" ? <>
+                    <LinkStyled style={{ fontSize: "14px", color: "#fff" }} to="/orders">Orders</LinkStyled>
                     <LogoutBtn style={{ fontSize: "14px", color: "#fff" }} onClick={handleSignOut}>Logout</LogoutBtn>
                     <LinkStyled style={{ fontSize: "14px", color: "#fff" }} option="fav" to="/fav-restaurant">Favourites</LinkStyled></> : null}
                 <LinkStyled to="/offers" style={{ fontSize: "14px", color: "#fff" }}>Offers</LinkStyled>
