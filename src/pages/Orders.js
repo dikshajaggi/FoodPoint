@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { Desc, DescInfo, EstTime, Image, Information, Label, LabelDesc, LableInfo, OrdNo, OrderDelivered, OrdersMain, OrdersWrapper, Status, StatusWrapper } from './styledComponents/Orders'
+import { Check, Desc, DescInfo, EstTime, Image, ImageChecked, Information, Label, LabelDesc, LableInfo, OrdNo, OrderDelivered, OrdersMain, OrdersWrapper, Status, StatusCheckWrapper, StatusWrapper } from './styledComponents/Orders'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import delivery from "../assets/images/delivery.png"
@@ -12,6 +12,8 @@ import placed_fade from "../assets/images/placed_fade.png"
 import processed_fade from "../assets/images/processed_fade.png"
 import delivery_fade from "../assets/images/delivery_fade.png"
 import confirmation_fade from "../assets/images/confirmation_fade.png"
+import checked from "../assets/images/checked.png"
+import checked_faded from "../assets/images/checked_fade.png"
 
 const Orders = () => {
   const context = useContext(Context)
@@ -55,13 +57,18 @@ const Orders = () => {
         <Status>
           {statusArr.map((item, index) => {
             return(
-              <StatusWrapper key = {index}>
-                <Image src = {context.status.includes(item.id) ? item.icon: item.fadedicon} />
-                <LabelDesc>
-                  <Label fade= {context.status.includes(item.id) ? false : true}>{item.label}</Label>
-                  <Desc  fade= {context.status.includes(item.id) ? false : true}>{item.desc}</Desc>
-                </LabelDesc>
-              </StatusWrapper>
+              <StatusCheckWrapper>
+                  <Check>
+                    <ImageChecked src = {context.status.includes(item.id) ? checked : checked_faded}></ImageChecked>
+                  </Check>
+                  <StatusWrapper key = {index}>
+                    <Image src = {context.status.includes(item.id) ? item.icon: item.fadedicon} />
+                    <LabelDesc>
+                      <Label fade= {context.status.includes(item.id) ? false : true}>{item.label}</Label>
+                      <Desc  fade= {context.status.includes(item.id) ? false : true}>{item.desc}</Desc>
+                    </LabelDesc>
+                  </StatusWrapper>
+              </StatusCheckWrapper>
             )
             })}
         </Status>

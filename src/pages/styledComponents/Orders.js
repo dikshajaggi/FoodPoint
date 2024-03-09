@@ -16,11 +16,17 @@ height:100%;
 const StatusWrapper = styled.div`
 display: flex;
 margin-bottom: 45px;
+width: 300px;
 `
 
 const Image = styled.img`
 height: 40px;
 width: 40px;
+`
+
+const ImageChecked = styled.img`
+height: 25px;
+width: 25px;
 `
 
 const Label = styled.h6`
@@ -73,7 +79,18 @@ font-weight: 600px;
 const DescInfo = styled.p``
 
 const OrderDelivered = styled.div`
-
+`
+const StatusCheckWrapper = styled.div`
+display: flex;
+align-items: center;
+justify-content: space-between;
+width: 25%;
 `
 
-export {OrdersWrapper, OrdersMain, StatusWrapper, Image, Label, LabelDesc, Desc, Status, Information, EstTime, OrdNo, LableInfo, DescInfo, OrderDelivered}
+const Check = styled.div`
+display: flex;
+flex-direction: column;
+margin-bottom: 55px;
+`
+
+export {OrdersWrapper, OrdersMain, StatusWrapper, Image, ImageChecked, Label, LabelDesc, Desc, Status, Information, EstTime, OrdNo, LableInfo, DescInfo, OrderDelivered, StatusCheckWrapper, Check}
