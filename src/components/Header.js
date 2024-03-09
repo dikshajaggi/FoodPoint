@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { UserContext } from '../utilities/context/UserContext'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import "../style.css"
 import { Context } from "../utilities/context/Context"
 import { Avatar, CartItemsLength, CartWrapper, HeaderDiv, HeaderWrapper, Input, LinkStyled, Location, LoginUser, Logo, LogoutBtn, MobileHeader, Name, NavbarLI, Offers, SearchBarList, SearchBtn, SearchListVal, SearchValImg, SearchValWrapper, SearchWrapper, Span, UserDropdown, UserInfo, Username } from './styledComponents/Header'
@@ -15,6 +15,7 @@ import offersAccent from "../assets/images/offersAccent.png"
 import DrawerComponent from './DrawerComponent'
 import specficRest from "../assets/specificRest.json"
 import _ from 'lodash'
+import { clearCart } from '../utilities/redux/cartSlice'
 
 const Header = () => {
     const theme = useTheme()
@@ -39,7 +40,9 @@ const Header = () => {
     //     : "subHeader";
 
     const [isHovered, setIsHovered] = useState(false);
+    const dispatch = useDispatch()
 
+    const statusArr = ["placed", "confirmed", "processing", "delivery", "end"]
 
     const getAllDishes = () => {
         setSearchedDish(specficRest.cards.map(item => item.menu).flat(2))
@@ -76,6 +79,24 @@ const Header = () => {
         getAllDishes()
         setrestData(data?.restaurants)
         // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
+
+    useEffect(() => {
+        console.log(context.orderPlaced, "28")
+        if(context.orderPlaced) {
+            dispatch(clearCart())
+        }
+    }, [context.orderPlaced])
+
+    useEffect(() => {
+        if (context.orderPlaced === true) {
+            statusArr.map((item, index) => {
+                setTimeout(() => {
+                    context.setStatus(prev => [...prev, item])
+                }, index * 10000)
+                return true
+            })
+        }
     }, [])
 
     // async function getRest() {

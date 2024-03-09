@@ -1,12 +1,14 @@
-import React, {useEffect, useState } from 'react'
+import React, {useContext, useEffect, useState } from 'react'
 import { Button, ButtonClose, CardMethod, CashOnDelivery, CodHead, Input, InputRow, OrderDetails, PaymentInfo, PaymentOp, PaymentWrapper, RowInput, SubmitDetails, Wrapper } from './styledComponents/Payment'
 import GooglePayButton from '@google-pay/button-react';
 import { LabelInputWrapper } from './styledComponents/LoginSignup';
 import { useFormik } from 'formik';
 import Header from '../components/Header';
 import { useSelector } from 'react-redux';
+import { Context } from '../utilities/context/Context';
 
 const Payment = () => {
+    const context = useContext(Context)
     const [close, setClose] = useState(true)
     const [closeCard, setCloseCard] = useState(true)
     const initialValues = {
@@ -29,7 +31,8 @@ const Payment = () => {
 
     const handleSubmitDetails = () => {
         setClose(true)
-        console.log("saved")
+        console.log("28 saved")
+        context.setOrderPlaced(true)
     }
 
     const [total, setTotal] = useState()

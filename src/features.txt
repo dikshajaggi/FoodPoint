@@ -8,7 +8,7 @@ apart from rest, search dishes also
 light dark theme
 multi language (eng/hindi)
 
-
+order page
 transition to shimmer ui
 pagination in specific restaurant page
 auto suggetion div while searching

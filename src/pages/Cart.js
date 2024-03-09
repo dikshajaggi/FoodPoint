@@ -1,4 +1,4 @@
-import { useContext, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 // import { UserContext } from "../utilities/context/UserContext"
 import CartDataDisplay from "../components/CartDataDisplay"
@@ -33,7 +33,7 @@ const Cart = () => {
                     <ClearCartBtn onClick={handleclearCart}>Clear Cart</ClearCartBtn>
                 </Wrapper>
                 <hr></hr>
-                {cleared === false ? <CartContentWrapper>
+                {cleared === false ? context.orderPlaced === false ? <CartContentWrapper>
                     {items.length !== 0 ? <>
                         <CartData>
                             {items.map(data => <CartDataDisplay {...data} />)}
@@ -42,7 +42,7 @@ const Cart = () => {
                     </> : <EmptyCart><h4>Add something</h4></EmptyCart>}
                     {context.cartData ? <CartData>{context.cartData?.map(c => <CartDataDisplay {...c.item} />)}
                     </CartData> : null}
-                </CartContentWrapper> :
+                </CartContentWrapper> : <EmptyCart><h4>Add something</h4></EmptyCart> :
                     <EmptyCart><h4>Add something</h4></EmptyCart>
                 }
             </CartWrapper>

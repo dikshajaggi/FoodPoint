@@ -22,6 +22,8 @@ const ContextProvider = (props) => {
     const [start, setStart] = useState(false)
     const [idArray, setIdArray] = useState([])
     const [searched, setSearched] = useState(false)
+    const [status, setStatus] = useState([])
+    const [orderPlaced, setOrderPlaced] = useState(false)
 
     // const dispatch = useDispatch()
 
@@ -84,7 +86,11 @@ const ContextProvider = (props) => {
                 idArray,
                 setIdArray,
                 searched,
-                setSearched
+                setSearched,
+                status,
+                setStatus,
+                orderPlaced,
+                setOrderPlaced
             }}
         >
             {props.children}

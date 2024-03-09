@@ -25,6 +25,7 @@ width: 40px;
 
 const Label = styled.h6`
 text-transform: capitalize;
+color: ${props => props.fade ? "#C9C9C9" : "#000"}
 `
 const LabelDesc = styled.div`
 margin-left: 10px;
@@ -33,6 +34,8 @@ flex-direction: column;
 `
 
 const Desc = styled.p`
+color: ${props => props.fade? "#C9C9C9" : "#000"};
+
 `
 
 const Status = styled.div`
@@ -46,6 +49,10 @@ const Information = styled.div`
 display: flex;
 justify-content: space-evenly;
 margin-bottom: 25px;
+align-items: center;
+padding-top: 6px;
+background-color: ${props => props.theme.colors.accent};
+color: #fff;
 `
 
 const EstTime = styled.div`
@@ -60,8 +67,13 @@ flex-direction: column;
 
 const LableInfo = styled.h6`
 text-transform: uppercase;
+font-weight: 600px;
 `
 
 const DescInfo = styled.p``
 
-export {OrdersWrapper, OrdersMain, StatusWrapper, Image, Label, LabelDesc, Desc, Status, Information, EstTime, OrdNo, LableInfo, DescInfo}
+const OrderDelivered = styled.div`
+
+`
+
+export {OrdersWrapper, OrdersMain, StatusWrapper, Image, Label, LabelDesc, Desc, Status, Information, EstTime, OrdNo, LableInfo, DescInfo, OrderDelivered}
