@@ -86,6 +86,7 @@ const Header = () => {
         if(context.orderPlaced) {
             dispatch(clearCart())
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [context.orderPlaced])
 
     useEffect(() => {

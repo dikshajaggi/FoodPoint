@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react"
+import { useContext, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 // import { UserContext } from "../utilities/context/UserContext"
 import CartDataDisplay from "../components/CartDataDisplay"

@@ -26,6 +26,7 @@ const Orders = () => {
       setOrderDelivered(true)
       context.setOrderPlaced(false)
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [context.status])
 
   return (
