@@ -98,6 +98,7 @@ const Header = () => {
                 return true
             })
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     // async function getRest() {
