@@ -52,7 +52,19 @@ const Orders = () => {
     <OrdersWrapper>
       <Header />
       <SubHeader setActive={setActive} />
-      <Button style={{ width: "auto", marginTop: "20px", position: "absolute", right: "10px" }}><LinkStyled to="/map" style={{ color: "#fff" }}>Track order on Map</LinkStyled></Button>
+      {active === "current" ? (
+        <Button
+          disabled={context.orderPlaced === false || orderDelivered}
+          style={{ width: "auto", marginTop: "20px", position: "absolute", right: "10px", backgroundColor: context.orderPlaced === false || orderDelivered ? "rgba(251, 146, 53, 0.5)" : "#FB9235" }}
+        >
+          <LinkStyled
+            to={context.orderPlaced === false || orderDelivered ? '#' : "/map"}
+            style={{ color: "#fff", pointerEvents: context.orderPlaced === false || orderDelivered ? "none" : "auto" }}
+          >
+            Track order on Map
+          </LinkStyled>
+        </Button>
+      ) : null}
       {active === "current" ? <OrdersMain>
         {context.orderPlaced === false && orderDelivered === false ? <EmptyCart><h4>No orders</h4></EmptyCart> : orderDelivered ? <>
           <OrderDelivered>
