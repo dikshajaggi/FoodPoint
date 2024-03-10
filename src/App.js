@@ -21,6 +21,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TnC from "./pages/TnC";
 import Disclaimer from "./pages/styledComponents/Disclaimer";
 import Orders from "./pages/Orders";
+import OrderTrackingMap from "./pages/OrderTrackingMap";
 
 function App() {
   const appRoutes = createBrowserRouter([
@@ -63,6 +64,10 @@ function App() {
     {
       path: "/orders",
       element: <Orders />
+    },
+    {
+      path: "/map",
+      element: <OrderTrackingMap />
     },
     {
       path: "/rating",
