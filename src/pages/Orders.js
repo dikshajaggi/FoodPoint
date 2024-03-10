@@ -16,6 +16,7 @@ import checked from "../assets/images/checked.png"
 import checked_faded from "../assets/images/checked_fade.png"
 // import { useSelector } from 'react-redux'
 import SubHeader from '../components/SubHeader'
+import { LinkStyled } from '../components/styledComponents/Header'
 
 const Orders = () => {
   const context = useContext(Context)
@@ -51,6 +52,7 @@ const Orders = () => {
     <OrdersWrapper>
       <Header />
       <SubHeader setActive={setActive} />
+      <Button style={{ width: "auto", marginTop: "20px", position: "absolute", right: "10px" }}><LinkStyled to="/map" style={{ color: "#fff" }}>Track order on Map</LinkStyled></Button>
       {active === "current" ? <OrdersMain>
         {context.orderPlaced === false && orderDelivered === false ? <EmptyCart><h4>No orders</h4></EmptyCart> : orderDelivered ? <>
           <OrderDelivered>

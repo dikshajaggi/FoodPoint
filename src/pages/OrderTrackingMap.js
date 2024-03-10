@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import deliveryMan from "../assets/images/deliveryMan.png"
 import { MapWrapper } from './styledComponents/OrderTrackingMap';
 
 const OrderTrackingMap = () => {

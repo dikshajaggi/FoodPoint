@@ -248,7 +248,6 @@ const Header = () => {
                                 <Name>{user.name}</Name>
                                 <UserDropdown isHovered={isHovered}>
                                     <LinkStyled style={{ fontSize: "14px" }} to="/orders">Orders</LinkStyled>
-                                    <LinkStyled to="/map">Map</LinkStyled>
                                     <LinkStyled option="fav" to="/fav-restaurant">Favourites</LinkStyled>
                                     <LogoutBtn onClick={handleSignOut}>Logout</LogoutBtn>
                                 </UserDropdown>
