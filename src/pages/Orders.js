@@ -20,62 +20,67 @@ const Orders = () => {
   const [orderDelivered, setOrderDelivered] = useState(false)
 
   const statusArr = [
-    {icon: placed, label: "order placed", desc: "We have recieved your order", id: "placed", fadedicon: placed_fade}, 
-    {icon: processed, label: "order confirmed", desc:"Your order has been confirmed", id: "confirmed", fadedicon: processed_fade},
-    {icon: confirmed, label: "order processing", desc: "We are preparing your order", id: "processing", fadedicon: confirmation_fade},
-    {icon: delivery, label: "out for delivery", desc:"Your order is out for delivery", id: "delivery", fadedicon: delivery_fade}
+    { icon: placed, label: "order placed", desc: "We have recieved your order", id: "placed", fadedicon: placed_fade },
+    { icon: processed, label: "order confirmed", desc: "Your order has been confirmed", id: "confirmed", fadedicon: processed_fade },
+    { icon: confirmed, label: "order processing", desc: "We are preparing your order", id: "processing", fadedicon: confirmation_fade },
+    { icon: delivery, label: "out for delivery", desc: "Your order is out for delivery", id: "delivery", fadedicon: delivery_fade }
   ]
 
   useEffect(() => {
-    if(context.status[context.status.length - 1] === "end") {
+    if (context.status[context.status.length - 1] === "end") {
       context.setStatus([])
+      console.log(orderDelivered, "chekcingorderdel")
       setOrderDelivered(true)
       context.setOrderPlaced(false)
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [context.status])
 
+  useEffect(() => {
+    console.log(orderDelivered, "chekcingorderdel")
+  }, [orderDelivered])
+
   return (
     <OrdersWrapper>
-      <Header/>
+      <Header />
       <OrdersMain>
-        {context.orderPlaced === false ? <EmptyCart><h4>No orders</h4></EmptyCart> : orderDelivered ? <>
+        {context.orderPlaced === false && orderDelivered === false ? <EmptyCart><h4>No orders</h4></EmptyCart> : orderDelivered ? <>
           <OrderDelivered>
-          <EmptyCart><h4>Your order has been delivered successfully !</h4></EmptyCart> 
+            <EmptyCart><h4>Your order has been delivered successfully !</h4></EmptyCart>
           </OrderDelivered>
         </> : <>
           <Information>
-          <EstTime>
-            <LableInfo>ESTIMATED TIME</LableInfo>
-            <DescInfo>30 MINUTES</DescInfo>
-          </EstTime>
-          <OrdNo>
-            <LableInfo>ORDER NUMBER</LableInfo>
-            <DescInfo>#1234HB</DescInfo>
-          </OrdNo>
-        </Information>
-        <Status>
-          {statusArr.map((item, index) => {
-            return(
-              <StatusCheckWrapper>
+            <EstTime>
+              <LableInfo>ESTIMATED TIME</LableInfo>
+              <DescInfo>30 MINUTES</DescInfo>
+            </EstTime>
+            <OrdNo>
+              <LableInfo>ORDER NUMBER</LableInfo>
+              <DescInfo>#1234HB</DescInfo>
+            </OrdNo>
+          </Information>
+          <Status>
+            {statusArr.map((item, index) => {
+              return (
+                <StatusCheckWrapper>
                   <Check>
-                    <ImageChecked src = {context.status.includes(item.id) ? checked : checked_faded}></ImageChecked>
+                    <ImageChecked src={context.status.includes(item.id) ? checked : checked_faded}></ImageChecked>
                   </Check>
-                  <StatusWrapper key = {index}>
-                    <Image src = {context.status.includes(item.id) ? item.icon: item.fadedicon} />
+                  <StatusWrapper key={index}>
+                    <Image src={context.status.includes(item.id) ? item.icon : item.fadedicon} />
                     <LabelDesc>
-                      <Label fade= {context.status.includes(item.id) ? false : true}>{item.label}</Label>
-                      <Desc  fade= {context.status.includes(item.id) ? false : true}>{item.desc}</Desc>
+                      <Label fade={context.status.includes(item.id) ? false : true}>{item.label}</Label>
+                      <Desc fade={context.status.includes(item.id) ? false : true}>{item.desc}</Desc>
                     </LabelDesc>
                   </StatusWrapper>
-              </StatusCheckWrapper>
-            )
+                </StatusCheckWrapper>
+              )
             })}
-        </Status>
+          </Status>
         </>}
-        
+
       </OrdersMain>
-      <Footer/>
+      <Footer />
     </OrdersWrapper>
   )
 }

@@ -83,13 +83,16 @@ const Header = () => {
 
     useEffect(() => {
         console.log(context.orderPlaced, "28")
-        if(context.orderPlaced) {
+        if (context.orderPlaced) {
             dispatch(clearCart())
         }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [context.orderPlaced])
 
     useEffect(() => {
+        if (localStorage.getItem("userDetails")) {
+            setUser(JSON.parse(localStorage.getItem("userDetails")))
+        }
         if (context.orderPlaced === true) {
             statusArr.map((item, index) => {
                 setTimeout(() => {
@@ -98,7 +101,7 @@ const Header = () => {
                 return true
             })
         }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     // async function getRest() {
@@ -242,7 +245,7 @@ const Header = () => {
                             <Username>
                                 <Name>{user.name}</Name>
                                 <UserDropdown isHovered={isHovered}>
-                                    <LinkStyled style={{ fontSize: "14px"}} to="/orders">Orders</LinkStyled>
+                                    <LinkStyled style={{ fontSize: "14px" }} to="/orders">Orders</LinkStyled>
                                     <LinkStyled option="fav" to="/fav-restaurant">Favourites</LinkStyled>
                                     <LogoutBtn onClick={handleSignOut}>Logout</LogoutBtn>
                                 </UserDropdown>
@@ -264,7 +267,7 @@ const Header = () => {
             </Categories> */}
             {/* <CategoryLabel display={linkInfo} >{context.filter}</CategoryLabel> */}
             <MobileHeader>
-                <LinkStyled to="/login"><Username style={{ fontSize: "14px", color: "#fff", textTransform: "capitalize" }}> {user !== "" ? user.name : "Login" } </Username></LinkStyled>
+                <LinkStyled to="/login"><Username style={{ fontSize: "14px", color: "#fff", textTransform: "capitalize" }}> {user !== "" ? user.name : "Login"} </Username></LinkStyled>
                 {user !== "" ? <>
                     <LinkStyled style={{ fontSize: "14px", color: "#fff" }} to="/orders">Orders</LinkStyled>
                     <LogoutBtn style={{ fontSize: "14px", color: "#fff" }} onClick={handleSignOut}>Logout</LogoutBtn>

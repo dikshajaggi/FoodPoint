@@ -17,6 +17,12 @@ const StatusWrapper = styled.div`
 display: flex;
 margin-bottom: 45px;
 width: 300px;
+@media only screen and (max-width: 600px)  {
+    width: 400px;
+}
+@media only screen and (min-width: 768px) and (max-width: 768px) and (min-height: 1025px) and (max-height: 1025px) {
+    width: 400px;
+}
 `
 
 const Image = styled.img`
@@ -40,7 +46,7 @@ flex-direction: column;
 `
 
 const Desc = styled.p`
-color: ${props => props.fade? "#C9C9C9" : "#000"};
+color: ${props => props.fade ? "#C9C9C9" : "#000"};
 
 `
 
@@ -84,13 +90,25 @@ const StatusCheckWrapper = styled.div`
 display: flex;
 align-items: center;
 justify-content: space-between;
-width: 25%;
+width: 32%;
+@media only screen and (max-width: 600px)  {
+    width: 90%;
+}
+@media only screen and (min-width: 768px) and (max-width: 768px) and (min-height: 1025px) and (max-height: 1025px) {
+    width: 90%;
+}
 `
 
 const Check = styled.div`
 display: flex;
 flex-direction: column;
 margin-bottom: 55px;
+@media only screen and (max-width: 600px)  {
+    margin-bottom: 55px;
+}
+@media only screen and (min-width: 768px) and (max-width: 768px) and (min-height: 1025px) and (max-height: 1025px) {
+    margin-bottom: 55px;
+}
 `
 
-export {OrdersWrapper, OrdersMain, StatusWrapper, Image, ImageChecked, Label, LabelDesc, Desc, Status, Information, EstTime, OrdNo, LableInfo, DescInfo, OrderDelivered, StatusCheckWrapper, Check}
+export { OrdersWrapper, OrdersMain, StatusWrapper, Image, ImageChecked, Label, LabelDesc, Desc, Status, Information, EstTime, OrdNo, LableInfo, DescInfo, OrderDelivered, StatusCheckWrapper, Check }

@@ -19,6 +19,7 @@ const Login = () => {
         password: ""
     }
     const handleLogin = (values) => {
+        localStorage.setItem("userDetails", JSON.stringify(values))
         console.log(values, "valuescheck")
         setUser(values)
         // signInWithEmailAndPassword(auth, values.email, values.password)
