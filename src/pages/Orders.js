@@ -17,18 +17,17 @@ import checked_faded from "../assets/images/checked_fade.png"
 // import { useSelector } from 'react-redux'
 import SubHeader from '../components/SubHeader'
 import { LinkStyled } from '../components/styledComponents/Header'
+import prevOrderList from "../assets/prevOrderList.json"
+import { useDispatch } from 'react-redux'
+import { addItems } from '../utilities/redux/cartSlice'
 
 const Orders = () => {
   const context = useContext(Context)
   // const items = useSelector(store => store.cart.items)
   const [active, setActive] = useState("current")
   const [orderDelivered, setOrderDelivered] = useState(false)
+  const dispatch = useDispatch()
 
-  const prevOrderList = [
-    { orderNo: "#123HB", orderDate: "12/11/2023", orderPrice: "1220", orderStatus: "Delivered" },
-    { orderNo: "#116HB", orderDate: "15/10/2023", orderPrice: "1500", orderStatus: "Delivered" },
-    { orderNo: "#113HB", orderDate: "12/10/2023", orderPrice: "1800", orderStatus: "Cancelled" }
-  ]
 
   const statusArr = [
     { icon: placed, label: "order placed", desc: "We have recieved your order", id: "placed", fadedicon: placed_fade },
@@ -37,6 +36,10 @@ const Orders = () => {
     { icon: delivery, label: "out for delivery", desc: "Your order is out for delivery", id: "delivery", fadedicon: delivery_fade }
   ]
 
+
+  const addToCart = (order) => {
+    dispatch(addItems(order))
+  }
   useEffect(() => {
     if (context.status[context.status.length - 1] === "end") {
       context.setStatus([])
@@ -114,7 +117,7 @@ const Orders = () => {
               </OrderDetails>
               <ButtonGroup>
                 <Button>View order</Button>
-                <Button>Reorder</Button>
+                <Button onClick={() => addToCart(item.order)}>Reorder</Button>
               </ButtonGroup>
             </OrderWrapper>
           )
