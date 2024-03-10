@@ -151,6 +151,8 @@ const Header = () => {
         // });
         navigate("/login")
         setUser(null)
+        localStorage.removeItem("userDetails");
+
     }
 
     const searchRestWithList = () => {

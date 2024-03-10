@@ -25,7 +25,7 @@ const Orders = () => {
 
   const prevOrderList = [
     { orderNo: "#123HB", orderDate: "12/11/2023", orderPrice: "1220", orderStatus: "Delivered" },
-    { orderNo: "#113HB", orderDate: "15/10/2023", orderPrice: "1500", orderStatus: "Delivered" },
+    { orderNo: "#116HB", orderDate: "15/10/2023", orderPrice: "1500", orderStatus: "Delivered" },
     { orderNo: "#113HB", orderDate: "12/10/2023", orderPrice: "1800", orderStatus: "Cancelled" }
   ]
 
