@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { Check, Desc, DescInfo, EstTime, Image, ImageChecked, Information, Label, LabelDesc, LableInfo, OrdNo, OrderDelivered, OrdersMain, OrdersWrapper, Status, StatusCheckWrapper, StatusWrapper } from './styledComponents/Orders'
+import { Button, ButtonGroup, Check, Desc, DescInfo, EstTime, Image, ImageChecked, Information, Item, Label, LabelDesc, LableInfo, OrdNo, OrderDelivered, OrderDetails, OrderHistory, OrderWrapper, OrdersMain, OrdersWrapper, Status, StatusCheckWrapper, StatusWrapper } from './styledComponents/Orders'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import delivery from "../assets/images/delivery.png"
@@ -14,10 +14,20 @@ import delivery_fade from "../assets/images/delivery_fade.png"
 import confirmation_fade from "../assets/images/confirmation_fade.png"
 import checked from "../assets/images/checked.png"
 import checked_faded from "../assets/images/checked_fade.png"
+// import { useSelector } from 'react-redux'
+import SubHeader from '../components/SubHeader'
 
 const Orders = () => {
   const context = useContext(Context)
+  // const items = useSelector(store => store.cart.items)
+  const [active, setActive] = useState("current")
   const [orderDelivered, setOrderDelivered] = useState(false)
+
+  const prevOrderList = [
+    { orderNo: "#123HB", orderDate: "12/11/2023", orderPrice: "1220", orderStatus: "Delivered" },
+    { orderNo: "#113HB", orderDate: "15/10/2023", orderPrice: "1500", orderStatus: "Delivered" },
+    { orderNo: "#113HB", orderDate: "12/10/2023", orderPrice: "1800", orderStatus: "Cancelled" }
+  ]
 
   const statusArr = [
     { icon: placed, label: "order placed", desc: "We have recieved your order", id: "placed", fadedicon: placed_fade },
@@ -36,14 +46,12 @@ const Orders = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [context.status])
 
-  useEffect(() => {
-    console.log(orderDelivered, "chekcingorderdel")
-  }, [orderDelivered])
 
   return (
     <OrdersWrapper>
       <Header />
-      <OrdersMain>
+      <SubHeader setActive={setActive} />
+      {active === "current" ? <OrdersMain>
         {context.orderPlaced === false && orderDelivered === false ? <EmptyCart><h4>No orders</h4></EmptyCart> : orderDelivered ? <>
           <OrderDelivered>
             <EmptyCart><h4>Your order has been delivered successfully !</h4></EmptyCart>
@@ -79,7 +87,26 @@ const Orders = () => {
           </Status>
         </>}
 
-      </OrdersMain>
+      </OrdersMain> : <OrderHistory>
+        <h4>Previous Orders</h4>
+        {prevOrderList.map(item => {
+          return (
+            <OrderWrapper>
+              <OrderDetails>
+                <h6>Order Number - <Item>{item.orderNo}</Item></h6>
+                <h6>Order Date - <Item>{item.orderDate}</Item></h6>
+                <h6>Order Price - <Item>{item.orderPrice}</Item></h6>
+                <h6>Order Status - <Item>{item.orderStatus}</Item></h6>
+              </OrderDetails>
+              <ButtonGroup>
+                <Button>View order</Button>
+                <Button>Reorder</Button>
+              </ButtonGroup>
+            </OrderWrapper>
+          )
+        })}
+      </OrderHistory>
+      }
       <Footer />
     </OrdersWrapper>
   )
