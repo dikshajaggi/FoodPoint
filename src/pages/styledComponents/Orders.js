@@ -166,7 +166,20 @@ const Item = styled.span`
 font-weight: 400
 `
 
+const OrderListContainer = styled.div`
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ background-color: rgba(0, 0, 0, 0.5);
+ z-index: 1000;
+`
+
 export {
     OrdersWrapper, OrdersMain, OrderHistory, StatusWrapper, Image, ImageChecked, Label, LabelDesc, Desc, Status, Information, EstTime, OrdNo, LableInfo, DescInfo, OrderDelivered, StatusCheckWrapper, Check, OrderDetails,
-    OrderWrapper, Button, ButtonGroup, Item
+    OrderWrapper, Button, ButtonGroup, Item, OrderListContainer
 }

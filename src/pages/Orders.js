@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { Button, ButtonGroup, Check, Desc, DescInfo, EstTime, Image, ImageChecked, Information, Item, Label, LabelDesc, LableInfo, OrdNo, OrderDelivered, OrderDetails, OrderHistory, OrderWrapper, OrdersMain, OrdersWrapper, Status, StatusCheckWrapper, StatusWrapper } from './styledComponents/Orders'
+import { Button, ButtonGroup, Check, Desc, DescInfo, EstTime, Image, ImageChecked, Information, Item, Label, LabelDesc, LableInfo, OrdNo, OrderDelivered, OrderDetails, OrderHistory, OrderListContainer, OrderWrapper, OrdersMain, OrdersWrapper, Status, StatusCheckWrapper, StatusWrapper } from './styledComponents/Orders'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import delivery from "../assets/images/delivery.png"
@@ -20,6 +20,7 @@ import { LinkStyled } from '../components/styledComponents/Header'
 import prevOrderList from "../assets/prevOrderList.json"
 import { useDispatch } from 'react-redux'
 import { addItems } from '../utilities/redux/cartSlice'
+import OrderLIst from '../components/OrderLIst'
 
 const Orders = () => {
   const context = useContext(Context)
@@ -27,6 +28,7 @@ const Orders = () => {
   const [active, setActive] = useState("current")
   const [orderDelivered, setOrderDelivered] = useState(false)
   const dispatch = useDispatch()
+  const [openOrderIndexes, setOpenOrderIndexes] = useState([])
 
 
   const statusArr = [
@@ -36,10 +38,25 @@ const Orders = () => {
     { icon: delivery, label: "out for delivery", desc: "Your order is out for delivery", id: "delivery", fadedicon: delivery_fade }
   ]
 
+  const toggleOrderList = (index) => {
+    setOpenOrderIndexes(prevIndexes => {
+      if (prevIndexes.includes(index)) {
+        return prevIndexes.filter(i => i !== index)
+      } else {
+        return [...prevIndexes, index]
+      }
+    })
+  }
+
 
   const addToCart = (order) => {
     dispatch(addItems(order))
   }
+
+  const closeOrderList = () => {
+    setOpenOrderIndexes([])
+  }
+
   useEffect(() => {
     if (context.status[context.status.length - 1] === "end") {
       context.setStatus([])
@@ -106,9 +123,9 @@ const Orders = () => {
 
       </OrdersMain> : <OrderHistory>
         <h4>Previous Orders</h4>
-        {prevOrderList.map(item => {
+        {prevOrderList.map((item, index) => {
           return (
-            <OrderWrapper>
+            <OrderWrapper key={item.id}>
               <OrderDetails>
                 <h6>Order Number - <Item>{item.orderNo}</Item></h6>
                 <h6>Order Date - <Item>{item.orderDate}</Item></h6>
@@ -116,8 +133,13 @@ const Orders = () => {
                 <h6>Order Status - <Item>{item.orderStatus}</Item></h6>
               </OrderDetails>
               <ButtonGroup>
-                <Button>View order</Button>
+                <Button onClick={() => toggleOrderList(index)}>View order</Button>
                 <Button onClick={() => addToCart(item.order)}>Reorder</Button>
+                {openOrderIndexes.includes(index) && (
+                  <OrderListContainer>
+                    <OrderLIst items={item.order} onClose={closeOrderList} />
+                  </OrderListContainer>
+                )}
               </ButtonGroup>
             </OrderWrapper>
           )
