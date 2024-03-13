@@ -2,7 +2,14 @@ import styled from "styled-components";
 
 const OrdersWrapper = styled.div`
 height: 100vh;
-
+@media only screen and (max-width: 600px)  {
+    display: flex;
+    flex-direction: column;
+    }
+@media only screen and (min-width: 768px) and (max-width: 768px) and (min-height: 1025px) and (max-height: 1025px) {
+    display: flex;
+    flex-direction: column;
+}
 `
 
 const OrdersMain = styled.div`
@@ -13,7 +20,6 @@ height:100%;
 
 const OrderHistory = styled.div`
 margin: 10px 0;
-width: 100%;
 height:100%;
 display: flex;
 align-items: center;
@@ -132,6 +138,13 @@ flex-direction: row;
 justify-content: space-evenly;
 border-bottom: 1px solid #c9c9c9;
 margin-bottom: 10vh;
+ width: 100%;
+@media only screen and (max-width: 600px)  {
+   width: 90%;
+}
+@media only screen and (min-width: 768px) and (max-width: 768px) and (min-height: 1025px) and (max-height: 1025px) {
+   width: 90%;
+}
 `
 
 const ButtonGroup = styled.div`
@@ -151,12 +164,14 @@ color:white;
 font-weight: 500;
 background-color: ${props => props.theme.colors.accent};
 @media only screen and (max-width: 600px)  {
-    width:200px;
+    width:80px;
+    font-size: 12px;
     font-weight: 400;
     margin-bottom: 4px;
     }
 @media only screen and (min-width: 768px) and (max-width: 768px) and (min-height: 1025px) and (max-height: 1025px) {
-    width:200px;
+    width:80px;
+    font-size: 12px;
     font-weight: 400;
     margin-bottom: 4px;
 }
