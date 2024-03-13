@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { UserContext } from '../utilities/context/UserContext'
 import { useDispatch, useSelector } from 'react-redux'
 import "../style.css"
@@ -21,7 +21,7 @@ const Header = () => {
     const theme = useTheme()
     const { user, setUser } = useContext(UserContext)
     const context = useContext(Context)
-    // const location = useLocation()
+    const location = useLocation()
     const navigate = useNavigate()
 
     const items = useSelector((store) => store.cart.items)
@@ -32,12 +32,9 @@ const Header = () => {
     const [open, setOpen] = useState(false);
     const [searchedDish, setSearchedDish] = useState()
     const [matchingDish, setMatchingDish] = useState()
-    // const currentPathname = location.pathname;
-    // const params = useParams()
-    // const headerPaths = ["/", "/signup", "/login", "/about", "/offers", "/cart", "/fav-restaurant", "/payment"];
-    // const linkInfo = headerPaths.includes(currentPathname) || currentPathname === `/rest/${params.id}`
-    //     ? "header"
-    //     : "subHeader";
+    const currentPathname = location.pathname;
+    const headerPaths = ["/signup", "/login", "/about", "/privacy-policy", "/terms_conditions", "/disclaimer", "/map", "/cart", "/fav-restaurant", "/payment", "/orders"];
+    const linkInfo = headerPaths.includes(currentPathname) ? "noSearch" : "search";
 
     const [isHovered, setIsHovered] = useState(false);
     const dispatch = useDispatch()
@@ -208,7 +205,7 @@ const Header = () => {
                     {localStorage.getItem("location") !== null ? `${localStorage.getItem("location").slice(0, 20)}....` : null} <i class="fa-solid fa-angle-down" style={{ marginLeft: "1vw", marginTop: "4px", color: theme.colors.accent, cursor: "pointer" }}></i>
                 </Location>
                 <DrawerComponent open={open} setOpen={setOpen} />
-                <SearchWrapper>
+                <SearchWrapper show={linkInfo === "search" ? "true" : "false"}>
                     <Input type="search" list="search-suggestions" placeholder='Search...' value={searchvalue} onChange={searchrest} />
                     <SearchBtn onClick={search}><i class="fa-solid fa-magnifying-glass"
                         style={{

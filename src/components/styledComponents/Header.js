@@ -151,11 +151,10 @@ font-size: 14px;
 `
 const SearchWrapper = styled.div`
  display: flex;
+ visibility: ${props => props.show === "true" ? "visible" : "hidden"};
  align-items: center;
  height: 5vh;
-}
 `
-
 
 const SearchBtn = styled.button`
 background-color:transparent;
