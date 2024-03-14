@@ -12,7 +12,7 @@ const OrderLIst = ({ items, onClose }) => {
                 <OrderListDiv key={index}>
                     <DetailsWrapper>
                         <h6>{item.item.name}</h6>
-                        <p>Price: {item.item.finalPrice}</p>
+                        <p>Price: {item.item.price / 100}</p>
                         <p>Quantity: {item.quantity}</p>
                     </DetailsWrapper>
                     <p>{item.item.description}</p>
