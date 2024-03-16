@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
-import { MapWrapper } from './styledComponents/OrderTrackingMap';
+import { MapDiv, MapWrapper, Wrapper } from './styledComponents/OrderTrackingMap';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 const OrderTrackingMap = () => {
     useEffect(() => {
@@ -59,10 +61,14 @@ const OrderTrackingMap = () => {
     }, []);
 
     return (
-        <MapWrapper>
-            <h4>Order Tracking</h4>
-            <div id="map" style={{ height: '400px', width: '800px' }}></div>
-        </MapWrapper>
+        <Wrapper>
+            <Header />
+            <MapWrapper>
+                <h4>Order Tracking</h4>
+                <MapDiv id="map"></MapDiv>
+            </MapWrapper>
+            <Footer />
+        </Wrapper>
     );
 };
 
