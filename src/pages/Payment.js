@@ -1,16 +1,19 @@
-import React, {useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Button, ButtonClose, CardMethod, CashOnDelivery, CodHead, Input, InputRow, OrderDetails, PaymentInfo, PaymentOp, PaymentWrapper, RowInput, SubmitDetails, Wrapper } from './styledComponents/Payment'
 import GooglePayButton from '@google-pay/button-react';
-import { LabelInputWrapper } from './styledComponents/LoginSignup';
+import { ErrorPara, LabelInputWrapper } from './styledComponents/LoginSignup';
 import { useFormik } from 'formik';
 import Header from '../components/Header';
 import { useSelector } from 'react-redux';
 import { Context } from '../utilities/context/Context';
+import { paymentFormSchema } from '../schemas/payment';
+
 
 const Payment = () => {
     const context = useContext(Context)
     const [close, setClose] = useState(true)
     const [closeCard, setCloseCard] = useState(true)
+
     const initialValues = {
         name: "",
         address: "",
@@ -22,7 +25,7 @@ const Payment = () => {
 
     const formik = useFormik({
         initialValues: initialValues,
-        // validationSchema: SignUpSchema,
+        validationSchema: paymentFormSchema,
         onSubmit: (values, action) => {
             console.log(values)
             action.resetForm()
@@ -58,44 +61,52 @@ const Payment = () => {
             <Header />
             <OrderDetails>
                 <PaymentOp>Payment Options</PaymentOp>
-                <PaymentInfo>{totalItems === 1 ? `${totalItems} item` : `${totalItems} items` } | Total ₹{total/100}</PaymentInfo>
+                <PaymentInfo>{totalItems === 1 ? `${totalItems} item` : `${totalItems} items`} | Total ₹{total / 100}</PaymentInfo>
             </OrderDetails>
             <Wrapper>
-                <Button onClick={() => setClose(false)}><CodHead><img src = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_64,e_trim/PaymentLogos/instruments/4x/Cash" alt= "" style={{marginRight: "10px", height: "2vh"}}/> Pay on Delivery</CodHead></Button>
-                <Button onClick={() => setCloseCard(false)}><CodHead> <i class="fa-regular fa-credit-card" style={{color: "#2D2D3D", marginRight: "10px"}}></i> Credit / Debit card</CodHead></Button>
+                <Button onClick={() => setClose(false)}><CodHead><img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_64,e_trim/PaymentLogos/instruments/4x/Cash" alt="" style={{ marginRight: "10px", height: "2vh" }} /> Pay on Delivery</CodHead></Button>
+                <Button onClick={() => setCloseCard(false)}><CodHead> <i class="fa-regular fa-credit-card" style={{ color: "#2D2D3D", marginRight: "10px" }}></i> Credit / Debit card</CodHead></Button>
                 <CashOnDelivery close={close}>
-                    <ButtonClose onClick={() => setClose(true)}><i class="fa-solid fa-xmark" style={{fontSize: "18px"}}></i></ButtonClose>
+                    <ButtonClose onClick={() => setClose(true)}><i class="fa-solid fa-xmark" style={{ fontSize: "18px" }}></i></ButtonClose>
                     <CodHead>Payment Authorization Form</CodHead>
                     <form onSubmit={formik.handleSubmit}>
                         <LabelInputWrapper>
                             <Input type="text" placeholder="Name" name="name" id="name" onChange={formik.handleChange} onBlur={formik.handleBlur}></Input>
+                            {formik.errors.name && formik.touched.name ? <ErrorPara>{formik.errors.name}</ErrorPara> : null}
                         </LabelInputWrapper>
                         <LabelInputWrapper>
                             <Input type="text" placeholder="Street address" name="address" id="address" onChange={formik.handleChange} onBlur={formik.handleBlur}></Input>
+                            {formik.errors.address && formik.touched.address ? <ErrorPara>{formik.errors.address}</ErrorPara> : null}
                         </LabelInputWrapper>
                         <LabelInputWrapper>
                             <Input type="text" placeholder="Street address line 2" name="address2" id="address2" onChange={formik.handleChange} onBlur={formik.handleBlur}></Input>
+                            {formik.errors.address2 && formik.touched.address2 ? <ErrorPara>{formik.errors.address2}</ErrorPara> : null}
                         </LabelInputWrapper>
                         <LabelInputWrapper>
                             <RowInput>
                                 <InputRow type="text" placeholder="City" name="city" id="city" onChange={formik.handleChange} onBlur={formik.handleBlur}></InputRow>
+                                {formik.errors.city && formik.touched.city ? <ErrorPara>{formik.errors.city}</ErrorPara> : null}
                                 <InputRow type="text" placeholder="Region" name="region" id="region" onChange={formik.handleChange} onBlur={formik.handleBlur}></InputRow>
+                                {formik.errors.region && formik.touched.region ? <ErrorPara>{formik.errors.region}</ErrorPara> : null}
                             </RowInput>
                         </LabelInputWrapper>
                         <LabelInputWrapper>
                             <RowInput>
                                 <InputRow type="number" placeholder="Pincode" name="pincode" id="pincode" onChange={formik.handleChange} onBlur={formik.handleBlur}></InputRow>
+                                {formik.errors.pincode && formik.touched.pincode ? <ErrorPara>{formik.errors.pincode}</ErrorPara> : null}
                                 <InputRow type="text" placeholder="State" name="state" id="state" onChange={formik.handleChange} onBlur={formik.handleBlur}></InputRow>
+                                {formik.errors.state && formik.touched.state ? <ErrorPara>{formik.errors.state}</ErrorPara> : null}
                             </RowInput>
                         </LabelInputWrapper>
                         <LabelInputWrapper>
                             <Input type="number" placeholder="Contact number" name="contact" id="contact" onChange={formik.handleChange} onBlur={formik.handleBlur}></Input>
+                            {formik.errors.contact && formik.touched.contact ? <ErrorPara>{formik.errors.contact}</ErrorPara> : null}
                         </LabelInputWrapper>
                     </form>
                     <SubmitDetails onClick={handleSubmitDetails}> Place Order </SubmitDetails>
                 </CashOnDelivery>
                 <CardMethod closeCard={closeCard}>
-                    <ButtonClose onClick={() => setCloseCard(true)}><i class="fa-solid fa-xmark" style={{fontSize: "18px"}}></i></ButtonClose>
+                    <ButtonClose onClick={() => setCloseCard(true)}><i class="fa-solid fa-xmark" style={{ fontSize: "18px" }}></i></ButtonClose>
                     <GooglePayButton
                         environment="TEST"
                         paymentRequest={{

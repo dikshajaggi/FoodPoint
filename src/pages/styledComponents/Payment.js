@@ -32,7 +32,7 @@ background-color: white;
 `
 const CashOnDelivery = styled.div`
 display: ${props => props.close === true ? "none" : "flex"};
-height:75vh;
+height:auto;
 padding: 4vh;
 position: absolute;
 flex-direction:column;
