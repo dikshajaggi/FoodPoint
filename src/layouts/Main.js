@@ -11,18 +11,18 @@ import Footer from '../components/Footer'
 import RestCard from "../shimmerUI/RestCard"
 
 const Main = () => {
-    const props = useContext(Context)
+    const context = useContext(Context)
     const theme = useTheme()
     const [isLoading, setIsLoading] = useState(true)
 
 
     useEffect(() => {
         console.log(data?.restaurants, "data?.cards?.card.card.gridElements.infoWithStyle.restaurants")
-        props.setrestData(data?.restaurants)
-        props.setFilteredData(data?.restaurants)
+        context.setrestData(data?.restaurants)
+        context.setFilteredData(data?.restaurants)
         setIsLoading(false)
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [props.filter])
+    }, [context.filter])
 
     return (
         <MainWrapper theme={theme}>
@@ -30,7 +30,7 @@ const Main = () => {
             <CardWrapper>
                 {isLoading ? data?.restaurants.map((item) => {
                     return <RestCard />
-                }) : props?.filteredData?.map((item) => {
+                }) : context?.filteredData?.map((item) => {
                     return <Link style={{ textDecoration: 'none' }} to={`/rest/${item.id}`}> <Card {...item} /> </Link>
                     // return < Card {...item?.info} />
                 })}

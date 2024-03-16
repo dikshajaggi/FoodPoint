@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Card from "../components/RestCard"
 import Header from "../components/Header"
@@ -7,19 +7,20 @@ import { OfferBanner, OfferWrapper } from "./styledComponents/Offers"
 import Footer from "../components/Footer"
 import { CardWrapper } from "../layouts/styledComponents/Main"
 import RestCard from "../shimmerUI/RestCard"
+import { Context } from '../utilities/context/Context'
 
 const Offers = () => {
-
+    const context = useContext(Context)
     const [offers, setOffers] = useState([])
     const [isLoading, setIsLoading] = useState(true)
     useEffect(() => {
         setTimeout(() => {
             setIsLoading(false)
             // getData()
-            setOffers(data?.restaurants)
+            setOffers(context?.filteredData)
         }, 1000)
 
-    }, [])
+    }, [context?.filteredData])
 
     // async function getData() {
     //     await axios.get("https://www.swiggy.com/api/seo/getListing?lat=28.65420&lng=77.23730").then(item => {
