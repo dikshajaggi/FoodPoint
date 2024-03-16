@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate, useParams } from 'react-router-dom'
 import { UserContext } from '../utilities/context/UserContext'
 import { useDispatch, useSelector } from 'react-redux'
 import "../style.css"
@@ -33,7 +33,8 @@ const Header = () => {
     const [searchedDish, setSearchedDish] = useState()
     const [matchingDish, setMatchingDish] = useState()
     const currentPathname = location.pathname;
-    const headerPaths = ["/signup", "/login", "/about", "/privacy-policy", "/terms_conditions", "/disclaimer", "/map", "/cart", "/fav-restaurant", "/payment", "/orders"];
+    const params = useParams()
+    const headerPaths = ["/signup", "/login", `/rest/${params.id}`, "/about", "/privacy-policy", "/terms_conditions", "/disclaimer", "/map", "/cart", "/fav-restaurant", "/payment", "/orders"];
     const linkInfo = headerPaths.includes(currentPathname) ? "noSearch" : "search";
 
     const [isHovered, setIsHovered] = useState(false);
