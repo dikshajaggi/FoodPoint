@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { Button, ButtonGroup, Check, Desc, DescInfo, EstTime, Image, ImageChecked, Information, Item, Label, LabelDesc, LableInfo, OrdNo, OrderDelivered, OrderDetails, OrderHistory, OrderListContainer, OrderWrapper, OrdersMain, OrdersWrapper, Status, StatusCheckWrapper, StatusWrapper } from './styledComponents/Orders'
+import { Button, ButtonGroup, Check, Desc, DescInfo, EmptyCart, EmptyCartMapBtn, EstTime, Image, ImageChecked, Information, Item, Label, LabelDesc, LableInfo, OrdNo, OrderDelivered, OrderDetails, OrderHistory, OrderListContainer, OrderWrapper, OrdersMain, OrdersWrapper, Status, StatusCheckWrapper, StatusWrapper } from './styledComponents/Orders'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import delivery from "../assets/images/delivery.png"
@@ -7,7 +7,6 @@ import processed from "../assets/images/processed.png"
 import confirmed from "../assets/images/confirmed.png"
 import placed from "../assets/images/placed.png"
 import { Context } from '../utilities/context/Context'
-import { EmptyCart } from './styledComponents/Cart'
 import placed_fade from "../assets/images/placed_fade.png"
 import processed_fade from "../assets/images/processed_fade.png"
 import delivery_fade from "../assets/images/delivery_fade.png"
@@ -60,7 +59,6 @@ const Orders = () => {
   useEffect(() => {
     if (context.status[context.status.length - 1] === "end") {
       context.setStatus([])
-      console.log(orderDelivered, "chekcingorderdel")
       setOrderDelivered(true)
       context.setOrderPlaced(false)
     }
@@ -72,21 +70,21 @@ const Orders = () => {
     <OrdersWrapper>
       <Header />
       <SubHeader setActive={setActive} />
-      {active === "current" ? (
-        <Button
-          disabled={context.orderPlaced === false || orderDelivered}
-          style={{ width: "auto", marginTop: "20px", position: "absolute", right: "10px", backgroundColor: context.orderPlaced === false || orderDelivered ? "rgba(251, 146, 53, 0.5)" : "#FB9235" }}
-        >
-          <LinkStyled
-            to={context.orderPlaced === false || orderDelivered ? '#' : "/map"}
-            style={{ color: "#fff", pointerEvents: context.orderPlaced === false || orderDelivered ? "none" : "auto" }}
-          >
-            Track order on Map
-          </LinkStyled>
-        </Button>
-      ) : null}
       {active === "current" ? <OrdersMain>
-        {context.orderPlaced === false && orderDelivered === false ? <EmptyCart><h4>No orders</h4></EmptyCart> : orderDelivered ? <>
+        {context.orderPlaced === false && orderDelivered === false ? <EmptyCartMapBtn>
+          <EmptyCart><h4>No orders</h4></EmptyCart>
+          <Button
+            disabled={context.orderPlaced === false || orderDelivered}
+            style={{ width: "auto", position: "absolute", right: "10px", backgroundColor: context.orderPlaced === false || orderDelivered ? "rgba(251, 146, 53, 0.5)" : "#FB9235" }}
+          >
+            <LinkStyled
+              to={context.orderPlaced === false || orderDelivered ? '#' : "/map"}
+              style={{ color: "#fff", pointerEvents: context.orderPlaced === false || orderDelivered ? "none" : "auto" }}
+            >
+              Track order on Map
+            </LinkStyled>
+          </Button>
+        </EmptyCartMapBtn> : orderDelivered ? <>
           <OrderDelivered>
             <EmptyCart><h4>Your order has been delivered successfully !</h4></EmptyCart>
           </OrderDelivered>
@@ -101,6 +99,17 @@ const Orders = () => {
               <DescInfo>#1234HB</DescInfo>
             </OrdNo>
           </Information>
+          <Button
+            disabled={context.orderPlaced === false || orderDelivered}
+            style={{ width: "auto", position: "absolute", right: "10px", backgroundColor: context.orderPlaced === false || orderDelivered ? "rgba(251, 146, 53, 0.5)" : "#FB9235" }}
+          >
+            <LinkStyled
+              to={context.orderPlaced === false || orderDelivered ? '#' : "/map"}
+              style={{ color: "#fff", pointerEvents: context.orderPlaced === false || orderDelivered ? "none" : "auto" }}
+            >
+              Track order on Map
+            </LinkStyled>
+          </Button>
           <Status>
             {statusArr.map((item, index) => {
               return (

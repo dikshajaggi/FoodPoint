@@ -70,6 +70,19 @@ justify-content: center;
 align-items: center;
 `
 
+const EmptyCartMapBtn = styled.div`
+display: flex;
+width: 100%;
+justify-content: space-between;
+align-items: center;
+@media only screen and (max-width: 600px)  {
+    flex-direction: column;
+}
+@media only screen and (min-width: 768px) and (max-width: 768px) and (min-height: 1025px) and (max-height: 1025px) {
+    flex-direction: column;
+}
+`
+
 const Information = styled.div`
 display: flex;
 justify-content: space-evenly;
@@ -181,6 +194,11 @@ const Item = styled.span`
 font-weight: 400
 `
 
+const EmptyCart = styled.div`
+width:90%;
+margin:auto;
+`
+
 const OrderListContainer = styled.div`
  display: flex;
  justify-content: center;
@@ -195,6 +213,6 @@ const OrderListContainer = styled.div`
 `
 
 export {
-    OrdersWrapper, OrdersMain, OrderHistory, StatusWrapper, Image, ImageChecked, Label, LabelDesc, Desc, Status, Information, EstTime, OrdNo, LableInfo, DescInfo, OrderDelivered, StatusCheckWrapper, Check, OrderDetails,
+    OrdersWrapper, OrdersMain, OrderHistory, StatusWrapper, EmptyCart, EmptyCartMapBtn, Image, ImageChecked, Label, LabelDesc, Desc, Status, Information, EstTime, OrdNo, LableInfo, DescInfo, OrderDelivered, StatusCheckWrapper, Check, OrderDetails,
     OrderWrapper, Button, ButtonGroup, Item, OrderListContainer
 }
