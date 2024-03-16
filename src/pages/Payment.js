@@ -7,13 +7,14 @@ import Header from '../components/Header';
 import { useSelector } from 'react-redux';
 import { Context } from '../utilities/context/Context';
 import { paymentFormSchema } from '../schemas/payment';
+import { useNavigate } from 'react-router-dom';
 
 
 const Payment = () => {
     const context = useContext(Context)
     const [close, setClose] = useState(true)
     const [closeCard, setCloseCard] = useState(true)
-
+    const navigate = useNavigate()
     const initialValues = {
         name: "",
         address: "",
@@ -41,6 +42,12 @@ const Payment = () => {
     const [total, setTotal] = useState()
     const [totalItems, setTotalItems] = useState()
     const cartItems = useSelector(state => state.cart.items)
+
+    useEffect(() => {
+        if (cartItems?.length === 0) {
+            navigate("/")
+        }
+    }, [])
 
     useEffect(() => {
         const totalItems = cartItems.reduce((acc, current) => acc + current.quantity, 0);
