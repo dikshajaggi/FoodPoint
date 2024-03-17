@@ -51,6 +51,7 @@ const Payment = () => {
         if (cartItems?.length === 0) {
             navigate("/")
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     useEffect(() => {
