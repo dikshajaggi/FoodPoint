@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { Elements, CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 
-const stripePromise = loadStripe('pk_test_51L8RIISDs4GP9CM0Z4xPcERBYUJ4wCZrNFYfIBdU3jD7Cx8SQOowcBW9YBPVBMjBwzaMtIdNGlTKwyQ22IpdnL4A00JRaV3WXO');
+const stripeApiKey = process.env.REACT_APP_STRIPE_API_KEY;
+const stripePromise = loadStripe(stripeApiKey);
 
 const PaymentForm = () => {
     const stripe = useStripe();

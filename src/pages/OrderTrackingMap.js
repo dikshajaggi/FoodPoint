@@ -50,7 +50,7 @@ const OrderTrackingMap = () => {
 
         // Load the Google Maps API
         const script = document.createElement('script');
-        script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyDc7XMkdi8X_kEE8MNia8_K6fMiSqfu3QQ&libraries=geometry&callback=initMap`;
+        script.src = `https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_API_KEY}&libraries=geometry&callback=initMap`;
         script.async = true;
         document.body.appendChild(script);
 
