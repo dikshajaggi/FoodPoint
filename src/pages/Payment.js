@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { Button, ButtonClose, CardMethod, CashOnDelivery, CodHead, Input, InputRow, OrderDetails, PaymentInfo, PaymentOp, PaymentWrapper, RowInput, SubmitDetails, Wrapper } from './styledComponents/Payment'
-import GooglePayButton from '@google-pay/button-react';
 import { ErrorPara, LabelInputWrapper } from './styledComponents/LoginSignup';
 import { useFormik } from 'formik';
 import Header from '../components/Header';
@@ -8,13 +7,17 @@ import { useSelector } from 'react-redux';
 import { Context } from '../utilities/context/Context';
 import { paymentFormSchema } from '../schemas/payment';
 import { useNavigate } from 'react-router-dom';
-
+import { Elements } from '@stripe/react-stripe-js';
+import PaymentForm from '../components/PaymentForm';
+import { loadStripe } from '@stripe/stripe-js';
 
 const Payment = () => {
     const context = useContext(Context)
     const [close, setClose] = useState(true)
     const [closeCard, setCloseCard] = useState(true)
     const navigate = useNavigate()
+    const stripePromise = loadStripe('pk_test_51L8RIISDs4GP9CM0Z4xPcERBYUJ4wCZrNFYfIBdU3jD7Cx8SQOowcBW9YBPVBMjBwzaMtIdNGlTKwyQ22IpdnL4A00JRaV3WXO')
+
     const initialValues = {
         name: "",
         address: "",
@@ -23,6 +26,7 @@ const Payment = () => {
         city: "",
         region: ""
     }
+
 
     const formik = useFormik({
         initialValues: initialValues,
@@ -113,8 +117,11 @@ const Payment = () => {
                     <SubmitDetails onClick={handleSubmitDetails}> Place Order </SubmitDetails>
                 </CashOnDelivery>
                 <CardMethod closeCard={closeCard}>
-                    <ButtonClose onClick={() => setCloseCard(true)}><i class="fa-solid fa-xmark" style={{ fontSize: "18px" }}></i></ButtonClose>
-                    <GooglePayButton
+                    <Elements stripe={stripePromise}>
+                        <PaymentForm />
+                    </Elements>
+
+                    {/* <GooglePayButton
                         environment="TEST"
                         paymentRequest={{
                             apiVersion: 2,
@@ -150,7 +157,7 @@ const Payment = () => {
                         onLoadPaymentData={paymentRequest => {
                             console.log('load payment data', paymentRequest);
                         }}
-                    />
+                    /> */}
                 </CardMethod>
             </Wrapper>
         </PaymentWrapper>
