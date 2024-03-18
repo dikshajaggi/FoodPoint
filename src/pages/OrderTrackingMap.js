@@ -1,24 +1,20 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { MapDiv, MapWrapper, Wrapper } from './styledComponents/OrderTrackingMap';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 const OrderTrackingMap = () => {
+    const [estimatedTime, setEstimatedTime] = useState(0); // State to hold the estimated time
+
     useEffect(() => {
+        const startLocation = { lat: 28.5847449, lng: 77.0348151 }; // Replace with actual start location
+        const endLocation = { lat: 28.591775, lng: 77.161548 }; // Replace with actual end location
+
         const initMap = () => {
             const map = new window.google.maps.Map(document.getElementById('map'), {
-                center: { lat: 20.5937, lng: 78.9629 },
-                zoom: 5
+                center: startLocation, // Center map at the start location
+                zoom: 12 // Adjust zoom level as needed
             });
-
-            const startLocation = { lat: 28.5847449, lng: 77.0348151 }; // Replace with actual start location
-            const endLocation = { lat: 28.591775, lng: 77.161548 }; // Replace with actual end location
-
-            const bounds = new window.google.maps.LatLngBounds();
-            bounds.extend(startLocation);
-            bounds.extend(endLocation);
-
-            map.fitBounds(bounds);
 
             const marker = new window.google.maps.Marker({
                 position: startLocation,
@@ -37,6 +33,15 @@ const OrderTrackingMap = () => {
                 }
                 const interpolatedPosition = window.google.maps.geometry.spherical.interpolate(startLocation, endLocation, step);
                 marker.setPosition(interpolatedPosition);
+
+                // Calculate estimated time based on distance covered
+                const totalDistance = window.google.maps.geometry.spherical.computeDistanceBetween(startLocation, endLocation);
+                const currentLocation = marker.getPosition(); // Get the current position of the marker
+                const distanceCovered = window.google.maps.geometry.spherical.computeDistanceBetween(startLocation, currentLocation);                
+                const currentSpeed = 700; // Average speed in meters per minute (adjust as needed)
+                const timeRemaining = (totalDistance - distanceCovered) / currentSpeed;
+                setEstimatedTime(Math.ceil(timeRemaining)); // Update estimated time
+
                 if (step < 1) {
                     setTimeout(animate, intervalTime);
                 }
@@ -60,11 +65,13 @@ const OrderTrackingMap = () => {
         };
     }, []);
 
+    console.log(estimatedTime, "estimatedTimeestimatedTime")
     return (
         <Wrapper>
             <Header />
             <MapWrapper>
                 <h4>Order Tracking</h4>
+                <p>Estimated Time Remaining: {estimatedTime} minutes</p> {/* Display estimated time */}
                 <MapDiv id="map"></MapDiv>
             </MapWrapper>
             <Footer />
