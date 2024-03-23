@@ -146,6 +146,7 @@ border-radius: 5px;
 font-size: 14px;
 &:focus {
     outline: none; 
+    border: 2px solid ${props => props.theme.colors.accent};
   }
 
 `

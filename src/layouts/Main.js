@@ -4,11 +4,12 @@ import "../style.css"
 import { Link } from 'react-router-dom'
 import Header from "../components/Header"
 import { Context } from '../utilities/context/Context'
-import { CardWrapper, MainWrapper } from './styledComponents/Main'
+import { Banner, CardWrapper, MainWrapper, Text } from './styledComponents/Main'
 import { useTheme } from 'styled-components'
 import data from "../assets/data.json"
 import Footer from '../components/Footer'
 import RestCard from "../shimmerUI/RestCard"
+
 
 const Main = () => {
     const context = useContext(Context)
@@ -27,6 +28,9 @@ const Main = () => {
     return (
         <MainWrapper theme={theme}>
             <Header />
+            <Banner>
+                <Text>Welcome to HungerBites: Your Ultimate Culinary Destination!</Text>
+            </Banner>
             <CardWrapper>
                 {isLoading ? data?.restaurants.map((item) => {
                     return <RestCard />
