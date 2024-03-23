@@ -22,6 +22,7 @@ import TnC from "./pages/TnC";
 import Disclaimer from "./pages/styledComponents/Disclaimer";
 import Orders from "./pages/Orders";
 import OrderTrackingMap from "./pages/OrderTrackingMap";
+import DishDiscoveryGpt from "./pages/DishDiscoveryGpt";
 
 function App() {
   const appRoutes = createBrowserRouter([
@@ -104,6 +105,10 @@ function App() {
     {
       path: "/disclaimer",
       element: <Disclaimer />
+    },
+    {
+      path: "/gpt-dish-discovery",
+      element: <DishDiscoveryGpt />
     }
   ])
 

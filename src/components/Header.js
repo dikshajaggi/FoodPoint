@@ -4,7 +4,7 @@ import { UserContext } from '../utilities/context/UserContext'
 import { useDispatch, useSelector } from 'react-redux'
 import "../style.css"
 import { Context } from "../utilities/context/Context"
-import { Avatar, CartItemsLength, CartWrapper, HeaderDiv, HeaderWrapper, Input, LinkStyled, Location, LoginUser, Logo, LogoutBtn, MobileHeader, Name, NavbarLI, Offers, SearchBarList, SearchBtn, SearchListVal, SearchValImg, SearchValWrapper, SearchWrapper, Span, UserDropdown, UserInfo, Username } from './styledComponents/Header'
+import { Avatar, CartItemsLength, CartWrapper, ChatGPTButton, HeaderDiv, HeaderWrapper, Input, LinkStyled, Location, LoginUser, Logo, LogoutBtn, MobileHeader, Name, NavbarLI, Offers, SearchBarList, SearchBtn, SearchListVal, SearchValImg, SearchValWrapper, SearchWrapper, Span, UserDropdown, UserInfo, Username } from './styledComponents/Header'
 import data from "../assets/data.json"
 // import { useLocation } from 'react-router-dom';
 // import { onAuthStateChanged, signOut } from 'firebase/auth'
@@ -253,6 +253,7 @@ const Header = () => {
                         </UserInfo>
                     </LoginUser> : <LinkStyled to="/login"><Username>Login</Username></LinkStyled>}
                     <LinkStyled to="/cart"><i class="fa-sharp fa-solid fa-cart-shopping" style={{ color: items.length === 0 ? "black" : theme.colors.accent, fontSize: "16px" }}><CartItemsLength style={{ color: 'black', fontSize: "12px" }}>{items.length}</CartItemsLength></i></LinkStyled>
+                    <ChatGPTButton><LinkStyled to="/gpt-dish-discovery" style={{color: "#fff", fontWeight: 600, fontSize: "14px"}}>GPT Dish Discovery</LinkStyled></ChatGPTButton>
                 </CartWrapper>
             </HeaderWrapper>
 

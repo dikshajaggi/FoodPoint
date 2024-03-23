@@ -120,6 +120,23 @@ const Name = styled.div`
     font-size: 16px;
 `
 
+const ChatGPTButton = styled.button`
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color:${props => props.theme.colors.accent};
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  /* Add additional styles as needed */
+`;
+
 const CartItemsLength = styled.span`
 margin-left: 4px;
 font-size: 12px;
@@ -258,4 +275,4 @@ width:100%;
     }
 `
 
-export { MobileHeader, HeaderDiv, HeaderWrapper, Categories, CategoryLabel, NavbarLI, LinkStyled, LogoutBtn, Offers, SearchWrapper, SearchBarList, CartWrapper, UserInfo, Avatar, Username, UserDropdown, CartItemsLength, LoginUser, Input, Name, SearchListVal, SearchValWrapper, SearchValImg, Logo, SearchBtn, NavbarULCat, Span, Button, Location }
+export { MobileHeader, HeaderDiv, HeaderWrapper, Categories, CategoryLabel, NavbarLI, LinkStyled, LogoutBtn, Offers, SearchWrapper, SearchBarList, CartWrapper, UserInfo, Avatar, Username, UserDropdown, CartItemsLength, LoginUser, Input, Name, ChatGPTButton, SearchListVal, SearchValWrapper, SearchValImg, Logo, SearchBtn, NavbarULCat, Span, Button, Location }
