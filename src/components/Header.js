@@ -40,7 +40,7 @@ const Header = () => {
     const [isHovered, setIsHovered] = useState(false);
     const dispatch = useDispatch()
 
-    const statusArr = ["placed", "confirmed", "processing", "delivery", "end"]
+    // const statusArr = ["placed", "confirmed", "processing", "delivery", "end"]
 
     const getAllDishes = () => {
         setSearchedDish(specficRest.cards.map(item => item.menu).flat(2))
@@ -91,14 +91,14 @@ const Header = () => {
         if (localStorage.getItem("userDetails")) {
             setUser(JSON.parse(localStorage.getItem("userDetails")))
         }
-        if (context.orderPlaced === true) {
-            statusArr.map((item, index) => {
-                setTimeout(() => {
-                    context.setStatus(prev => [...prev, item])
-                }, index * 10000)
-                return true
-            })
-        }
+        // if (context.orderPlaced === true) {
+        //     statusArr.map((item, index) => {
+        //         setTimeout(() => {
+        //             context.setStatus(prev => [...prev, item])
+        //         }, index * 10000)
+        //         return true
+        //     })
+        // }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 

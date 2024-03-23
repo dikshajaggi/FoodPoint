@@ -1,19 +1,32 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { MapDiv, MapWrapper, Wrapper } from './styledComponents/OrderTrackingMap';
-import Header from '../components/Header';
+// import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { Context } from '../utilities/context/Context';
+import Header from '../components/Header';
 
 const OrderTrackingMap = () => {
-    const [estimatedTime, setEstimatedTime] = useState(0); // State to hold the estimated time
+    const [estimatedTime, setEstimatedTime] = useState(0);
+    const [startAnimation, setStartAnimation] = useState(false);
+    const context = useContext(Context)
+    useEffect(() => {
+        console.log(context.status, "context.status")
+        if (context.status.includes("delivery")) {
+            setStartAnimation(true)
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [context.status])
 
     useEffect(() => {
-        const startLocation = { lat: 28.5847449, lng: 77.0348151 }; // Replace with actual start location
-        const endLocation = { lat: 28.591775, lng: 77.161548 }; // Replace with actual end location
+        console.log(startAnimation)
+        if (!startAnimation) return;
+        const startLocation = { lat: 28.5847449, lng: 77.0348151 };
+        const endLocation = { lat: 28.6231, lng: 77.0277 };
 
         const initMap = () => {
             const map = new window.google.maps.Map(document.getElementById('map'), {
-                center: startLocation, // Center map at the start location
-                zoom: 12 // Adjust zoom level as needed
+                center: startLocation,
+                zoom: 12
             });
 
             const marker = new window.google.maps.Marker({
@@ -23,8 +36,8 @@ const OrderTrackingMap = () => {
             });
 
             let step = 0;
-            const numSteps = 100; // Change this value for smoother or slower animation
-            const intervalTime = 1000; // Time between each animation step (milliseconds)
+            const numSteps = 200;
+            const intervalTime = 50; // time between each animation step in ms
 
             const animate = () => {
                 step += 1 / numSteps;
@@ -37,7 +50,7 @@ const OrderTrackingMap = () => {
                 // Calculate estimated time based on distance covered
                 const totalDistance = window.google.maps.geometry.spherical.computeDistanceBetween(startLocation, endLocation);
                 const currentLocation = marker.getPosition(); // Get the current position of the marker
-                const distanceCovered = window.google.maps.geometry.spherical.computeDistanceBetween(startLocation, currentLocation);                
+                const distanceCovered = window.google.maps.geometry.spherical.computeDistanceBetween(startLocation, currentLocation);
                 const currentSpeed = 700; // Average speed in meters per minute (adjust as needed)
                 const timeRemaining = (totalDistance - distanceCovered) / currentSpeed;
                 setEstimatedTime(Math.ceil(timeRemaining)); // Update estimated time
@@ -63,7 +76,7 @@ const OrderTrackingMap = () => {
         return () => {
             document.body.removeChild(script);
         };
-    }, []);
+    }, [context.status]);
 
     console.log(estimatedTime, "estimatedTimeestimatedTime")
     return (
@@ -71,7 +84,7 @@ const OrderTrackingMap = () => {
             <Header />
             <MapWrapper>
                 <h4>Order Tracking</h4>
-                <p>Estimated Time Remaining: {estimatedTime} minutes</p> {/* Display estimated time */}
+                <p>Estimated Time Remaining: {estimatedTime} minutes</p>
                 <MapDiv id="map"></MapDiv>
             </MapWrapper>
             <Footer />

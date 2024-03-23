@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { data } from "../../assets/data"
 // import { useDispatch } from "react-redux";
 
@@ -24,6 +24,25 @@ const ContextProvider = (props) => {
     const [searched, setSearched] = useState(false)
     const [status, setStatus] = useState([])
     const [orderPlaced, setOrderPlaced] = useState(false)
+    const statusArr = ["placed", "confirmed", "processing", "delivery", "end"]
+
+    useEffect(() => {
+        if (orderPlaced === true) {
+            console.log("placedddddddddddddddd", statusArr)
+            statusArr.forEach((item, index) => {
+                if (item === "end") {
+                    setTimeout(() => {
+                        setStatus(prev => [...prev, item]);
+                    }, 20000);
+                } else {
+                    setTimeout(() => {
+                        setStatus(prev => [...prev, item]);
+                    }, index * 10000);
+                }
+            });
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [orderPlaced])
 
     // const dispatch = useDispatch()
 
@@ -35,7 +54,7 @@ const ContextProvider = (props) => {
     //             if (snapshot.exists()) {
     //                 const data = snapshot.val();
     //                 // Extract the values from the object into an array
-    //                 const objectDataArr = Object.values(data);
+    //                  const objectDataArr = Object.values(data);
     //                 console.log(objectDataArr, "object")
     //                 setCartData(objectDataArr)
     //                 for (const data of objectDataArr) {
