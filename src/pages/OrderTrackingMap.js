@@ -76,6 +76,7 @@ const OrderTrackingMap = () => {
         return () => {
             document.body.removeChild(script);
         };
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [context.status]);
 
     console.log(estimatedTime, "estimatedTimeestimatedTime")
