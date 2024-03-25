@@ -24,21 +24,17 @@ const ContextProvider = (props) => {
     const [searched, setSearched] = useState(false)
     const [status, setStatus] = useState([])
     const [orderPlaced, setOrderPlaced] = useState(false)
+    const [orderStatus, setOrderStatus] = useState()
     const statusArr = ["placed", "confirmed", "processing", "delivery", "end"]
 
     useEffect(() => {
         if (orderPlaced === true) {
             console.log("placedddddddddddddddd", statusArr)
             statusArr.forEach((item, index) => {
-                if (item === "end") {
-                    setTimeout(() => {
-                        setStatus(prev => [...prev, item]);
-                    }, 20000);
-                } else {
-                    setTimeout(() => {
-                        setStatus(prev => [...prev, item]);
-                    }, index * 10000);
-                }
+                setTimeout(() => {
+                    setOrderStatus(item)
+                    setStatus(prev => [...prev, item]); // Ensure a new array instance is created
+                }, index * 10000);
             });
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -109,7 +105,9 @@ const ContextProvider = (props) => {
                 status,
                 setStatus,
                 orderPlaced,
-                setOrderPlaced
+                setOrderPlaced,
+                orderStatus,
+                setOrderStatus
             }}
         >
             {props.children}

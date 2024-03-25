@@ -78,6 +78,7 @@ width: 21vw;
 background-color: ${props => props.theme.colors.accent};
 font-weight: 500;
 color: white;
+cursor: pointer;
 `
 
 const Button = styled.button`

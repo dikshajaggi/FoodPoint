@@ -7,19 +7,10 @@ import Header from '../components/Header';
 
 const OrderTrackingMap = () => {
     const [estimatedTime, setEstimatedTime] = useState(0);
-    const [startAnimation, setStartAnimation] = useState(false);
     const context = useContext(Context)
-    useEffect(() => {
-        console.log(context.status, "context.status")
-        if (context.status.includes("delivery")) {
-            setStartAnimation(true)
-        }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [context.status])
 
     useEffect(() => {
-        console.log(startAnimation)
-        if (!startAnimation) return;
+        if (context.orderStatus !== "delivery") return;
         const startLocation = { lat: 28.5847449, lng: 77.0348151 };
         const endLocation = { lat: 28.6231, lng: 77.0277 };
 
@@ -37,7 +28,7 @@ const OrderTrackingMap = () => {
 
             let step = 0;
             const numSteps = 200;
-            const intervalTime = 50; // time between each animation step in ms
+            const intervalTime = 55; // time between each animation step in ms
 
             const animate = () => {
                 step += 1 / numSteps;
