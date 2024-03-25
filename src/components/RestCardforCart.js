@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { addItems, removeItem } from '../utilities/redux/cartSlice'
 import { AddBtnWrapper, AddDishBtn, DishDesc, DishImg, Image, ItemAdd, ItemAddData, MenuDishName, SpecificCardSubHead } from './styledComponents/RestCardforCart'
@@ -12,6 +12,11 @@ const SpecificCard = (props) => {
     const { name, price, description, id, imageId, category, defaultPrice } = props
     const dispatch = useDispatch()
     const cartItems = useSelector(state => state.cart.items)
+
+    useEffect(() => {
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    }, [cartItems]);
+
 
     const addItemToCart = (data) => {
         dispatch(addItems(data))
@@ -34,7 +39,7 @@ const SpecificCard = (props) => {
                 <DishDesc>{description?.slice(0, 400)}...</DishDesc>
             </ItemAddData>
             <AddBtnWrapper>
-            {cartItems.length !== 0 && cartItems.some(c => c.item.id === id) ? <AddDishBtn onClick={() => removeItemFromCart(props)}>REMOVE</AddDishBtn> : <AddDishBtn onClick={() => addItemToCart(props)}>ADD</AddDishBtn>} 
+                {cartItems.length !== 0 && cartItems.some(c => c.item.id === id) ? <AddDishBtn onClick={() => removeItemFromCart(props)}>REMOVE</AddDishBtn> : <AddDishBtn onClick={() => addItemToCart(props)}>ADD</AddDishBtn>}
             </AddBtnWrapper>
         </ItemAdd>
     )

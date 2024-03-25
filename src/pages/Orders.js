@@ -28,7 +28,7 @@ const Orders = () => {
   const [orderDelivered, setOrderDelivered] = useState(false)
   const dispatch = useDispatch()
   const [openOrderIndexes, setOpenOrderIndexes] = useState([])
-
+  const [prevOrdersList, setPrevOrdersList] = useState(prevOrderList)
 
   const statusArr = [
     { icon: placed, label: "order placed", desc: "We have recieved your order", id: "placed", fadedicon: placed_fade },
@@ -64,6 +64,36 @@ const Orders = () => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [context.status])
+
+  const formatDate = () => {
+    const currentDate = new Date();
+
+    const day = currentDate.getDate().toString().padStart(2, '0');
+    const month = (currentDate.getMonth() + 1).toString().padStart(2, '0'); // Month starts from 0, so add 1
+    const year = currentDate.getFullYear();
+
+    const formattedDate = `${day}/${month}/${year}`;
+    return formattedDate
+  }
+  console.log(localStorage.getItem('cartItems'), "mango")
+
+
+  useEffect(() => {
+    const storedCartItems = localStorage.getItem('cartItems');
+    // if (context.orderPlaced) {
+    //   storedCartItems.map(item => {
+    //     const formattedDate = formatDate()
+    //     const obj = {
+    //       orderNo: "#123HB",
+    //       orderDate: formattedDate,
+    //       orderPrice: "1226",
+    //       orderStatus: "Delivered",
+    //       order: item
+    //     }
+    //     setPrevOrdersList(prev => [...prev, obj])
+    //   })
+    // }
+  }, [context.orderPlaced])
 
 
   return (
@@ -132,7 +162,7 @@ const Orders = () => {
 
       </OrdersMain> : <OrderHistory>
         <h4>Previous Orders</h4>
-        {prevOrderList.map((item, index) => {
+        {prevOrdersList.map((item, index) => {
           return (
             <OrderWrapper key={item.id}>
               <OrderDetails>
