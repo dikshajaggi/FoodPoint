@@ -1,0 +1,1139 @@
+{
+    "cards": [
+        {
+            "id": 423775,
+            "name": "Dough & Cream",
+            "cat": "Bakery, Desserts",
+            "loc": "Paschim Vihar | 4.9 km",
+            "costForTwoMessage": "₹250 for two",
+            "menu": [
+                {
+                    "id": "77674870",
+                    "name": "Choco Marquise Cake",
+                    "category": "Cakes",
+                    "description": "Serves 1 | Dense chocolate cake layered with rich Belgian dark chocolate ganache mousse. (Serves 5)",
+                    "imageId": "cyt8tgytyf5kaxckvcp8",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "variants": {},
+                    "variantsV2": {
+                        "variantGroups": [
+                            {
+                                "groupId": "33679713",
+                                "name": "Choose Your Cake Size",
+                                "variations": [
+                                    {
+                                        "name": "Small Cake",
+                                        "price": 749,
+                                        "default": 1,
+                                        "id": "104063930",
+                                        "inStock": 1,
+                                        "isVeg": 1,
+                                        "isEnabled": 1
+                                    },
+                                    {
+                                        "name": "Large Cake",
+                                        "price": 1374,
+                                        "id": "104063931",
+                                        "inStock": 1,
+                                        "isVeg": 1,
+                                        "isEnabled": 1
+                                    }
+                                ]
+                            }
+                        ],
+                        "pricingModels": [
+                            {
+                                "variations": [
+                                    {
+                                        "groupId": "33679713",
+                                        "variationId": "104063930"
+                                    }
+                                ],
+                                "price": 74900,
+                                "addonCombinations": [
+                                    {
+                                        "groupId": "43401829",
+                                        "addonId": "97625696"
+                                    },
+                                    {
+                                        "groupId": "43401829",
+                                        "addonId": "97625697"
+                                    },
+                                    {
+                                        "groupId": "43401829",
+                                        "addonId": "97625698"
+                                    },
+                                    {
+                                        "groupId": "43401829",
+                                        "addonId": "30046612"
+                                    },
+                                    {
+                                        "groupId": "43401829",
+                                        "addonId": "30046613"
+                                    },
+                                    {
+                                        "groupId": "43401829",
+                                        "addonId": "30046614"
+                                    },
+                                    {
+                                        "groupId": "43401829",
+                                        "addonId": "30046615"
+                                    },
+                                    {
+                                        "groupId": "43401829",
+                                        "addonId": "30046616"
+                                    },
+                                    {
+                                        "groupId": "43401826",
+                                        "addonId": "30046609"
+                                    },
+                                    {
+                                        "groupId": "43401826",
+                                        "addonId": "30046610"
+                                    },
+                                    {
+                                        "groupId": "43401826",
+                                        "addonId": "30046611"
+                                    },
+                                    {
+                                        "groupId": "43401843",
+                                        "addonId": "30046619"
+                                    },
+                                    {
+                                        "groupId": "43401843",
+                                        "addonId": "30046620"
+                                    },
+                                    {
+                                        "groupId": "43401839",
+                                        "addonId": "97625699"
+                                    },
+                                    {
+                                        "groupId": "43401839",
+                                        "addonId": "97625700"
+                                    },
+                                    {
+                                        "groupId": "43401839",
+                                        "addonId": "97625701"
+                                    },
+                                    {
+                                        "groupId": "43401839",
+                                        "addonId": "97625702"
+                                    },
+                                    {
+                                        "groupId": "43401839",
+                                        "addonId": "97625703"
+                                    },
+                                    {
+                                        "groupId": "43401839",
+                                        "addonId": "97625704"
+                                    },
+                                    {
+                                        "groupId": "43401839",
+                                        "addonId": "30046617"
+                                    },
+                                    {
+                                        "groupId": "43401839",
+                                        "addonId": "30046618"
+                                    },
+                                    {
+                                        "groupId": "43401853",
+                                        "addonId": "30046623"
+                                    },
+                                    {
+                                        "groupId": "43401859",
+                                        "addonId": "30046624"
+                                    },
+                                    {
+                                        "groupId": "43401859",
+                                        "addonId": "30046625"
+                                    },
+                                    {
+                                        "groupId": "119924532",
+                                        "addonId": "103835238"
+                                    },
+                                    {
+                                        "groupId": "119924532",
+                                        "addonId": "103835239"
+                                    },
+                                    {
+                                        "groupId": "119924532",
+                                        "addonId": "103835240"
+                                    },
+                                    {
+                                        "groupId": "119924532",
+                                        "addonId": "103835241"
+                                    }
+                                ]
+                            },
+                            {
+                                "variations": [
+                                    {
+                                        "groupId": "33679713",
+                                        "variationId": "104063931"
+                                    }
+                                ],
+                                "price": 137400,
+                                "addonCombinations": [
+                                    {
+                                        "groupId": "43401829",
+                                        "addonId": "97625696"
+                                    },
+                                    {
+                                        "groupId": "43401829",
+                                        "addonId": "97625697"
+                                    },
+                                    {
+                                        "groupId": "43401829",
+                                        "addonId": "97625698"
+                                    },
+                                    {
+                                        "groupId": "43401829",
+                                        "addonId": "30046612"
+                                    },
+                                    {
+                                        "groupId": "43401829",
+                                        "addonId": "30046613"
+                                    },
+                                    {
+                                        "groupId": "43401829",
+                                        "addonId": "30046614"
+                                    },
+                                    {
+                                        "groupId": "43401829",
+                                        "addonId": "30046615"
+                                    },
+                                    {
+                                        "groupId": "43401829",
+                                        "addonId": "30046616"
+                                    },
+                                    {
+                                        "groupId": "43401826",
+                                        "addonId": "30046609"
+                                    },
+                                    {
+                                        "groupId": "43401826",
+                                        "addonId": "30046610"
+                                    },
+                                    {
+                                        "groupId": "43401826",
+                                        "addonId": "30046611"
+                                    },
+                                    {
+                                        "groupId": "43401843",
+                                        "addonId": "30046619"
+                                    },
+                                    {
+                                        "groupId": "43401843",
+                                        "addonId": "30046620"
+                                    },
+                                    {
+                                        "groupId": "43401839",
+                                        "addonId": "97625699"
+                                    },
+                                    {
+                                        "groupId": "43401839",
+                                        "addonId": "97625700"
+                                    },
+                                    {
+                                        "groupId": "43401839",
+                                        "addonId": "97625701"
+                                    },
+                                    {
+                                        "groupId": "43401839",
+                                        "addonId": "97625702"
+                                    },
+                                    {
+                                        "groupId": "43401839",
+                                        "addonId": "97625703"
+                                    },
+                                    {
+                                        "groupId": "43401839",
+                                        "addonId": "97625704"
+                                    },
+                                    {
+                                        "groupId": "43401839",
+                                        "addonId": "30046617"
+                                    },
+                                    {
+                                        "groupId": "43401839",
+                                        "addonId": "30046618"
+                                    },
+                                    {
+                                        "groupId": "43401853",
+                                        "addonId": "30046623"
+                                    },
+                                    {
+                                        "groupId": "43401859",
+                                        "addonId": "30046624"
+                                    },
+                                    {
+                                        "groupId": "43401859",
+                                        "addonId": "30046625"
+                                    },
+                                    {
+                                        "groupId": "119924532",
+                                        "addonId": "103835238"
+                                    },
+                                    {
+                                        "groupId": "119924532",
+                                        "addonId": "103835239"
+                                    },
+                                    {
+                                        "groupId": "119924532",
+                                        "addonId": "103835240"
+                                    },
+                                    {
+                                        "groupId": "119924532",
+                                        "addonId": "103835241"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "addons": [
+                        {
+                            "groupId": "43401826",
+                            "groupName": "Add on Party Popper",
+                            "choices": [
+                                {
+                                    "id": "30046609",
+                                    "name": "Small Party Popper",
+                                    "price": 12500,
+                                    "inStock": 1,
+                                    "isVeg": 1,
+                                    "isEnabled": 1
+                                },
+                                {
+                                    "id": "30046610",
+                                    "name": "Medium Party Popper",
+                                    "price": 19000,
+                                    "inStock": 1,
+                                    "isVeg": 1,
+                                    "isEnabled": 1
+                                },
+                                {
+                                    "id": "30046611",
+                                    "name": "Large Party Popper",
+                                    "price": 25000,
+                                    "inStock": 1,
+                                    "isVeg": 1,
+                                    "isEnabled": 1
+                                }
+                            ],
+                            "maxAddons": 3,
+                            "maxFreeAddons": -1
+                        },
+                        {
+                            "groupId": "43401829",
+                            "groupName": "Add on Candles",
+                            "choices": [
+                                {
+                                    "id": "97625696",
+                                    "name": "Party Candles",
+                                    "price": 18500,
+                                    "inStock": 1,
+                                    "isEnabled": 1
+                                },
+                                {
+                                    "id": "97625697",
+                                    "name": "Happy Birthday Sticky Candles",
+                                    "price": 8000,
+                                    "inStock": 1,
+                                    "isEnabled": 1
+                                },
+                                {
+                                    "id": "97625698",
+                                    "name": "Color Flame Birthday Candles",
+                                    "price": 10000,
+                                    "inStock": 1,
+                                    "isEnabled": 1
+                                },
+                                {
+                                    "id": "30046612",
+                                    "name": "Sparkle Candles (Pack of 2)",
+                                    "price": 10000,
+                                    "inStock": 1,
+                                    "isVeg": 1,
+                                    "isEnabled": 1
+                                },
+                                {
+                                    "id": "30046613",
+                                    "name": "Happy Birthday Candles",
+                                    "price": 12500,
+                                    "inStock": 1,
+                                    "isVeg": 1,
+                                    "isEnabled": 1
+                                },
+                                {
+                                    "id": "30046615",
+                                    "name": "Birthday Boy Candle",
+                                    "price": 12500,
+                                    "inStock": 1,
+                                    "isVeg": 1,
+                                    "isEnabled": 1
+                                },
+                                {
+                                    "id": "30046616",
+                                    "name": "Birthday Girl Candle",
+                                    "price": 12500,
+                                    "inStock": 1,
+                                    "isVeg": 1,
+                                    "isEnabled": 1
+                                },
+                                {
+                                    "id": "30046614",
+                                    "name": "Happy Anniversary Candle",
+                                    "price": 12500,
+                                    "isVeg": 1,
+                                    "isEnabled": 1
+                                }
+                            ],
+                            "maxAddons": 8,
+                            "maxFreeAddons": -1
+                        },
+                        {
+                            "groupId": "43401839",
+                            "groupName": "Add On Balloons",
+                            "choices": [
+                                {
+                                    "id": "97625699",
+                                    "name": "Baby Shower Foil Ballon",
+                                    "price": 15000,
+                                    "inStock": 1,
+                                    "isEnabled": 1
+                                },
+                                {
+                                    "id": "97625701",
+                                    "name": "Happy Birthday Wall Foil Balloons Set",
+                                    "price": 35000,
+                                    "inStock": 1,
+                                    "isEnabled": 1
+                                },
+                                {
+                                    "id": "97625702",
+                                    "name": "Happy Anniversary Wall Foil Balloons Set",
+                                    "price": 35000,
+                                    "inStock": 1,
+                                    "isEnabled": 1
+                                },
+                                {
+                                    "id": "97625703",
+                                    "name": "Balloons(50 pcs)",
+                                    "price": 15000,
+                                    "inStock": 1,
+                                    "isEnabled": 1
+                                },
+                                {
+                                    "id": "97625704",
+                                    "name": "Balloons(10 pcs)",
+                                    "price": 10000,
+                                    "inStock": 1,
+                                    "isEnabled": 1
+                                },
+                                {
+                                    "id": "30046617",
+                                    "name": "Happy Birthday Foil Balloon",
+                                    "price": 19000,
+                                    "inStock": 1,
+                                    "isVeg": 1,
+                                    "isEnabled": 1
+                                },
+                                {
+                                    "id": "30046618",
+                                    "name": "Happy Anniversary Foil Balloon",
+                                    "price": 19000,
+                                    "inStock": 1,
+                                    "isVeg": 1,
+                                    "isEnabled": 1
+                                },
+                                {
+                                    "id": "97625700",
+                                    "name": "I LOVE YOU Foil Balloon",
+                                    "price": 15000,
+                                    "isEnabled": 1
+                                }
+                            ],
+                            "maxAddons": 8,
+                            "maxFreeAddons": -1
+                        },
+                        {
+                            "groupId": "43401843",
+                            "groupName": "Add On Birthday Cap",
+                            "choices": [
+                                {
+                                    "id": "30046619",
+                                    "name": "Boy Birthday Cap",
+                                    "price": 7500,
+                                    "inStock": 1,
+                                    "isVeg": 1,
+                                    "isEnabled": 1
+                                },
+                                {
+                                    "id": "30046620",
+                                    "name": "Girl Birthday Cap",
+                                    "price": 7500,
+                                    "inStock": 1,
+                                    "isVeg": 1,
+                                    "isEnabled": 1
+                                }
+                            ],
+                            "maxAddons": 2,
+                            "maxFreeAddons": -1
+                        },
+                        {
+                            "groupId": "119924532",
+                            "groupName": "Add On Sash",
+                            "choices": [
+                                {
+                                    "id": "103835238",
+                                    "name": "Birthday Boy Sash",
+                                    "price": 18500,
+                                    "inStock": 1,
+                                    "isEnabled": 1
+                                },
+                                {
+                                    "id": "103835240",
+                                    "name": "Happy Anniversary Sash",
+                                    "price": 18500,
+                                    "inStock": 1,
+                                    "isEnabled": 1
+                                },
+                                {
+                                    "id": "103835241",
+                                    "name": "Bride To Be Sash",
+                                    "price": 18500,
+                                    "inStock": 1,
+                                    "isEnabled": 1
+                                },
+                                {
+                                    "id": "103835239",
+                                    "name": "Birthday Girl Sash",
+                                    "price": 18500,
+                                    "isEnabled": 1
+                                }
+                            ],
+                            "maxAddons": 4,
+                            "maxFreeAddons": -1
+                        },
+                        {
+                            "groupId": "43401853",
+                            "groupName": "Add On Banner",
+                            "choices": [
+                                {
+                                    "id": "30046623",
+                                    "name": "Happy Birthday Banner",
+                                    "price": 10000,
+                                    "inStock": 1,
+                                    "isVeg": 1,
+                                    "isEnabled": 1
+                                }
+                            ],
+                            "maxAddons": 1,
+                            "maxFreeAddons": -1
+                        },
+                        {
+                            "groupId": "43401859",
+                            "groupName": "Add On Topper",
+                            "choices": [
+                                {
+                                    "id": "30046624",
+                                    "name": "Happy Birthday Topper",
+                                    "price": 18500,
+                                    "inStock": 1,
+                                    "isVeg": 1,
+                                    "isEnabled": 1
+                                },
+                                {
+                                    "id": "30046625",
+                                    "name": "Happy Anniversary Topper",
+                                    "price": 18500,
+                                    "inStock": 1,
+                                    "isVeg": 1,
+                                    "isEnabled": 1
+                                }
+                            ],
+                            "maxAddons": 2,
+                            "maxFreeAddons": -1
+                        }
+                    ],
+                    "itemAttribute": {
+                        "vegClassifier": "VEG",
+                        "portionSize": "Serves 1"
+                    },
+                    "defaultPrice": 74900,
+                    "ribbon": {},
+                    "showImage": true,
+                    "itemBadge": {},
+                    "badgesV2": {},
+                    "ratings": {
+                        "aggregatedRating": {
+                            "rating": "4.8",
+                            "ratingCount": "4 ratings",
+                            "ratingCountV2": "4"
+                        }
+                    }
+                },
+                {
+                    "id": "133034111",
+                    "name": "Steamed Cheese & Corn Momos (8 Pieces)",
+                    "category": "Momos & Spring Rolls",
+                    "description": "Serves 2 | Try our Steamed Cheese & Corn Momos for a delightful twist on a classic favorite! Creamy cheese and sweet corn, perfectly steamed in a soft dumpling. A flavorful treat that's simply irresistible.",
+                    "imageId": "736896ca12fc860e90c4f4748c78f45f",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 23000,
+                    "variants": {},
+                    "variantsV2": {},
+                    "addons": [
+                        {
+                            "groupId": "134233563",
+                            "groupName": "Extra Dips",
+                            "choices": [
+                                {
+                                    "id": "30046592",
+                                    "name": "Extra Momo's Chutney",
+                                    "price": 4000,
+                                    "inStock": 1,
+                                    "isVeg": 1,
+                                    "isEnabled": 1
+                                },
+                                {
+                                    "id": "30046593",
+                                    "name": "Extra Mayo",
+                                    "price": 4000,
+                                    "inStock": 1,
+                                    "isVeg": 1,
+                                    "isEnabled": 1
+                                },
+                                {
+                                    "id": "30046594",
+                                    "name": "Tandoori Mayo",
+                                    "price": 4000,
+                                    "inStock": 1,
+                                    "isVeg": 1,
+                                    "isEnabled": 1
+                                },
+                                {
+                                    "id": "30046595",
+                                    "name": "Cocktail Dip",
+                                    "price": 4000,
+                                    "inStock": 1,
+                                    "isVeg": 1,
+                                    "isEnabled": 1
+                                },
+                                {
+                                    "id": "30046596",
+                                    "name": "Salsa",
+                                    "price": 4000,
+                                    "inStock": 1,
+                                    "isVeg": 1,
+                                    "isEnabled": 1
+                                }
+                            ],
+                            "maxAddons": 5,
+                            "maxFreeAddons": -1
+                        }
+                    ],
+                    "itemAttribute": {
+                        "vegClassifier": "VEG",
+                        "portionSize": "Serves 2"
+                    },
+                    "ribbon": {},
+                    "showImage": true,
+                    "itemBadge": {},
+                    "badgesV2": {},
+                    "ratings": {
+                        "aggregatedRating": {}
+                    }
+                },
+                {
+                    "id": "133034112",
+                    "name": "Kurkure Cheese & Corn Momos (6 Pieces)",
+                    "category": "Momos & Spring Rolls",
+                    "description": "Serves 2 | Experience the crunch with our Kurkure Cheese and Corn Momos! Delightful dumplings filled with creamy cheese and sweet corn, perfectly paired with a crispy covering. A flavorful twist that adds a satisfying crunch to your momo indulgence!",
+                    "imageId": "7caa0f4def544bbf21a34e2e8969b183",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 24900,
+                    "variants": {},
+                    "variantsV2": {},
+                    "addons": [
+                        {
+                            "groupId": "134233564",
+                            "groupName": "Extra Dips",
+                            "choices": [
+                                {
+                                    "id": "30046592",
+                                    "name": "Extra Momo's Chutney",
+                                    "price": 4000,
+                                    "inStock": 1,
+                                    "isVeg": 1,
+                                    "isEnabled": 1
+                                },
+                                {
+                                    "id": "30046593",
+                                    "name": "Extra Mayo",
+                                    "price": 4000,
+                                    "inStock": 1,
+                                    "isVeg": 1,
+                                    "isEnabled": 1
+                                },
+                                {
+                                    "id": "30046594",
+                                    "name": "Tandoori Mayo",
+                                    "price": 4000,
+                                    "inStock": 1,
+                                    "isVeg": 1,
+                                    "isEnabled": 1
+                                },
+                                {
+                                    "id": "30046595",
+                                    "name": "Cocktail Dip",
+                                    "price": 4000,
+                                    "inStock": 1,
+                                    "isVeg": 1,
+                                    "isEnabled": 1
+                                },
+                                {
+                                    "id": "30046596",
+                                    "name": "Salsa",
+                                    "price": 4000,
+                                    "inStock": 1,
+                                    "isVeg": 1,
+                                    "isEnabled": 1
+                                }
+                            ],
+                            "maxAddons": 5,
+                            "maxFreeAddons": -1
+                        }
+                    ],
+                    "itemAttribute": {
+                        "vegClassifier": "VEG",
+                        "portionSize": "Serves 2"
+                    },
+                    "ribbon": {},
+                    "showImage": true,
+                    "itemBadge": {},
+                    "badgesV2": {},
+                    "ratings": {
+                        "aggregatedRating": {}
+                    }
+                },
+                {
+                    "id": "76304306",
+                    "name": "Assorted Cookies Gift Hamper",
+                    "category": "Gifting Hampers",
+                    "description": "Serves 10 | Pick the perfect box of assorted cookies in our premium gift box. This box contains 3 Cookie Boxes",
+                    "imageId": "rqdhmb1btc9kayguj7ll",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 97500,
+                    "variants": {},
+                    "variantsV2": {},
+                    "addons": [
+                        {
+                            "groupId": "43402449",
+                            "groupName": "Pick Your Cookies Set",
+                            "choices": [
+                                {
+                                    "id": "30047113",
+                                    "name": "Honey Oats Cookies (200g)",
+                                    "inStock": 1,
+                                    "isVeg": 1,
+                                    "isEnabled": 1
+                                },
+                                {
+                                    "id": "30047114",
+                                    "name": "Vanilla Choco Chip Cookies (200g)",
+                                    "inStock": 1,
+                                    "isVeg": 1,
+                                    "isEnabled": 1
+                                },
+                                {
+                                    "id": "30047116",
+                                    "name": "Multigrain Cookies (200g)",
+                                    "inStock": 1,
+                                    "isVeg": 1,
+                                    "isEnabled": 1
+                                },
+                                {
+                                    "id": "30047118",
+                                    "name": "Kaju Pista Cookies (200g)",
+                                    "inStock": 1,
+                                    "isVeg": 1,
+                                    "isEnabled": 1
+                                },
+                                {
+                                    "id": "30047119",
+                                    "name": "Cornflakes Cookies (200g)",
+                                    "inStock": 1,
+                                    "isVeg": 1,
+                                    "isEnabled": 1
+                                },
+                                {
+                                    "id": "30047121",
+                                    "name": "Coconut Cookies (200g)",
+                                    "inStock": 1,
+                                    "isVeg": 1,
+                                    "isEnabled": 1
+                                },
+                                {
+                                    "id": "30047122",
+                                    "name": "Chocolate Walnut Brownie Cookies (200g)",
+                                    "inStock": 1,
+                                    "isVeg": 1,
+                                    "isEnabled": 1
+                                },
+                                {
+                                    "id": "30047124",
+                                    "name": "Chocolate Belgium Cookies (200g)",
+                                    "inStock": 1,
+                                    "isVeg": 1,
+                                    "isEnabled": 1
+                                },
+                                {
+                                    "id": "30047125",
+                                    "name": "Choco Chip Cookies (200g)",
+                                    "inStock": 1,
+                                    "isVeg": 1,
+                                    "isEnabled": 1
+                                },
+                                {
+                                    "id": "30047126",
+                                    "name": "Cashew Nut Cookies (200g)",
+                                    "inStock": 1,
+                                    "isVeg": 1,
+                                    "isEnabled": 1
+                                },
+                                {
+                                    "id": "30047129",
+                                    "name": "Butter Almond Cookies (200g)",
+                                    "inStock": 1,
+                                    "isVeg": 1,
+                                    "isEnabled": 1
+                                },
+                                {
+                                    "id": "30047130",
+                                    "name": "Butter Ajwain Cookies (200g)",
+                                    "inStock": 1,
+                                    "isVeg": 1,
+                                    "isEnabled": 1
+                                },
+                                {
+                                    "id": "30047131",
+                                    "name": "American Choco Chip Cookies (200g)",
+                                    "inStock": 1,
+                                    "isVeg": 1,
+                                    "isEnabled": 1
+                                },
+                                {
+                                    "id": "30047115",
+                                    "name": "Red Velvet Cookies (200g)",
+                                    "isVeg": 1,
+                                    "isEnabled": 1
+                                },
+                                {
+                                    "id": "30047117",
+                                    "name": "Milk Chocolate Cookies (200g)",
+                                    "isVeg": 1,
+                                    "isEnabled": 1
+                                },
+                                {
+                                    "id": "30047120",
+                                    "name": "Coffee Mocha Crunch Cookies (200g)",
+                                    "isVeg": 1,
+                                    "isEnabled": 1
+                                },
+                                {
+                                    "id": "30047123",
+                                    "name": "Chocolate Gems Cookies (200g)",
+                                    "isVeg": 1,
+                                    "isEnabled": 1
+                                },
+                                {
+                                    "id": "30047127",
+                                    "name": "Butterscotch Cookies (200g)",
+                                    "isVeg": 1,
+                                    "isEnabled": 1
+                                },
+                                {
+                                    "id": "30047132",
+                                    "name": "Almond Crunchy Cookies (200g)",
+                                    "isVeg": 1,
+                                    "isEnabled": 1
+                                }
+                            ],
+                            "maxAddons": 3,
+                            "maxFreeAddons": -1,
+                            "minAddons": 3
+                        }
+                    ],
+                    "itemAttribute": {
+                        "vegClassifier": "VEG",
+                        "portionSize": "Serves 10"
+                    },
+                    "ribbon": {},
+                    "type": "ITEM",
+                    "itemBadge": {},
+                    "badgesV2": {},
+                    "ratings": {
+                        "aggregatedRating": {}
+                    }
+                }
+            ]
+        },
+        {
+            "id": "780417",
+            "name": "California Burrito",
+            "cat": "Mexican, American",
+            "loc": "Rohini | 1.6 km",
+            "costForTwoMessage": "₹250 for two",
+            "menu": [
+                {
+                    "id": "126680485",
+                    "name": "Barbeque Paneer Rice Bowl (Regular)",
+                    "category": "Honest Bowls",
+                    "description": "Serves 1 | Fresh cilantro rice and everything nice. Comes with your favourite toppings, fajita veggies like bell peppers and onions, pico de galla and BBQ Paneer. Make it just the way you like it!",
+                    "imageId": "f590ac3a24773c350ccc5e8dcfcbd808",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 31900,
+                    "variants": {},
+                    "variantsV2": {},
+                    "itemAttribute": {
+                        "vegClassifier": "VEG",
+                        "portionSize": "Serves 1"
+                    },
+                    "ribbon": {},
+                    "showImage": true,
+                    "itemBadge": {},
+                    "badgesV2": {},
+                    "ratings": {
+                        "aggregatedRating": {
+                            "rating": "4.3",
+                            "ratingCount": "12 ratings",
+                            "ratingCountV2": "12"
+                        }
+                    }
+                },
+                {
+                    "id": "126680492",
+                    "name": "Grilled Barbeque Chicken Rice Bowl (Regular)",
+                    "category": "Honest Bowls",
+                    "description": "Serves 1 | Fresh cilantro rice and everything nice. Comes with your favourite toppings, fajita veggies like bell peppers and onions, pico de galla and grilled chicken. Make it just the way you like it!",
+                    "imageId": "850b109187edc3968df3c00cc8b9c825",
+                    "inStock": 1,
+                    "price": 31900,
+                    "variants": {},
+                    "variantsV2": {},
+                    "itemAttribute": {
+                        "vegClassifier": "NONVEG",
+                        "portionSize": "Serves 1"
+                    },
+                    "ribbon": {
+                        "text": "Bestseller",
+                        "textColor": "#ffffff",
+                        "topBackgroundColor": "#d53d4c",
+                        "bottomBackgroundColor": "#b02331"
+                    },
+                    "showImage": true,
+                    "itemBadge": {},
+                    "badgesV2": {},
+                    "isBestseller": true,
+                    "ratings": {
+                        "aggregatedRating": {
+                            "rating": "4.3",
+                            "ratingCount": "16 ratings",
+                            "ratingCountV2": "16"
+                        }
+                    }
+                },
+                {
+                    "id": "126680481",
+                    "name": "Crispy Mushroom Rice Bowl (Mini)",
+                    "category": "Honest Bowls",
+                    "description": "Serves 1 | Fresh cilantro rice and everything nice. Comes with your favourite toppings, fajita veggies like bell peppers and onions, pico de galla and crispy mushroom. Make it just the way you like it!",
+                    "imageId": "34c3bd4a0c92ed117b93bb21c263ba69",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 25500,
+                    "variants": {},
+                    "variantsV2": {},
+                    "itemAttribute": {
+                        "vegClassifier": "VEG",
+                        "portionSize": "Serves 1"
+                    },
+                    "ribbon": {
+                        "text": "Bestseller",
+                        "textColor": "#ffffff",
+                        "topBackgroundColor": "#d53d4c",
+                        "bottomBackgroundColor": "#b02331"
+                    },
+                    "showImage": true,
+                    "itemBadge": {},
+                    "badgesV2": {},
+                    "isBestseller": true,
+                    "ratings": {
+                        "aggregatedRating": {
+                            "rating": "4.5",
+                            "ratingCount": "16 ratings",
+                            "ratingCountV2": "16"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "id": "603438",
+            "name": "Chinese Wok",
+            "cat": "Chinese, Asian",
+            "loc": "Rohini | 2.7 km",
+            "costForTwoMessage": "₹250 for two",
+            "menu": [
+                {
+                    "id": "118214502",
+                    "name": "Combo for 1 Veg",
+                    "category": "Combos",
+                    "description": "Serves 1 | Combo for one (Rice/Noodle Bowl with choice of Veg Gravy, Veg Momos & Drinks)",
+                    "imageId": "3e4f7ca32bf517b390f1cb3205b892e4",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "variants": {},
+                    "itemAttribute": {
+                        "vegClassifier": "VEG",
+                        "portionSize": "Serves 1"
+                    },
+                    "defaultPrice": 35900,
+                    "ribbon": {},
+                    "showImage": true,
+                    "itemBadge": {},
+                    "badgesV2": {},
+                    "ratings": {
+                        "aggregatedRating": {
+                            "rating": "2.9",
+                            "ratingCount": "6 ratings",
+                            "ratingCountV2": "6"
+                        }
+                    }
+                },
+                {
+                    "id": "118214503",
+                    "name": "Combo for 1 Non-Veg",
+                    "category": "Combos",
+                    "description": "Serves 1 | Combo for one (Rice/Noodle Bowl with choice of Non-Veg Gravy, Non- Veg Momos & Drinks)",
+                    "imageId": "440c06ace44b931b729d9b6a090aba07",
+                    "inStock": 1,
+                    "variants": {},
+                    "itemAttribute": {
+                        "vegClassifier": "NONVEG",
+                        "portionSize": "Serves 1"
+                    },
+                    "defaultPrice": 37900,
+                    "ribbon": {},
+                    "showImage": true,
+                    "itemBadge": {},
+                    "badgesV2": {},
+                    "ratings": {
+                        "aggregatedRating": {
+                            "rating": "5.0",
+                            "ratingCount": "3 ratings",
+                            "ratingCountV2": "3"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "id": "26723",
+            "name": "KFC",
+            "cat": "Burgers, Biryani",
+            "loc": "Rohini | 2.0 km",
+            "menu": [
+                {
+                    "id": "122150641",
+                    "name": "Zinger Pro Burger & Chicken Meal",
+                    "category": "Burgers",
+                    "description": "New Zinger Pro premium Burger with 1 Pc Hot & Crispy and Pepsi PET 475ml at a deal price",
+                    "imageId": "6bafd5f307841d1025401757c7be3521",
+                    "inStock": 1,
+                    "price": 39905,
+                    "itemAttribute": {
+                        "vegClassifier": "NONVEG"
+                    },
+                    "ribbon": {},
+                    "type": "ITEM",
+                    "offerTags": [
+                        {
+                            "title": "40% OFF",
+                            "subTitle": "USE SWIGGYIT",
+                            "textColor": "#DB6742",
+                            "backgroundColor": "#FAE8E3"
+                        }
+                    ],
+                    "itemBadge": {},
+                    "badgesV2": {},
+                    "ratings": {
+                        "aggregatedRating": {}
+                    }
+                },
+                {
+                    "id": "55853174",
+                    "name": "Chicken Burger Buddy Meal",
+                    "category": "Burgers",
+                    "description": "Save Rs. 40 & Share 2 Classic Chicken Zinger Burgers & a Medium Chicken Popcorn in this delightful combo for 2",
+                    "imageId": "8f9137a6bae94a4d61fcc4fa1c3c15cd",
+                    "inStock": 1,
+                    "price": 52857,
+                    "itemAttribute": {
+                        "vegClassifier": "NONVEG"
+                    },
+                    "ribbon": {},
+                    "type": "ITEM",
+                    "offerTags": [
+                        {
+                            "title": "40% OFF",
+                            "subTitle": "USE SWIGGYIT",
+                            "textColor": "#DB6742",
+                            "backgroundColor": "#FAE8E3"
+                        }
+                    ],
+                    "itemBadge": {},
+                    "badgesV2": {},
+                    "ratings": {
+                        "aggregatedRating": {
+                            "rating": "4.4",
+                            "ratingCount": "87 ratings",
+                            "ratingCountV2": "87"
+                        }
+                    }
+                },
+                {
+                    "id": "62208124",
+                    "name": "Mixed Chicken Zinger Burger Doubles",
+                    "category": "Burgers",
+                    "description": "Save Rs.41 on Best-seller combo of classic chicken Zinger & Tandoori zinger burgers",
+                    "imageId": "dd434d7cd80de42b3d04cb979aeacb46",
+                    "inStock": 1,
+                    "price": 36857,
+                    "variants": {},
+                    "variantsV2": {},
+                    "itemAttribute": {
+                        "vegClassifier": "NONVEG"
+                    },
+                    "ribbon": {},
+                    "type": "ITEM",
+                    "itemBadge": {},
+                    "badgesV2": {},
+                    "ratings": {
+                        "aggregatedRating": {
+                            "rating": "4.0",
+                            "ratingCount": "239 ratings",
+                            "ratingCountV2": "239"
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

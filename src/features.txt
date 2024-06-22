@@ -1,0 +1,3 @@
+-> categories -> rolls | combos | thali | pizza | burger | desserts and sweets
+
+-> show name instead of id in route

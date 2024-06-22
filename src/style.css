@@ -1,0 +1,324 @@
+.main-wrapper {
+    font-family: sans-serif;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.specific-wrapper {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgb(158, 155, 155);
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+}
+
+.header ul {
+    float: right;
+    width: 60%;
+}
+
+.link {
+    text-decoration: none;
+    color: black;
+}
+
+.navbar {
+    width: 300px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.navbar li {
+    font-size: 20px;
+    font-weight: 500;
+    list-style-type: none;
+}
+
+.card {
+    border: none;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin: 10px;
+    width: 480px;
+    height: 550px;
+    margin-bottom: 20vh;
+}
+
+.card h2 {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.card h4,
+h3 {
+    font-size: 20px;
+}
+
+.border-bottom {
+    border-bottom: 1px solid rgb(158, 155, 155);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 20px;
+    font-weight: 400;
+    color: rgb(88, 86, 86);
+}
+
+.additional {
+    font-size: 26px;
+    font-weight: 400;
+    color: rgb(88, 86, 86);
+}
+
+.text-light {
+    font-size: 22px;
+    font-weight: 400;
+    color: rgb(88, 86, 86);
+}
+
+.pizzaImg {
+    width: 100%;
+    height: 80%;
+}
+
+.card-wrapper {
+    flex-wrap: wrap;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-box {
+    width: 300px;
+    height: 35px;
+}
+
+.search-wrapper {
+    display: flex;
+}
+
+.specific-card {
+    margin: 20px;
+    width: 900px;
+}
+
+.specifc-card h2 {
+    font-weight: 300;
+}
+
+.specifc-heading {
+    font-size: 30px;
+    margin-bottom: 2vh;
+}
+
+.specific-card-subheading {
+    font-weight: 600;
+    font-size: 22px;
+}
+
+.about {
+    margin: 10px 80px;
+}
+
+.about h4 {
+    font-size: 30px;
+}
+
+.about-desc {
+    text-align: justify;
+}
+
+.menu-heading {
+    margin-top: 10vh;
+    font-size: 30px;
+    color: rgb(112, 112, 112);
+}
+
+.menu-category {
+    font-size: 30px;
+    margin: 4vh 0;
+    font-weight: 600;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.search-cart-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    width: 700px;
+    align-items: center;
+}
+
+.cart-wrapper {
+    width: 300px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.cart-wrapper .username {
+    text-transform: capitalize;
+    font-weight: 600;
+}
+
+.cart-items-length {
+    margin-left: 4px;
+    font-size: 12px;
+}
+
+.card-cart {
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px;
+    margin: auto;
+    width: 90%;
+    height: 300px;
+}
+
+.pizzaImg-cart {
+    width: 200px;
+    height: 110px;
+}
+
+.text-cart {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-head {
+    text-align: center;
+}
+
+.clear-cart-btn {
+    margin-bottom: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clear-cart-btn button {
+    height: 30px;
+    width: 200px;
+}
+
+.cart-remove-btn {
+    height: 30px;
+    width: 80px;
+}
+
+.item-add {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+    margin-bottom: 4vh;
+    border-bottom: 1px solid rgb(104, 103, 103);
+}
+
+.item-add-data {
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.item-add-data h2 {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.item-add-data .menu-dish-name {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.item-add h6 {
+    font-size: 20px;
+}
+
+.item-add button {
+    height: 40px;
+    width: 60px;
+}
+
+.offer-banner {
+    padding: 2vh;
+}
+
+.offerCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 250px;
+    border: 1px solid rgb(173, 173, 173);
+    width: 580px;
+    margin: 20px;
+    padding: 10px;
+}
+
+.offer-card-wrapper {
+    flex-wrap: wrap;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.copy-coupon-code {
+    width: 100px;
+}
+
+.cart-content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cart-data {
+    width: 60%;
+}
+
+.login-user {
+    display: flex;
+    flex-direction: column;
+}
+
+.userInfo {
+    width: 200px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.user-dropdown {
+    display: none;
+    background-color: aqua;
+}

@@ -1,0 +1,460 @@
+{
+    "restaurants": [
+        {
+            "id": "780417",
+            "name": "California Burrito",
+            "cloudinaryImageId": "bfc67762fa34dd47250975f3e8131344",
+            "image": "californiaburrito.png",
+            "locality": "Naharpur",
+            "areaName": "Rohini",
+            "costForTwo": "₹250 for two",
+            "cuisines": [
+                "Mexican",
+                "American",
+                "Salads",
+                "Continental"
+            ],
+            "avgRating": 4.4,
+            "parentId": "1252",
+            "avgRatingString": "4.4",
+            "totalRatingsString": "100+",
+            "sla": {
+                "deliveryTime": 18,
+                "lastMileTravel": 1.6,
+                "serviceability": "SERVICEABLE",
+                "slaString": "18 mins",
+                "lastMileTravelString": "1.6 km",
+                "iconType": "ICON_TYPE_EMPTY"
+            },
+            "availability": {
+                "nextCloseTime": "2024-02-09 03:00:00",
+                "opened": true
+            },
+            "isOpen": true,
+            "type": "F",
+            "aggregatedDiscountInfoV3": {
+                "header": "50% OFF",
+                "subHeader": "UPTO ₹100"
+            }
+        },
+        {
+            "id": "354629",
+            "name": "BOX8 - Desi Meals",
+            "cloudinaryImageId": "69a061b7e0f951cef2b4947946f94ec6",
+            "image": "bigbox.png",
+            "locality": "Sector 7",
+            "areaName": "Rohini",
+            "costForTwo": "₹250 for two",
+            "cuisines": [
+                "North Indian",
+                "Biryani",
+                "Thalis",
+                "Home Food"
+            ],
+            "avgRating": 4.3,
+            "parentId": "10655",
+            "avgRatingString": "4.3",
+            "totalRatingsString": "1K+",
+            "sla": {
+                "deliveryTime": 32,
+                "lastMileTravel": 2.8,
+                "serviceability": "SERVICEABLE",
+                "slaString": "27-37 mins",
+                "lastMileTravelString": "2.8 km",
+                "iconType": "ICON_TYPE_EMPTY"
+            },
+            "availability": {
+                "nextCloseTime": "2024-02-09 02:00:00",
+                "opened": true
+            },
+            "isOpen": true,
+            "type": "F",
+            "aggregatedDiscountInfoV3": {
+                "header": "EVERY ITEM",
+                "subHeader": "@ ₹179"
+            }
+        },
+        {
+            "id": "603438",
+            "name": "Chinese Wok",
+            "cloudinaryImageId": "e0839ff574213e6f35b3899ebf1fc597",
+            "image": "chinesewok.png",
+            "locality": "Sector 7",
+            "areaName": "Rohini",
+            "costForTwo": "₹250 for two",
+            "cuisines": [
+                "Chinese",
+                "Asian",
+                "Tibetan",
+                "Desserts"
+            ],
+            "avgRating": 4,
+            "parentId": "61955",
+            "avgRatingString": "4.0",
+            "totalRatingsString": "500+",
+            "sla": {
+                "deliveryTime": 22,
+                "lastMileTravel": 2.8,
+                "serviceability": "SERVICEABLE",
+                "slaString": "22 mins",
+                "lastMileTravelString": "2.8 km",
+                "iconType": "ICON_TYPE_EMPTY"
+            },
+            "availability": {
+                "nextCloseTime": "2024-02-08 23:00:00",
+                "opened": true
+            },
+            "badges": {},
+            "isOpen": true,
+            "type": "F",
+            "aggregatedDiscountInfoV3": {
+                "header": "50% OFF",
+                "subHeader": "UPTO ₹100"
+            }
+        },
+        {
+            "id": "40415",
+            "name": "Bikanervala",
+            "image": "bikaner.png",
+            "cloudinaryImageId": "bhb6fmjbetmpa2nh3w0t",
+            "locality": "Ring Road",
+            "areaName": "Rohini",
+            "costForTwo": "₹300 for two",
+            "cuisines": [
+                "North Indian",
+                "Snacks",
+                "Chaat",
+                "Sweets"
+            ],
+            "avgRating": 4.4,
+            "veg": true,
+            "parentId": "45936",
+            "avgRatingString": "4.4",
+            "totalRatingsString": "10K+",
+            "sla": {
+                "deliveryTime": 19,
+                "lastMileTravel": 1.8,
+                "serviceability": "SERVICEABLE",
+                "slaString": "19 mins",
+                "lastMileTravelString": "1.8 km",
+                "iconType": "ICON_TYPE_EMPTY"
+            },
+            "availability": {
+                "nextCloseTime": "2024-02-09 00:00:00",
+                "opened": true
+            },
+            "badges": {
+                "imageBadges": [
+                    {
+                        "imageId": "v1695133679/badges/Pure_Veg111.png",
+                        "description": "pureveg"
+                    }
+                ]
+            },
+            "isOpen": true,
+            "aggregatedDiscountInfoV2": {},
+            "type": "F"
+        },
+        {
+            "id": "733714",
+            "name": "Chicago Pizza",
+            "image": "chicagopizza.png",
+            "cloudinaryImageId": "80f040545552605e33eba09f8fa30be9",
+            "locality": "Sector 8",
+            "areaName": "Rohini",
+            "costForTwo": "₹500 for two",
+            "cuisines": [
+                "Fast Food",
+                "Pizzas"
+            ],
+            "avgRating": 3.8,
+            "parentId": "60277",
+            "avgRatingString": "3.8",
+            "totalRatingsString": "50+",
+            "sla": {
+                "deliveryTime": 25,
+                "lastMileTravel": 2.4,
+                "serviceability": "SERVICEABLE",
+                "slaString": "25 mins",
+                "lastMileTravelString": "2.4 km",
+                "iconType": "ICON_TYPE_EMPTY"
+            },
+            "availability": {
+                "nextCloseTime": "2024-02-08 23:00:00",
+                "opened": true
+            },
+            "badges": {},
+            "isOpen": true,
+            "type": "F",
+            "aggregatedDiscountInfoV3": {
+                "header": "₹125 OFF",
+                "subHeader": "ABOVE ₹199",
+                "discountTag": "FLAT DEAL"
+            }
+        },
+        {
+            "id": "423775",
+            "name": "Dough & Cream",
+            "image": "doughandcream.png",
+            "cloudinaryImageId": "ryp5qgrhm2hdshunww2t",
+            "locality": "Chaudhary Balbir Singh Marg",
+            "areaName": "Paschim Vihar",
+            "costForTwo": "₹250 for two",
+            "cuisines": [
+                "Bakery",
+                "Desserts",
+                "Snacks",
+                "Pizzas"
+            ],
+            "avgRating": 4.1,
+            "parentId": "11127",
+            "avgRatingString": "4.1",
+            "totalRatingsString": "1K+",
+            "sla": {
+                "deliveryTime": 27,
+                "lastMileTravel": 4.9,
+                "serviceability": "SERVICEABLE",
+                "slaString": "27 mins",
+                "lastMileTravelString": "4.9 km",
+                "iconType": "ICON_TYPE_EMPTY"
+            },
+            "availability": {
+                "nextCloseTime": "2024-02-08 23:00:00",
+                "opened": true
+            },
+            "badges": {
+                "textExtendedBadges": [
+                    {
+                        "iconId": "guiltfree/GF_Logo_android_3x",
+                        "shortDescription": "options available",
+                        "fontColor": "#7E808C"
+                    }
+                ]
+            },
+            "isOpen": true,
+            "type": "F",
+            "aggregatedDiscountInfoV3": {
+                "header": "50% OFF",
+                "subHeader": "UPTO ₹100"
+            }
+        },
+        {
+            "id": "326440",
+            "name": "Punjabi Angithi (Vegorama Group)",
+            "image": "punjabiangithi.png",
+            "cloudinaryImageId": "g2pklvjnapzfoc4ackou",
+            "locality": "Paschim Vihar",
+            "areaName": "Paschim Vihar",
+            "costForTwo": "₹400 for two",
+            "cuisines": [
+                "Chinese",
+                "Punjabi",
+                "Kebabs",
+                "Tandoor"
+            ],
+            "avgRating": 4.2,
+            "veg": true,
+            "parentId": "465050",
+            "avgRatingString": "4.2",
+            "totalRatingsString": "10K+",
+            "sla": {
+                "deliveryTime": 31,
+                "lastMileTravel": 5,
+                "serviceability": "SERVICEABLE",
+                "slaString": "31 mins",
+                "lastMileTravelString": "5.0 km",
+                "iconType": "ICON_TYPE_EMPTY"
+            },
+            "availability": {
+                "nextCloseTime": "2024-02-08 22:45:00",
+                "opened": true
+            },
+            "isOpen": true,
+            "type": "F",
+            "aggregatedDiscountInfoV3": {
+                "header": "₹125 OFF",
+                "subHeader": "ABOVE ₹249",
+                "discountTag": "FLAT DEAL"
+            }
+        },
+        {
+            "id": "341033",
+            "name": "Bakingo",
+            "image": "bakingo.png",
+            "cloudinaryImageId": "05994df0e49725bd230146c320b8f7aa",
+            "locality": "Rithala",
+            "areaName": "Rohini",
+            "costForTwo": "₹300 for two",
+            "cuisines": [
+                "Bakery",
+                "Desserts",
+                "Beverages",
+                "Snacks"
+            ],
+            "avgRating": 4.4,
+            "parentId": "3818",
+            "avgRatingString": "4.4",
+            "totalRatingsString": "1K+",
+            "sla": {
+                "deliveryTime": 22,
+                "lastMileTravel": 3,
+                "serviceability": "SERVICEABLE",
+                "slaString": "22 mins",
+                "lastMileTravelString": "3.0 km",
+                "iconType": "ICON_TYPE_EMPTY"
+            },
+            "availability": {
+                "nextCloseTime": "2024-02-09 00:00:00",
+                "opened": true
+            },
+            "badges": {},
+            "isOpen": true,
+            "aggregatedDiscountInfoV2": {},
+            "type": "F"
+        },
+        {
+            "id": "10392",
+            "name": "Subway",
+            "image": "subway.png",
+            "cloudinaryImageId": "63178e3e64d503a479f2a2048a474552",
+            "locality": "Sector 3",
+            "areaName": "Rohini",
+            "costForTwo": "₹350 for two",
+            "cuisines": [
+                "Salads",
+                "Snacks",
+                "Desserts",
+                "Beverages"
+            ],
+            "avgRating": 4.1,
+            "parentId": "2",
+            "avgRatingString": "4.1",
+            "totalRatingsString": "10K+",
+            "sla": {
+                "deliveryTime": 22,
+                "lastMileTravel": 2,
+                "serviceability": "SERVICEABLE",
+                "slaString": "22 mins",
+                "lastMileTravelString": "2.0 km",
+                "iconType": "ICON_TYPE_EMPTY"
+            },
+            "availability": {
+                "nextCloseTime": "2024-02-09 04:00:00",
+                "opened": true
+            },
+            "isOpen": true,
+            "type": "F",
+            "aggregatedDiscountInfoV3": {
+                "header": "40% OFF",
+                "subHeader": "UPTO ₹80"
+            }
+        },
+        {
+            "id": "26723",
+            "name": "KFC",
+            "image": "kfc.png",
+            "cloudinaryImageId": "56c9ab92bd79745fd152a30fa2525426",
+            "locality": "Sector 3",
+            "areaName": "Rohini",
+            "costForTwo": "₹400 for two",
+            "cuisines": [
+                "Burgers",
+                "Biryani",
+                "American",
+                "Snacks",
+                "Fast Food"
+            ],
+            "avgRating": 4.2,
+            "parentId": "547",
+            "avgRatingString": "4.2",
+            "totalRatingsString": "10K+",
+            "sla": {
+                "deliveryTime": 19,
+                "lastMileTravel": 2,
+                "serviceability": "SERVICEABLE",
+                "slaString": "19 mins",
+                "lastMileTravelString": "2.0 km",
+                "iconType": "ICON_TYPE_EMPTY"
+            },
+            "availability": {
+                "nextCloseTime": "2024-02-09 05:00:00",
+                "opened": true
+            },
+            "badges": {},
+            "isOpen": true,
+            "type": "F",
+            "aggregatedDiscountInfoV3": {
+                "header": "ITEMS",
+                "subHeader": "AT ₹179"
+            }
+        },
+        {
+            "id": "498382",
+            "name": "Burger King",
+            "image": "burgerking.png",
+            "cloudinaryImageId": "e33e1d3ba7d6b2bb0d45e1001b731fcf",
+            "locality": "M2K Mall",
+            "areaName": "Rohini",
+            "costForTwo": "₹350 for two",
+            "cuisines": [
+                "Burgers",
+                "American"
+            ],
+            "avgRating": 4.4,
+            "parentId": "166",
+            "avgRatingString": "4.4",
+            "totalRatingsString": "1K+",
+            "sla": {
+                "deliveryTime": 21,
+                "lastMileTravel": 2,
+                "serviceability": "SERVICEABLE",
+                "slaString": "21 mins",
+                "lastMileTravelString": "2.0 km",
+                "iconType": "ICON_TYPE_EMPTY"
+            },
+            "availability": {
+                "nextCloseTime": "2024-02-09 03:00:00",
+                "opened": true
+            },
+            "badges": {},
+            "isOpen": true,
+            "type": "F",
+            "aggregatedDiscountInfoV3": {
+                "header": "60% OFF",
+                "subHeader": "UPTO ₹120"
+            }
+        },
+        {
+            "id": "253731",
+            "name": "McDonald's",
+            "image": "mcd.png",
+            "cloudinaryImageId": "ecd32b841549ce6bfd993260a2086c1f",
+            "locality": "Sector 3",
+            "areaName": "Rohini",
+            "costForTwo": "₹400 for two",
+            "cuisines": [
+                "American"
+            ],
+            "avgRating": 4.4,
+            "parentId": "630",
+            "avgRatingString": "4.4",
+            "totalRatingsString": "5K+",
+            "sla": {
+                "deliveryTime": 22,
+                "lastMileTravel": 2.2,
+                "serviceability": "SERVICEABLE",
+                "slaString": "22 mins",
+                "lastMileTravelString": "2.2 km",
+                "iconType": "ICON_TYPE_EMPTY"
+            },
+            "availability": {
+                "nextCloseTime": "2024-02-08 23:45:00",
+                "opened": true
+            },
+            "badges": {},
+            "isOpen": true,
+            "aggregatedDiscountInfoV2": {},
+            "type": "F"
+        }
+    ]
+}

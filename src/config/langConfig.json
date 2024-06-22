@@ -1,0 +1,404 @@
+[
+    {
+        "header": {
+            "search": {
+                "en": "Search",
+                "hn": "खोज"
+            },
+            "offers": {
+                "en": "Offers",
+                "hn": "ऑफर"
+            },
+            "no_search_result": {
+                "en": "no results found",
+                "hn": "कोई परिणाम नहीं मिला"
+            },
+            "user_dropdown": {
+                "orders": {
+                    "en": "Orders",
+                    "hn": "ऑर्डर"
+                },
+                "favourites": {
+                    "en": "Favourites",
+                    "hn": "पसंदीदा"
+                },
+                "logout": {
+                    "en": "Logout",
+                    "hn": "लॉग आउट"
+                },
+                "lng": {
+                    "en": "English",
+                    "hn": "हिंदी"
+                },
+                "login": {
+                    "en": "Login",
+                    "hn": "लॉग इन"
+                },
+                "cart": {
+                    "en": "Cart",
+                    "hn": "कार्ट"
+                }
+            },
+            "categoryLabel" : {
+                "en" : "What's on your mind?",
+                "hn" : "क्या खाने का सोच रहे हो ?"
+            }
+        },
+        "banner": {
+            "en": "Welcome to FoodPoint: Your Ultimate Culinary Destination!",
+            "hn": "हंगरबाइट्स में आपका स्वागत है"
+        },
+        "location_using_gps": {
+            "en": "Get current location (using GPS)",
+            "hn": "जीपीएस का उपयोग करके अपना वर्तमान स्थान प्राप्त करें"
+        },
+        "offers": {
+            "heading": {
+                "en": "Explore top deals and offers exclusively for you!",
+                "hn": "विशेष रूप से आपके लिए ऑफ़र!"
+            }
+        },
+        "welcome": {
+            "subhead": {
+                "en": "Order food from favourite restaurants near you.",
+                "hn": "अपने नजदीकी पसंदीदा रेस्तरां से खाना ऑर्डर करें।"
+            },
+            "login": {
+                "en": "Login",
+                "hn": "लॉग इन"
+            },
+            "signup": {
+                "en": "Sign up",
+                "hn": "साइन अप "
+            },
+            "locate": {
+                "en": "Locate me",
+                "hn": "मेरा पता लगाओ"
+            },
+            "find": {
+                "en": "Find food",
+                "hn": "खाना ढूंढो"
+            },
+            "loc": {
+                "en": "Enter your delivery location",
+                "hn": "अपना डिलीवरी स्थान दर्ज करें"
+            }
+        },
+        "login": {
+            "name": {
+                "en": "enter name",
+                "hn": "नाम दर्ज करें"
+            },
+            "email": {
+                "en": "enter email id",
+                "hn": "ईमेल आईडी दर्ज करें"
+            },
+            "pass": {
+                "en": "enter password",
+                "hn": "पास वर्ड दर्ज करें"
+            },
+            "name_err": {
+                "en": "enter your name",
+                "hn": "नाम दर्ज करें"
+            },
+            "email_err": {
+                "en": "enter your email id",
+                "hn": "ईमेल आईडी दर्ज करें"
+            },
+            "pass_err": {
+                "en": "enter password",
+                "hn": "पास वर्ड दर्ज करें"
+            },
+            "login": {
+                "en": "Login",
+                "hn": "लॉग इन"
+            },
+            "signupText": {
+                "en": "Sign up",
+                "hn": "साइन अप करें"
+            },
+            "signup": {
+                "en": "Don't have an account?",
+                "hn": "कोई खाता नहीं है?"
+            }
+        },
+        "signup": {
+            "name": {
+                "en": "enter name",
+                "hn": "नाम दर्ज करें"
+            },
+            "email": {
+                "en": "enter email id",
+                "hn": "ईमेल आईडी दर्ज करें"
+            },
+            "pass": {
+                "en": "enter password",
+                "hn": "पास वर्ड दर्ज करें"
+            },
+            "confirm_pass": {
+                "en": "confirm password",
+                "hn": "पासवर्ड की पुष्टि कीजिये"
+            },
+            "name_err": {
+                "en": "enter your name",
+                "hn": "नाम दर्ज करें"
+            },
+            "email_err": {
+                "en": "enter your email id",
+                "hn": "ईमेल आईडी दर्ज करें"
+            },
+            "pass_err": {
+                "en": "enter password",
+                "hn": "पास वर्ड दर्ज करें"
+            },
+            "loginText": {
+                "en": "Login",
+                "hn": "लॉग इन करें"
+            },
+            "signup": {
+                "en": "Sign up",
+                "hn": "साइन अप"
+            },
+            "login": {
+                "en": "Don't have an account?",
+                "hn": "क्या आपके पास पहले से एक खाता मौजूद है?"
+            }
+        },
+        "footer": {
+            "disclaimer": {
+                "en": "Disclaimer",
+                "hn": "अस्वीकरण"
+            },
+            "about": {
+                "en": "About",
+                "hn": "के बारे में"
+            },
+            "privacy_policy": {
+                "en": "Privacy Policy",
+                "hn": "गोपनीयता नीति"
+            },
+            "terms": {
+                "en": "Terms and Conditions",
+                "hn": "नियम और शर्तें"
+            },
+            "copyright": {
+                "en": "All Rights Reserved. Copyright © 2024",
+                "hn": "सर्वाधिकार सुरक्षित। कॉपीराइट © 2024"
+            }
+        },
+        "rest_card": {
+            "add_to_cart": {
+                "en": "ADD",
+                "hn": "कार्ट में जोड़ें"
+            },
+            "remove": {
+                "en": "REMOVE",
+                "hn": "कार्ट से हटाएँ"
+            }
+        },
+        "orders": {
+            "current": {
+                "en": "Current Order",
+                "hn": "अभी का ऑर्डर"
+            },
+            "prev": {
+                "en": "Previous Orders",
+                "hn": "पिछले ऑर्डर"
+            },
+            "no": {
+                "en": "No Orders",
+                "hn": "कोई ऑर्डर नहीं"
+            },
+            "track": {
+                "en": "Track order on Map",
+                "hn": "मानचित्र पर ऑर्डर ट्रैक करें"
+            },
+            "order_success": {
+                "en": "Your order has been delivered successfully !",
+                "hn": "आपका ऑर्डर सफलतापूर्वक वितरित कर दिया गया है!"
+            },
+            "view": {
+                "en": "View Order",
+                "hn": "आर्डर देखें"
+            },
+            "reorder": {
+                "en": "Reorder",
+                "hn": "पुन: आर्डर"
+            },
+            "your_order": {
+                "en": "Your Order",
+                "hn": "आपका ऑर्डर"
+            }
+        },
+        "fav": {
+            "heading": {
+                "en": "Your Plate, Your Favorites: Discover Delicious Dishes from a World of Flavors!",
+                "hn": "आपकी थाली, आपका पसंदीदा: स्वादों की दुनिया से स्वादिष्ट व्यंजन खोजें!"
+            },
+            "sub_heading": {
+                "en": "You haven't selected your favourite restaurants yet",
+                "hn": "आपने अभी तक अपने पसंदीदा रेस्तरां का चयन नहीं किया है"
+            }
+        },
+        "cart": {
+            "cart": {
+                "en": "Food Cart",
+                "hn": "कार्ट"
+            },
+            "clear": {
+                "en": "Clear Cart",
+                "hn": "कार्ट को खाली करें"
+            },
+            "totalPrice": {
+                "en": "Total Price",
+                "hn": "कुल कीमत"
+            },
+            "totalItems": {
+                "en": "Total Items",
+                "hn": "कुल सामान"
+            },
+            "checkout": {
+                "en": "Checkout",
+                "hn": "चेक आउट"
+            },
+            "delete": {
+                "en": "Delete",
+                "hn": "चीज़ें हटाएं"
+            },
+            "add": {
+                "en": "Add Something",
+                "hn": "कार्ट में कुछ जोड़ें"
+            }
+        },
+        "checkout": {
+            "pay_option": {
+                "en": "Payment Options",
+                "hn": "भुगतान विकल्प"
+            },
+            "item": {
+                "en": "Item",
+                "hn": "सामान"
+            },
+            "items": {
+                "en": "Items",
+                "hn": "सामान"
+            },
+            "total": {
+                "en": "Total",
+                "hn": "कुल"
+            },
+            "cod": {
+                "en": " Pay on Delivery",
+                "hn": "पहुंचने पर भुगतान"
+            },
+            "order_tracking": {
+                "en": "Order Tracking",
+                "hn": "ऑर्डर ट्रैकिंग अनुमानित शेष समय:"
+            },
+            "eta": {
+                "en": "Estimated Time Remaining: ",
+                "hn": "अनुमानित शेष समय:"
+            }
+        },
+        "paymentForm": {
+            "heading": {
+                "en": "Payment Authorization Form",
+                "hn": "भुगतान प्राधिकरण प्रपत्र"
+            },
+            "formFields": {
+                "name": {
+                    "en": "Name",
+                    "hn": "नाम"
+                },
+                "street_add": {
+                    "en": "Street address",
+                    "hn": "गली का पता"
+                },
+                "street_add_2 ": {
+                    "en": "Street address line 2",
+                    "hn": "गली का पता"
+                },
+                "city": {
+                    "en": "City",
+                    "hn": "शहर"
+                },
+                "region": {
+                    "en": "Region",
+                    "hn": "क्षेत्र"
+                },
+                "pincode": {
+                    "en": "Pincode",
+                    "hn": "पिन कोड"
+                },
+                "state": {
+                    "en": "State",
+                    "hn": "राज्य"
+                },
+                "contact": {
+                    "en": "Contact",
+                    "hn": "संपर्क"
+                }
+            },
+            "place_order": {
+                "en": "Place Order",
+                "hn": "भोजन के लिए ऑर्डर दें"
+            }
+        },
+        "about": {
+            "main_desc": {
+                "en": "At FoodPoint, we are passionate about food and dedicated to bringing the flavors of the world to your doorstep. Our mission is simple: to provide you with a convenient and delightful way to explore, order, and savor a wide variety of cuisines from the comfort of your home.",
+                "hn": "हंगरबाइट्स में, हम भोजन के शौकीन हैं और दुनिया के स्वादों को सामने लाने के लिए समर्पित हैं आपका दरवाज़ा. हमारा मिशन सरल है: आपको एक सुविधाजनक और आनंददायक तरीका प्रदान करना अपने घर के आराम से विभिन्न प्रकार के व्यंजनों का पता लगाएं, ऑर्डर करें और उनका स्वाद लें।"
+            },
+            "story": {
+                "en": "Our journey began with a love for food and a desire to make the dining experience as convenient and enjoyable as possible. Founded in 2017, FoodPoint started as a small, family-run operation. Today, we've grown into a thriving platform, connecting hungry food enthusiasts with the best local restaurants, food trucks, and culinary artisans in your area.",
+                "hn": "हमारी यात्रा भोजन के प्रति प्रेम और भोजन के अनुभव को यथासंभव सुविधाजनक और आनंददायक बनाने की इच्छा के साथ शुरू हुई। 2017 में स्थापित, हंगरबाइट्स की शुरुआत एक छोटे, परिवार द्वारा संचालित ऑपरेशन के रूप में हुई। आज, हम एक संपन्न मंच बन गए हैं, जो भूखे भोजन के शौकीनों को आपके क्षेत्र के सर्वश्रेष्ठ स्थानीय रेस्तरां, खाद्य ट्रक और पाक कारीगरों से जोड़ रहा है।"
+            },
+            "get_in_touch": {
+                "en": "We love hearing from our customers and welcome your feedback. If you have any suggestions, comments, or questions, please don't hesitate to reach out to us. Your input helps us improve and provide you with an even better food ordering experience. Thank you for choosing FoodPoint for your culinary adventures. We look forward to being your go-to destination for satisfying your cravings and exploring the world of flavors. Savor the moments, one delicious bite at a time. Bon appétit!",
+                "hn": "हम अपने ग्राहकों से सुनना पसंद करते हैं और आपकी प्रतिक्रिया का स्वागत करते हैं। यदि आपके पास कोई सुझाव, टिप्पणी या प्रश्न हैं, तो कृपया हमसे संपर्क करने में संकोच न करें। आपका इनपुट हमें बेहतर बनाने और आपको खाना ऑर्डर करने का और भी बेहतर अनुभव प्रदान करने में मदद करता है। अपने पाक साहसिक कार्यों के लिए हंगरबाइट्स को चुनने के लिए धन्यवाद। हम आपकी लालसाओं को संतुष्ट करने और स्वादों की दुनिया की खोज के लिए आपका पसंदीदा गंतव्य बनने की आशा करते हैं। एक समय में एक स्वादिष्ट भोजन के साथ क्षणों का आनंद लें। बॉन एपेतीत!"
+            },
+            "team": {
+                "en": "Behind FoodPoint is a dedicated team of foodies, tech enthusiasts, and customer service experts who work tirelessly to ensure your experience is top-notch. We're here to assist you, whether you have questions about our service, need help with an order, or simply want recommendations on what to try next.",
+                "hn": "हंगरबाइट्स के पीछे खाने-पीने के शौकीनों, तकनीक के शौकीनों और ग्राहक सेवा विशेषज्ञों की एक समर्पित टीम है जो यह सुनिश्चित करने के लिए अथक प्रयास करते हैं कि आपका अनुभव शीर्ष स्तर का हो। हम आपकी सहायता के लिए यहां हैं, चाहे आपके पास हमारी सेवा के बारे में प्रश्न हों, किसी ऑर्डर के लिए सहायता की आवश्यकता हो, या बस आगे क्या प्रयास करना है इसके बारे में अनुशंसाएँ चाहिए।"
+            },
+            "commit": {
+                "en": "At FoodPoint, we believe that good food is more than just sustenance; it's an experience. That's why we've made it our mission to create a seamless, user-friendly platform that enables you to explore a world of flavors at your fingertips. We are committed to:",
+                "hn": "हंगरबाइट्स में, हमारा मानना ​​है कि अच्छा भोजन सिर्फ जीविका से कहीं अधिक है; यह एक अनुभव है. इसीलिए हमने एक सहज, उपयोगकर्ता-अनुकूल प्लेटफ़ॉर्म बनाने को अपना मिशन बना लिया है जो आपको अपनी उंगलियों पर स्वादों की दुनिया का पता लगाने में सक्षम बनाता है। हम इसके लिए प्रतिबद्ध हैं:"
+            },
+            "commit_sub": {
+                "quality": {
+                    "en": "Quality",
+                    "hn": "गुणवत्ता"
+                },
+                "variety": {
+                    "en": "Variety",
+                    "hn": "विविधता"
+                },
+                "convenience": {
+                    "en": "Convenience",
+                    "hn": "सुविधा"
+                },
+                "reliability": {
+                    "en": "Reliability",
+                    "hn": "विश्वसनीयता"
+                },
+                "quality1": {
+                    "en": "We partner with only the finest local restaurants and eateries to ensure that every dish you order is of the highest quality and freshness.",
+                    "hn": "हम यह सुनिश्चित करने के लिए केवल बेहतरीन स्थानीय रेस्तरां और भोजनालयों के साथ साझेदारी करते हैं कि आपके द्वारा ऑर्डर किया गया प्रत्येक व्यंजन उच्चतम गुणवत्ता और ताजगी वाला हो।"
+                },
+                "variety1": {
+                    "en": "With a diverse range of cuisines and menus to choose from, you'll never run out of options. From comfort food to international delights, we've got it all.",
+                    "hn": "चुनने के लिए विविध प्रकार के व्यंजनों और मेनू के साथ, आपके पास कभी भी विकल्पों की कमी नहीं होगी। आरामदायक भोजन से लेकर अंतर्राष्ट्रीय व्यंजनों तक, हमारे पास सब कुछ है।"
+                },
+                "convenience1": {
+                    "en": "Ordering food online should be easy and hassle-free. Our user-friendly website and mobile app make the process simple and straightforward.",
+                    "hn": "ऑनलाइन खाना ऑर्डर करना आसान और परेशानी मुक्त होना चाहिए। हमारी उपयोगकर्ता-अनुकूल वेबसाइट और मोबाइल ऐप प्रक्रिया को सरल और सीधा बनाते हैं।"
+                },
+                "reliability1": {
+                    "en": "We understand that your time is precious. We promise prompt deliveries and real-time order tracking to keep you informed every step of the way.",
+                    "hn": "हम समझते हैं कि आपका समय बहुमूल्य है। हम आपको हर कदम पर सूचित रखने के लिए त्वरित डिलीवरी और वास्तविक समय ऑर्डर ट्रैकिंग का वादा करते हैं।"
+                }
+            }
+        }
+    }
+]

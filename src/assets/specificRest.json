@@ -1,0 +1,1426 @@
+{
+    "cards": [
+        {
+            "id": "780417",
+            "name": "California Burrito",
+            "avgRating": 4.4,
+            "sla": {
+                "deliveryTime": 18,
+                "lastMileTravel": 1.6,
+                "serviceability": "SERVICEABLE",
+                "slaString": "18 mins",
+                "lastMileTravelString": "1.6 km",
+                "iconType": "ICON_TYPE_EMPTY"
+            },
+            "menu": [
+                {
+                    "id": "126680480",
+                    "name": "Barbeque Paneer Rice Bowl (Mini)",
+                    "category": "Honest Bowls",
+                    "description": "Serves 1 | Fresh cilantro rice and everything nice. Comes with your favourite toppings, fajita veggies like bell peppers and onions, pico de galla and grilled BBQ Paneer. Make it just the way you like it!",
+                    "imageId": "f590ac3a24773c350ccc5e8dcfcbd808",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 25900
+                },
+                {
+                    "id": "126680484",
+                    "name": "Grilled Barbeque Chicken Rice Bowl (Mini)",
+                    "category": "Honest Bowls",
+                    "description": "Serves 1 | Fresh cilantro rice and everything nice. Comes with your favourite toppings, fajita veggies like bell peppers and onions, pico de galla and grilled chicken. Make it just the way you like it!",
+                    "imageId": "850b109187edc3968df3c00cc8b9c825",
+                    "inStock": 1,
+                    "price": 25900
+                },
+                {
+                    "id": "126680485",
+                    "name": "Barbeque Paneer Rice Bowl (Regular)",
+                    "category": "Honest Bowls",
+                    "description": "Serves 1 | Fresh cilantro rice and everything nice. Comes with your favourite toppings, fajita veggies like bell peppers and onions, pico de galla and BBQ Paneer. Make it just the way you like it!",
+                    "imageId": "f590ac3a24773c350ccc5e8dcfcbd808",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 31900
+                },
+                {
+                    "id": "126680492",
+                    "name": "Grilled Barbeque Chicken Rice Bowl (Regular)",
+                    "category": "Honest Bowls",
+                    "description": "Serves 1 | Fresh cilantro rice and everything nice. Comes with your favourite toppings, fajita veggies like bell peppers and onions, pico de galla and grilled chicken. Make it just the way you like it!",
+                    "imageId": "850b109187edc3968df3c00cc8b9c825",
+                    "inStock": 1,
+                    "price": 31900
+                },
+                {
+                    "id": "126680481",
+                    "name": "Crispy Mushroom Rice Bowl (Mini)",
+                    "category": "Honest Bowls",
+                    "description": "Serves 1 | Fresh cilantro rice and everything nice. Comes with your favourite toppings, fajita veggies like bell peppers and onions, pico de galla and crispy mushroom. Make it just the way you like it!",
+                    "imageId": "34c3bd4a0c92ed117b93bb21c263ba69",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 25500
+                },
+                {
+                    "id": "126680486",
+                    "name": "Crispy Mushroom Rice Bowl (Regular)",
+                    "category": "Honest Bowls",
+                    "description": "Serves 1 | Fresh cilantro rice and everything nice. Comes with your favourite toppings, fajita veggies like bell peppers and onions, pico de galla and crispy mushroom. Make it just the way you like it!",
+                    "imageId": "34c3bd4a0c92ed117b93bb21c263ba69",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 30900
+                },
+                {
+                    "id": "126680482",
+                    "name": "Peri Peri Potato Rice Bowl (Mini)",
+                    "category": "Honest Bowls",
+                    "description": "Serves 1 | Fresh cilantro rice and everything nice. Comes with your favourite toppings, fajita veggies like bell peppers and onions, pico de galla and peri peri potato. Make it just the way you like it!",
+                    "imageId": "64190258f5ce49be309637ee86bbd17f",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 21900
+                },
+                {
+                    "id": "126680487",
+                    "name": "Peri Peri Potato Rice Bowl (Regular)",
+                    "category": "Honest Bowls",
+                    "description": "Serves 1 | Fresh cilantro rice and everything nice. Comes with your favourite toppings, fajita veggies like bell peppers and onions, pico de galla and peri peri potato. Make it just the way you like it!",
+                    "imageId": "64190258f5ce49be309637ee86bbd17f",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 27900
+                },
+                {
+                    "id": "126680483",
+                    "name": "Mexican Spicy Paneer Rice Bowl (Mini)",
+                    "category": "Honest Bowls",
+                    "description": "Serves 1 | Fresh cilantro rice and everything nice. Comes with your favourite toppings, fajita veggies like bell peppers and onions, pico de galla and mexican spicy paneer. Make it just the way you like it!",
+                    "imageId": "93e99c97da526f9f84c4ca1d0e0d69a6",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 25900
+                },
+                {
+                    "id": "126680488",
+                    "name": "Mexican Spicy Paneer Rice Bowl (Regular)",
+                    "category": "Honest Bowls",
+                    "description": "Serves 1 | Fresh cilantro rice and everything nice. Comes with your favourite toppings, fajita veggies like bell peppers and onions, pico de galla and mexican spicy paneer. Make it just the way you like it!",
+                    "imageId": "93e99c97da526f9f84c4ca1d0e0d69a6",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 31900
+                },
+                {
+                    "id": "126680599",
+                    "name": "Crispy Peri Peri Chicken Rice Bowl (Regular)",
+                    "category": "Honest Bowls",
+                    "description": "Serves 1 | Fresh cilantro rice and everything nice. Comes with your favourite toppings, fajita veggies like bell peppers and onions, pico de galla and crispy chicken. Make it just the way you like it!",
+                    "imageId": "e27ed32be7247b7a1d0b57cb12e64efd",
+                    "inStock": 1,
+                    "price": 31900
+                }
+            ]
+        },
+        {
+            "id": "354629",
+            "name": "BOX8 - Desi Meals",
+            "avgRating": 4.3,
+            "sla": {
+                "deliveryTime": 32,
+                "lastMileTravel": 2.8,
+                "serviceability": "SERVICEABLE",
+                "slaString": "27-37 mins",
+                "lastMileTravelString": "2.8 km",
+                "iconType": "ICON_TYPE_EMPTY"
+            },
+            "menu": [
+                {
+                    "id": "88988537",
+                    "name": "Dal Makhani Thali Meal",
+                    "category": "All-in-1 Thali Meals",
+                    "description": "Creamy Dal Makhni cooked overnight + Dal makhni /Chole/Dilli Rajma/ + Paratha/Rice + Salad + Chutney + Dessert.",
+                    "imageId": "e6e9177035050d7a48393bb4edf30d61",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 26900,
+                    "finalPrice": 17900
+                },
+                {
+                    "id": "88988556",
+                    "name": "Butter Chicken Thali Meal",
+                    "category": "All-in-1 Thali Meals",
+                    "description": "Seriously delicious Butter Chicken + Dal Makhni/Chole/Dilli Rajma + Paratha/Rice + Salad + Chutney + Dessert.",
+                    "imageId": "3e6b710c8f2ba0227f6d449d99f5aa7a",
+                    "inStock": 1,
+                    "price": 31900,
+                    "finalPrice": 17900
+                },
+                {
+                    "id": "128409607",
+                    "name": "Homestyle Chicken Meal",
+                    "category": "All-in-1 Thali Meals",
+                    "description": "Homestyle Chicken + Dal Makhni/Chole/Dilli Rajma + Paratha/Rice + Salad + Chutney + Dessert.",
+                    "imageId": "01a5e5179d3583ea929b7f987ddc9777",
+                    "inStock": 1,
+                    "price": 31900,
+                    "finalPrice": 17900
+                },
+                {
+                    "id": "88988577",
+                    "name": "Kadhai Chicken Thali Meal",
+                    "category": "All-in-1 Thali Meals",
+                    "description": "Tender boneless chicken slow cooked in a curry of freshly ground spices + Dal Makhni/Chole/Dilli Rajma + Paratha/Rice + Salad + Chutney + Dessert.",
+                    "imageId": "524fe16a853e72a7e2416669632acaae",
+                    "inStock": 1,
+                    "price": 31900,
+                    "finalPrice": 17900
+                },
+                {
+                    "id": "88988599",
+                    "name": "Subz Handi Mini Meal",
+                    "category": "Mini Thali Meals",
+                    "description": "Assorted veggies + paneer simmered in a lavish curry + Paratha/Rice + Salad. Absolutely lip-smacking!",
+                    "imageId": "66c829c6e7f50250ee75752413ea5cfa",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 23900,
+                    "finalPrice": 17900
+                },
+                {
+                    "id": "88988562",
+                    "name": "Dilli Wale Rajma Rice Bowl",
+                    "category": "Desi Rice Bowls",
+                    "description": "Really good Rajma served with Rice + Salad + Mint chutney + Garlic yogurt. Comfort meal at it's best!",
+                    "imageId": "hr14fsiayijfr968g6my",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 21900,
+                    "finalPrice": 17900
+                },
+                {
+                    "id": "88988336",
+                    "name": "Chicken Tikka Rice Bowl",
+                    "category": "Desi Rice Bowls",
+                    "description": "Fire-grilled chicken tikka in masala curry; Served with Rice + Salad + Mint chutney + Garlic yogurt.",
+                    "imageId": "vtpompn4oxmd8bipzn1k",
+                    "inStock": 1,
+                    "price": 27900,
+                    "finalPrice": 17900
+                },
+                {
+                    "id": "128409601",
+                    "name": "Egg Dum Biryani",
+                    "category": "Dum Biryani",
+                    "description": "[Comes with Raita] 2 boiled eggs marinated in masalas, layered with basmati rice. A perfect symphony of flavours!",
+                    "imageId": "697c43eb7ad8f42fcfc04309a56f2456",
+                    "inStock": 1,
+                    "price": 24900,
+                    "finalPrice": 17900
+                },
+                {
+                    "id": "128409600",
+                    "name": "Chicken Tangdi Biryani",
+                    "category": "Dum Biryani",
+                    "description": "[Comes with Raita, 1 Leg Pc with Bone] Tender chicken tangdi marinated in rustic spices, layered between basmati rice & slow-cooked on dum.",
+                    "imageId": "7b84f9a64e962d813c242c93d2a055a2",
+                    "inStock": 1,
+                    "price": 26900,
+                    "finalPrice": 17900
+                },
+                {
+                    "id": "88988467",
+                    "name": "Murg Dum Biryani",
+                    "category": "Dum Biryani",
+                    "description": "Succulent chicken (boneless) layered over aromatic super-long grain rice, slow cooked in quintessential dum style!",
+                    "imageId": "de511f89e43e3e129fb1474d0cd295cf",
+                    "inStock": 1,
+                    "price": 29900,
+                    "finalPrice": 17900
+                },
+                {
+                    "id": "88988701",
+                    "name": "Kadhai Paneer 500ml Family Pack",
+                    "category": "Main Course",
+                    "description": "Soft paneer simmered in masala curry made with freshly ground spices. Unique blend of flavours!",
+                    "imageId": "cfyd04uygydf7a0zxwod",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 37900,
+                    "finalPrice": 17900
+                },
+                {
+                    "id": "88988658",
+                    "name": "Mayo Tikki Roll",
+                    "category": "Paratha Rolls",
+                    "description": "Crispy 'Grilled' veg tikki topped generously with mayo, green chutney & exotic veggies, wrapped in a whole wheat paratha. Lip smacking!",
+                    "imageId": "evurb4ugqblta34implq",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 16900
+                }
+            ]
+        },
+        {
+            "id": "603438",
+            "name": "Chinese Wok",
+            "avgRating": 4,
+            "sla": {
+                "deliveryTime": 22,
+                "lastMileTravel": 2.8,
+                "serviceability": "SERVICEABLE",
+                "slaString": "22 mins",
+                "lastMileTravelString": "2.8 km",
+                "iconType": "ICON_TYPE_EMPTY"
+            },
+            "menu": [
+                {
+                    "id": "118213041",
+                    "name": "Combo for 1 Veg",
+                    "category": "Combos",
+                    "description": "Serves 1 | Combo for one (Rice/Noodle Bowl with choice of Veg Gravy, Veg Momos & Drinks)",
+                    "imageId": "3e4f7ca32bf517b390f1cb3205b892e4",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "variants": {},
+                    "defaultPrice": 35900
+                },
+                {
+                    "id": "118213042",
+                    "name": "Combo for 1 Non-Veg",
+                    "category": "Combos",
+                    "description": "Serves 1 | Combo for one (Rice/Noodle Bowl with choice of Non-Veg Gravy, Non- Veg Momos & Drinks)",
+                    "imageId": "440c06ace44b931b729d9b6a090aba07",
+                    "defaultPrice": 37900
+                },
+                {
+                    "id": "133683097",
+                    "name": "Steamed Veg Wheat Momos With Momo Chutney",
+                    "category": "Momos",
+                    "description": "Serves 1 | Aromatic mixture of minced vegetables encased in wheat wrapper. Served with momo chutney",
+                    "imageId": "fd1eeadc20ff34308ff365ae2ce45659",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "defaultPrice": 23000
+                },
+                {
+                    "id": "133683098",
+                    "name": "Steamed Chicken Wheat Momos With Momo Chutney",
+                    "category": "Momos",
+                    "description": "Serves 1 | Aromatic chicken mince encased in wheat wrapper.Served with momo chutney",
+                    "imageId": "34c4e4459727b4429974700d487a9b48",
+                    "defaultPrice": 24000
+                },
+                {
+                    "id": "133683099",
+                    "name": "Fried Veg Wheat Momos With Momo Chutney",
+                    "category": "Momos",
+                    "description": "Serves 1 | Aromatic mixture of minced vegetables encased & fried in wheat wrapper. Served with momo chutney",
+                    "imageId": "800f58db1ea02ccfb12f8d13667c7a79",
+                    "defaultPrice": 25000
+                },
+                {
+                    "id": "133683100",
+                    "name": "Fried Chicken Wheat Momos With Momo Chutney",
+                    "category": "Momos",
+                    "description": "Serves 1 | Aromatic chicken mince encased & fried in wheat wrapper. Served with momo chutney",
+                    "imageId": "8c5022135bbffbd592814e53e3c59c60",
+                    "defaultPrice": 25900
+                },
+                {
+                    "id": "133683085",
+                    "name": "Steamed Veg Wheat Momos With Momo Chutney - 12 Pcs",
+                    "category": "Momos",
+                    "description": "Serves 1 | Aromatic mixture of minced vegetables encased in wheat wrapper. Served with momo chutney",
+                    "imageId": "4d2f2e67adf6c2acfecf246f99594ee5",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 34000
+                },
+                {
+                    "id": "133607702",
+                    "name": "Salted Caramel Choco Mousse",
+                    "category": "Dessert",
+                    "description": "Serves 1 | Layers of Salted Caramel mousse and Choco mousse served chilled",
+                    "imageId": "3ded4072d30fde445c7e3bbc4d442b5f",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 8900
+                }
+            ]
+        },
+        {
+            "id": "40415",
+            "name": "Bikanervala",
+            "avgRating": 4.4,
+            "sla": {
+                "deliveryTime": 19,
+                "lastMileTravel": 1.8,
+                "serviceability": "SERVICEABLE",
+                "slaString": "19 mins",
+                "lastMileTravelString": "1.8 km",
+                "iconType": "ICON_TYPE_EMPTY"
+            },
+            "menu": [
+                {
+                    "id": "39887411",
+                    "name": "Bedmi Puri With Aloo Subji",
+                    "category": "Good Morning Menu",
+                    "description": "Serves 1 | Bedmi Puri with Aloo Subzi is a popular North Indian breakfast or brunch dish.This item contains Aloo Subji with 2 pieces of Bedmi Puri",
+                    "imageId": "ge3tdfspzgylxnna8ltf",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 12000
+                },
+                {
+                    "id": "47676320",
+                    "name": "Gajar Halwa",
+                    "category": "Winter Special",
+                    "description": "Gajar Halwa is a popular and indulgent Indian dessert that is cherished for its rich, sweet, and aromatic flavors.",
+                    "imageId": "tzhv1nzsjfocsl9pga5a",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "defaultPrice": 34000
+                },
+                {
+                    "id": "100163924",
+                    "name": "Rasmalai One Pc",
+                    "category": "Sweets",
+                    "description": "Serves 1 | Bikanervala Top-Seller: A delectable Indian dessert made from soft cheese dumplings soaked in sweet, saffron-infused milk, garnished with pistachios or almonds.This item includes 1 piece of Rasmalai.",
+                    "imageId": "4ff8a2ef199f63c4490bb08fb4a815b2",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 6000
+                },
+                {
+                    "id": "20513718",
+                    "name": "Kaju Burfii",
+                    "category": "Sweets",
+                    "description": "Serves 1 | A popular Indian sweet made from cashew nuts (kaju) and sugar, shaped into smooth, diamond-shaped pieces.This item Contains approximately 60 pieces of Kaju Burfi.",
+                    "imageId": "tzaxsmdi2q7w107inivn",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "defaultPrice": 49000
+                },
+                {
+                    "id": "20513759",
+                    "name": "Raj Kachori",
+                    "category": "Chaat, Snacks & Quick Bites",
+                    "description": "Serves 1 | A big crispy sphere ball stuffed with diced boiled potatoes and sprouted black gram, tamarind sauce, mint sauce, and sweet curd sprinkled with chaat masala.This delightful Item includes- 1 Raj Kachori, Dahi, Curd, Chaat Masala and Garnishes.",
+                    "imageId": "scosfx4zwqhve5aexzfo",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 16000
+                },
+                {
+                    "id": "20513690",
+                    "name": "Bhalla Papdi",
+                    "category": "Chaat, Snacks & Quick Bites",
+                    "description": "Serves 1 | Bhalla Papdi is a popular and delightful Indian street food that offers a burst of sweet, spicy, tangy, and crunchy flavors all in one bite.This item is served with Crispy Papdi, Bhalla, Dahi, Chutney and Garnishes.",
+                    "imageId": "nshzfsb4mahz2jqlusbg",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 16000
+                },
+                {
+                    "id": "20513688",
+                    "name": "Aloo Tikki",
+                    "category": "Chaat, Snacks & Quick Bites",
+                    "description": "Serves 1 | Aloo Tikki is a popular and delicious Indian street food snack made from mashed potatoes that are seasoned with spices. This item is served with Chutney, Aloo Tikki and Garnishes.",
+                    "imageId": "krtphdu2kzrabejdxmbf",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 12000
+                },
+                {
+                    "id": "20513691",
+                    "name": "Bhel Puri",
+                    "category": "Chaat, Snacks & Quick Bites",
+                    "description": "Serves 1 | A spicy dish prepared with puffed rice, onion, exotic spices and hot chutney.",
+                    "imageId": "dsyyzzijvz2a8aypmh7x",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 10000
+                },
+                {
+                    "id": "20513755",
+                    "name": "Punjabi Chana Kulcha",
+                    "category": "Chaat, Snacks & Quick Bites",
+                    "description": "Serves 1 | A North Indian delight featuring spicy chickpea curry (chana) paired with soft, fluffy kulcha bread. A hearty and flavorful combination.This Item Contains Punjabi Channa with 2 pieces of Kulcha.",
+                    "imageId": "243a3b5f1f8f1cd55afdfcabcf913b7c",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 16000
+                },
+                {
+                    "id": "96056448",
+                    "name": "Pyaz Kachori.",
+                    "category": "Chaat, Snacks & Quick Bites",
+                    "description": "Serves 1 | Explore the Savory and Crunchy goodness of Pyaz Kachori. This Crispy Indian snack filled with spiced onion.This item Includes 1 Pyaz Kachori and Chutney.",
+                    "imageId": "r8csf0txz9bnzoyiyqqu",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 4200
+                },
+                {
+                    "id": "52989362",
+                    "name": "Syrup Khus 1 Kg",
+                    "category": "Beverages",
+                    "description": "Serves 1 | A soft and flaky Indian flatbread cooked in a tandoor or clay oven, brushed with butter for a rich, flavorful taste.",
+                    "imageId": "qbhmmih1h7umz8jbl1gq",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 13559
+                },
+                {
+                    "id": "52989398",
+                    "name": "Syrup Jeera Shikanji 1 Kg",
+                    "category": "Beverages",
+                    "description": "Serves 1",
+                    "imageId": "n9laakzluq2xy5bxyfxn",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 14407
+                },
+                {
+                    "id": "52990190",
+                    "name": "Badam Drink 180 ml",
+                    "category": "Beverages",
+                    "description": "Serves 1 | Badam drink is a delicious and nutritious beverage made from almonds, milk, and various flavorings.Item includes Badam Drink in 180ml sized can.",
+                    "imageId": "oafufsce8x049x5dmfxu",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 4762
+                },
+                {
+                    "id": "52990507",
+                    "name": "Chocolate Drink 180 ml",
+                    "category": "Beverages",
+                    "description": "Serves 1 | Chocolate drink is a delicious and popular beverage made by combining milk with chocolate flavoring. It's enjoyed by people of all ages and is commonly served as a refreshing and sweet treat.Item includes Chocolate Drink in 180 ml sized can.",
+                    "imageId": "bgxvvgqak9z4ueqtlli5",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 4762
+                },
+                {
+                    "id": "52990845",
+                    "name": "Strawberry Drink 180 ml",
+                    "category": "Beverages",
+                    "description": "Serves 1",
+                    "imageId": "a7vb32dje5zepbvk0i6u",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 4762
+                },
+                {
+                    "id": "52990846",
+                    "name": "Thandai Drink 180 ml",
+                    "category": "Beverages",
+                    "description": "Serves 1 | Thandai Drink is a refreshing and energizing drink known for its cooling properties, making it perfect for hot summer days. Thandai is made with a blend of various nuts, spices, and aromatic ingredients.Item includes Thandai Drink in 180 ml can.",
+                    "imageId": "r3ah9ttlrleugwjowqrq",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 4762
+                },
+                {
+                    "id": "52989449",
+                    "name": "Soan Papdi Desi Ghee - 250g",
+                    "category": "Packed sweets, Namkeens & Savouries",
+                    "description": "Serves 1 | Soan Papdi made with Desi Ghee is a rich and indulgent variation of the popular Indian sweet delicacy. Desi ghee, or clarified butter made from cow's milk, adds a unique and luxurious flavor to Soan Papdi.Item includes Soan Papdi Desi Ghee in a box with net weight of 250 gms.",
+                    "imageId": "jmhtkuxgmkhmalwccwhz",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 10476
+                }
+            ]
+        },
+        {
+            "id": "733714",
+            "name": "Chicago Pizza",
+            "avgRating": 3.8,
+            "sla": {
+                "deliveryTime": 25,
+                "lastMileTravel": 2.4,
+                "serviceability": "SERVICEABLE",
+                "slaString": "25 mins",
+                "lastMileTravelString": "2.4 km",
+                "iconType": "ICON_TYPE_EMPTY"
+            },
+            "menu": [
+                {
+                    "id": "65546303",
+                    "name": "Reshmi Paneer Pizza",
+                    "category": "Desi Veg Pizza",
+                    "description": "Paneer, roasted capsiucum  & caramalized onion marinated in inhouse tandoori sauce sprinkled with 100% mozarella cheese and served with inhouse chilli flakes & oregano seasoning",
+                    "imageId": "92051f3f61bbd1d79eeb85c0996e77e1",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "itemAttribute": {
+                        "vegClassifier": "VEG"
+                    },
+                    "defaultPrice": 19900
+                },
+                {
+                    "id": "65546280",
+                    "name": "Paneer Lababdar Pizza",
+                    "category": "Desi Veg Pizza",
+                    "description": "Paneer & caramalized onion marinated in inhouse korma sprinkled with 100% mozarella cheese and served with inhouse chilli flakes & oregano seasoning. ",
+                    "imageId": "507a7ceb5bc646c1e3b151274ebc26f7",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "itemAttribute": {
+                        "vegClassifier": "VEG"
+                    },
+                    "defaultPrice": 19900
+                },
+                {
+                    "id": "112594310",
+                    "name": "La Chicken Meatball Pizza",
+                    "category": "Non Veg Pizza @ 158",
+                    "description": "Chicken meatball freshly baked pizza with secret recipe cheesy, spicy & creamy jalapeno cheese sauce sprinkled with 100% mozarella cheese and served with inhouse chilli flakes & oregano seasoning",
+                    "imageId": "1ff4c8faeabafe35677a522ff9414b83",
+                    "inStock": 1,
+                    "itemAttribute": {
+                        "vegClassifier": "NONVEG"
+                    },
+                    "defaultPrice": 15800
+                },
+                {
+                    "id": "112594309",
+                    "name": "La Chicken Ham Pizza",
+                    "category": "Non Veg Pizza @ 158",
+                    "description": "Smoked chicken ham freshly baked pizza with secret recipe cheesy, spicy & creamy jalapeno cheese sauce sprinkled with 100% mozarella cheese and served with inhouse chilli flakes & oregano seasoning",
+                    "imageId": "554c3c6ab94e2c1c651adc0da934a9b0",
+                    "defaultPrice": 15800
+                },
+                {
+                    "id": "51821435",
+                    "name": "Bhuna Murg Pizza",
+                    "category": "Desi Nonveg Pizza",
+                    "description": "Chicken tikka marinated in inhouse desi butter gravy, caramalised onion and capsicum sprinkled with 100% mozarella cheese and served with inhouse chilli flakes & oregano seasoning",
+                    "imageId": "b5d1c4a6f945741b874a41b11b7306c4",
+                    "defaultPrice": 24900
+                },
+                {
+                    "id": "76620838",
+                    "name": "Cold Coffee",
+                    "category": "Milkshakes",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 14900
+                },
+                {
+                    "id": "51821425",
+                    "name": "Classic Cheese Pasta",
+                    "category": "Pastas",
+                    "description": "Authentic italian penne pasta tossed with extra virgin spanish olive oil with 100% mozarella cheese and a dash of garlic & bresh basil with a choice of 4 secret sauces",
+                    "imageId": "8d56aa78515be450c7e47c1adea63a70",
+                    "itemAttribute": {
+                        "vegClassifier": "VEG"
+                    },
+                    "defaultPrice": 19900
+                },
+                {
+                    "id": "51821480",
+                    "name": "Simply Veg Pasta",
+                    "category": "Pastas",
+                    "description": "Roasted capsicum & caramalized onion authentic italian penne pasta tossed with extra virgin spanish olive oil with 100% mozarella cheese and a dash of garlic & bresh basil with a choice of 4 secret sauces",
+                    "imageId": "637a07e1efb02d3c2abcc877e61fdb16",
+                    "itemAttribute": {
+                        "vegClassifier": "VEG"
+                    },
+                    "defaultPrice": 24900
+                }
+            ]
+        },
+        {
+            "id": "423775",
+            "name": "Dough & Cream",
+            "avgRating": 4.1,
+            "sla": {
+                "deliveryTime": 27,
+                "lastMileTravel": 4.9,
+                "serviceability": "SERVICEABLE",
+                "slaString": "27 mins",
+                "lastMileTravelString": "4.9 km",
+                "iconType": "ICON_TYPE_EMPTY"
+            },
+            "menu": [
+                {
+                    "id": "92410406",
+                    "name": "Pizza Parcel",
+                    "category": "Baked Savoury Snacks - Ready To Eat",
+                    "description": "Serves 1",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 10000
+                },
+                {
+                    "id": "109573671",
+                    "name": "Paneer Tikka Footlong Sub",
+                    "category": "Baked Savoury Snacks - Ready To Eat",
+                    "description": "Serves 1",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 10000
+                },
+                {
+                    "id": "77794496",
+                    "name": "Peri Peri Chicken Roll",
+                    "category": "Baked Savoury Snacks - Ready To Eat",
+                    "description": "Serves 1",
+                    "inStock": 1,
+                    "price": 12000
+                },
+                {
+                    "id": "77794498",
+                    "name": "Tandoori Chaap Roll",
+                    "category": "Baked Savoury Snacks - Ready To Eat",
+                    "description": "Serves 1",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 10000
+                },
+                {
+                    "id": "79827762",
+                    "name": "Chicken Wrap",
+                    "category": "Baked Savoury Snacks - Ready To Eat",
+                    "description": "Serves 1 | Chicken wrapped with tandoori mayo stuffed in our signature wrap",
+                    "inStock": 1,
+                    "price": 15000
+                },
+                {
+                    "id": "77793825",
+                    "name": "Mexican Cheese Roll",
+                    "category": "Baked Savoury Snacks - Ready To Eat",
+                    "description": "Serves 1 | Soft bread roll filled with mexican vegetable fillings and cheese",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 12000
+                },
+                {
+                    "id": "77793826",
+                    "name": "Mushroom Roll",
+                    "category": "Baked Savoury Snacks - Ready To Eat",
+                    "description": "Serves 1 | Soft bread roll filled with mushroom and veggies",
+                    "imageId": "w1nidoouhp7t1lztvoz0",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 10000
+                },
+                {
+                    "id": "77793866",
+                    "name": "Chilli Paneer Kathi Roll",
+                    "category": "Baked Savoury Snacks - Ready To Eat",
+                    "description": "Serves 1 | Indo chinise style, paneer tossed with veggies in chilli sauce, wrapped in a roll",
+                    "imageId": "ta4ei7z2retctqumutq9",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 13000
+                },
+                {
+                    "id": "59685765",
+                    "name": "Chicken Shawarma (6 inches)",
+                    "category": "Baked Savoury Snacks - Ready To Eat",
+                    "description": "Serves 1 | Juicy chicken marinated in a blend of Middle Eastern spices in a wrap",
+                    "imageId": "rfl2ezmhbb1in0ysbwle",
+                    "inStock": 1,
+                    "price": 15000
+                },
+                {
+                    "id": "59686077",
+                    "name": "Paneer Shawarma",
+                    "category": "Baked Savoury Snacks - Ready To Eat",
+                    "description": "Serves 1 | Spiced and flavourful cottage cheese wrap(6 Inches)",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 12000
+                },
+                {
+                    "id": "77794515",
+                    "name": "Masala Sandwich",
+                    "category": "Baked Savoury Snacks - Ready To Eat",
+                    "description": "Serves 1",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 11000
+                },
+                {
+                    "id": "92410476",
+                    "name": "Mexican Sandwich",
+                    "category": "Baked Savoury Snacks - Ready To Eat",
+                    "description": "Serves 1",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 11000
+                },
+                {
+                    "id": "59686074",
+                    "name": "Roasted Chicken Sandwich",
+                    "category": "Baked Savoury Snacks - Ready To Eat",
+                    "description": "Serves 1 | Classic white bread sandwich filled with roasted chicken",
+                    "imageId": "g250fpqi2s6ugfp5zmj3",
+                    "inStock": 1,
+                    "price": 16000
+                },
+                {
+                    "id": "81324256",
+                    "name": "Mumbaiya Vada Pao",
+                    "category": "Baked Savoury Snacks - Ready To Eat",
+                    "description": "Serves 1",
+                    "imageId": "zpfw3fmkksbzixvfm2rx",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 7000
+                },
+                {
+                    "id": "77793824",
+                    "name": "Cheese Burger",
+                    "category": "Baked Savoury Snacks - Ready To Eat",
+                    "description": "Serves 1 | Classic burger with crunchy veg patty, veggies, sauces and cheese",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 10000
+                },
+                {
+                    "id": "59685859",
+                    "name": "Veg Burger",
+                    "category": "Baked Savoury Snacks - Ready To Eat",
+                    "description": "Serves 1 | Classic burger with crunchy veg patty, veggies and sauces",
+                    "imageId": "j109enfwoxadaqrf7do8",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 9000
+                },
+                {
+                    "id": "59685861",
+                    "name": "Chicken Burger",
+                    "category": "Baked Savoury Snacks - Ready To Eat",
+                    "description": "Serves 1 | A perfect snack if you're craving a crispy chicken burger",
+                    "inStock": 1,
+                    "price": 13000
+                },
+                {
+                    "id": "77793828",
+                    "name": "Veg Hot Dog",
+                    "category": "Baked Savoury Snacks - Ready To Eat",
+                    "description": "Serves 1 | Classic hot dog bun filled with veg nuggets and sauces",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 9000
+                }
+            ]
+        },
+        {
+            "id": "326440",
+            "name": "Punjabi Angithi (Vegorama Group)",
+            "avgRating": 4.2,
+            "sla": {
+                "deliveryTime": 31,
+                "lastMileTravel": 5,
+                "serviceability": "SERVICEABLE",
+                "slaString": "31 mins",
+                "lastMileTravelString": "5.0 km",
+                "iconType": "ICON_TYPE_EMPTY"
+            },
+            "menu": [
+                {
+                    "id": "124133401",
+                    "name": "Chicken Curry",
+                    "category": "Lazeez Handi",
+                    "description": "Chicken pieces braised in yoghurt and cream, cooked in meaty stock, and seasoned to taste - all to produce a mouth watering spicy curry.",
+                    "imageId": "f6fe3af087ef9cab4c1c809584d3c8d1",
+                    "defaultPrice": 34900
+                },
+                {
+                    "id": "124133405",
+                    "name": "Butter Chicken",
+                    "category": "Lazeez Handi",
+                    "description": "The original butter chicken receipe, which is not sweet. Made in a base gravy of cashew paste. A extremly delightful, aromatic dish not to be missed. Low spices, but on request can be made medium spicy.",
+                    "imageId": "a6f411ffd53b34cf11b1297eaa2d81c1",
+                    "defaultPrice": 34900
+                },
+                {
+                    "id": "124133427",
+                    "name": "Kadai Chicken",
+                    "category": "Lazeez Handi",
+                    "description": "Famous desi signature dish. Chicken cooked with fresh garlic, ginger, onions, capsicum, tomatoes and spices. Garnished with chunks of tomatoes and sprinkled with fresh coriander and ginger and freshly chopped green chilies.",
+                    "imageId": "acc8958a1f3df032d7f09163a3c47fbf",
+                    "defaultPrice": 34900
+                },
+                {
+                    "id": "124133432",
+                    "name": "Tawa Chicken",
+                    "category": "Lazeez Handi",
+                    "description": "Tender pieces of chicken roasted and coated with full-of-spices onion-tomato masala, all done on one pan to add that street style flavour.",
+                    "imageId": "cd421cc71e01575e803c03dae6c6c60f",
+                    "defaultPrice": 34900
+                },
+                {
+                    "id": "124133436",
+                    "name": "Rara Chicken",
+                    "category": "Lazeez Handi",
+                    "description": "Chicken keema based gravy with chicken pieces, medium to high spices, the highest selling chicken dish we serve. Do try for its rich taste. Medium to high spices.",
+                    "imageId": "a3798af7880fc3555c0461b59c748f94",
+                    "defaultPrice": 35900
+                },
+                {
+                    "id": "126094062",
+                    "name": "Butter Chicken (boneless)",
+                    "category": "Lazeez Handi",
+                    "description": "Smooth and rich, tomato based makhani gravy cooked with cream and butter with boneless chicken tikka.",
+                    "imageId": "0671429e4400d712804b23e89b8ec683",
+                    "defaultPrice": 35500
+                },
+                {
+                    "id": "126094063",
+                    "name": "Changezi Chicken",
+                    "category": "Lazeez Handi",
+                    "description": "Relish juicey pieces of chicken made with the finest ingredients in a rich gravy that you just cant ignore!",
+                    "imageId": "81b9cdff479501a2da02e7e20d783049",
+                    "defaultPrice": 35900
+                },
+                {
+                    "id": "126094064",
+                    "name": "Chicken Korma",
+                    "category": "Lazeez Handi",
+                    "description": "[serves 2 - 3 people] - 4 pcs of chicken a rich mughlai curry [to go with the biryani or lachha parantha] made by marinating the main ingredients in yoghurt, cashew paste and fresh ground spices.",
+                    "imageId": "a88e21d51ea9483bbe3dc5fc3df956ba",
+                    "defaultPrice": 35900
+                }
+            ]
+        },
+        {
+            "id": "341033",
+            "name": "Bakingo",
+            "avgRating": 4.4,
+            "sla": {
+                "deliveryTime": 22,
+                "lastMileTravel": 3,
+                "serviceability": "SERVICEABLE",
+                "slaString": "22 mins",
+                "lastMileTravelString": "3.0 km",
+                "iconType": "ICON_TYPE_EMPTY"
+            },
+            "menu": [
+                {
+                    "id": "47790481",
+                    "name": "Chocolate Snicker Cake",
+                    "category": "Cakes",
+                    "description": "Serves 1 | A dark, rich & chocolaty bind of mocha, snickers & melted chocolate is pure indulgence",
+                    "imageId": "b92a91d0db96679e466319687383d5d3",
+                    "defaultPrice": 59900
+                },
+                {
+                    "id": "10531198",
+                    "name": "Black Forest Cake",
+                    "category": "Cakes",
+                    "description": "Serves 1 | A crowd favourite and for good reason. Multiple layers of moist chocolate topped with whipped cream and garnished with chocolate flakes & a cherry on top",
+                    "imageId": "xnznp2fkndvgpndt2dyl",
+                    "defaultPrice": 47900
+                },
+                {
+                    "id": "10531214",
+                    "name": "German Black Forest Cake",
+                    "category": "Cakes",
+                    "description": "Serves 1 | A crowd favourite and for good reason. Multiple layers of moist German chocolate topped with whipped cream and garnished with chocolate flakes & a cherry on top",
+                    "imageId": "b93222c67463070fc45ced51a432faac",
+                    "defaultPrice": 49900
+                },
+                {
+                    "id": "10531233",
+                    "name": "Red Velvet Cake",
+                    "category": "Cakes",
+                    "description": "Serves 1 | A vanilla based red velvet cake dressed in red velvet crumbs with dollops of whipped cream",
+                    "imageId": "xcj4thrsskl8knl6xxgf",
+                    "defaultPrice": 59900
+                },
+                {
+                    "id": "28387961",
+                    "name": "Red Velvet Heart Cake",
+                    "category": "Cakes",
+                    "description": "Serves 1 | A vanilla based heart shaped red velvet cake dressed in red velvet crumbs with dollops of whipped cream",
+                    "imageId": "o4ghcydrnv8toen8jkuy",
+                    "defaultPrice": 64900
+                },
+                {
+                    "id": "67760104",
+                    "name": "Blueberry Bake Cheesecake Slice",
+                    "category": "Baked Cheesecakes",
+                    "description": "Serves 1 | A light & creamy cheese cake with blueberry pulp baked with cream cheese",
+                    "imageId": "f532ecd6ffae5ca5b75cf0f18c1123ac",
+                    "price": 19900
+                },
+                {
+                    "id": "26020593",
+                    "name": "Classic Walnut Brownie",
+                    "category": "Brownie & Tarts",
+                    "description": "Serves 1 | A classic brownie Bakingo style. Infused with milkmaid, fresh cream and Vanleer dark chocolate, inundated with walnuts.",
+                    "imageId": "1f27dba287121fbb4df192b7c67ede64",
+                    "price": 19900
+                },
+                {
+                    "id": "26020595",
+                    "name": "Nutella Brownie",
+                    "category": "Brownie & Tarts",
+                    "description": "Serves 1 | The quintessential indulgent brownie prepared with milk maid, fresh cream & CHD 45 Chocolate, infused with Nutella and hazelnuts.",
+                    "imageId": "2fca02ee8233a9b0f93455565458a8ae",
+                    "defaultPrice": 11900
+                }
+            ]
+        },
+        {
+            "id": "10392",
+            "name": "Subway",
+            "avgRating": 4.1,
+            "sla": {
+                "deliveryTime": 22,
+                "lastMileTravel": 2,
+                "serviceability": "SERVICEABLE",
+                "slaString": "22 mins",
+                "lastMileTravelString": "2.0 km",
+                "iconType": "ICON_TYPE_EMPTY"
+            },
+            "menu": [
+                {
+                    "id": "126848059",
+                    "name": "Delhi Tikki Sandwich + Side + Coke",
+                    "category": "SUPER SAVER COMBOS - SAVE UPTO 46%",
+                    "description": "Enjoy your favourite Grills sandwich with a choice of drink and a cookie or veg kebabs.",
+                    "imageId": "3b1bb2e4ab7a6f145d675e811b4ee0a3",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 22800
+                },
+                {
+                    "id": "126848057",
+                    "name": "Bombay Grill Sandwich + Side + Coke",
+                    "category": "SUPER SAVER COMBOS - SAVE UPTO 46%",
+                    "description": "Enjoy your favourite Grills sandwich with a choice of drink and a cookie or veg kebabs.",
+                    "imageId": "6f6f6cdda05e7a857f18bd8459f231ce",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 24800
+                },
+                {
+                    "id": "130251912",
+                    "name": "3 Cheese Melt Sandwich + Side + Coke",
+                    "category": "SUPER SAVER COMBOS - SAVE UPTO 46%",
+                    "description": "Enjoy your favourite Grills sandwich with a choice of drink and any choice of side.",
+                    "imageId": "c3f54b48c8a70db042cbd09accbe0931",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 36800
+                },
+                {
+                    "id": "130251916",
+                    "name": "Egg 'n Cheese Sandwich + Side + Coke",
+                    "category": "SUPER SAVER COMBOS - SAVE UPTO 46%",
+                    "description": "Enjoy your favourite Grills sandwich with a choice of drink and any choice of side.",
+                    "imageId": "8740a76234a1c48351f27e1b935cd795",
+                    "inStock": 1,
+                    "price": 31800
+                },
+                {
+                    "id": "126848066",
+                    "name": "Chicken Keema Sandwich + Side + Coke",
+                    "category": "SUPER SAVER COMBOS - SAVE UPTO 46%",
+                    "description": "Enjoy your favourite Grills sandwich with a choice of drink?and?a?cookie.",
+                    "imageId": "40730c1ec1c9294fe8a537c0fb2a061f",
+                    "inStock": 1,
+                    "price": 26800
+                },
+                {
+                    "id": "130251904",
+                    "name": "Roast Chicken Melt Sandwich + Side + Coke",
+                    "category": "SUPER SAVER COMBOS - SAVE UPTO 46%",
+                    "description": "Enjoy your favourite Grills sandwich with a choice of drink?and?a?cookie.",
+                    "imageId": "66f7dfa9d7f0e3b1ad27ced7e673544e",
+                    "inStock": 1,
+                    "price": 33800
+                },
+                {
+                    "id": "119195524",
+                    "name": "Paneer Achari Sandwich + Side + Coke",
+                    "category": "SUPER SAVER COMBOS - SAVE UPTO 46%",
+                    "description": "Enjoy your favourite Hotseller sub with a choice of cookie and a choice of drink.",
+                    "imageId": "b9016987d7c9a36ccae5c21b9772c265",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 35900
+                },
+                {
+                    "id": "119195525",
+                    "name": "Crunchy Mexican Sandwich + Side + Coke",
+                    "category": "SUPER SAVER COMBOS - SAVE UPTO 46%",
+                    "description": "Enjoy your favourite Hotseller sub with a choice of cookie and a choice of drink.",
+                    "imageId": "694b329ba400202058dd2793e2d8ab5d",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 36900
+                },
+                {
+                    "id": "119195526",
+                    "name": "Chilli Cheese Sandwich + Side + Coke",
+                    "category": "SUPER SAVER COMBOS - SAVE UPTO 46%",
+                    "description": "Enjoy your favourite Hotseller sub with a choice of cookie and a choice of drink.",
+                    "imageId": "9020a32adc2b5fc28ac6ed497ea14a3a",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 35900
+                },
+                {
+                    "id": "119195507",
+                    "name": "Great American BBQ Sandwich + Side + Coke",
+                    "category": "SUPER SAVER COMBOS - SAVE UPTO 46%",
+                    "description": "Enjoy your favourite Hotseller sub with a choice of cookie and a choice of drink.",
+                    "imageId": "b4e32b37ea2c71cfc7b28f885aa668fe",
+                    "inStock": 1,
+                    "price": 39900
+                }
+            ]
+        },
+        {
+            "id": "26723",
+            "name": "KFC",
+            "avgRating": 4.2,
+            "sla": {
+                "deliveryTime": 19,
+                "lastMileTravel": 2,
+                "serviceability": "SERVICEABLE",
+                "slaString": "19 mins",
+                "lastMileTravelString": "2.0 km",
+                "iconType": "ICON_TYPE_EMPTY"
+            },
+            "menu": [
+                {
+                    "id": "135162896",
+                    "name": "Chicken Super Snacker Combo",
+                    "category": "KFC Black Friday",
+                    "description": "Best of snacks meal with a Medium Chicken Popcorn, 4 strips, 1 dip & a chilled Pepsi Black [serves 1-2]",
+                    "imageId": "xpfkrnzizg80fvytwemn",
+                    "inStock": 1,
+                    "price": 49333
+                },
+                {
+                    "id": "135162895",
+                    "name": "Chicken Wings Combo",
+                    "category": "KFC Black Friday",
+                    "description": "Save Rs. 59 & Enjoy 2pc Hot & Crispy Chicken, 4 chicken wings , 2 dips & a chilled Pepsi Black [serves 1-2]",
+                    "imageId": "soqdycnjeyzedvivoul2",
+                    "inStock": 1,
+                    "price": 46667
+                },
+                {
+                    "id": "135162893",
+                    "name": "Chicken Zinger Burger Meal",
+                    "category": "KFC Black Friday",
+                    "description": "Favorite combo of Classic Chicken Zinger Burger, Medium French Fries & a chilled Pepsi Black",
+                    "imageId": "jvhlgdezs1zssu0awfa1",
+                    "inStock": 1,
+                    "price": 35524
+                },
+                {
+                    "id": "135162771",
+                    "name": "Peri Peri chicken strips - 3 pc",
+                    "category": "Sides and Dips",
+                    "description": "3 Pieces Spicy Peri Peri chicken boneless strips ",
+                    "imageId": "fgtsqzqqxxtzxu0p0acw",
+                    "inStock": 1,
+                    "price": 17905
+                },
+                {
+                    "id": "135162766",
+                    "name": "French Fries - Large",
+                    "category": "Sides and Dips",
+                    "description": "Jazz up your meal with crispy large fries!",
+                    "imageId": "r93ljtqjnlpn2xr24dln",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 11905
+                },
+                {
+                    "id": "135162765",
+                    "name": "Spicy Mix French Fries - Medium",
+                    "category": "Sides and Dips",
+                    "description": "Crispy french fries with a spicy chilli lime sprinkle",
+                    "imageId": "wrh1fdjs1uynfefykyok",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 11429
+                },
+                {
+                    "id": "135162760",
+                    "name": "Chocolate Lava Cake",
+                    "category": "Desserts & Beverages",
+                    "description": "New Soft Chocolate cake with a gooey center- perfect chocolaty end to every meal",
+                    "imageId": "thb7rrdooctsnknsnatz",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 10857
+                },
+                {
+                    "id": "135162759",
+                    "name": "Chocolate Mud Pie",
+                    "category": "Desserts & Beverages",
+                    "description": "Chocolate lovers unite! Say hello to our delicious, new, creamy chocolate & cake dessert- a must try! ",
+                    "imageId": "fhtrvjerl7l2ck1crwhp",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 12857
+                },
+                {
+                    "id": "135162758",
+                    "name": "Coffee Mousse Cake",
+                    "category": "Desserts & Beverages",
+                    "description": "Coffee, chocolate, cake?what's not to love? Enjoy our delicious, new dessert for those coffee-licious temptations!",
+                    "imageId": "cb0kmlqdl0kjiri0qii9",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 12857
+                },
+                {
+                    "id": "135162755",
+                    "name": "7UP Can 300 ml",
+                    "category": "Desserts & Beverages",
+                    "description": "7UP is the ultimate Super-Duper Refresher. Every sip of this crisp lemon flavour refreshes you to the core.",
+                    "imageId": "qn00mdssgatf9yjauq8o",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 5714
+                },
+                {
+                    "id": "135162753",
+                    "name": "Mirinda Can 300 ml",
+                    "category": "Desserts & Beverages",
+                    "description": "Great orange taste and sparking bubbles encourage you to be carefree, spontaneous and playful!",
+                    "imageId": "zcwmo9x7sbvhehuz59td",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 5714
+                }
+            ]
+        },
+        {
+            "id": "498382",
+            "name": "Burger King",
+            "avgRating": 4.4,
+            "sla": {
+                "deliveryTime": 21,
+                "lastMileTravel": 2,
+                "serviceability": "SERVICEABLE",
+                "slaString": "21 mins",
+                "lastMileTravelString": "2.0 km",
+                "iconType": "ICON_TYPE_EMPTY"
+            },
+            "menu": [
+                {
+                    "id": "130923417",
+                    "name": "Crispy Veg Burger+Fries(M)",
+                    "category": "Burger+Fries (Save upto 15%)",
+                    "imageId": "7798d7bed74c81bc0e5ffc677a7d2eef",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 16000
+                },
+                {
+                    "id": "130923420",
+                    "name": "Crispy Veg Double Patty Burger+Fries(M)",
+                    "category": "Burger+Fries (Save upto 15%)",
+                    "imageId": "2b8b717cfc1d7aac9c1c9d16594735f8",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 18900
+                },
+                {
+                    "id": "130923423",
+                    "name": "Crispy Chicken Double Patty Burger+Fries(M)",
+                    "category": "Burger+Fries (Save upto 15%)",
+                    "imageId": "d065d5e9870ed98fb74d6b58c6e4f455",
+                    "inStock": 1,
+                    "price": 22900
+                },
+                {
+                    "id": "130923436",
+                    "name": "Premium Family Feast for 4 - Chicken",
+                    "category": "Family Feast for 4 ( Save upto 37%)",
+                    "description": "Save Rs. 200 | Chicken Whopper + Fiery Chicken + Crispy Chicken + Chicken Crunchy Taco + 2 Med Fries + 1 Dip + Peri Peri Sachet + Medium Soft Drink (Cola) + Chocolate Thick Shake",
+                    "imageId": "6f1dd11c2eb1b708e642bc32b6d5a0e3",
+                    "inStock": 1,
+                    "price": 98200
+                },
+                {
+                    "id": "130923437",
+                    "name": "Classic Family Feast for 4 - Veg",
+                    "category": "Family Feast for 4 ( Save upto 37%)",
+                    "description": "Save Rs. 200 | 2 Crispy Veg + BK Veggie + Veg Crunchy Taco + 2 Med Fries + 2 Dips + Medium Soft Drink (Cola) + Chocolate Thick Shake",
+                    "imageId": "062d970e847e4b3ad386054fc2795a96",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 73100
+                },
+                {
+                    "id": "130923460",
+                    "name": "Veg Whopper",
+                    "category": "Whopper",
+                    "description": "Our signature Whopper with 7 layers between the buns. Extra crunchy veg patty, fresh onions, crispy lettuce, juicy tomatoes (seasonal), tangy gherkins, creamy and smoky sauces with new premium buns. Swaad Aisa, India Jaisa.",
+                    "imageId": "f10379c6bd1edbbb7ee38da07c78058f",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 17900
+                },
+                {
+                    "id": "130923473",
+                    "name": "Chicken Whopper",
+                    "category": "Whopper",
+                    "description": "Our signature Whopper with 7 layers between the buns. Flame-Grilled chicken patty, fresh onions, crispy lettuce, juicy tomatoes (seasonal), tangy gherkins, creamy and smoky sauces with new premium glazed buns. Swaad Aisa, India Jaisa.",
+                    "imageId": "2ece2c5f21d615e1bb12163a495bbcbc",
+                    "inStock": 1,
+                    "price": 19900
+                },
+                {
+                    "id": "130923531",
+                    "name": "Crispy Veg Burger",
+                    "category": "Burgers & Wraps",
+                    "description": "Our Best-Selling Burger With Crispy Veg Patty, Fresh Onion And Our Signature Sauce",
+                    "imageId": "eqaon8guufklmil7ayhr",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 7000
+                },
+                {
+                    "id": "130923559",
+                    "name": "Crispy Veg Double Patty Burger",
+                    "category": "Burgers & Wraps",
+                    "description": "Our Best-Selling Burger With Crispy Veg Double Patty, Fresh Onion And Our Signature Sauce",
+                    "imageId": "phm3t2g7v0lpczvtu6g7",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 9900
+                },
+                {
+                    "id": "130923565",
+                    "name": "Crispy Chicken Burger",
+                    "category": "Burgers & Wraps",
+                    "description": "Our Best-Selling Burger With Crispy Chicken Patty, Onion And Classic Mayo Sauce",
+                    "imageId": "mqr237klqgnu0w2pzd94",
+                    "inStock": 1,
+                    "price": 9900
+                },
+                {
+                    "id": "130923596",
+                    "name": "Crispy Chicken Double Patty Burger",
+                    "category": "Burgers & Wraps",
+                    "description": "Our Best-Selling Burger With Crispy Chicken Double Patty, Onion And Classic Mayo Sauce",
+                    "imageId": "vfagr7gcirgouhiewq66",
+                    "inStock": 1,
+                    "price": 13900
+                },
+                {
+                    "id": "130923621",
+                    "name": "Hot 'N' Saucy Burger",
+                    "category": "Kings Premium Burgers",
+                    "description": "Chilli Saucy patty, spicy sauce, soft square masala buns. It's saucy & spicy.",
+                    "imageId": "zv7fx1ed433greh6tpvn",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 19900
+                },
+                {
+                    "id": "130923626",
+                    "name": "Fiery Chicken Burger",
+                    "category": "Kings Premium Burgers",
+                    "description": "Spicy Fried Chicken, loads of sauces in soft square masala buns. It's hot and happening.",
+                    "imageId": "ppxmlepv15e3qexhhq9v",
+                    "inStock": 1,
+                    "price": 19900
+                }
+            ]
+        },
+        {
+            "id": "253731",
+            "name": "McDonald's",
+            "avgRating": 4.4,
+            "sla": {
+                "deliveryTime": 22,
+                "lastMileTravel": 2.2,
+                "serviceability": "SERVICEABLE",
+                "slaString": "22 mins",
+                "lastMileTravelString": "2.2 km",
+                "iconType": "ICON_TYPE_EMPTY"
+            },
+            "menu": [
+                {
+                    "id": "134525534",
+                    "name": "VegSurprise+SmallCoke",
+                    "category": "The Great McDonald's Sale Menu Starts @99",
+                    "description": "A surprise that will leave you wide-eyed. A scrumptious potato patty topped with a delectable Italian herb sauce and shredded onions placed between perfectly toasted buns.",
+                    "imageId": "07c717e117ea76843da8fa306a2217e9",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 10900
+                },
+                {
+                    "id": "86600647",
+                    "name": "McAloo VM® ",
+                    "category": "The Great McDonald's Sale Menu Starts @99",
+                    "imageId": "qjacrl5imzdgvbfecjf1",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 11400,
+                    "variants": {},
+                    "variantsV2": {}
+                },
+                {
+                    "id": "86600662",
+                    "name": "Chicken McGrill VM® ",
+                    "category": "The Great McDonald's Sale Menu Starts @99",
+                    "imageId": "hvqfaosliamvgscaqstj",
+                    "inStock": 1,
+                    "price": 17300
+                },
+                {
+                    "id": "86600682",
+                    "name": "McChicken VM®",
+                    "category": "The Great McDonald's Sale Menu Starts @99",
+                    "imageId": "rphagkrvp9rntb3nusdz",
+                    "inStock": 1,
+                    "price": 20800
+                },
+                {
+                    "id": "86600637",
+                    "name": "McEgg VM®",
+                    "category": "The Great McDonald's Sale Menu Starts @99",
+                    "imageId": "k33isy2arro5etraswap",
+                    "inStock": 1,
+                    "price": 11400
+                },
+                {
+                    "id": "127414987",
+                    "name": "Aloo Wrap VM",
+                    "category": "The Great McDonald's Sale Menu Starts @99",
+                    "imageId": "1c5ff48d1aa4cd315745ca7fdf3519f2",
+                    "inStock": 1,
+                    "isVeg": 1,
+                    "price": 15300
+                },
+                {
+                    "id": "127414986",
+                    "name": "Egg Wrap VM",
+                    "category": "The Great McDonald's Sale Menu Starts @99",
+                    "imageId": "bde4a78f0931d7ce4e4ab22b2157f1a9",
+                    "inStock": 1,
+                    "price": 16400
+                },
+                {
+                    "id": "127414989",
+                    "name": "Tandoori Chicken Wrap VM",
+                    "category": "The Great McDonald's Sale Menu Starts @99",
+                    "imageId": "8318530be40be4ef88d21d005e598630",
+                    "inStock": 1,
+                    "price": 17600
+                }
+            ]
+        }
+    ]
+}

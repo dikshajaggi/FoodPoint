@@ -1,0 +1,13 @@
+.quantityIncDec {
+    display: flex;
+}
+
+.inc-dec-btn {
+    margin: 0 6px;
+    font-size: 22px;
+    border: none;
+}
+
+.inc-dec-span {
+    font-size: 20px;
+}
