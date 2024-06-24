@@ -145,7 +145,19 @@ const api = {
         console.error("Error fetching data:", error);
         throw error
       }
-    }
+    },
+
+      //---------------------------------- fetching order data -----------------------------------
+
+    async orderPlaced(data) {
+      try {
+          const res = await axios.post('place-order', data)
+          return res;
+      } catch (error) {
+          console.error("Error posting data:", error);
+          throw error;
+        }
+    },
 
 };
 

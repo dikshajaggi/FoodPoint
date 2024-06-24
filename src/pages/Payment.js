@@ -8,11 +8,18 @@ import { Context } from '../utilities/context/Context';
 import { paymentFormSchema } from '../schemas/payment';
 import { useNavigate } from 'react-router-dom';
 import langConfig from "../config/langConfig.json"
+import api from '../utilities/api';
+import { UserContext } from '../utilities/context/UserContext';
 
 const Payment = () => {
     const context = useContext(Context)
     const [close, setClose] = useState(true)
+    const [total, setTotal] = useState()
+    const [totalItems, setTotalItems] = useState()
+    const cartItems = useSelector(state => state.cart.items)
+    const [cart, setCart] = useState(cartItems)
     const navigate = useNavigate()
+    const { userId } = useContext(UserContext)
 
     const initialValues = {
         name: "",
@@ -23,9 +30,10 @@ const Payment = () => {
         region: ""
     }
 
-    const handleSubmitDetails = () => {
+    const handleSubmitDetails = (values) => {
+        orderPlaced(values)
         setClose(true)
-        console.log("28 saved")
+        console.log("28 saved", values, cartItems)
         context.setOrderPlaced(true)
         navigate("/main")
     }
@@ -35,14 +43,25 @@ const Payment = () => {
         validationSchema: paymentFormSchema,
         onSubmit: (values, action) => {
             console.log(values, "payment form submitted")
-            handleSubmitDetails()
+            handleSubmitDetails(values)
         }
     })
 
+    const getCartItems = async() => {
+        const res = await api.getCartItems(userId)
+        if (res.success) setCart(res.items)
+    }
 
-    const [total, setTotal] = useState()
-    const [totalItems, setTotalItems] = useState()
-    const cartItems = useSelector(state => state.cart.items)
+    const orderPlaced = async(values) => {
+        const orderData = {cart: cart._id, ...values}
+        const data = {
+            user: userId,
+            items: orderData,
+        }
+        const res = await api.orderPlaced(data)
+        console.log(res, "order placed")
+        if (res.data.success) api.deleteAllCartItems(userId)
+    }
 
     useEffect(() => {
         if (cartItems?.length === 0) {
@@ -63,6 +82,10 @@ const Payment = () => {
         }, 0);
         setTotalItems(totalItems);
         setTotal(totalPrice);
+    }, [cartItems])
+
+    useEffect(() => {
+        getCartItems()
     }, [cartItems])
 
     return (

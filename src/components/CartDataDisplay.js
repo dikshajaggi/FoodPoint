@@ -30,7 +30,7 @@ const CartDataDisplay = (props) => {
                     {defaultPrice ? <h2 style={{ fontSize: "18px" }}>Rs. {(defaultPrice) / 100}</h2> : <h2 style={{ fontSize: "18px" }}>Rs. {(price) / 100}</h2>}
                     <QtyRemoveWrapper>
                         <QuantityIncDec id={id} qty={props.quantity} name={name} defaultPrice={defaultPrice / 100} price={price / 100} />
-                        <CartRemoveBtn onClick={() => removeItemFromCart(props.menu)}><i class="fa-solid fa-trash" style={{ paddingRight: "4px" }}></i>{context.language === "en" ? langConfig[0].cart.delete.en : langConfig[0].cart.delete.hn}</CartRemoveBtn>
+                        <CartRemoveBtn onClick={() => removeItemFromCart(props)}><i class="fa-solid fa-trash" style={{ paddingRight: "4px" }}></i>{context.language === "en" ? langConfig[0].cart.delete.en : langConfig[0].cart.delete.hn}</CartRemoveBtn>
                     </QtyRemoveWrapper>
                 </CardText>
             </CardCart>
