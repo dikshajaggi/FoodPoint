@@ -142,22 +142,25 @@ const Orders = () => {
 
   return (
     <OrdersWrapper setHeight={context.orderPlaced === false && orderDelivered === false ? true : false}>
-      <Header />
-      <SubHeader setActive={setActive} />
-      {active === "current" ? <OrdersMain>
+      <div>
+        <Header />
+        <SubHeader setActive={setActive} />
+        <Button
+          disabled={context.orderPlaced === false || orderDelivered}
+          style={{ width: "auto", position: "absolute", borderColor: "transparent", right: "10px", color: "#ffffff", backgroundColor: context.orderPlaced === false || orderDelivered ? "rgb(188,188,188)" : "#000000" }}
+        >
+          <LinkStyled
+            to={context.orderPlaced === false || orderDelivered ? '#' : "/map"}
+            style={{ color: "#fff", pointerEvents: context.orderPlaced === false || orderDelivered ? "none" : "auto" }}
+          >
+            {context.language === "en" ? langConfig[0].orders.track.en : langConfig[0].orders.track.hn}
+          </LinkStyled>
+        </Button>
+      </div>
+     <div>
+     {active === "current" ? <OrdersMain>
         {context.orderPlaced === false && orderDelivered === false ? <EmptyCartMapBtn>
           <EmptyCart><h4>{context.language === "en" ? langConfig[0].orders.no.en : langConfig[0].orders.no.hn}</h4></EmptyCart>
-          <Button
-            disabled={context.orderPlaced === false || orderDelivered}
-            style={{ width: "auto", position: "absolute", right: "10px", backgroundColor: context.orderPlaced === false || orderDelivered ? "rgba(251, 146, 53, 0.5)" : "#FB9235" }}
-          >
-            <LinkStyled
-              to={context.orderPlaced === false || orderDelivered ? '#' : "/map"}
-              style={{ color: "#fff", pointerEvents: context.orderPlaced === false || orderDelivered ? "none" : "auto" }}
-            >
-              {context.language === "en" ? langConfig[0].orders.track.en : langConfig[0].orders.track.hn}
-            </LinkStyled>
-          </Button>
         </EmptyCartMapBtn> : orderDelivered ? <>
           <OrderDelivered>
             <EmptyCart><h4>{context.language === "en" ? langConfig[0].orders.order_success.en : langConfig[0].orders.order_success.hn}</h4></EmptyCart>
@@ -173,17 +176,6 @@ const Orders = () => {
               <DescInfo>#1234HB</DescInfo>
             </OrdNo>
           </Information>
-          <Button
-            disabled={context.orderPlaced === false || orderDelivered}
-            style={{ width: "auto", position: "absolute", right: "10px", backgroundColor: context.orderPlaced === false || orderDelivered ? "rgba(251, 146, 53, 0.5)" : "#FB9235" }}
-          >
-            <LinkStyled
-              to={context.orderPlaced === false || orderDelivered ? '#' : "/map"}
-              style={{ color: "#fff", pointerEvents: context.orderPlaced === false || orderDelivered ? "none" : "auto" }}
-            >
-              {context.language === "en" ? langConfig[0].orders.track.en : langConfig[0].orders.track.hn}
-            </LinkStyled>
-          </Button>
           <Status>
             {statusArrContent.map((item, index) => {
               return (
@@ -230,6 +222,7 @@ const Orders = () => {
         })}
       </OrderHistory>
       }
+     </div>
       <Footer />
     </OrdersWrapper>
   )

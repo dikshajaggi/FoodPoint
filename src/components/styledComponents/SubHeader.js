@@ -4,7 +4,7 @@ const Wrapper = styled.div`
 margin-top: 14px;
 width: 100%;
 display: flex;
-justify-content: space-evenly;
+justify-content: space-between;
 align-items: center;
 color: #fff;
 background-color: ${props => props.theme.colors.accent};
