@@ -10,7 +10,6 @@ import { useNavigate } from 'react-router-dom';
 import langConfig from "../config/langConfig.json"
 import api from '../utilities/api';
 import { UserContext } from '../utilities/context/UserContext';
-import { generateOrderNumber } from '../utilities/OrderNumberGenerator';
 
 const Payment = () => {
     const context = useContext(Context)
@@ -21,8 +20,6 @@ const Payment = () => {
     const [cart, setCart] = useState(cartItems)
     const navigate = useNavigate()
     const { userId } = useContext(UserContext)
-    const orderNumber = generateOrderNumber();
-
 
     const initialValues = {
         name: "",
@@ -82,7 +79,7 @@ const Payment = () => {
             })),
             orderDate: date,
             totalPrice: totalPrice / 100,
-            orderNumber: orderNumber,
+            orderNumber: context.orderNumber,
             orderStatus: "Placed" 
         }];
     

@@ -173,7 +173,7 @@ const Orders = () => {
             </EstTime>
             <OrdNo>
               <LableInfo>ORDER NUMBER</LableInfo>
-              <DescInfo>#1234HB</DescInfo>
+              <DescInfo>{context.orderNumber}</DescInfo>
             </OrdNo>
           </Information>
           <Status>

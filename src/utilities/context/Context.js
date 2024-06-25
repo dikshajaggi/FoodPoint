@@ -1,6 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import data from "../../assets/data.json"
 import api from "../api";
+import {generateOrderNumber} from "../OrderNumberGenerator.js"
 // import { useDispatch } from "react-redux";
 
 const value = "value"
@@ -28,6 +29,7 @@ const ContextProvider = (props) => {
     const statusArr = ["placed", "confirmed", "processing", "delivery", "end"]
     const [language, setLanguage] = useState("en")
     const [orderDetails, setOrderDetails] = useState(null)
+    const orderNumber = generateOrderNumber();
 
     const fetchRestData = async() => {
         await api.allRestData().then(data => {
@@ -39,18 +41,18 @@ const ContextProvider = (props) => {
         fetchRestData()
     }, [])
 
-    useEffect(() => {
-        if (orderPlaced === true) {
-            console.log("placedddddddddddddddd", statusArr)
-            statusArr.forEach((item, index) => {
-                setTimeout(() => {
-                    setOrderStatus(item)
-                    setStatus(prev => [...prev, item]); // Ensure a new array instance is created
-                }, index * 10000);
-            });
-        }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [orderPlaced])
+    // useEffect(() => {
+    //     if (orderPlaced === true) {
+    //         console.log("placedddddddddddddddd", statusArr)
+    //         statusArr.forEach((item, index) => {
+    //             setTimeout(() => {
+    //                 setOrderStatus(item)
+    //                 setStatus(prev => [...prev, item]); // Ensure a new array instance is created
+    //             }, index * 10000);
+    //         });
+    //     }
+    //     // eslint-disable-next-line react-hooks/exhaustive-deps
+    // }, [orderPlaced])
 
     // const dispatch = useDispatch()
 
@@ -121,7 +123,8 @@ const ContextProvider = (props) => {
                 language,
                 setLanguage,
                 orderDetails,
-                setOrderDetails
+                setOrderDetails,
+                orderNumber
             }}
         >
             {props.children}
