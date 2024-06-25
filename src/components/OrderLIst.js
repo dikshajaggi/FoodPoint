@@ -7,8 +7,7 @@ import { Context } from '../utilities/context/Context';
 const OrderLIst = ({ items, onClose }) => {
     const context= useContext(Context)
     console.log(items, "orderlist")
-    const data = Array.isArray(items) ? items : [items]
-    console.log(data, "datadata", [items])
+    const data = items.map(item => item)
     return (
         <Wrapper>
             <ButtonClose onClick={onClose}><i class="fa-solid fa-xmark" style={{ fontSize: "18px" }}></i></ButtonClose>
@@ -16,11 +15,11 @@ const OrderLIst = ({ items, onClose }) => {
             {data.map((item, index) => (
                 <OrderListDiv key={index}>
                     <DetailsWrapper>
-                        <h6>{item.item.name}</h6>
-                        <p>Price: {item.item.price? item.item.price / 100 : item.item.defaultPrice / 100}</p>
+                        <h6>{item.menu.name}</h6>
+                        <p>Price: {item.menu.price? item.menu.price / 100 : item.menu.defaultPrice / 100}</p>
                         <p>Quantity: {item.quantity}</p>
                     </DetailsWrapper>
-                    <p>{item.item.description}</p>
+                    <p>{item.menu.description}</p>
                 </OrderListDiv>
             ))}
         </Wrapper>

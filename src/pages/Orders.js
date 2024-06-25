@@ -21,9 +21,13 @@ import { useDispatch } from 'react-redux'
 import { addItems } from '../utilities/redux/cartSlice'
 import OrderLIst from '../components/OrderLIst'
 import langConfig from "../config/langConfig.json"
+import api from '../utilities/api'
+import { UserContext } from '../utilities/context/UserContext'
 
 const Orders = () => {
   const context = useContext(Context)
+  const { userId } = useContext(UserContext)
+
   // const items = useSelector(store => store.cart.items)
   const [active, setActive] = useState("current")
   const [orderDelivered, setOrderDelivered] = useState(false)
@@ -88,44 +92,38 @@ const Orders = () => {
   }
   console.log(localStorage.getItem('cartItems'), "mango")
 
-  function generateOrderNo() {
-    const randomNumber = Math.floor(Math.random() * 1000);
-    const orderNo = `#${randomNumber}HB`;
-    console.log(orderNo, "ordernpppp")
-    return orderNo;
+  async function getallOrders() {
+    const res = await api.getAllOders(userId)
+    setPrevOrdersList(res.data.items?.orderItems)
   }
-
   useEffect(() => {
-    const data = localStorage.getItem('prevOrders', prevOrdersList)
-    console.log(JSON.parse(data), "prevOrdersList localStorage.getItem('prevOrders', prevOrdersList)")
-    if (data && JSON.parse(data).length !== 0) setPrevOrdersList(JSON.parse(data))
-    else setPrevOrdersList(prevOrderList)
+    getallOrders()
     // eslint-disable-next-line
-  }, [])
+  }, [userId])
 
   useEffect(() => {
-    const storedCartItems = localStorage.getItem('cartItems');
-    if (storedCartItems) {
-      const storedCartItemsArr = JSON.parse(storedCartItems)
-      console.log(storedCartItemsArr, "storedCartItemsArr")
-      if (context.orderStatus === "end") {
-        storedCartItemsArr.map(item => {
-          const ordernumber = generateOrderNo()
-          const totalprice = item.quantity * (item.item.price / 100)
-          const formattedDate = formatDate()
-          const obj = {
-            orderNo: ordernumber,
-            orderDate: formattedDate,
-            orderPrice: totalprice,
-            orderStatus: "Delivered",
-            order: item
-          }
-          setPrevOrdersList(prev => [...prev, obj])
-          localStorage.setItem('cartItems', [])
-          return true
-        })
-      }
-    }
+    // const storedCartItems = localStorage.getItem('cartItems');
+    // if (storedCartItems) {
+    //   const storedCartItemsArr = JSON.parse(storedCartItems)
+    //   console.log(storedCartItemsArr, "storedCartItemsArr")
+    //   if (context.orderStatus === "end") {
+    //     storedCartItemsArr.map(item => {
+    //       const ordernumber = generateOrderNo()
+    //       const totalprice = item.quantity * (item.item.price / 100)
+    //       const formattedDate = formatDate()
+    //       const obj = {
+    //         orderNo: ordernumber,
+    //         orderDate: formattedDate,
+    //         orderPrice: totalprice,
+    //         orderStatus: "Delivered",
+    //         order: item
+    //       }
+    //       setPrevOrdersList(prev => [...prev, obj])
+    //       localStorage.setItem('cartItems', [])
+    //       return true
+    //     })
+    //   }
+    // }
     // eslint-disable-next-line
   }, [context.orderPlaced])
 
@@ -209,20 +207,21 @@ const Orders = () => {
       </OrdersMain> : <OrderHistory>
         <h4 style={{ color: "white" }}>{context.language === "en" ? langConfig[0].orders.prev.en : langConfig[0].orders.prev.hn}</h4>
         {prevOrdersList.map((item, index) => {
+          const menu = item.items
           return (
             <OrderWrapper key={item.id}>
               <OrderDetails>
-                <h6>Order Number - <Item>{item.orderNo}</Item></h6>
+                <h6>Order Number - <Item>{item.orderNumber}</Item></h6>
                 <h6>Order Date - <Item>{item.orderDate}</Item></h6>
-                <h6>Order Price - <Item>{item.orderPrice}</Item></h6>
+                <h6>Order Price - <Item>{item.totalPrice}</Item></h6>
                 <h6>Order Status - <Item>{item.orderStatus}</Item></h6>
               </OrderDetails>
               <ButtonGroup>
                 <Button onClick={() => toggleOrderList(index)}>{context.language === "en" ? langConfig[0].orders.view.en : langConfig[0].orders.view.hn}</Button>
-                <Button onClick={() => addToCart(item.order)}>{context.language === "en" ? langConfig[0].orders.reorder.en : langConfig[0].orders.reorder.hn}</Button>
+                <Button onClick={() => addToCart(item.menu)}>{context.language === "en" ? langConfig[0].orders.reorder.en : langConfig[0].orders.reorder.hn}</Button>
                 {openOrderIndexes.includes(index) && (
                   <OrderListContainer>
-                    <OrderLIst items={item.order} onClose={closeOrderList} />
+                    <OrderLIst items={menu} onClose={closeOrderList} />
                   </OrderListContainer>
                 )}
               </ButtonGroup>

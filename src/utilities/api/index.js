@@ -159,6 +159,16 @@ const api = {
         }
     },
 
+    async getAllOders(id) {
+      try{
+        const res = await axios.get(`all-orders/${id}`)
+        return res;
+      } catch (error) {
+          console.error("Error posting data:", error);
+          throw error;
+        }
+      }
+
 };
 
 export default api

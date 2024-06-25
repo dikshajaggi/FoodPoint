@@ -10,16 +10,19 @@ import { useNavigate } from 'react-router-dom';
 import langConfig from "../config/langConfig.json"
 import api from '../utilities/api';
 import { UserContext } from '../utilities/context/UserContext';
+import { generateOrderNumber } from '../utilities/OrderNumberGenerator';
 
 const Payment = () => {
     const context = useContext(Context)
     const [close, setClose] = useState(true)
-    const [total, setTotal] = useState()
-    const [totalItems, setTotalItems] = useState()
+    const totalPrice = context.orderDetails.totalPrice
+    const totalItems = context.orderDetails.totalItems
     const cartItems = useSelector(state => state.cart.items)
     const [cart, setCart] = useState(cartItems)
     const navigate = useNavigate()
     const { userId } = useContext(UserContext)
+    const orderNumber = generateOrderNumber();
+
 
     const initialValues = {
         name: "",
@@ -52,37 +55,60 @@ const Payment = () => {
         if (res.success) setCart(res.items)
     }
 
-    const orderPlaced = async(values) => {
-        const orderData = {cart: cart._id, ...values}
+    const orderPlaced = async (values) => {
+        const date = new Date();
+        const orderItems = [{
+            cart: cart._id, // Ensure cart._id is correctly fetched or derived
+            name: values.name,
+            address: values.address,
+            address2: values.address2,
+            contact: values.contact,
+            city: values.city,
+            region: values.region,
+            pincode: values.pincode,
+            state: values.state,
+            items: cartItems.map(item => ({
+                menu: {
+                    id: item.item.menu.id,
+                    name: item.item.menu.name,
+                    description: item.item.menu.description,
+                    defaultPrice: item.item.menu.defaultPrice,
+                    category: item.item.menu.category,
+                    imageId: item.item.menu.imageId,
+                    _id: item.item.menu._id,
+                },
+                quantity: item.item.quantity
+            })),
+            orderDate: date,
+            totalPrice: totalPrice / 100,
+            orderNumber: orderNumber,
+            orderStatus: "Placed" 
+        }];
+    
         const data = {
             user: userId,
-            items: orderData,
+            orderItems: [...orderItems]
+        };
+    
+        try {
+            const res = await api.orderPlaced(data);
+            console.log(res, "order placed");
+    
+            if (res.data.success) {
+                await api.deleteAllCartItems(userId);
+            }
+        } catch (error) {
+            console.error('Error placing order:', error);
         }
-        const res = await api.orderPlaced(data)
-        console.log(res, "order placed")
-        if (res.data.success) api.deleteAllCartItems(userId)
-    }
-
+    };
+    
+    
     useEffect(() => {
         if (cartItems?.length === 0) {
             navigate("/")
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
-
-    useEffect(() => {
-        const totalItems = cartItems.reduce((acc, current) => acc + current.quantity, 0);
-        const totalPrice = cartItems.reduce((acc, current) => {
-            if (current.item && current.item.defaultPrice) {
-                return acc + current.item.defaultPrice * current.quantity;
-            } else if (current.item && current.item.price) {
-                return acc + current.item.price * current.quantity;
-            }
-            return acc;
-        }, 0);
-        setTotalItems(totalItems);
-        setTotal(totalPrice);
-    }, [cartItems])
 
     useEffect(() => {
         getCartItems()
@@ -93,7 +119,7 @@ const Payment = () => {
             <Header />
             <OrderDetails>
                 <PaymentOp>{context.language === "en" ? langConfig[0].checkout.pay_option.en : langConfig[0].checkout.pay_option.hn}</PaymentOp>
-                <PaymentInfo>{totalItems === 1 ? `${totalItems} ${context.language === "en" ? langConfig[0].checkout.item.en : langConfig[0].checkout.item.hn}` : ` ${totalItems} ${context.language === "en" ? langConfig[0].checkout.items.en : langConfig[0].checkout.items.hn}`} | {context.language === "en" ? langConfig[0].checkout.total.en : langConfig[0].checkout.total.hn} ₹{total / 100}</PaymentInfo>
+                <PaymentInfo>{totalItems === 1 ? `${totalItems} ${context.language === "en" ? langConfig[0].checkout.item.en : langConfig[0].checkout.item.hn}` : ` ${totalItems} ${context.language === "en" ? langConfig[0].checkout.items.en : langConfig[0].checkout.items.hn}`} | {context.language === "en" ? langConfig[0].checkout.total.en : langConfig[0].checkout.total.hn} ₹{totalPrice / 100}</PaymentInfo>
             </OrderDetails>
             <Wrapper>
                 <Button onClick={() => setClose(false)}><CodHead><img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_64,e_trim/PaymentLogos/instruments/4x/Cash" alt="" style={{ marginRight: "10px", height: "2vh" }} />{context.language === "en" ? langConfig[0].checkout.cod.en : langConfig[0].checkout.cod.hn}</CodHead></Button>

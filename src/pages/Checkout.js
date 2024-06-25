@@ -27,6 +27,7 @@ const Checkout = ({cartData}) => {
         }, 0);
         setTotalItems(totalItems);
         setTotal(totalPrice);
+        context.setOrderDetails({totalItems, totalPrice})
     }, [cartData])
 
     return (

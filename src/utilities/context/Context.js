@@ -27,6 +27,7 @@ const ContextProvider = (props) => {
     const [orderStatus, setOrderStatus] = useState()
     const statusArr = ["placed", "confirmed", "processing", "delivery", "end"]
     const [language, setLanguage] = useState("en")
+    const [orderDetails, setOrderDetails] = useState(null)
 
     const fetchRestData = async() => {
         await api.allRestData().then(data => {
@@ -118,7 +119,9 @@ const ContextProvider = (props) => {
                 orderStatus,
                 setOrderStatus,
                 language,
-                setLanguage
+                setLanguage,
+                orderDetails,
+                setOrderDetails
             }}
         >
             {props.children}
