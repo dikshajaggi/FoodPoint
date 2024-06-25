@@ -46,6 +46,7 @@ const SpecificCard = (props) => {
 
     useEffect(() => {
         getAllCartItems()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [cartItems])
 
     return (

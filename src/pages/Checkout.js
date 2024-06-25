@@ -28,6 +28,7 @@ const Checkout = ({cartData}) => {
         setTotalItems(totalItems);
         setTotal(totalPrice);
         context.setOrderDetails({totalItems, totalPrice})
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [cartData])
 
     return (
