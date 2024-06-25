@@ -72,6 +72,7 @@ const Payment = () => {
                     id: item.item.menu.id,
                     name: item.item.menu.name,
                     description: item.item.menu.description,
+                    price: item.item.menu.price,
                     defaultPrice: item.item.menu.defaultPrice,
                     category: item.item.menu.category,
                     imageId: item.item.menu.imageId,
