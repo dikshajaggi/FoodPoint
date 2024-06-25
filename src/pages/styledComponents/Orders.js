@@ -2,7 +2,11 @@ import styled from "styled-components";
 
 const OrdersWrapper = styled.div`
 background-color: ${props => props.theme.colors.main};
-height: ${props => props.setHeight ? "100vh" : "auto"};
+min-height:100vh;
+overflow-y: auto;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
 @media only screen and (max-width: 600px)  {
     display: flex;
     flex-direction: column;
