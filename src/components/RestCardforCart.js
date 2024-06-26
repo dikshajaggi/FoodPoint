@@ -6,11 +6,13 @@ import langConfig from "../config/langConfig.json"
 import { Context } from '../utilities/context/Context'
 import api from '../utilities/api'
 import { UserContext } from '../utilities/context/UserContext'
+import { toast } from 'react-toastify'
 
 const SpecificCard = (props) => {
     const { name, price, description, id, imageId, category, defaultPrice } = props
     const dispatch = useDispatch()
     const cartItems = useSelector(state => state.cart.items)
+    console.log(cartItems, "cartItems")
     const context = useContext(Context)
     const { userId } = useContext(UserContext)
     const [cartData, setCartData] = useState([])
@@ -26,16 +28,18 @@ const SpecificCard = (props) => {
             menu: restData,
             quantity: 1
         }
-        await api.addToCart(data)
         dispatch(addItems(data))
+        const res = await api.addToCart(data)
+        if (res.status === 201) toast.success("Item added to cart")
     }
 
     const removeItemFromCart = async (restData) => {
         const data = {
             id: restData.id
         }
-        await api.deleteSpecificCartItem(userId, restData.id)
         dispatch(removeItem(data))
+        const res = await api.deleteSpecificCartItem(userId, restData.id)
+        if(res.status === 200) toast.success("Item removed from cart")
     }
 
     const getAllCartItems = async () => {

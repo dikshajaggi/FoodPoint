@@ -29,6 +29,7 @@ const ContextProvider = (props) => {
     const statusArr = ["placed", "confirmed", "processing", "delivery", "end"]
     const [language, setLanguage] = useState("en")
     const [orderDetails, setOrderDetails] = useState(null)
+    const [qtyUpdated, setQtyUpdated] = useState(false)
     const orderNumber = generateOrderNumber();
 
     const fetchRestData = async() => {
@@ -124,6 +125,8 @@ const ContextProvider = (props) => {
                 setLanguage,
                 orderDetails,
                 setOrderDetails,
+                qtyUpdated,
+                setQtyUpdated,
                 orderNumber
             }}
         >

@@ -10,19 +10,20 @@ import Footer from "../components/Footer"
 import langConfig from "../config/langConfig.json"
 import api from "../utilities/api"
 import { UserContext } from "../utilities/context/UserContext"
+import { toast } from "react-toastify"
 
 const Cart = () => {
     const {userId} = useContext(UserContext)
     const context = useContext(Context)
     const items = useSelector((store) => store.cart.items)
     const dispatch = useDispatch()
-    const [cartData, setCartData] = useState([])
+    const [cartData, setCartData] = useState(items)
+    console.log(cartData, "checking cartdata initially")
 
     const handleclearCart = async () => {
-       const response =  await api.deleteAllCartItems(userId)
-       if (response.success) {
         dispatch(clearCart())
-       }
+        const response =  await api.deleteAllCartItems(userId)
+        if (response.success) toast.success("Cleared Cart")
     }
 
     const getCartItems = async() => {
@@ -35,7 +36,7 @@ const Cart = () => {
           getCartItems()
           console.log(cartData, "getting cart items", items)
            // eslint-disable-next-line react-hooks/exhaustive-deps
-      }, [userId, items])
+      }, [userId, items, context.qtyUpdated])
 
     return (
         <CartMain>
@@ -48,6 +49,7 @@ const Cart = () => {
                 <hr></hr>
                 <CartContentWrapper>
                     {cartData.length !== 0 ? <>
+                    {console.log(cartData, "cartDatacartDatacartData")}
                         <CartData>{cartData?.map((c, index) => <CartDataDisplay key={index} {...c} />)}</CartData>
                         <div><Checkout cartData = {cartData} /></div>
                     </> : <EmptyCart><h4>{context.language === "en" ?  langConfig[0].cart.add.en : langConfig[0].cart.add.hn}</h4></EmptyCart>

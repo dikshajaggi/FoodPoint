@@ -1,21 +1,39 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import "./helperStyles.css"
 import { useDispatch } from 'react-redux'
 import { setItemQuantityDec, setItemQuantityInc } from '../redux/cartSlice'
+import api from '../api'
+import { UserContext } from '../context/UserContext'
+import { Context } from '../context/Context'
 
 const QuantityIncDec = (props) => {
 
     const dispatch = useDispatch()
     const [itemQty, setItemQty] = useState()
+    const { userId } = useContext(UserContext)
+    const context = useContext(Context)
 
-    const increase = (id) => {
+    const updateCart = async(updateType) => {
+        const data = {
+            id : props.id,
+            type: updateType
+        }
+        const res = api.updateCartItems(userId, data)
+        console.log(res, "updated cart response")
+    }
+
+    const increase = async(id) => {
         setItemQty(prevQty => prevQty + 1);
         dispatch(setItemQuantityInc(id))
+        context.setQtyUpdated(!context.qtyUpdated)
+        await updateCart("inc")
     }
-    const decrease = (id) => {
-        if (itemQty > 0) {
+    const decrease = async(id) => {
+        if (itemQty >= 2) {
             setItemQty(prevQty => prevQty - 1);
             dispatch(setItemQuantityDec(id));
+            context.setQtyUpdated(!context.qtyUpdated)
+            await updateCart("dec")
         }
     }
 

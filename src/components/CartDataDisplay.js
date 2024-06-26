@@ -8,17 +8,19 @@ import { useContext } from "react"
 import { Context } from "../utilities/context/Context"
 import api from "../utilities/api"
 import { UserContext } from "../utilities/context/UserContext"
+import { toast } from "react-toastify"
 
 const CartDataDisplay = (props) => {
     console.log(props, "line10")
-    const { name, price, imageId, id, defaultPrice } = props.menu
+    const { name, price, imageId, id, defaultPrice } = props?.menu
     const dispatch = useDispatch()
     const context = useContext(Context)
     const { userId } = useContext(UserContext)
 
     const removeItemFromCart = async (restData) => {
-        await api.deleteSpecificCartItem(userId, restData.id)
         dispatch(removeItem(restData))
+        const res = await api.deleteSpecificCartItem(userId, restData.id)
+        if (res.status === 200) toast.success("Item removed from cart")
     }
 
     return (

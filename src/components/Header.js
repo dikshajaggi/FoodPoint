@@ -8,7 +8,6 @@ import { useTheme } from 'styled-components'
 import offers from "../assets/images/offers.png"
 import offersAccent from "../assets/images/offersAccent.png"
 import DrawerComponent from './DrawerComponent'
-import { clearCart } from '../utilities/redux/cartSlice'
 import langConfig from "../config/langConfig.json"
 import { UserButton } from '@clerk/clerk-react'
 import api from '../utilities/api'
@@ -42,14 +41,6 @@ const Header = () => {
        if (userId) getCartItems()
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [userId, cartStoreData])
-
-    useEffect(() => {
-        console.log(context.orderPlaced, "28")
-        if (context.orderPlaced) {
-            dispatch(clearCart())
-        }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [context.orderPlaced])
 
     const toggleDrawer = () => {
         setOpen(!open);
