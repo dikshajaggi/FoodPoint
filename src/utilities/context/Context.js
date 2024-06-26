@@ -26,7 +26,7 @@ const ContextProvider = (props) => {
     const [status, setStatus] = useState([])
     const [orderPlaced, setOrderPlaced] = useState(false)
     const [orderStatus, setOrderStatus] = useState()
-    const statusArr = ["placed", "confirmed", "processing", "delivery", "end"]
+    // const statusArr = ["placed", "confirmed", "processing", "delivery", "end"]
     const [language, setLanguage] = useState("en")
     const [orderDetails, setOrderDetails] = useState(null)
     const [qtyUpdated, setQtyUpdated] = useState(false)

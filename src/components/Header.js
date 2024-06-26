@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { UserContext } from '../utilities/context/UserContext'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import "../style.css"
 import { Context } from "../utilities/context/Context"
 import {CartItemsLength, CartWrapper, Cart, HeaderDiv, HeaderWrapper, LinkStyled, Location, Logo, MobileHeader, NavbarLI, Offers, Username, LogoLoc, ChatGPTButton } from './styledComponents/Header'
@@ -20,7 +20,7 @@ const Header = () => {
     const cartStoreData = useSelector(state => state.cart.items)
     const [cartItems, setCartItems] = useState(cartStoreData)
     const [open, setOpen] = useState(false);
-    const dispatch = useDispatch()
+    // const dispatch = useDispatch()
     const langConfigHeader = langConfig[0].header
 
     const getCartItems = async() => {
