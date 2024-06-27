@@ -3,7 +3,7 @@ import { UserContext } from '../utilities/context/UserContext'
 import { useSelector } from 'react-redux'
 import "../style.css"
 import { Context } from "../utilities/context/Context"
-import {CartItemsLength, CartWrapper, Cart, HeaderDiv, HeaderWrapper, LinkStyled, Location, Logo, MobileHeader, NavbarLI, Offers, Username, LogoLoc, ChatGPTButton } from './styledComponents/Header'
+import {CartWrapper, HeaderDiv, HeaderWrapper, LinkStyled, Location, Logo, MobileHeader, NavbarLI, Offers, Username, LogoLoc, ChatGPTButton } from './styledComponents/Header'
 import { useTheme } from 'styled-components'
 import offers from "../assets/images/offers.png"
 import offersAccent from "../assets/images/offersAccent.png"

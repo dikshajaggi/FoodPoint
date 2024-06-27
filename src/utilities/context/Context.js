@@ -62,6 +62,7 @@ const ContextProvider = (props) => {
         console.log( cartStoreData.length, cartLength, " cartStoreData.length + cartLength")
         const totalLength = cartStoreData.length + cartLength
         setCartLength(totalLength)
+                // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [cartStoreData])
 
     // useEffect(() => {
