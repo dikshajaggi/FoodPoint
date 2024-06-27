@@ -1,13 +1,17 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import data from "../../assets/data.json"
 import api from "../api";
 import {generateOrderNumber} from "../OrderNumberGenerator.js"
+import { UserContext } from "./UserContext.js";
+import { useSelector } from "react-redux";
 // import { useDispatch } from "react-redux";
 
 const value = "value"
 const Context = createContext(value)
 
 const ContextProvider = (props) => {
+    const { userId } = useContext(UserContext)
+    const cartStoreData = useSelector(state => state.cart.items)
     const [flag, setFlag] = useState(0)
     const [quantity, setQuantity] = useState([])
     const [filter, setFilter] = useState("relevance")
@@ -30,6 +34,7 @@ const ContextProvider = (props) => {
     const [language, setLanguage] = useState("en")
     const [orderDetails, setOrderDetails] = useState(null)
     const [qtyUpdated, setQtyUpdated] = useState(false)
+    const [cartLength, setCartLength] = useState(null)
     const orderNumber = generateOrderNumber();
 
     const fetchRestData = async() => {
@@ -38,9 +43,26 @@ const ContextProvider = (props) => {
         })
     }
 
+    const getCartItems = async() => {
+        const cartdata =  await api.getCartItems(userId)
+        console.log(cartdata.items.items.length, "cartStoreData.length + cartLength")
+        if (cartdata.success) {
+            const length = cartdata.items.items.length
+            setCartLength(length)
+        }
+      }
+
     useEffect(() => {
         fetchRestData()
-    }, [])
+        getCartItems()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [userId])
+
+    useEffect(() => {
+        console.log( cartStoreData.length, cartLength, " cartStoreData.length + cartLength")
+        const totalLength = cartStoreData.length + cartLength
+        setCartLength(totalLength)
+    }, [cartStoreData])
 
     // useEffect(() => {
     //     if (orderPlaced === true) {
@@ -127,6 +149,8 @@ const ContextProvider = (props) => {
                 setOrderDetails,
                 qtyUpdated,
                 setQtyUpdated,
+                cartLength,
+                setCartLength,
                 orderNumber
             }}
         >

@@ -38,9 +38,9 @@ const Header = () => {
     }
 
     useEffect(() => {
-       if (userId) getCartItems()
+        if (userId) getCartItems()
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [userId, cartStoreData])
+    }, [userId, cartStoreData, context.qtyUpdated])
 
     const toggleDrawer = () => {
         setOpen(!open);
@@ -56,9 +56,9 @@ const Header = () => {
                     </Location>
                </LogoLoc>
                 <DrawerComponent open={open} setOpen={setOpen} />
-                <Cart onClick={() => changePageTitle("FoodPoint | Cart")}>
-                    <LinkStyled to="/cart"><i class="fa-sharp fa-solid fa-cart-shopping" style={{cursor: "pointer",  color: cartItems.length === 0 ? "white" : theme.colors.accent, fontSize: "16px" }}><CartItemsLength style={{ cursor: "pointer", color: 'white', fontSize: "12px" }}>{cartItems.length}</CartItemsLength></i></LinkStyled>
-                </Cart>
+                {/* <Cart onClick={() => changePageTitle("FoodPoint | Cart")}>
+                    <LinkStyled to="/cart"><i class="fa-sharp fa-solid fa-cart-shopping" style={{cursor: "pointer",  color: cartItems.length === 0 ? "white" : theme.colors.accent, fontSize: "16px" }}><CartItemsLength style={{ cursor: "pointer", color: 'white', fontSize: "12px" }}>{cartLength}</CartItemsLength></i></LinkStyled>
+                </Cart> */}
                 <CartWrapper>
                     <Offers onClick={() => changePageTitle("FoodPoint | Search")}>
                         {window.location.pathname === "/search" ? <i class="fa fa-search" style={{cursor: "pointer", color:  "#FB9235"}} aria-hidden="true"></i> : <i class="fa fa-search" style={{color:"white", cursor: "pointer"}} aria-hidden="true"></i>}
@@ -76,7 +76,8 @@ const Header = () => {
                         {window.location.pathname === "/orders" ? <i class="fa fa-list" style={{cursor: "pointer", color:  "#FB9235"}} aria-hidden="true"></i> : <i class="fa fa-list" style={{color:"white", cursor: "pointer"}} aria-hidden="true"></i>}
                         <LinkStyled to="/orders" style={{ marginLeft: "6px",  color: window.location.pathname === "/orders" ? theme.colors.accent : "white" }}><NavbarLI header="main">{context.language === "en" ? langConfigHeader.user_dropdown.orders.en : langConfigHeader.user_dropdown.orders.hn}</NavbarLI></LinkStyled>
                     </Offers>
-                    <LinkStyled onClick={() => changePageTitle("FoodPoint | Cart")} to="/cart"><i class="fa-sharp fa-solid fa-cart-shopping" style={{ color: cartItems.length === 0 ? "white" : theme.colors.accent, fontSize: "16px" }}><CartItemsLength style={{ color: 'white', fontSize: "12px" }}>{cartItems.length}</CartItemsLength></i></LinkStyled>
+                    <LinkStyled onClick={() => changePageTitle("FoodPoint | Cart")} to="/cart"><i class="fa-sharp fa-solid fa-cart-shopping" style={{ color: cartItems.length === 0 ? "white" : theme.colors.accent, fontSize: "16px" }}></i></LinkStyled>
+                    {/* <CartItemsLength style={{ color: 'white', fontSize: "12px" }}>{context.cartLength}</CartItemsLength> */}
                     <NavbarLI onClick={changeLang} header="main" style={{color: "white", cursor: "pointer"}}>{context.language === "en" ? langConfigHeader.user_dropdown.lng.hn : langConfigHeader.user_dropdown.lng.en}</NavbarLI>{userData !== null ? <UserButton /> : <LinkStyled to="/login"><Username>{context.language === "en" ? langConfigHeader.user_dropdown.login.en : langConfigHeader.user_dropdown.login.hn}</Username></LinkStyled>}
                     <LinkStyled onClick={() => changePageTitle(`FoodPoint | AI Dish Guru`)} to="/gpt-dish-discovery" style={{color: "#fff", fontWeight: 600, fontSize: "14px"}}><ChatGPTButton>AI Dish Guru</ChatGPTButton></LinkStyled>
                 </CartWrapper>

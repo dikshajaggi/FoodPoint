@@ -24,15 +24,15 @@ function App() {
       <Provider store={store}>
       <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
         <Themeprovider>
-          <ContextProvider>
             <UserContextProvider value={{
               user,
               setUser
             }}>
+              <ContextProvider>
               <ToastContainer />
               <RouterProvider router={appRoutes} />
+              </ContextProvider>
             </UserContextProvider>
-          </ContextProvider>
         </Themeprovider>
         </ClerkProvider>
       </Provider>
