@@ -18,8 +18,8 @@ const CartDataDisplay = (props) => {
     const { userId } = useContext(UserContext)
 
     const removeItemFromCart = async (restData) => {
-        dispatch(removeItem(restData))
-        const res = await api.deleteSpecificCartItem(userId, restData.id)
+        dispatch(removeItem(restData.menu.id))
+        const res = await api.deleteSpecificCartItem(userId, restData.menu.id)
         if (res.status === 200) toast.success("Item removed from cart")
     }
 

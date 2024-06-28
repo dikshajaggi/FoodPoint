@@ -10,6 +10,7 @@ import { toast } from 'react-toastify'
 
 const SpecificCard = (props) => {
     const { name, price, description, id, imageId, category, defaultPrice } = props
+    console.log(id, "idcheck")
     const dispatch = useDispatch()
     const cartItems = useSelector(state => state.cart.items)
     console.log(cartItems, "cartItems")
@@ -35,10 +36,10 @@ const SpecificCard = (props) => {
 
     const removeItemFromCart = async (restData) => {
         const data = {
-            id: restData.id
+            id: restData.menu.id
         }
         dispatch(removeItem(data))
-        const res = await api.deleteSpecificCartItem(userId, restData.id)
+        const res = await api.deleteSpecificCartItem(userId, restData.menu.id)
         if(res.status === 200) toast.success("Item removed from cart")
     }
 

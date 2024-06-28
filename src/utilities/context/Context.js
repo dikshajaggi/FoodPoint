@@ -34,7 +34,7 @@ const ContextProvider = (props) => {
     const [language, setLanguage] = useState("en")
     const [orderDetails, setOrderDetails] = useState(null)
     const [qtyUpdated, setQtyUpdated] = useState(false)
-    const [cartLength, setCartLength] = useState(null)
+    const [cart, setCart] = useState([])
     const orderNumber = generateOrderNumber();
 
     const fetchRestData = async() => {
@@ -45,25 +45,22 @@ const ContextProvider = (props) => {
 
     const getCartItems = async() => {
         const cartdata =  await api.getCartItems(userId)
-        console.log(cartdata.items.items.length, "cartStoreData.length + cartLength")
+        console.log(cartdata.items.items, "cartStoreData.length + cartLength")
         if (cartdata.success) {
-            const length = cartdata.items.items.length
-            setCartLength(length)
+            setCart(cartdata.items.items)
         }
       }
 
     useEffect(() => {
         fetchRestData()
-        getCartItems()
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [userId])
 
     useEffect(() => {
-        console.log( cartStoreData.length, cartLength, " cartStoreData.length + cartLength")
-        const totalLength = cartStoreData.length + cartLength
-        setCartLength(totalLength)
-                // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [cartStoreData])
+        setCart(cartStoreData)
+        getCartItems()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [userId, cartStoreData])
 
     // useEffect(() => {
     //     if (orderPlaced === true) {
@@ -150,8 +147,8 @@ const ContextProvider = (props) => {
                 setOrderDetails,
                 qtyUpdated,
                 setQtyUpdated,
-                cartLength,
-                setCartLength,
+                cart,
+                setCart,
                 orderNumber
             }}
         >

@@ -1,32 +1,23 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { UserContext } from '../utilities/context/UserContext'
-import { useSelector } from 'react-redux'
 import "../style.css"
 import { Context } from "../utilities/context/Context"
-import {CartWrapper, HeaderDiv, HeaderWrapper, LinkStyled, Location, Logo, MobileHeader, NavbarLI, Offers, Username, LogoLoc, ChatGPTButton } from './styledComponents/Header'
+import {CartWrapper, HeaderDiv, HeaderWrapper, LinkStyled, Location, Logo, MobileHeader, NavbarLI, Offers, Username, LogoLoc, ChatGPTButton, CartItemsLength } from './styledComponents/Header'
 import { useTheme } from 'styled-components'
 import offers from "../assets/images/offers.png"
 import offersAccent from "../assets/images/offersAccent.png"
 import DrawerComponent from './DrawerComponent'
 import langConfig from "../config/langConfig.json"
 import { UserButton } from '@clerk/clerk-react'
-import api from '../utilities/api'
 
 
 const Header = () => {
     const theme = useTheme()
-    const { userData, userId } = useContext(UserContext)
+    const { userData } = useContext(UserContext)
     const context = useContext(Context)
-    const cartStoreData = useSelector(state => state.cart.items)
-    const [cartItems, setCartItems] = useState(cartStoreData)
     const [open, setOpen] = useState(false);
     // const dispatch = useDispatch()
     const langConfigHeader = langConfig[0].header
-
-    const getCartItems = async() => {
-        const cartdata =  await api.getCartItems(userId)
-        if (cartdata.success) setCartItems(cartdata.items.items)
-      }
 
     const changeLang = () => {
         if (context.language === "en") context.setLanguage("hn")
@@ -36,11 +27,6 @@ const Header = () => {
     const changePageTitle = (title) => {
         document.title = title
     }
-
-    useEffect(() => {
-        if (userId) getCartItems()
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [userId, cartStoreData, context.qtyUpdated])
 
     const toggleDrawer = () => {
         setOpen(!open);
@@ -56,9 +42,6 @@ const Header = () => {
                     </Location>
                </LogoLoc>
                 <DrawerComponent open={open} setOpen={setOpen} />
-                {/* <Cart onClick={() => changePageTitle("FoodPoint | Cart")}>
-                    <LinkStyled to="/cart"><i class="fa-sharp fa-solid fa-cart-shopping" style={{cursor: "pointer",  color: cartItems.length === 0 ? "white" : theme.colors.accent, fontSize: "16px" }}><CartItemsLength style={{ cursor: "pointer", color: 'white', fontSize: "12px" }}>{cartLength}</CartItemsLength></i></LinkStyled>
-                </Cart> */}
                 <CartWrapper>
                     <Offers onClick={() => changePageTitle("FoodPoint | Search")}>
                         {window.location.pathname === "/search" ? <i class="fa fa-search" style={{cursor: "pointer", color:  "#FB9235"}} aria-hidden="true"></i> : <i class="fa fa-search" style={{color:"white", cursor: "pointer"}} aria-hidden="true"></i>}
@@ -76,8 +59,8 @@ const Header = () => {
                         {window.location.pathname === "/orders" ? <i class="fa fa-list" style={{cursor: "pointer", color:  "#FB9235"}} aria-hidden="true"></i> : <i class="fa fa-list" style={{color:"white", cursor: "pointer"}} aria-hidden="true"></i>}
                         <LinkStyled to="/orders" style={{ marginLeft: "6px",  color: window.location.pathname === "/orders" ? theme.colors.accent : "white" }}><NavbarLI header="main">{context.language === "en" ? langConfigHeader.user_dropdown.orders.en : langConfigHeader.user_dropdown.orders.hn}</NavbarLI></LinkStyled>
                     </Offers>
-                    <LinkStyled onClick={() => changePageTitle("FoodPoint | Cart")} to="/cart"><i class="fa-sharp fa-solid fa-cart-shopping" style={{ color: cartItems.length === 0 ? "white" : theme.colors.accent, fontSize: "16px" }}></i></LinkStyled>
-                    {/* <CartItemsLength style={{ color: 'white', fontSize: "12px" }}>{context.cartLength}</CartItemsLength> */}
+                    <LinkStyled onClick={() => changePageTitle("FoodPoint | Cart")} to="/cart"><i class="fa-sharp fa-solid fa-cart-shopping" style={{ color: context.cart.length === 0 ? "white" : theme.colors.accent, fontSize: "16px" }}></i>
+                    <CartItemsLength style={{ color: 'white', fontSize: "12px" }}>{context.cart.length}</CartItemsLength></LinkStyled>
                     <NavbarLI onClick={changeLang} header="main" style={{color: "white", cursor: "pointer"}}>{context.language === "en" ? langConfigHeader.user_dropdown.lng.hn : langConfigHeader.user_dropdown.lng.en}</NavbarLI>{userData !== null ? <UserButton /> : <LinkStyled to="/login"><Username>{context.language === "en" ? langConfigHeader.user_dropdown.login.en : langConfigHeader.user_dropdown.login.hn}</Username></LinkStyled>}
                     <LinkStyled onClick={() => changePageTitle(`FoodPoint | AI Dish Guru`)} to="/gpt-dish-discovery" style={{color: "#fff", fontWeight: 600, fontSize: "14px"}}><ChatGPTButton>AI Dish Guru</ChatGPTButton></LinkStyled>
                 </CartWrapper>
