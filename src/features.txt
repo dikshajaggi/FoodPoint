@@ -1,3 +1,7 @@
 -> categories -> rolls | combos | thali | pizza | burger | desserts and sweets
 
 -> show name instead of id in route
+
+-> socket.io for real time order status -->
+    ---> first send a msg to the server asking to start the order processing
+    ---> then keep on sending the order status to client on some intervals
