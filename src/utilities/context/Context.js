@@ -44,10 +44,7 @@ const ContextProvider = (props) => {
     }
 
     const getCartItems = async() => {
-        const cartdata = localStorage.getItem("cartItems")
-        ? JSON.parse(localStorage.getItem("cartItems"))
-        : []
-            setCart(cartdata)
+        setCart(cartStoreData)
       }
 
     useEffect(() => {
