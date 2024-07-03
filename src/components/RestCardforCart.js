@@ -46,7 +46,10 @@ const SpecificCard = (props) => {
     const getAllCartItems = async () => {
        const cartData = await api.getCartItems(userId)
        console.log(cartData, "data cart")
-       if (cartData.success) setCartData(cartData.items)
+       if (cartData.success) {
+        setCartData(cartData.items)
+        localStorage.setItem('cartItems', JSON.stringify(cartData.items));
+       }
     }
 
     useEffect(() => {

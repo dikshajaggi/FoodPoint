@@ -62,46 +62,6 @@ const ContextProvider = (props) => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [userId, cartStoreData])
 
-    // useEffect(() => {
-    //     if (orderPlaced === true) {
-    //         console.log("placedddddddddddddddd", statusArr)
-    //         statusArr.forEach((item, index) => {
-    //             setTimeout(() => {
-    //                 setOrderStatus(item)
-    //                 setStatus(prev => [...prev, item]); // Ensure a new array instance is created
-    //             }, index * 10000);
-    //         });
-    //     }
-    //     // eslint-disable-next-line react-hooks/exhaustive-deps
-    // }, [orderPlaced])
-
-    // const dispatch = useDispatch()
-
-    // useEffect(() => {
-    //     const dataRef = ref(database, "cart_items");
-
-    //     get(dataRef)
-    //         .then((snapshot) => {
-    //             if (snapshot.exists()) {
-    //                 const data = snapshot.val();
-    //                 // Extract the values from the object into an array
-    //                  const objectDataArr = Object.values(data);
-    //                 console.log(objectDataArr, "object")
-    //                 setCartData(objectDataArr)
-    //                 for (const data of objectDataArr) {
-    //                     dispatch(addItems(data))
-    //                 }
-    //             } else {
-    //                 console.log("No data available");
-    //             }
-    //         })
-    //         .catch((error) => {
-    //             console.error(error);
-    //         });
-
-
-    // }, []);
-
     return (
         <Context.Provider
             value={{

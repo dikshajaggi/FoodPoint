@@ -3,15 +3,14 @@ import { createSlice } from "@reduxjs/toolkit";
 const cartSlice = createSlice({
     name: "cart",
     initialState: {
-        items: []
+        items:  localStorage.getItem("cartItems")
+        ? JSON.parse(localStorage.getItem("cartItems"))
+        : []
     },
     reducers: {
         addItems: (state, action) => {
-            if (Array.isArray(action.payload)) {
-                state.items = state.items.concat(action.payload.map(item => (item)));
-            } else {
-                state.items.push(action.payload);
-            }
+            console.log(state.items, "checking state")
+            state.items.items.push(action.payload)
         },
         clearCart: (state) => {
             state.items = []

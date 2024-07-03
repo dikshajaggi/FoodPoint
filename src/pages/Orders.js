@@ -35,21 +35,21 @@ const Orders = () => {
   const [openOrderIndexes, setOpenOrderIndexes] = useState([])
   const [prevOrdersList, setPrevOrdersList] = useState([])
 
-  const statusArr = [
-    { icon: placed, label: "order placed", desc: "We have recieved your order", id: "placed", fadedicon: placed_fade },
-    { icon: processed, label: "order confirmed", desc: "Your order has been confirmed", id: "confirmed", fadedicon: processed_fade },
-    { icon: confirmed, label: "order processing", desc: "We are preparing your order", id: "processing", fadedicon: confirmation_fade },
-    { icon: delivery, label: "out for delivery", desc: "Your order is out for delivery", id: "delivery", fadedicon: delivery_fade }
-  ]
+  // const statusArr = [
+  //   { icon: placed, label: "order placed", desc: "We have recieved your order", id: "placed", fadedicon: placed_fade },
+  //   { icon: processed, label: "order confirmed", desc: "Your order has been confirmed", id: "confirmed", fadedicon: processed_fade },
+  //   { icon: confirmed, label: "order processing", desc: "We are preparing your order", id: "processing", fadedicon: confirmation_fade },
+  //   { icon: delivery, label: "out for delivery", desc: "Your order is out for delivery", id: "delivery", fadedicon: delivery_fade }
+  // ]
 
-  const statusArrHn = [
-    { icon: placed, label: "आदेश रखा", desc: "हमें आपका ऑर्डर प्राप्त हो गया है", id: "placed", fadedicon: placed_fade },
-    { icon: processed, label: "ऑर्डर की पुष्टि की गई", desc: "आपके ऑर्डर की पुष्टि हो गई है", id: "confirmed", fadedicon: processed_fade },
-    { icon: confirmed, label: "आदेश प्रसंस्करण", desc: "हम आपका ऑर्डर तैयार कर रहे हैं", id: "processing", fadedicon: confirmation_fade },
-    { icon: delivery, label: "डिलीवरी के लिए निकले हैं", desc: "आपका ऑर्डर डिलीवरी के लिए निकल चुका है", id: "delivery", fadedicon: delivery_fade }
-  ]
+  // const statusArrHn = [
+  //   { icon: placed, label: "आदेश रखा", desc: "हमें आपका ऑर्डर प्राप्त हो गया है", id: "placed", fadedicon: placed_fade },
+  //   { icon: processed, label: "ऑर्डर की पुष्टि की गई", desc: "आपके ऑर्डर की पुष्टि हो गई है", id: "confirmed", fadedicon: processed_fade },
+  //   { icon: confirmed, label: "आदेश प्रसंस्करण", desc: "हम आपका ऑर्डर तैयार कर रहे हैं", id: "processing", fadedicon: confirmation_fade },
+  //   { icon: delivery, label: "डिलीवरी के लिए निकले हैं", desc: "आपका ऑर्डर डिलीवरी के लिए निकल चुका है", id: "delivery", fadedicon: delivery_fade }
+  // ]
 
-  const [statusArrContent, setStatusArrContent] = useState(statusArr)
+  // const [statusArrContent, setStatusArrContent] = useState(statusArr)
 
 
   const toggleOrderList = (index) => {
@@ -96,11 +96,11 @@ const Orders = () => {
     else localStorage.setItem('prevOrders', JSON.stringify(prevOrdersList))
   }, [prevOrdersList, context.orderPlaced])
 
-  useEffect(() => {
-    if (context.language === "en") setStatusArrContent(statusArr)
-    else setStatusArrContent(statusArrHn)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [context.language])
+  // useEffect(() => {
+  //   if (context.language === "en") setStatusArrContent(statusArr)
+  //   else setStatusArrContent(statusArrHn)
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [context.language])
 
   return (
     <OrdersWrapper setHeight={context.orderPlaced === false && orderDelivered === false ? true : false}>
@@ -139,7 +139,7 @@ const Orders = () => {
             </OrdNo>
           </Information>
           <Status>
-            {statusArrContent.map((item, index) => {
+            {/* {statusArrContent.map((item, index) => {
               return (
                 <StatusCheckWrapper >
                   <Check>
@@ -154,7 +154,7 @@ const Orders = () => {
                   </StatusWrapper>
                 </StatusCheckWrapper>
               )
-            })}
+            })} */}
           </Status>
         </>}
 
