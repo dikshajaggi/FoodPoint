@@ -15,7 +15,7 @@ const Footer = () => {
     return (
         <FooterWrapper>
             <Info>
-                <Logo>FoodPoint</Logo>
+            <LinkStyled style={{cursor: "pointer"}} to="/main"><Logo>FoodPoint</Logo></LinkStyled>
                 <LinksWrapper>
                     <LinkStyled onClick={() => changePageTitle(`FoodPoint | Disclaimer`)}  to="/disclaimer" style={{ color: "white" }}>{context.language === "en" ? langConfigFooter.disclaimer.en : langConfigFooter.disclaimer.hn}</LinkStyled>
                     <LinkStyled onClick={() => changePageTitle(`FoodPoint | About`)} to="/about" style={{ color: "white" }}>{context.language === "en" ? langConfigFooter.about.en : langConfigFooter.about.hn}</LinkStyled>
