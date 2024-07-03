@@ -17,7 +17,6 @@ const cartSlice = createSlice({
         },
         removeItem: (state, action) => {
             state.items = state.items.filter(x => x.menu.id !== action.payload)
-
         },
         setItemQuantityInc: (state, action) => {
             console.log(state.items, action)

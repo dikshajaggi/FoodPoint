@@ -24,7 +24,7 @@ const Cart = () => {
         console.log(items, "checking cartdata initially")
 
         dispatch(clearCart())
-        localStorage.setItem('cartItems', []);
+        localStorage.removeItem('cartItems');
 
         setCartData([])
         const response =  await api.deleteAllCartItems(userId)
