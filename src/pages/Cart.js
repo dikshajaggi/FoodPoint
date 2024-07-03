@@ -21,9 +21,18 @@ const Cart = () => {
     console.log(cartData, "checking cartdata initially")
 
     const handleclearCart = async () => {
+        console.log(items, "checking cartdata initially")
+
         dispatch(clearCart())
+        localStorage.setItem('cartItems', []);
+
+        setCartData([])
         const response =  await api.deleteAllCartItems(userId)
-        if (response.success) toast.success("Cleared Cart")
+        console.log(response, "cartStoreData.length + cartLengt clearcartres")
+        if (response.status === 200) {
+            setCartData([])
+            toast.success("Cleared Cart")
+        }
     }
 
     const getCartItems = async() => {
@@ -36,7 +45,7 @@ const Cart = () => {
           getCartItems()
           console.log(cartData, "getting cart items", items)
            // eslint-disable-next-line react-hooks/exhaustive-deps
-      }, [userId, items, context.qtyUpdated])
+      }, [userId, context.qtyUpdated])
 
     return (
         <CartMain>

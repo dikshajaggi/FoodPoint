@@ -44,11 +44,10 @@ const ContextProvider = (props) => {
     }
 
     const getCartItems = async() => {
-        const cartdata =  await api.getCartItems(userId)
-        console.log(cartdata.items.items, "cartStoreData.length + cartLength")
-        if (cartdata.success) {
-            setCart(cartdata.items.items)
-        }
+        const cartdata = localStorage.getItem("cartItems")
+        ? JSON.parse(localStorage.getItem("cartItems"))
+        : []
+            setCart(cartdata)
       }
 
     useEffect(() => {
@@ -57,6 +56,7 @@ const ContextProvider = (props) => {
     }, [userId])
 
     useEffect(() => {
+        console.log(cartStoreData, "setCart(cartdata.items.items)")
         setCart(cartStoreData)
         getCartItems()
         // eslint-disable-next-line react-hooks/exhaustive-deps

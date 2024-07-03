@@ -19,7 +19,7 @@ const SpecificCard = (props) => {
     const [cartData, setCartData] = useState([])
 
     useEffect(() => {
-        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+        localStorage.setItem('cartItems', JSON.stringify(cartItems.items));
     }, [cartItems]);
 
 
@@ -48,7 +48,7 @@ const SpecificCard = (props) => {
        console.log(cartData, "data cart")
        if (cartData.success) {
         setCartData(cartData.items)
-        localStorage.setItem('cartItems', JSON.stringify(cartData.items));
+        localStorage.setItem('cartItems', JSON.stringify(cartData.items.items));
        }
     }
 
