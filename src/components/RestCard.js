@@ -6,7 +6,6 @@ import { useTheme } from 'styled-components'
 const Card = (props) => {
     const themes = useTheme()
     const { name, costForTwo, sla, avgRating, aggregatedDiscountInfoV3, image } = props
-    console.log(aggregatedDiscountInfoV3, "aggregatedDiscountInfoV3")
 
     const changePageTitle = (title) => {
          document.title = title

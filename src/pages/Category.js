@@ -13,7 +13,6 @@ const Category = () => {
 
   const getMenuItems = async() => {
     const response = await api.getMenu(id)
-    console.log(response, "category resp")
     setRestData(response.data)
   }
 

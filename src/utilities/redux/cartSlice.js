@@ -9,7 +9,6 @@ const cartSlice = createSlice({
     },
     reducers: {
         addItems: (state, action) => {
-            console.log(state.items, "checking state")
             state.items.push(action.payload)
         },
         clearCart: (state) => {
@@ -19,7 +18,6 @@ const cartSlice = createSlice({
             state.items = state.items.filter(x => x.menu.id !== action.payload)
         },
         setItemQuantityInc: (state, action) => {
-            console.log(state.items, action)
             state.items.filter(x => x.menu.id === action.payload ? (x.quantity += 1) : x.quantity)
         },
         setItemQuantityDec: (state, action) => {

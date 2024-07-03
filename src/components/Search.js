@@ -47,7 +47,6 @@ const Search = () => {
         setCloseSearchList(false)
 
         const restSearch = e.target.value
-        console.log(e.target.value, "checking search", restSearch)
         setSearchvalue(restSearch)
         findMatching(e)
         if (restSearch === "") context.setFilteredData(restData)
@@ -60,7 +59,6 @@ const Search = () => {
 
     const searchRestWithList = () => {
         const restaurants = []
-        console.log(matchingDish, "getting matching dish", restData)
         context.setSearched(true)
         setCloseSearchList(true)
         if (matchingDish.length !== 0) {
@@ -76,11 +74,6 @@ const Search = () => {
                 const restaurantName = findRestaurantName(dish);
                 restaurants.push(restaurantName)
             }
-
-            console.log(names, "line138", restaurants);
-
-
-            console.log(restData.filter((item) => restaurants.includes(item?.name.toLowerCase())), "line138")
             context.setFilteredData(restData.filter((item) => restaurants.includes(item?.name)))
         } else context.setFilteredData(restData.filter((item) => item?.name.toLowerCase().includes(searchvalue.toLowerCase())))
     }
@@ -102,7 +95,6 @@ const Search = () => {
                         }}></i></SearchBtn>
                     {searchvalue !== "" ? matchingRest.length !== 0 || matchingDish.length !== 0 ? closeSearchList ? null : <SearchBarList>
                         <ul>
-                            {console.log(matchingDish, "matchingDishmatchingDish")}
                             {matchingDish.length === 0 ? matchingRest.map(item => {
                                 return (
                                     <SearchValWrapper onClick={searchRestWithList}>

@@ -7,7 +7,6 @@ import langConfig from "../config/langConfig.json"
 import { Context } from '../utilities/context/Context'
 
 const Checkout = ({cartData}) => {
-    console.log(cartData, "getting checkout props")
     const { userData } = useContext(UserContext)
     // const cartItems = useSelector(state => state.cart.items)
     const [total, setTotal] = useState()
@@ -17,7 +16,6 @@ const Checkout = ({cartData}) => {
     useEffect(() => {
         const totalItems = cartData.reduce((acc, current) => acc + current.quantity, 0);
         const totalPrice = cartData.reduce((acc, current) => {
-            console.log(current, "current prop check")
             if (current.menu && current.menu.defaultPrice) {
                 return acc + current.menu.defaultPrice * current.quantity;
             } else if (current.menu && current.menu.price) {

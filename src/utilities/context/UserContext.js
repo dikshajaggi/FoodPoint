@@ -10,11 +10,9 @@ const UserContextProvider = (props) => {
     const { isSignedIn, user, isLoaded } = useUser()
 
     useEffect(() => {
-        console.log(user, "check user")
         if (isLoaded && user !== null) {
             setUserId(user.id)
             setUserData(user)
-            console.log(isSignedIn, user, "checking user details")
         }
     }, [isLoaded, isSignedIn, user])
     return (

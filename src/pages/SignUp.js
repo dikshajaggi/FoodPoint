@@ -50,7 +50,6 @@ const SignUp = () => {
         onSubmit: (values, action) => {
             handleSignup(values)
             localStorage.getItem("location") ? navigate("/main") : navigate("/")
-            console.log(values)
             action.resetForm()
         }
     })

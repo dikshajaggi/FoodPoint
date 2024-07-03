@@ -28,7 +28,6 @@ const DishDiscoveryGpt = () => {
   }
 
   useEffect(() => {
-    console.log(res, 'resdata', res.length !== 0 && res[0] !== 'generating information...')
     if (res.length !== 0 && res[0] !== 'generating information...') {
       setTextBoxValue(null)
     }

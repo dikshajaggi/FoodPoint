@@ -25,7 +25,6 @@ const Fav = () => {
   useEffect(() => {
     if (userId) {
       showfavRest();
-      console.log(fav, "fetch fav rest details")
     }
      // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userId])

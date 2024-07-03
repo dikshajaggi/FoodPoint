@@ -18,8 +18,7 @@ const QuantityIncDec = (props) => {
             id : props.id,
             type: updateType
         }
-        const res = api.updateCartItems(userId, data)
-        console.log(res, "updated cart response")
+        api.updateCartItems(userId, data)
     }
 
     const increase = async(id) => {

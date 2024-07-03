@@ -20,7 +20,6 @@ const Search = () => {
     setSearchVal(e.target.value)
     const res = await api.search(e.target.value)
     setData(res.data)
-    console.log(res.data, "search response")
   }
 
   useEffect(() => {

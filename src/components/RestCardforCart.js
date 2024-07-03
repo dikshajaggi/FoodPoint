@@ -17,7 +17,6 @@ const SpecificCard = (props) => {
     const [cartData, setCartData] = useState([])
 
     useEffect(() => {
-        console.log("modified cart to remove items", cartItems)
         localStorage.setItem('cartItems', JSON.stringify(cartItems.items));
     }, [cartItems]);
 
@@ -43,7 +42,6 @@ const SpecificCard = (props) => {
 
     const getAllCartItems = async () => {
        const cartData = await api.getCartItems(userId)
-       console.log(cartData, "data cart")
        if (cartData.success) {
         setCartData(cartData.items)
         localStorage.setItem('cartItems', JSON.stringify(cartData.items.items));

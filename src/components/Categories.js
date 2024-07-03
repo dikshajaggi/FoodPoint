@@ -33,7 +33,6 @@ const Categories = () => {
 
     const getCategories = async() => {
        const response = await api.getAllCategories()
-       console.log(response, "getAllCategories")
        setCategories(response.data)
     }
 

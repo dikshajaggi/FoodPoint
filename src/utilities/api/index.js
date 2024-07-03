@@ -39,7 +39,6 @@ const api = {
       },
 
       async addFavRest(data) {
-        console.log("fav rest data", data)
         try {
           const res = await axios.post('add-favrest', data);
           return res;
@@ -50,7 +49,6 @@ const api = {
       },
 
       async removeFavRest(data) {
-        console.log(data, "data check fav rets deletion")
         try {
           const res = await axios.delete('remove-favrest', data);
           return res;
@@ -94,7 +92,6 @@ const api = {
 
       async deleteSpecificCartItem(id, dishId) {
         try {
-          console.log(id, dishId, "data id")
           const res = await axios.delete(`delete-specific/${id}/${dishId}`);
           return res;
         } catch (error) {

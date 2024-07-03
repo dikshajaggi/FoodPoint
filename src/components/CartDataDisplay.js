@@ -11,7 +11,6 @@ import { UserContext } from "../utilities/context/UserContext"
 import { toast } from "react-toastify"
 
 const CartDataDisplay = (props) => {
-    console.log(props, "line10")
     const { name, price, imageId, id, defaultPrice } = props?.menu
     const dispatch = useDispatch()
     const context = useContext(Context)

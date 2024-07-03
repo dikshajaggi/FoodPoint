@@ -53,7 +53,6 @@ const ContextProvider = (props) => {
     }, [userId])
 
     useEffect(() => {
-        console.log(cartStoreData, "setCart(cartdata.items.items)")
         setCart(cartStoreData)
         getCartItems()
         // eslint-disable-next-line react-hooks/exhaustive-deps

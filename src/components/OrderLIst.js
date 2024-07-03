@@ -6,7 +6,6 @@ import { Context } from '../utilities/context/Context';
 
 const OrderLIst = ({ items, onClose }) => {
     const context= useContext(Context)
-    console.log(items, "orderlist")
     const data = items.map(item => item)
     return (
         <Wrapper>

@@ -21,7 +21,6 @@ const Main = () => {
     }
 
     useEffect(() => {
-        console.log(context.filteredData, "context.filteredData", isLoading);
         setTimeout(() => {
             setIsLoading(false);
         }, 100);

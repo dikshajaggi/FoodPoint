@@ -18,17 +18,13 @@ const Cart = () => {
     const items = useSelector((store) => store.cart.items)
     const dispatch = useDispatch()
     const [cartData, setCartData] = useState(items)
-    console.log(cartData, "checking cartdata initially")
 
     const handleclearCart = async () => {
-        console.log(items, "checking cartdata initially")
-
         dispatch(clearCart())
         localStorage.removeItem('cartItems');
 
         setCartData([])
         const response =  await api.deleteAllCartItems(userId)
-        console.log(response, "cartStoreData.length + cartLengt clearcartres")
         if (response.status === 200) {
             setCartData([])
             toast.success("Cleared Cart")
@@ -37,13 +33,11 @@ const Cart = () => {
 
     const getCartItems = async() => {
         const cartdata =  await api.getCartItems(userId)
-        console.log(cartdata, "cartdata", userId)
         if (cartdata.success) setCartData(cartdata.items.items)
       }
   
       useEffect(() => {
           getCartItems()
-          console.log(cartData, "getting cart items", items)
            // eslint-disable-next-line react-hooks/exhaustive-deps
       }, [userId, context.qtyUpdated])
 
@@ -58,7 +52,6 @@ const Cart = () => {
                 <hr></hr>
                 <CartContentWrapper>
                     {cartData.length !== 0 ? <>
-                    {console.log(cartData, "cartDatacartDatacartData")}
                         <CartData>{cartData?.map((c, index) => <CartDataDisplay key={index} {...c} />)}</CartData>
                         <div><Checkout cartData = {cartData} /></div>
                     </> : <EmptyCart><h4>{context.language === "en" ?  langConfig[0].cart.add.en : langConfig[0].cart.add.hn}</h4></EmptyCart>

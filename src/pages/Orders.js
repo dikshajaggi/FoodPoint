@@ -90,8 +90,6 @@ const Orders = () => {
   }, [userId])
 
   useEffect(() => {
-    console.log("working")
-    console.log(prevOrdersList, "prevOrdersList")
     if (prevOrdersList.length === 0) localStorage.setItem('prevOrders', JSON.stringify(prevOrderList))
     else localStorage.setItem('prevOrders', JSON.stringify(prevOrdersList))
   }, [prevOrdersList, context.orderPlaced])

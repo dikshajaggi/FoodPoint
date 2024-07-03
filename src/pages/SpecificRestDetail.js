@@ -246,7 +246,6 @@ const Specific = () => {
 
     const fetchRestData = async () => {
         await api.specRestData(id).then(data => {
-            console.log(data, "specific rest")
             setSpecifcRestInfo(data)
         })
     }
@@ -264,7 +263,6 @@ const Specific = () => {
         if (fav.length !== 0) {
             // eslint-disable-next-line array-callback-return
             fav.filter(item => {
-                console.log(item.restId, id, "item.restId, id")
                 if (item.restId === id) setMarked(true)
             })
         }
@@ -277,7 +275,6 @@ const Specific = () => {
             userId,
             restId: rest._id
         }
-        console.log(marked, "markedfav")
         if (marked === false) {
             const res = await api.addFavRest(obj)
             if (res.status === 200) {

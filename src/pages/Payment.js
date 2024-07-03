@@ -33,7 +33,6 @@ const Payment = () => {
     const handleSubmitDetails = (values) => {
         orderPlaced(values)
         setClose(true)
-        console.log("28 saved", values, cartItems)
         context.setOrderPlaced(true)
         navigate("/main")
     }
@@ -42,7 +41,6 @@ const Payment = () => {
         initialValues: initialValues,
         validationSchema: paymentFormSchema,
         onSubmit: (values, action) => {
-            console.log(values, "payment form submitted")
             handleSubmitDetails(values)
         }
     })
@@ -90,7 +88,6 @@ const Payment = () => {
     
         try {
             const res = await api.orderPlaced(data);
-            console.log(res, "order placed");
     
             if (res.data.success) {
                 await api.deleteAllCartItems(userId);

@@ -41,7 +41,6 @@ const WelcomePage = () => {
         const ReverseGeoCoding = (obj) => {
             let response = axios.get(`https://nominatim.openstreetmap.org/reverse?lat=${obj.latitude}&lon=${obj.longitude}&format=json`)
             response.then(result => {
-                console.log(result.data, "context.location result")
                 localStorage.setItem('location', result.data.display_name);
                 context.setLocation(result.data.display_name)
                 // setTimeout(() => {
