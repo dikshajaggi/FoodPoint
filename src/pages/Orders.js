@@ -1,18 +1,18 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { Button, ButtonGroup, Check, Desc, DescInfo, EmptyCart, EmptyCartMapBtn, EstTime, Image, ImageChecked, Information, Item, Label, LabelDesc, LableInfo, OrdNo, OrderDelivered, OrderDetails, OrderHistory, OrderListContainer, OrderWrapper, OrdersMain, OrdersWrapper, Status, StatusCheckWrapper, StatusWrapper } from './styledComponents/Orders'
+import { Button, ButtonGroup, DescInfo, EmptyCart, EmptyCartMapBtn, EstTime, Information, Item, LableInfo, OrdNo, OrderDelivered, OrderDetails, OrderHistory, OrderListContainer, OrderWrapper, OrdersMain, OrdersWrapper, Status } from './styledComponents/Orders'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
-import delivery from "../assets/images/delivery.png"
-import processed from "../assets/images/processed.png"
-import confirmed from "../assets/images/confirmed.png"
-import placed from "../assets/images/placed.png"
+// import delivery from "../assets/images/delivery.png"
+// import processed from "../assets/images/processed.png"
+// import confirmed from "../assets/images/confirmed.png"
+// import placed from "../assets/images/placed.png"
 import { Context } from '../utilities/context/Context'
-import placed_fade from "../assets/images/placed_fade.png"
-import processed_fade from "../assets/images/processed_fade.png"
-import delivery_fade from "../assets/images/delivery_fade.png"
-import confirmation_fade from "../assets/images/confirmation_fade.png"
-import checked from "../assets/images/checked.png"
-import checked_faded from "../assets/images/checked_fade.png"
+// import placed_fade from "../assets/images/placed_fade.png"
+// import processed_fade from "../assets/images/processed_fade.png"
+// import delivery_fade from "../assets/images/delivery_fade.png"
+// import confirmation_fade from "../assets/images/confirmation_fade.png"
+// import checked from "../assets/images/checked.png"
+// import checked_faded from "../assets/images/checked_fade.png"
 // import { useSelector } from 'react-redux'
 import SubHeader from '../components/SubHeader'
 import { LinkStyled } from '../components/styledComponents/Header'

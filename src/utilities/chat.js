@@ -58,8 +58,8 @@ async function run(prompt) {
     const result = await chatSession.sendMessage(prompt)
     const response = result.response
     const formattedResponse = response.text()
-    .replace(/\*\*([^\*]+)\*\*/g, '\n**$1**\n')  
-    .replace(/\* ([^\*]+)/g, '\n* $1')  
+    .replace(/\*\*([^*]+)\*\*/g, '\n**$1**\n')  
+    .replace(/\* ([^*]+)/g, '\n* $1')  
     .replace(/\*\*\d+\./g, '\n$&') 
 
     const lines = formattedResponse.split('\n').filter(line => line.trim() !== '');
