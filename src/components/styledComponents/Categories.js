@@ -15,7 +15,6 @@ font-size: 20px;
 const CategoryWrapper = styled.div`
 width: 100%;
 display: flex;
-flex-direction: row-reverse;
 justify-content: space-between;
 align-items: center;
 `
