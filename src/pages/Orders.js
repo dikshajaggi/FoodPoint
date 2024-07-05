@@ -71,28 +71,20 @@ const Orders = () => {
     setOpenOrderIndexes([])
   }
 
-  useEffect(() => {
-    if (context.status[context.status.length - 1] === "end") {
-      context.setStatus([])
-      setOrderDelivered(true)
-      context.setOrderPlaced(false)
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [context.status])
-
   async function getallOrders() {
     const res = await api.getAllOders(userId)
     setPrevOrdersList(res.data.items?.orderItems)
   }
+
   useEffect(() => {
     getallOrders()
     // eslint-disable-next-line
   }, [userId])
 
-  useEffect(() => {
-    if (prevOrdersList.length === 0) localStorage.setItem('prevOrders', JSON.stringify(prevOrderList))
-    else localStorage.setItem('prevOrders', JSON.stringify(prevOrdersList))
-  }, [prevOrdersList, context.orderPlaced])
+  // useEffect(() => {
+  //   if (prevOrdersList.length === 0) localStorage.setItem('prevOrders', JSON.stringify(prevOrderList))
+  //   else localStorage.setItem('prevOrders', JSON.stringify(prevOrdersList))
+  // }, [prevOrdersList, context.orderPlaced])
 
   // useEffect(() => {
   //   if (context.language === "en") setStatusArrContent(statusArr)
@@ -102,9 +94,9 @@ const Orders = () => {
 
   return (
     <OrdersWrapper setHeight={context.orderPlaced === false && orderDelivered === false ? true : false}>
-      <div>
-        <Header />
-        <SubHeader setActive={setActive} />
+      {/* <div>
+        <Header /> */}
+        {/* <SubHeader setActive={setActive} />
         <Button
           disabled={context.orderPlaced === false || orderDelivered}
           style={{ width: "auto", position: "absolute", borderColor: "transparent", right: "10px", color: "#ffffff", backgroundColor: context.orderPlaced === false || orderDelivered ? "rgb(188,188,188)" : "#000000" }}
@@ -136,7 +128,7 @@ const Orders = () => {
               <DescInfo>{context.orderNumber}</DescInfo>
             </OrdNo>
           </Information>
-          <Status>
+          <Status> */}
             {/* {statusArrContent.map((item, index) => {
               return (
                 <StatusCheckWrapper >
@@ -153,7 +145,7 @@ const Orders = () => {
                 </StatusCheckWrapper>
               )
             })} */}
-          </Status>
+          {/* </Status>
         </>}
 
       </OrdersMain> : <OrderHistory>
@@ -182,7 +174,7 @@ const Orders = () => {
         })}
       </OrderHistory>
       }
-     </div>
+     </div> */}
       <Footer />
     </OrdersWrapper>
   )

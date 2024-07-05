@@ -31,7 +31,7 @@ const Payment = () => {
     }
 
     const handleSubmitDetails = (values) => {
-        orderPlaced(values)
+        // orderPlaced(values)
         setClose(true)
         context.setOrderPlaced(true)
         navigate("/main")

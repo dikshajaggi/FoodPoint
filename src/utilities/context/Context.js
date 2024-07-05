@@ -4,6 +4,8 @@ import api from "../api";
 import {generateOrderNumber} from "../OrderNumberGenerator.js"
 import { UserContext } from "./UserContext.js";
 import { useSelector } from "react-redux";
+import { io } from 'socket.io-client'
+
 // import { useDispatch } from "react-redux";
 
 const value = "value"
@@ -36,6 +38,8 @@ const ContextProvider = (props) => {
     const [qtyUpdated, setQtyUpdated] = useState(false)
     const [cart, setCart] = useState([])
     const orderNumber = generateOrderNumber();
+    const message = '1213435';
+    const socket = io('http://localhost:8000');
 
     const fetchRestData = async() => {
         await api.allRestData().then(data => {
@@ -57,6 +61,28 @@ const ContextProvider = (props) => {
         getCartItems()
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [userId, cartStoreData])
+
+    const getOrderStatus = () => {
+    setOrderPlaced(false)
+        socket.emit('order_id', message);
+        socket.on('order_status_update', (msg) => {
+          console.log(msg, "order status")
+        })
+      };
+    
+    
+      useEffect(() => {
+        // Clean up the socket connection when the component unmounts
+        return () => {
+          socket.disconnect();
+        };
+      }, []);
+    
+      useEffect(() => {
+        if (orderPlaced) {
+          getOrderStatus()
+        }
+      }, [orderPlaced])
 
     return (
         <Context.Provider
