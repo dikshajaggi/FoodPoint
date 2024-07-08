@@ -31,15 +31,16 @@ const Cart = () => {
         }
     }
 
-    const getCartItems = async() => {
-        const cartdata =  await api.getCartItems(userId)
-        if (cartdata.success) setCartData(cartdata.items.items)
-      }
+    // const getCartItems = async() => {
+    //     const cartdata =  await api.getCartItems(userId)
+    //     if (cartdata.success) setCartData(cartdata.items.items)
+    //   }
   
       useEffect(() => {
-          getCartItems()
+        //   getCartItems()
+          setCartData(items)
            // eslint-disable-next-line react-hooks/exhaustive-deps
-      }, [userId, context.qtyUpdated])
+      }, [userId, context.qtyUpdated, items])
 
     return (
         <CartMain>

@@ -38,7 +38,6 @@ const ContextProvider = (props) => {
     const [qtyUpdated, setQtyUpdated] = useState(false)
     const [cart, setCart] = useState([])
     const orderNumber = generateOrderNumber();
-    const message = '1213435';
     const socket = io('http://localhost:8000');
 
     const fetchRestData = async() => {
@@ -64,7 +63,7 @@ const ContextProvider = (props) => {
 
     const getOrderStatus = () => {
     setOrderPlaced(false)
-        socket.emit('order_id', message);
+        socket.emit('order_id', orderNumber);
         socket.on('order_status_update', (msg) => {
           console.log(msg, "order status")
         })

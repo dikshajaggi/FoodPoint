@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import './App.css';
 import { RouterProvider } from 'react-router-dom';
 import { UserContextProvider } from './utilities/context/UserContext';

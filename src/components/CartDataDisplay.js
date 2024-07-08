@@ -1,4 +1,4 @@
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import "../style.css"
 import { removeItem } from '../utilities/redux/cartSlice'
 import { CardCart, CardText, CartRemoveBtn, DishImgCart, DishName, QtyRemoveWrapper } from "./styledComponents/CartDataDisplay"
@@ -15,9 +15,14 @@ const CartDataDisplay = (props) => {
     const dispatch = useDispatch()
     const context = useContext(Context)
     const { userId } = useContext(UserContext)
+    const cartItems = useSelector(state => state.cart.items)
+
 
     const removeItemFromCart = async (restData) => {
+        console.log(restData, "restdataaaaa", cartItems)
         dispatch(removeItem(restData.menu.id))
+        const itemsRemoved = cartItems.filter(item => item.menu.id !== restData.menu.id)
+        localStorage.setItem('cartItems', JSON.stringify(itemsRemoved))
         const res = await api.deleteSpecificCartItem(userId, restData.menu.id)
         if (res.status === 200) toast.success("Item removed from cart")
     }
