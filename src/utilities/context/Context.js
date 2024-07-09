@@ -4,7 +4,7 @@ import api from "../api";
 import {generateOrderNumber} from "../OrderNumberGenerator.js"
 import { UserContext } from "./UserContext.js";
 import { useSelector } from "react-redux";
-import { io } from 'socket.io-client'
+// import { io } from 'socket.io-client'
 
 // import { useDispatch } from "react-redux";
 
@@ -38,7 +38,7 @@ const ContextProvider = (props) => {
     const [qtyUpdated, setQtyUpdated] = useState(false)
     const [cart, setCart] = useState([])
     const orderNumber = generateOrderNumber();
-    const socket = io('http://localhost:8000');
+    // const socket = io('http://localhost:8000');
 
     const fetchRestData = async() => {
         await api.allRestData().then(data => {
@@ -61,27 +61,27 @@ const ContextProvider = (props) => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [userId, cartStoreData])
 
-    const getOrderStatus = () => {
-    setOrderPlaced(false)
-        socket.emit('order_id', orderNumber);
-        socket.on('order_status_update', (msg) => {
-          console.log(msg, "order status")
-        })
-      };
+    // const getOrderStatus = () => {
+    // setOrderPlaced(false)
+    //     socket.emit('order_id', orderNumber);
+    //     socket.on('order_status_update', (msg) => {
+    //       console.log(msg, "order status")
+    //     })
+    //   };
     
     
-      useEffect(() => {
-        // Clean up the socket connection when the component unmounts
-        return () => {
-          socket.disconnect();
-        };
-      }, []);
+      // useEffect(() => {
+      //   // Clean up the socket connection when the component unmounts
+      //   return () => {
+      //     socket.disconnect();
+      //   };
+      // }, []);
     
-      useEffect(() => {
-        if (orderPlaced) {
-          getOrderStatus()
-        }
-      }, [orderPlaced])
+      // useEffect(() => {
+      //   if (orderPlaced) {
+      //     getOrderStatus()
+      //   }
+      // }, [orderPlaced])
 
     return (
         <Context.Provider
