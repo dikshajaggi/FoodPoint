@@ -14,14 +14,14 @@ import api from '../utilities/api'
 const Categories = () => {
     const context = useContext(Context)
     const langConfigHeader = langConfig[0].header
-    const images = {
-        "pizza" : pizza,
-        "burger" : burger,
-        "roll" : roll,
-        "thali" : thali,
-        "combo" : combo,
-        "dessert" : dessert
-    }
+    // const images = {
+    //     "pizza" : pizza,
+    //     "burger" : burger,
+    //     "roll" : roll,
+    //     "thali" : thali,
+    //     "combo" : combo,
+    //     "dessert" : dessert
+    // }
     const [categories, setCategories] = useState([
         {image: pizza, en: "Pizza", hn: "पिज़्ज़ा"},
         {image: burger, en: "Burger", hn: "बर्गर"},
