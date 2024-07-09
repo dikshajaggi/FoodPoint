@@ -284,7 +284,7 @@ const Specific = () => {
                 toast.success("Restaurant added to favourites");
             }
         } else if (marked) {
-            await axios.delete('http://localhost:8000/api/remove-favrest', {
+            await axios.delete('https://foodpointbackend-7mxm.onrender.com/api/remove-favrest', {
                 headers: {
                     'Content-Type': 'application/json',
                 },
