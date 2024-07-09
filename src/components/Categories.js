@@ -52,7 +52,7 @@ const Categories = () => {
             return (
                <LinkStyled to={`/category/${item.en}`}>
                     <Category key={index} onClick={() => changePageTitle(`FoodPoint | ${item.en}`)}>
-                        <Image src={images[item.image]} alt="category-image"></Image>
+                        <Image src={item.image} alt="category-image"></Image>
                         <Label>{context.language === "en" ? item.en : item.hn}</Label>
                     </Category>
                </LinkStyled>
