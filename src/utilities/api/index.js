@@ -1,7 +1,7 @@
 import axios from "axios"
 
-// axios.defaults.baseURL = "http://localhost:8000/api/";
-axios.defaults.baseURL = "https://foodpointbackend-7mxm.onrender.com/api/"
+axios.defaults.baseURL = "http://localhost:8000/api/";
+// axios.defaults.baseURL = "https://foodpointbackend-7mxm.onrender.com/api/"
 
 // id -> refers to user-id
 
@@ -165,7 +165,28 @@ const api = {
           console.error("Error posting data:", error);
           throw error;
         }
-      }
+      },
+
+  //---------------------------------- payment -----------------------------------
+    async makePayment(amount) {
+      try{
+        const res = await axios.post("payment", {amount})
+        return res;
+      } catch (error) {
+          console.error("Error posting data:", error);
+          throw error;
+        }
+    },
+
+    async getKey () {
+      try{
+        const res = await axios.get("getkey")
+        return res;
+      } catch (error) {
+          console.error("Error posting data:", error);
+          throw error;
+        }
+    }
 
 };
 

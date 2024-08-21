@@ -11,7 +11,7 @@ const Checkout = ({cartData}) => {
     // const cartItems = useSelector(state => state.cart.items)
     const [total, setTotal] = useState()
     const [totalItems, setTotalItems] = useState()
-    const context = useContext(Context)
+    const {setOrderDetails, language, setTotalPrice} = useContext(Context)
 
     useEffect(() => {
         const totalItems = cartData.reduce((acc, current) => acc + current.quantity, 0);
@@ -25,19 +25,20 @@ const Checkout = ({cartData}) => {
         }, 0);
         setTotalItems(totalItems);
         setTotal(totalPrice);
-        context.setOrderDetails({totalItems, totalPrice})
+        setTotalPrice(totalPrice/100)
+        setOrderDetails({totalItems, totalPrice})
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [cartData])
 
     return (
         <CheckoutWrapper>
-            <CheckoutLabel>{context.language === "en" ?  langConfig[0].cart.checkout.en : langConfig[0].cart.checkout.hn}</CheckoutLabel>
+            <CheckoutLabel>{language === "en" ?  langConfig[0].cart.checkout.en : langConfig[0].cart.checkout.hn}</CheckoutLabel>
             <br></br>
             <TotalWrapper>
-                <TotalLabels>{context.language === "en" ?  langConfig[0].cart.totalItems.en : langConfig[0].cart.totalItems.hn} : <span style={{ fontWeight: 400 }}>{totalItems}</span></TotalLabels>
-                <TotalLabels>{context.language === "en" ?  langConfig[0].cart.totalPrice.en : langConfig[0].cart.totalPrice.hn} : <span style={{ fontWeight: 400 }}>Rs. {(total) / 100}</span></TotalLabels>
+                <TotalLabels>{language === "en" ?  langConfig[0].cart.totalItems.en : langConfig[0].cart.totalItems.hn} : <span style={{ fontWeight: 400 }}>{totalItems}</span></TotalLabels>
+                <TotalLabels>{language === "en" ?  langConfig[0].cart.totalPrice.en : langConfig[0].cart.totalPrice.hn} : <span style={{ fontWeight: 400 }}>Rs. {(total) / 100}</span></TotalLabels>
             </TotalWrapper>
-            {userData !== null? <LinkStyled to="/payment"><CheckoutBtn>{context.language === "en" ?  langConfig[0].cart.checkout.en : langConfig[0].cart.checkout.hn}</CheckoutBtn></LinkStyled> : <LinkStyled to="/login"><CheckoutBtn>{context.language === "en" ?  langConfig[0].cart.checkout.en : langConfig[0].cart.checkout.hn}</CheckoutBtn></LinkStyled>}
+            {userData !== null? <LinkStyled to="/payment"><CheckoutBtn>{language === "en" ?  langConfig[0].cart.checkout.en : langConfig[0].cart.checkout.hn}</CheckoutBtn></LinkStyled> : <LinkStyled to="/login"><CheckoutBtn>{language === "en" ?  langConfig[0].cart.checkout.en : langConfig[0].cart.checkout.hn}</CheckoutBtn></LinkStyled>}
         </CheckoutWrapper>
     )
 }

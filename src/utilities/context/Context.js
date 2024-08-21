@@ -61,28 +61,6 @@ const ContextProvider = (props) => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [userId, cartStoreData])
 
-    // const getOrderStatus = () => {
-    // setOrderPlaced(false)
-    //     socket.emit('order_id', orderNumber);
-    //     socket.on('order_status_update', (msg) => {
-    //       console.log(msg, "order status")
-    //     })
-    //   };
-    
-    
-      // useEffect(() => {
-      //   // Clean up the socket connection when the component unmounts
-      //   return () => {
-      //     socket.disconnect();
-      //   };
-      // }, []);
-    
-      // useEffect(() => {
-      //   if (orderPlaced) {
-      //     getOrderStatus()
-      //   }
-      // }, [orderPlaced])
-
     return (
         <Context.Provider
             value={{

@@ -18,6 +18,7 @@ import About from "../pages/About"
 import Disclaimer from "../pages/Disclaimer";
 import Search from "../pages/Search";
 import Category from "../pages/Category";
+import PaymentSuccess from "../pages/PaymentSuccess";
 
 export const appRoutes = createBrowserRouter([
   {
@@ -111,5 +112,9 @@ export const appRoutes = createBrowserRouter([
   {
     path: "/gpt-dish-discovery",
     element: <DishDiscoveryGpt />
+  },
+  {
+    path: "/paymentsuccess",
+    element: <PaymentSuccess />
   }
 ])
