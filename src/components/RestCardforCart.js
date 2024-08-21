@@ -16,22 +16,26 @@ const SpecificCard = (props) => {
     const { userId } = useContext(UserContext)
 
     const addItemToCart = async (restData) => {
-        const data = {
-            user: userId,
-            menu: restData,
-            quantity: 1
+        if(userId) {
+            const data = {
+                user: userId,
+                menu: restData,
+                quantity: 1
+            }
+            dispatch(addItems(data))
+            const res = await api.addToCart(data)
+            if (res.status === 201) toast.success("Item added to cart")
         }
-        dispatch(addItems(data))
-        const res = await api.addToCart(data)
-        if (res.status === 201) toast.success("Item added to cart")
     }
 
     const removeItemFromCart = async (restData) => {
-        dispatch(removeItem(restData.id))
-        const itemsRemoved = cartItems.filter(item => item.menu.id !== restData.id)
-        localStorage.setItem('cartItems', JSON.stringify(itemsRemoved))
-        const res = await api.deleteSpecificCartItem(userId, restData.id)
-        if(res.status === 200) toast.success("Item removed from cart")
+        if (userId) {
+            dispatch(removeItem(restData.id))
+            const itemsRemoved = cartItems.filter(item => item.menu.id !== restData.id)
+            localStorage.setItem('cartItems', JSON.stringify(itemsRemoved))
+            const res = await api.deleteSpecificCartItem(userId, restData.id)
+            if(res.status === 200) toast.success("Item removed from cart")
+        }
     }
 
     useEffect(() => {
