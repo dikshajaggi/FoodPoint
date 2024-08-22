@@ -121,4 +121,14 @@ const PaymentInfo = styled.p`
 font-size: 14px;
 `
 
-export { PaymentWrapper, Wrapper, CashOnDelivery, SubmitDetails, CodHead, Input, RowInput, InputRow, CardMethod, Button, OrderDetails, ButtonClose, PaymentInfo, PaymentOp }
+const SuccessPaymentWrapper = styled.div`
+display: flex;
+height: 100vh;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+color: white;
+background-color:  ${props => props.theme.colors.main};
+`
+
+export { SuccessPaymentWrapper, PaymentWrapper, Wrapper, CashOnDelivery, SubmitDetails, CodHead, Input, RowInput, InputRow, CardMethod, Button, OrderDetails, ButtonClose, PaymentInfo, PaymentOp }
