@@ -6,7 +6,7 @@ import { CheckoutBtn, CheckoutLabel, CheckoutWrapper, TotalLabels, TotalWrapper 
 import langConfig from "../config/langConfig.json"
 import { Context } from '../utilities/context/Context'
 
-const Checkout = ({cartData}) => {
+const Checkout = ({cartData, checkoutHandler}) => {
     const { userData } = useContext(UserContext)
     // const cartItems = useSelector(state => state.cart.items)
     const [total, setTotal] = useState()
@@ -38,7 +38,11 @@ const Checkout = ({cartData}) => {
                 <TotalLabels>{language === "en" ?  langConfig[0].cart.totalItems.en : langConfig[0].cart.totalItems.hn} : <span style={{ fontWeight: 400 }}>{totalItems}</span></TotalLabels>
                 <TotalLabels>{language === "en" ?  langConfig[0].cart.totalPrice.en : langConfig[0].cart.totalPrice.hn} : <span style={{ fontWeight: 400 }}>Rs. {(total) / 100}</span></TotalLabels>
             </TotalWrapper>
-            {userData !== null? <LinkStyled to="/payment"><CheckoutBtn>{language === "en" ?  langConfig[0].cart.checkout.en : langConfig[0].cart.checkout.hn}</CheckoutBtn></LinkStyled> : <LinkStyled to="/login"><CheckoutBtn>{language === "en" ?  langConfig[0].cart.checkout.en : langConfig[0].cart.checkout.hn}</CheckoutBtn></LinkStyled>}
+            {window.location.pathname === "/payment" ? <CheckoutBtn onClick={checkoutHandler}>{language === "en" ?  langConfig[0].cart.pay.en : langConfig[0].cart.pay.hn}</CheckoutBtn> : userData !== null? <LinkStyled to="/payment">
+            <CheckoutBtn>{language === "en" ?  langConfig[0].cart.checkout.en : langConfig[0].cart.checkout.hn}</CheckoutBtn>
+            </LinkStyled> : <LinkStyled to="/login">
+            <CheckoutBtn>{language === "en" ?  langConfig[0].cart.checkout.en : langConfig[0].cart.checkout.hn}</CheckoutBtn>
+            </LinkStyled>}
         </CheckoutWrapper>
     )
 }

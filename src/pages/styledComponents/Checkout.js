@@ -24,10 +24,12 @@ border: 2px solid ${props => props.theme.colors.accent};
 const CheckoutLabel = styled.h5`
 font-weight: 500, 
 font-size: 20px; 
+color: white;
 `
 
 const TotalLabels = styled.h6`
 font-size: 18px;
+color: white;
 `
 
 const CheckoutBtn = styled.button`

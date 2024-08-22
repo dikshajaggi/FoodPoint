@@ -1,14 +1,28 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Context } from '../utilities/context/Context'
 import api from '../utilities/api'
-import { Button } from '@mui/material'
+import Checkout from './Checkout'
+import { useSelector } from 'react-redux'
+import { UserContext } from '../utilities/context/UserContext'
+import { BillingWrapper } from './styledComponents/Payment'
+import { CartMain } from './styledComponents/Cart'
 
 const Payment = () => {
 
-    const {totalPrice} = useContext(Context)
+    const {totalPrice, qtyUpdated} = useContext(Context)
+    const items = useSelector((store) => store.cart.items)
+    const [cartData, setCartData] = useState(items)
+    const { userId } = useContext(UserContext)
 
-    const checkoutHandler = async(amount) =>{
-        const {data: {order}} = await api.makePayment(amount)
+    useEffect(() => {
+          setCartData(items)
+           // eslint-disable-next-line react-hooks/exhaustive-deps
+      }, [userId, qtyUpdated, items])
+
+
+
+    const checkoutHandler = async() =>{
+        const {data: {order}} = await api.makePayment(totalPrice)
         console.log(order, "response of payment api", window)
 
         const {data: {key}} = await api.getKey()
@@ -39,8 +53,12 @@ const Payment = () => {
             rzp1.open();
     }
     return (
-        <Button onClick={() => checkoutHandler(totalPrice)}>Click</Button>
-       
+        <CartMain>
+            <BillingWrapper>
+                <Checkout cartData={cartData} checkoutHandler={checkoutHandler}  />
+            </BillingWrapper>
+        </CartMain>
+        
     )
 }
 
