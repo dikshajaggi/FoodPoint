@@ -9,12 +9,16 @@ import FinalPayment from '../components/FinalPayment'
 
 const Payment = () => {
 
-    const {totalPrice, qtyUpdated} = useContext(Context)
+    const {totalPrice, qtyUpdated, orderNumber} = useContext(Context)
     const items = useSelector((store) => store.cart.items)
     const [cartData, setCartData] = useState(items)
-    const { userId } = useContext(UserContext)
+    const { userId, userData } = useContext(UserContext)
+    const itemsObj = items.map(data => {
+        return {menu: data.menu, quantity: data.quantity}
+    })
 
     useEffect(() => {
+        console.log(items, "cart items checkkk", itemsObj)
           setCartData(items)
            // eslint-disable-next-line react-hooks/exhaustive-deps
       }, [userId, qtyUpdated, items])
@@ -51,6 +55,26 @@ const Payment = () => {
 
         const rzp1 = new window.Razorpay(options);
             rzp1.open();
+        const orderItems = {
+            name: userData.firstName,
+            address: "123 Main St",
+            address2: "Apt 4B",
+            region: "North",
+            pincode: 123456,
+            city: "New York",
+            state: "NY",
+            contact: 9876543210,
+            items:itemsObj,
+            totalPrice: totalPrice,
+            orderNumber: orderNumber,
+            orderStatus: "Placed"
+        }
+
+        const data = {
+            user: userId,
+            orderItems: [orderItems]
+        }
+        api.orderPlaced(data)
     }
     return (
         <CartMain>

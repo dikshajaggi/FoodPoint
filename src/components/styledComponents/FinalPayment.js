@@ -49,4 +49,5 @@ font-weight: 600;
 font-size: 18px;
 background-color: transparent;
 cursor: pointer;
+color: #FF5200
 `

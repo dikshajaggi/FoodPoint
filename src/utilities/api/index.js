@@ -157,7 +157,7 @@ const api = {
         }
     },
 
-    async getAllOders(id) {
+    async getAllOrders(id) {
       try{
         const res = await axios.get(`all-orders/${id}`)
         return res;
