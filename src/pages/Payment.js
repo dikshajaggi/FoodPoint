@@ -35,7 +35,7 @@ const Payment = () => {
             description: "Test Transaction",
             image: "https://example.com/your_logo",
             order_id: order.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-            callback_url: "http://localhost:8000/api/paymentverification",
+            callback_url: "https://foodpointbackend-7mxm.onrender.com/api/paymentverification",
             prefill: {
                 "name": "sample",
                 "email": "sample@example.com",
