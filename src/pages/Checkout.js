@@ -38,7 +38,7 @@ const Checkout = ({cartData, checkoutHandler}) => {
                 <TotalLabels>{language === "en" ?  langConfig[0].cart.totalItems.en : langConfig[0].cart.totalItems.hn} : <span style={{ fontWeight: 400 }}>{totalItems}</span></TotalLabels>
                 <TotalLabels>{language === "en" ?  langConfig[0].cart.totalPrice.en : langConfig[0].cart.totalPrice.hn} : <span style={{ fontWeight: 400 }}>Rs. {(total) / 100}</span></TotalLabels>
             </TotalWrapper>
-            {window.location.pathname === "/payment" ? <CheckoutBtn onClick={checkoutHandler}>{language === "en" ?  langConfig[0].cart.pay.en : langConfig[0].cart.pay.hn}</CheckoutBtn> : userData !== null? <LinkStyled to="/payment">
+            {userData !== null? <LinkStyled to="/payment">
             <CheckoutBtn>{language === "en" ?  langConfig[0].cart.checkout.en : langConfig[0].cart.checkout.hn}</CheckoutBtn>
             </LinkStyled> : <LinkStyled to="/login">
             <CheckoutBtn>{language === "en" ?  langConfig[0].cart.checkout.en : langConfig[0].cart.checkout.hn}</CheckoutBtn>

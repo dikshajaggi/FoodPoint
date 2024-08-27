@@ -6,6 +6,7 @@ import { useSelector } from 'react-redux'
 import { UserContext } from '../utilities/context/UserContext'
 import { BillingWrapper } from './styledComponents/Payment'
 import { CartMain } from './styledComponents/Cart'
+import FinalPayment from '../components/FinalPayment'
 
 const Payment = () => {
 
@@ -35,7 +36,7 @@ const Payment = () => {
             description: "Test Transaction",
             image: "https://example.com/your_logo",
             order_id: order.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-            callback_url: "https://foodpointbackend-7mxm.onrender.com/api/paymentverification",
+            callback_url: "http://localhost:8000/api/paymentverification",
             prefill: {
                 "name": "sample",
                 "email": "sample@example.com",
@@ -55,7 +56,7 @@ const Payment = () => {
     return (
         <CartMain>
             <BillingWrapper>
-                <Checkout cartData={cartData} checkoutHandler={checkoutHandler}  />
+                <FinalPayment cartData={cartData} checkoutHandler={checkoutHandler}  />
             </BillingWrapper>
         </CartMain>
         
