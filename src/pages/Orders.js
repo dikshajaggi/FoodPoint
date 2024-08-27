@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useContext, useEffect, useState } from 'react'
 import api from '../utilities/api'
 import { UserContext } from '../utilities/context/UserContext'
