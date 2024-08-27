@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { Context } from '../utilities/context/Context'
 import api from '../utilities/api'
-import Checkout from './Checkout'
 import { useSelector } from 'react-redux'
 import { UserContext } from '../utilities/context/UserContext'
 import { BillingWrapper } from './styledComponents/Payment'
