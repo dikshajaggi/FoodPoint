@@ -283,7 +283,8 @@ const Specific = () => {
                 setMarked(true)
                 toast.success("Restaurant added to favourites");
             }
-        } else if (marked) {
+        } 
+        if (marked) {
             await axios.delete('https://foodpointbackend-7mxm.onrender.com/api/remove-favrest', {
                 headers: {
                     'Content-Type': 'application/json',
