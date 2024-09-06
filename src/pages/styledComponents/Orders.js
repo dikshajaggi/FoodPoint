@@ -25,7 +25,7 @@ export const OrderCard = styled.div`
     justify-content: center;
     color: white;
     border: 1px solid white;
-    width: 60%;
+    width: 50%;
     padding: 20px;
     margin-bottom: 20px;
 `
