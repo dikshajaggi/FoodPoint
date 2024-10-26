@@ -25,6 +25,8 @@ const SpecificCard = (props) => {
             dispatch(addItems(data))
             const res = await api.addToCart(data)
             if (res.status === 201) toast.success("Item added to cart")
+        } else {
+            toast.error("Please login to add items")
         }
     }
 
@@ -35,6 +37,8 @@ const SpecificCard = (props) => {
             localStorage.setItem('cartItems', JSON.stringify(itemsRemoved))
             const res = await api.deleteSpecificCartItem(userId, restData.id)
             if(res.status === 200) toast.success("Item removed from cart")
+        } else {
+            toast.error("Please login to remove items")
         }
     }
 

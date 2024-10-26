@@ -128,6 +128,7 @@ align-items: center;
 justify-content: center;
 flex-direction: column;
 background-color:  ${props => props.theme.colors.main};
+color: #fff;
 `
 
 const BillingWrapper = styled.div`
