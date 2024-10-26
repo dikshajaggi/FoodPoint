@@ -53,29 +53,31 @@ const Payment = () => {
             }
         };
 
-        const rzp1 = new window.Razorpay(options);
+        if (order) {
+            const rzp1 = new window.Razorpay(options);
             rzp1.open();
-        const orderItems = {
-            name: userData.firstName,
-            address: "123 Main St",
-            address2: "Apt 4B",
-            region: "North",
-            pincode: 123456,
-            city: "New York",
-            state: "NY",
-            contact: 9876543210,
-            items:itemsObj,
-            totalPrice: totalPrice,
-            orderNumber: orderNumber,
-            orderStatus: "Placed"
-        }
+            const orderItems = {
+                name: userData.firstName,
+                address: "123 Main St",
+                address2: "Apt 4B",
+                region: "North",
+                pincode: 123456,
+                city: "New York",
+                state: "NY",
+                contact: 9876543210,
+                items:itemsObj,
+                totalPrice: totalPrice,
+                orderNumber: orderNumber,
+                orderStatus: "Placed"
+            }
 
-        const data = {
-            user: userId,
-            orderItems: [orderItems]
+            const data = {
+                user: userId,
+                orderItems: [orderItems]
+            }
+            await api.orderPlaced(data)
+            const deleted =  await api.deleteAllCartItems(userId)
         }
-        await api.orderPlaced(data)
-        await api.deleteAllCartItems(userId)
     }
     return (
         <CartMain>
