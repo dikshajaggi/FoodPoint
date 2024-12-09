@@ -27,7 +27,10 @@ const Category = () => {
     <Header />
     <CategoryWrapper>
       <h6 style={{color: "white", marginTop: "2vh", fontSize: "22px"}}>Restaurants serving {id}</h6>
-      <CardWrapper>
+      {console.log(restData, "restDatarestData")}
+      {restData.length === 0 ? <div style={{height: "80vh", color: "white", display: "flex", alignItems: "center", justifyContent: "center"}}>
+        Loading Food.....
+      </div> : <CardWrapper>
         {restData?.map((item) => (
             <Link key={item.id} style={{ textDecoration: 'none' }} to={`/rest/${item._id}`}>
                 <Card {...item} />
@@ -35,6 +38,7 @@ const Category = () => {
         ))
         }
       </CardWrapper>
+      }
     </CategoryWrapper>
     <Footer />
   </Main>
