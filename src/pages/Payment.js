@@ -76,7 +76,7 @@ const Payment = () => {
                 orderItems: [orderItems]
             }
             await api.orderPlaced(data)
-            const deleted =  await api.deleteAllCartItems(userId)
+            await api.deleteAllCartItems(userId)
         }
     }
     return (

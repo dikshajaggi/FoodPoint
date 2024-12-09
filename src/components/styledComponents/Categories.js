@@ -17,6 +17,11 @@ width: 100%;
 display: flex;
 justify-content: space-between;
 align-items: center;
+   @media only screen and (max-width: 600px)  {
+        flex-direction: column;
+    }
+    @media only screen and (min-width: 768px) and (max-width: 768px) and (min-height: 1025px) and (max-height: 1025px) {
+        flex-direction: column;
 `
 
 const Category = styled.div`
