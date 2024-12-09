@@ -59,7 +59,7 @@ background-color: ${props => props.type === "login" ? "transparent" : "black"};
 color: ${props => props.type === "login" ? "black" : "white"};
 font-weight: 600;
  @media screen and (max-width: 1024px) {
-  width: 18vw;
+  width: 20vw;
  }
 `
 
@@ -130,6 +130,11 @@ align-items: center;
 border: 1px solid black;
 background-color: white;
 margin: ${props => props.component === "drawer" ? "10vh 2vw 2vh 2vw" : "0"};
+   @media only screen and (max-width: 600px)  {
+        width:  ${props => props.component === "drawer" ? "26vw" : "60%"}
+    }
+    @media only screen and (min-width: 768px) and (max-width: 768px) and (min-height: 1025px) and (max-height: 1025px) {
+        width:  ${props => props.component === "drawer" ? "26vw" : "60%"}
 `
 const Address = styled.input`
 border: none;

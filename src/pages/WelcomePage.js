@@ -31,7 +31,6 @@ const WelcomePage = () => {
     } , [context.language])
 
     const handleClick = () => {
-
         if (context.location === null) setShowError(true)
     }
 
@@ -102,7 +101,7 @@ const WelcomePage = () => {
                         <LocationInput>
                             {/* {console.log(changePage, "changePage")} */}
                             <LocWrapper><i class="fa-solid fa-location-crosshairs" style={{ color: "#686b78" }}></i><LocateUser onClick={handleLocation}>{context.language === "en" ?  langConfig[0].welcome.locate.en : langConfig[0].welcome.locate.hn}</LocateUser></LocWrapper>
-                            <FindFood onClick={handleClick}>{fetchingLoc ? <img src={loadingSpinner} alt="" style={{ maxHeight: "100%" }} /> : context.language === "en" ?  langConfig[0].welcome.find.en : langConfig[0].welcome.find.hn}</FindFood>
+                            {/* <FindFood onClick={handleClick}>{fetchingLoc ? <img src={loadingSpinner} alt="" style={{ maxHeight: "100%" }} /> : context.language === "en" ?  langConfig[0].welcome.find.en : langConfig[0].welcome.find.hn}</FindFood> */}
                         </LocationInput>
                         {showError ? <LocationInput type="error">{context.language === "en" ?  langConfig[0].welcome.loc.en : langConfig[0].welcome.loc.hn}</LocationInput> : null}
                     </Body>
