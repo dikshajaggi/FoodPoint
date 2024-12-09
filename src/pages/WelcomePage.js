@@ -1,10 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { Body, Button, Content, FindFood, Head, Header, Image, LocWrapper, LocateUser, LocationInput, LoginSignup, Main, SubHead, WelcomeText, Wrapper } from './styledComponents/WelcomePage'
+import { Body, Button, Content, Head, Header, Image, LocWrapper, LocateUser, LocationInput, LoginSignup, Main, SubHead, WelcomeText, Wrapper } from './styledComponents/WelcomePage'
 // import Footer from '../components/Footer'
 import { LinkStyled, Logo, Name } from '../components/styledComponents/Header'
 import displayImg from "../assets/images/dining.jpg"
 import { Context } from '../utilities/context/Context'
-import loadingSpinner from "../assets/images/loadingSpinner.gif"
+// import loadingSpinner from "../assets/images/loadingSpinner.gif"
 import { UserContext } from '../utilities/context/UserContext'
 import axios from 'axios'
 import { useNavigate } from "react-router-dom"
@@ -24,15 +24,16 @@ const WelcomePage = () => {
     const [showError, setShowError] = useState(false)
 
     useEffect (() => {
+        console.log(fetchingLoc)
         if (context.language === "en") setDynamicText(dynamicTextEnglish)
         else setDynamicText(dynamicTextHindi)
     
     // eslint-disable-next-line react-hooks/exhaustive-deps
     } , [context.language])
 
-    const handleClick = () => {
-        if (context.location === null) setShowError(true)
-    }
+    // const handleClick = () => {
+    //     if (context.location === null) setShowError(true)
+    // }
 
     const handleLocation = () => {
         setShowError(false)

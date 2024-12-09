@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect } from 'react'
 import pizza from "../assets/categoryImg/pizza.jpg"
 import burger from "../assets/categoryImg/burger.jpg"
 import thali from "../assets/categoryImg/thali.jpg"
@@ -9,7 +9,7 @@ import { CategoriesMainDiv, Category, CategoryWrapper, Head, Image, Label } from
 import { LinkStyled } from './styledComponents/Header'
 import { Context } from '../utilities/context/Context'
 import langConfig from "../config/langConfig.json"
-import api from '../utilities/api'
+// import api from '../utilities/api'
 
 const Categories = () => {
     const context = useContext(Context)
@@ -22,26 +22,34 @@ const Categories = () => {
     //     "combo" : combo,
     //     "dessert" : dessert
     // }
-    const [categories, setCategories] = useState([
+    // const [categories, setCategories] = useState([
+    //     {image: pizza, en: "Pizza", hn: "पिज़्ज़ा"},
+    //     {image: burger, en: "Burger", hn: "बर्गर"},
+    //     {image: roll, en: "Roll", hn: "रोल"},
+    //     {image: thali, en: "Thali", hn: "थाली"},
+    //     {image: combo, en: "Combo", hn: "कॉम्बो"},
+    //     {image: dessert, en: "Desserts and Sweets", hn: "मिठाइयाँ"}
+    // ])
+    const categories = [
         {image: pizza, en: "Pizza", hn: "पिज़्ज़ा"},
         {image: burger, en: "Burger", hn: "बर्गर"},
         {image: roll, en: "Roll", hn: "रोल"},
         {image: thali, en: "Thali", hn: "थाली"},
         {image: combo, en: "Combo", hn: "कॉम्बो"},
         {image: dessert, en: "Desserts and Sweets", hn: "मिठाइयाँ"}
-    ])
+    ]
 
-    const getCategories = async() => {
-        await api.getAllCategories()
-    //    setCategories(response.data)
-    }
+    // const getCategories = async() => {
+    //     await api.getAllCategories()
+    // //    setCategories(response.data)
+    // }
 
     const changePageTitle = (title) => {
         document.title = title
     }
     
     useEffect(() => {
-        getCategories()
+        // getCategories()
     }, [context.language])
 
   return (
