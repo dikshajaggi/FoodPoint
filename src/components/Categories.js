@@ -32,8 +32,8 @@ const Categories = () => {
     ])
 
     const getCategories = async() => {
-       const response = await api.getAllCategories()
-       setCategories(response.data)
+        await api.getAllCategories()
+    //    setCategories(response.data)
     }
 
     const changePageTitle = (title) => {
